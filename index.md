@@ -29,7 +29,7 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
     
 
     <details style="margin-bottom: 30px;">
-    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
+    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature'; font-color: $darkMint;">Individual Meditation Instruction</summary>
     <p>Description...</p>
     </details>
 
