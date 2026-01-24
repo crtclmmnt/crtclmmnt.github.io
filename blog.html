@@ -17,7 +17,7 @@ This is a blog about things I find interesting. If you would like to recieve new
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
-      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <h2 style="line-height: 0.9;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       <div class="date">
          {{ page.date | date: "%B %e, %Y" }}
       </div>
