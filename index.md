@@ -3,9 +3,7 @@ layout: page
 permalink: /
 ---
 
-<p align="center">
-  <img src="/images/critmomnotxt.png" alt="Critical Moment logo" width="600">
-</p>
+<img src="/images/pano.jpg" alt="big ol moon at sunset" style="width: 100%; max-width: 1200px; display: block; margin: 0 auto;">
 
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
@@ -13,14 +11,13 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
 
 ---
 
-## Services
-
 <div style="display: flex; align-items: flex-start; gap: 30px;">
   <div style="flex-shrink: 0;">
     <img src="/images/critmomnotxt.png" alt="Meditation" width="300">
   </div>
   
   <div>
+    ## Services
     <details style="margin-bottom: 30px;">
     <summary><strong>Free Mindfulness Meditation Workshops for Community Organizations</strong></summary>
     <p>Description...</p>
