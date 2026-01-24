@@ -19,7 +19,7 @@ Some information about you!
     
 
     <details style="margin-bottom: 30px;">
-    <p>A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. Description...</p>
+    A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. Description...
     </details>
 
       </div>
