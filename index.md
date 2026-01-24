@@ -3,7 +3,7 @@ layout: page
 permalink: /
 ---
 
-<img src="/images/pano.jpg" alt="big ol moon at sunset" style="width: 100%; max-width: 1200px; display: block; margin: 0 auto;">
+<img src="/images/pano.JPG" alt="big ol moon at sunset" style="width: 100%; max-width: 1200px; display: block; margin: 0 auto;">
 
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
@@ -17,7 +17,7 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
   </div>
   
   <div>
-    ## Services
+    <h2>Services</h2>
     <details style="margin-bottom: 30px;">
     <summary><strong>Free Mindfulness Meditation Workshops for Community Organizations</strong></summary>
     <p>Description...</p>
