@@ -67,7 +67,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 800px;
   padding: 0 10px;
   width: 100%;
 }
@@ -115,7 +115,7 @@ a {
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $darkRose;
   }
 }
 
@@ -200,7 +200,7 @@ img {
 
 .masthead {
   max-width: 100%;
-  padding: 10px 180px;
+  padding: 10px 200px;
 
   @include mobile {
     text-align: center;
