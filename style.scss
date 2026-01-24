@@ -238,11 +238,15 @@ img {
 
 .site-info {
   float: left;
+  display: flex;
+  align-items: center;
+  height: 90px;
 
   @include mobile {
     float: none;
     display: block;
     margin: 0 auto;
+    height: auto;
   }
 }
 
@@ -253,7 +257,7 @@ img {
   font-family: 'ZTNature', $helveticaNeue;
   font-weight: 500;  /* Regular for "critical" */
   font-size: 32px;
-  letter-spacing: 1px;
+  letter-spacing: -1px;
   line-height: 0.9;  /* Tighter line spacing */
   text-transform: lowercase;
   
