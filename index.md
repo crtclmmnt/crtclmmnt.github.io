@@ -21,7 +21,7 @@ Describe your workshops - what they cover, format, how they help groups integrat
 </p>
 </details>
 
-***
+* * *
 
 <details>
 <summary><strong>Organizational Consulting</strong></summary>
@@ -34,6 +34,4 @@ Explain how you work with nonprofits/advocacy groups to build sustainable practi
 ---
 
 
-## Get In Touch
-
-**[Fill out our interest form →](https://forms.gle/your-form-link)**
+**[Fill out the interest form](https://forms.gle/your-form-link)**
