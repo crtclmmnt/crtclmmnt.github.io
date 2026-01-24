@@ -319,13 +319,21 @@ nav {
   gap: 30px;
   
   @include mobile {
-    flex-direction: column;  /* Stack vertically */
-    align-items: center;     /* Center everything */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  > div:first-child {
+    @include mobile {
+      text-align: center;  /* Center the image inside its div */
+    }
   }
   
   img {
     @include mobile {
-      max-width: 60%;  /* Shrink logo on mobile */
+      max-width: 85%;
+      display: block;
+      margin: 0 auto;  /* Center the image */
     }
   }
 }
