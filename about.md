@@ -9,13 +9,15 @@ permalink: /about/
 
 <div class="services-layout">
   <div>
-    <img src="/images/bio1.JPG" alt="me" width="180">
+    <img src="/images/bio.JPG" alt="me" width="300">
   </div>
   
   <div class="services-content">
-    A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. Description... Like this description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass, it would probably involve quite a few revolutions of the second hand on a traditional analog clock, perhaps even quite a few revolutions of the minute hand on an analog clock. That's how long the description will be. That's how long I will be making this bio. 
+    A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass, it would probably involve quite a few revolutions of the second hand on a traditional analog clock, perhaps even quite a few revolutions of the minute hand on an analog clock. 
   </div>
 </div>
+
+And then the rest of the information in my bio is going to exist outside of the double column formatting. It's going to take up the full span of the page as a continuation of whatever I will write in this part.
 
 ### More Information
 
