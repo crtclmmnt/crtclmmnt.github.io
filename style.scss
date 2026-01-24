@@ -283,7 +283,7 @@ nav {
   font-family: 'ZTNature', $helveticaNeue;
   font-weight: 200;
   font-size: 28px;
-  font-style: bold // delete if it does nothing or maybe just increase font weight
+  font-style: bold; // delete if it does nothing or maybe just increase font weight
 
   @include mobile {
     float: none;
