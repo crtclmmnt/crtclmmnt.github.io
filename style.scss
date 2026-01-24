@@ -201,7 +201,6 @@ img {
 .masthead {
   max-width: 100%;
   padding: 10px 200px;
-  display: flex;
   align-items: center;
 
   @include mobile {
@@ -304,8 +303,6 @@ nav {
   }
 
   a {
-    float: right;
-    display: flex;
     margin-left: 20px;
     color: $darkGray;
     text-align: right;
@@ -391,7 +388,7 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: $rose;
 }
 
 footer {
