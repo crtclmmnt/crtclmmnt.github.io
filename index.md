@@ -5,6 +5,8 @@ permalink: /
 
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
+<br>
+
 ---
 
 ## Services
@@ -16,16 +18,12 @@ Longer description here about how you teach meditation specifically for communit
 </p>
 </details>  
 
-<br>
-
 <details>
 <summary><strong>Contemplative Activism Workshops</strong></summary>
 <p>
 Describe your workshops - what they cover, format, how they help groups integrate inner and outer work...
 </p>
 </details>  
-
-<br>
 
 <details>
 <summary><strong>Organizational Consulting</strong></summary>
@@ -34,9 +32,8 @@ Explain how you work with nonprofits/advocacy groups to build sustainable practi
 </p>
 </details>
 
-<br>
-
 ---
 
+<br>
 
 **[Fill out the interest form](https://forms.gle/your-form-link)**
