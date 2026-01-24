@@ -316,7 +316,7 @@ nav {
 .services-layout {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 10px;
   
   @include mobile {
     flex-direction: column;
