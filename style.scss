@@ -201,10 +201,13 @@ img {
 .masthead {
   max-width: 100%;
   padding: 10px 200px;
+  display: flex;
+  align-items: center;
 
   @include mobile {
     text-align: center;
     padding: 20px 10px;
+    display: block;
   }
 }
 
