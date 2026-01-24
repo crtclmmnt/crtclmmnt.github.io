@@ -1,29 +1,31 @@
 ---
-layout: page
+layout: default
 permalink: /about/
 ---
 
-<img src="/images/pano5.jpg" alt="About header" class="hero-image">
+<img src="/images/bio.JPG" alt="About header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center;">
 
+<h1>About Me</h1>
 
-<div class="services-layout">
-  <div>
-    <img src="/images/bio.JPG" alt="me" width="300">
+<div style="display: flex; 
+  gap: 30px; 
+  align-items: flex-start; 
+  margin-bottom: 30px;">
+  <div style="flex-shrink: 0;">
+    <img src="/images/your-photo.jpg" alt="Joshua" style="width: 250px; height: auto;">
   </div>
   
-  <div class="services-content">
-    <h1>About Me</h1>
+  <div>
+    <p>A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass.</p>
   </div>
 </div>
 
-A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass.
+<p>And then the rest of the information in my bio is going to exist outside of the double column formatting. It's going to take up the full span of the page as a continuation of whatever I will write in this part.</p>
 
-And then the rest of the information in my bio is going to exist outside of the double column formatting. It's going to take up the full span of the page as a continuation of whatever I will write in this part.
+## More Information
 
-### More Information
+A place to include any other types of information...
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
+## Contact me
 
 [email@domain.com](mailto:email@domain.com)

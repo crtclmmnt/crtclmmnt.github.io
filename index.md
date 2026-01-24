@@ -48,6 +48,8 @@ The goal of this project is to help people live in the Critical Moment, to bring
 </div>
 <p></p>
 
+---
+
 <details style="margin-bottom: 30px;">
     <summary style="font-size: 30px; font-weight: normal; font-family:'ZTNature';">Free Mindfulness Meditation Workshops for Community Organizations</summary>
     <p>Description...</p>
