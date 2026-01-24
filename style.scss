@@ -279,11 +279,10 @@ img {
 nav {
   float: right;
   display: flex;
-  align-items: center;
-  //  margin-top: 30px; // @TODO: Vertically middle align
+  margin-top: 30px; // @TODO: Vertically middle align
   font-family: 'ZTNature', $helveticaNeue;
   font-weight: 200;
-  font-size: 32px;
+  font-size: 28px;
 
   @include mobile {
     float: none;
