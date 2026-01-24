@@ -327,6 +327,13 @@ nav {
     align-items: center;
     gap: 10px;
   }
+
+.services-content {
+  @include mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
   
   > div:first-child {
     @include mobile {

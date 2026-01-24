@@ -24,7 +24,7 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
     <img src="/images/critmomnotxt.png" alt="Meditation" width="300">
   </div>
   
-  <div>
+  <div class="services-content">
     <h2>Build A Meditation Practice</h2>
     
 
