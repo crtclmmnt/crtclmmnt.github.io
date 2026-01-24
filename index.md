@@ -6,6 +6,8 @@ permalink: /
 
 <br>
 
+<h1>You're here for a reason...</h1>
+
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
 <br>
