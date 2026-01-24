@@ -42,4 +42,6 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
 
 <br>
 
+No matter your experience level, regardless of your goals, cultivating a meditation practice can help you do things and stuff. Ready to get started?
+
 **[Fill out the interest form](https://forms.gle/your-form-link)**
