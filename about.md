@@ -5,24 +5,15 @@ permalink: /about/
 
 <img src="/images/pano5.jpg" alt="About header" class="hero-image">
 
-<h1>About</h1>
-
-Some information about you!
-
 <div class="services-layout">
   <div>
     <img src="/images/bio.JPG" alt="me" width="300">
   </div>
   
   <div class="services-content">
-    <h2>About Me</h2>
-    
-
-    <details style="margin-bottom: 30px;">
+    <h1>About Me</h1>
     A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. Description...
-    </details>
-
-      </div>
+  </div>
 </div>
 
 ### More Information
