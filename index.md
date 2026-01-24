@@ -13,7 +13,7 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
 <br>
 
 <details style="margin-bottom: 30px;">
-    <summary style="font-size: 24px; font-weight: bold;"><strong>Free Mindfulness Meditation Workshops for Community Organizations</strong></summary>
+    <summary style="font-size: 24px; font-weight: bold; font-family:'ZTNature';"><strong>Free Mindfulness Meditation Workshops for Community Organizations</strong></summary>
     <p>Description...</p>
     </details>
 
