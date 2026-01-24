@@ -239,6 +239,7 @@ img {
     min-height: 200px;
     max-height: none;
     object-fit: cover;
+    object-position: left center;
   }
 }
 
@@ -308,6 +309,23 @@ nav {
     @include mobile {
       margin: 0 10px;
       color: $blue;
+    }
+  }
+}
+
+.services-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  
+  @include mobile {
+    flex-direction: column;  /* Stack vertically */
+    align-items: center;     /* Center everything */
+  }
+  
+  img {
+    @include mobile {
+      max-width: 60%;  /* Shrink logo on mobile */
     }
   }
 }

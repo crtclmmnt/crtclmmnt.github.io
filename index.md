@@ -19,8 +19,8 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
 
 ---
 
-<div style="display: flex; align-items: flex-start; gap: 30px;">
-  <div style="flex-shrink: 0;">
+<div class="services-layout">
+  <div>
     <img src="/images/critmomnotxt.png" alt="Meditation" width="300">
   </div>
   
