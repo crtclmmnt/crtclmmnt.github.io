@@ -63,6 +63,12 @@ body {
 	background: $white;
   font: 18px/1.4 'ZTNature';
   color: $darkGray;
+
+  @include mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
 }
 
 .container {
