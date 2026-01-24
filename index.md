@@ -8,6 +8,8 @@ permalink: /
 
 <h1>We are living in a Critical Moment.</h1>
 
+<div style="text-align: justify"> 
+
 The political and ecological interpretations of that statement should be obvious, so I won't belabor them. 
 
 The spiritual interpretation of that statement might not be so obvious, but, the critical moment is what we are living in. We have ideas about how we have lived in the past, or how we might live in the future. But these are just ideas. We can never exist in the past or the future, we can only exist in the present, critical moment.
@@ -23,6 +25,8 @@ In the worst cases, it is too frightening to live in the political version of th
 In the worst cases, the spiritual version of the Critical Moment becomes a way of distancing yourself from the world that actually exists, in pursuit of a permanent transcendence or escape. 
 
 The goal of this project is to help people live in the Critical Moment, to bring about outer justice, and inner peace.
+
+</div>
 
 <br>
 
