@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-<img src="/images/pano2.jpg" alt="Blog header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center;">
+<img src="/images/pano2.jpg" alt="Blog header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center; margin-top: 0;">
 
 <h1>Blog</h1>
 
@@ -17,7 +17,7 @@ This is a blog about things I find interesting. If you would like to recieve new
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       <div class="date">
          {{ page.date | date: "%B %e, %Y" }}
       </div>
