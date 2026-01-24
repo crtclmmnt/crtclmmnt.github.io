@@ -159,6 +159,7 @@ img {
 .masthead {
   max-width: 100%;
   padding: 5px 100px;
+
   @include mobile {
     text-align: center;
     padding: 20px 10px;
@@ -189,7 +190,6 @@ img {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: -10px;
   max-width: none;
 }
 
