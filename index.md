@@ -14,7 +14,7 @@ The political and ecological interpretations of that statement should be obvious
 <p></p>
 
 <div style="text-align: justify"> 
-The spiritual interpretation of that statement might not be so obvious, but, the critical moment is what we are living in. We have ideas about how we have lived in the past, or how we might live in the future. But these are just ideas. We can never exist in the past or the future, we can only exist in the present, critical moment.
+The spiritual interpretation of that statement might not be so obvious, but, the critical moment is what we are living in. We have ideas about how we have lived in the past, or how we might live in the future. But these are just ideas. We can never exist in the past or the future, we can only exist in the present moment.
 </div>
 <p></p>
 
