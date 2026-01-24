@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Critical Moment
 permalink: /
 ---
 
@@ -17,8 +16,7 @@ Longer description here about how you teach meditation specifically for communit
 </p>
 </details>  
 
-
-
+<br>
 
 <details>
 <summary><strong>Contemplative Activism Workshops</strong></summary>
@@ -27,7 +25,7 @@ Describe your workshops - what they cover, format, how they help groups integrat
 </p>
 </details>  
 
-
+<br>
 
 <details>
 <summary><strong>Organizational Consulting</strong></summary>
@@ -36,6 +34,7 @@ Explain how you work with nonprofits/advocacy groups to build sustainable practi
 </p>
 </details>
 
+<br>
 
 ---
 
