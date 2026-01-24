@@ -19,7 +19,7 @@ The spiritual interpretation of that statement might not be so obvious, but, the
 <p>
 
 <div style="text-align: justify"> 
-<h4>These two interpretations of the Critical Moment are seemingly at odds with each other:<h4> 
+<h4>These two interpretations of the Critical Moment are seemingly at odds with each other:</h4> 
 </div>
 <p>
 
