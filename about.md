@@ -3,7 +3,7 @@ layout: default
 permalink: /about/
 ---
 
-<img src="/images/bio.JPG" alt="About header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center;">
+<img src="/images/pano5.jpg" alt="About header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center;">
 
 <h1>About Me</h1>
 
@@ -12,7 +12,7 @@ permalink: /about/
   align-items: flex-start; 
   margin-bottom: 30px;">
   <div style="flex-shrink: 0;">
-    <img src="/images/your-photo.jpg" alt="Joshua" style="width: 250px; height: auto;">
+    <img src="/images/bio.JPG" alt="Joshua" style="width: 250px; height: auto;">
   </div>
   
   <div>
