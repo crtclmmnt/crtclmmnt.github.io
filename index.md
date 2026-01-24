@@ -4,6 +4,10 @@ title: Critical Moment
 permalink: /
 ---
 
+Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
+
+---
+
 ## Services
 
 <details>
@@ -11,7 +15,9 @@ permalink: /
 <p>
 Longer description here about how you teach meditation specifically for community organizers. Talk about techniques, what makes this different, who it's for, etc.
 </p>
-</details>
+</details>  
+
+
 
 
 <details>
@@ -19,9 +25,9 @@ Longer description here about how you teach meditation specifically for communit
 <p>
 Describe your workshops - what they cover, format, how they help groups integrate inner and outer work...
 </p>
-</details>
+</details>  
 
-* * *
+
 
 <details>
 <summary><strong>Organizational Consulting</strong></summary>
