@@ -247,7 +247,7 @@ img {
   float: left;
   display: flex;
   align-items: center;
-  height: auto;
+  height: 110;
 
   @include mobile {
     float: none;
