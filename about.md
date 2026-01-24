@@ -3,7 +3,7 @@ layout: page
 permalink: /about/
 ---
 
-<img src="/images/pano4.jpg" alt="About header" class="hero-image">
+<img src="/images/pano5.jpg" alt="About header" class="hero-image">
 
 <h1>About</h1>
 
