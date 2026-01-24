@@ -321,6 +321,7 @@ nav {
   display: flex;
   align-items: flex-start;
   gap: 50px;
+  min-width: 200px;
   
   @include mobile {
     flex-direction: column;

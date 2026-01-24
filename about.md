@@ -9,7 +9,7 @@ permalink: /about/
 
 <div class="services-layout">
   <div>
-    <img src="/images/bio1.JPG" alt="me" width="300">
+    <img src="/images/bio1.JPG" alt="me" width="180">
   </div>
   
   <div class="services-content">
