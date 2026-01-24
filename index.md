@@ -29,12 +29,12 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
     
 
     <details style="margin-bottom: 30px;">
-    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature':">Individual Meditation Instruction</summary>
+    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
     <p>Description...</p>
     </details>
 
     <details style="margin-bottom: 30px;">
-    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature':">Meditation Workshops for Workplaces</summary>
+    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Meditation Workshops for Workplaces</summary>
     <p>Description...</p>
     </details>
   </div>
