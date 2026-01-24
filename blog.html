@@ -19,7 +19,7 @@ This is a blog about things I find interesting. If you would like to recieve new
     <article class="post">
       <h2 style="line-height: 0.9;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       <div class="date">
-         {{ page.date | date: "%B %e, %Y" }}
+         {{ post.date | date: "%B %e, %Y" }}
       </div>
       <div class="entry">
         {{ post.excerpt }}
