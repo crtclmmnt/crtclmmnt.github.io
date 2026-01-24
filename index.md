@@ -4,13 +4,6 @@ title: Critical Moment
 permalink: /
 ---
 
-# Critical Moment
-*Contemplative Practice for Social Change*
-
-Brief description of your site here - a few sentences about integrating mindfulness with activism, serving organizers who want to sustain their work...
-
----
-
 ## Services
 
 <details>
