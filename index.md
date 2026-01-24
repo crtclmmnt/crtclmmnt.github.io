@@ -2,7 +2,7 @@
 layout: page
 permalink: /
 ---
-<img src="/images/pano2.JPG" alt="big ol moon at sunset" class="hero-image">
+<img src="/images/pano2.jpg" alt="big ol moon at sunset" class="hero-image">
 
 <br>
 
