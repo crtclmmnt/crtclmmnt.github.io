@@ -75,7 +75,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'ZTNature', $helveticaNeue;
   color: $darkerGray;
-  font-weight: bold;
+  font-weight: normal;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -232,7 +232,7 @@ img {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: -20px;
+  margin-top: -30px;
   max-width: none;
 }
 
@@ -258,7 +258,7 @@ img {
   font-weight: 500;  /* Regular for "critical" */
   font-size: 32px;
   letter-spacing: -1px;
-  line-height: 0.9;  /* Tighter line spacing */
+  line-height: 0.8;  /* Tighter line spacing */
   text-transform: lowercase;
   
   .bold {
