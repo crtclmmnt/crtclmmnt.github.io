@@ -2,8 +2,9 @@
 layout: page
 permalink: /
 ---
-
 <img src="/images/pano.JPG" alt="big ol moon at sunset" class="hero-image">
+
+<br>
 
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
