@@ -211,7 +211,7 @@ img {
 .site-avatar {
   float: left;
   width: 110px;
-  height: 110px;
+  height: auto;
   margin-right: 15px;
 
   @include mobile {
@@ -247,7 +247,7 @@ img {
   float: left;
   display: flex;
   align-items: center;
-  height: 110px;
+  height: auto;
 
   @include mobile {
     float: none;
