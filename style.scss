@@ -61,7 +61,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $ZTNature;
+  font: 18px/1.4 'ZTNature';
   color: $darkGray;
 }
 
@@ -321,7 +321,7 @@ nav {
   display: flex;
   align-items: flex-start;
   gap: 50px;
-  min-width: 200px;
+  min-width: 250px;
   
   @include mobile {
     flex-direction: column;
