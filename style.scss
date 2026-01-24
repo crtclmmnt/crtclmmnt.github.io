@@ -280,11 +280,11 @@ nav {
   float: right;
   display: flex;
   margin-top: 40px; // @TODO: Vertically middle align
+  color: $darkMint
   font-family: 'ZTNature', $helveticaNeue;
   font-weight: 500;
   font-size: 28px;
-  font-style: bold; // delete if it does nothing or maybe just increase font weight
-
+  
   @include mobile {
     float: none;
     margin-top: 9px;
