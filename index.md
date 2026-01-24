@@ -18,7 +18,7 @@ Welcome to my page! I'm working on it. I don't know what to write here yet. It's
   </div>
   
   <div>
-    <h2>Services</h2>
+    <h2>Build Your Meditation Practice</h2>
     <details style="margin-bottom: 30px;">
     <summary><strong>Free Mindfulness Meditation Workshops for Community Organizations</strong></summary>
     <p>Description...</p>
