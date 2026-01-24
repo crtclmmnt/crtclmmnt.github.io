@@ -247,13 +247,14 @@ img {
   float: left;
   display: flex;
   align-items: center;
-  height: 110;
+  min-height: 92px;
 
   @include mobile {
     float: none;
     display: block;
     margin: 0 auto;
     height: auto;
+    min-height: auto;
   }
 }
 
