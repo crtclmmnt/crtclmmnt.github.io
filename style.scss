@@ -278,9 +278,11 @@ img {
 
 nav {
   float: right;
+  display: flex;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
-  font-size: 18px;
+  font-family: 'ZTNature', $helveticaNeue;
+  font-weight: 200;
+  font-size: 22px;
 
   @include mobile {
     float: none;
