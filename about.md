@@ -13,7 +13,7 @@ permalink: /about/
   </div>
   
   <div class="services-content">
-    A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass, it would probably involve quite a few revolutions of the second hand on a traditional analog clock, perhaps even quite a few revolutions of the minute hand on an analog clock. 
+    A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass.
   </div>
 </div>
 
