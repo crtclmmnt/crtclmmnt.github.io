@@ -25,7 +25,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
+  max-width: 1200px;
   padding: 0 10px;
   width: 100%;
 }
@@ -155,7 +155,8 @@ img {
 }
 
 .masthead {
-  padding: 20px 0;
+  max-width: 100%;
+  padding: 20px 40px;
   border-bottom: 1px solid $lightGray;
 
   @include mobile {
@@ -178,6 +179,13 @@ img {
   img {
     border-radius: 5px;
   }
+}
+
+.hero-image {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  max-width: none;
 }
 
 .site-info {

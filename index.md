@@ -3,7 +3,7 @@ layout: page
 permalink: /
 ---
 
-<img src="/images/pano.JPG" alt="big ol moon at sunset" style="width: 100%; max-width: 1200px; display: block; margin: 0 auto;">
+<img src="/images/pano.JPG" alt="big ol moon at sunset" class="hero-image">
 
 Welcome to my page! I'm working on it. I don't know what to write here yet. It's all just being tested. 
 
