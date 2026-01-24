@@ -9,7 +9,7 @@ permalink: /
 <h1>We are living in a Critical Moment.</h1>
 
 <div style="text-align: justify"> 
-The political and ecological interpretations of that statement should be obvious, so I won't belabor them. 
+<body>The political and ecological interpretations of that statement should be obvious, so I won't belabor them.</body>
 </div>
 
 
