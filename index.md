@@ -12,7 +12,9 @@ The goal of this project is to empower people who are already rising to the occa
 
 The critical moment I’m referencing is not just political or ecological. It is not just an abstract idea, it is also the visceral thing we are all experiencing. Spiritually, it is the moment where we interface with the universe. Philosophically, it is the only real reality. The past is an idea we will never see again. The future is an idea we could be wrong about. The present, the critical moment, is all we have.
 
-Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can distract us from engaging with the present, the moment that everything has led to, the moment where every future is possible. How do we engage fully with the critical moment at hand?
+Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can distract us from engaging with the present, the moment that everything has led to, the moment where every future is possible. 
+
+How do we engage fully with the critical moment at hand?
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 

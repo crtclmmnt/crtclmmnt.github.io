@@ -406,6 +406,11 @@ img {
   line-height: 0.8;  /* Tighter line spacing */
   text-transform: lowercase;
   
+  .the {
+    font-weight: 200;  /* Thin like "critical" or lighter */
+    font-size: 24px;   /* Smaller than the rest */
+  }
+
   .bold {
     font-weight: 900;  /* Black for "moment" */
   }
