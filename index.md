@@ -30,15 +30,14 @@ This offering is the main point of this project.
   </div>
   
   <div class="services-content">
-    <h2>Build A Meditation Practice</h2>
-    
+    <h1>Build A Meditation Practice</h1>
 
-    <details style="margin-bottom: 30px;">
+    <details style="margin-bottom: 20px;">
     <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
     <p>Description...</p>
     </details>
 
-    <details style="margin-bottom: 30px;">
+    <details style="margin-bottom: 20px;">
     <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Meditation Workshops for Workplaces</summary>
     <p>Description...</p>
     </details>
