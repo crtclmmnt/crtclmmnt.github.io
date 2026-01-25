@@ -10,7 +10,7 @@ permalink: /
 
 The goal of this project is to empower people who are already rising to the occasion of this critical moment, and to give them new skills for responding to the unfolding crises effectively, sustainably, and mindfully. 
 
-The critical moment I’m referencing is not just the political or the ecological one. It is also spiritual and philosophical. Spiritually, it is the moment where we interface with the universe. Philosophically, it is the only reality we can prove. The past is an idea we will never see again. The future is an idea we could be wrong about. 
+The critical moment I’m referencing is not just political or ecological. It is also spiritual and philosophical. Spiritually, it is the moment where we interface with the universe. Philosophically, it is the only reality we can prove. The past is an idea we will never see again. The future is an idea we could be wrong about. 
 
 Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can often distract us from engaging fully with the critical moment at hand. 
 
