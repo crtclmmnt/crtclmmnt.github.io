@@ -9,17 +9,17 @@ permalink: /
 <h1>We are living in a Critical Moment.</h1>
 
 <div style="text-align: justify"> 
-This statement is political, ecological, philosophical, and spiritual. It means a different thing in each of those contexts. 
+This statement is political and ecological, in an obvious way. In a more subtle way, it is also philosophical, and spiritual. It means a different thing in each of those contexts. 
 </div>
 <p></p>
 
 <div style="text-align: justify"> 
-Many people are concerned with one or two of these critical moments. It can feel overwhelming to pay attention to all of them at once. 
+Many people are concerned with one or two of these critical moments. Some of us are frantically looking for ways to fix the issues at hand, becoming absorbed by them. Others of us are trying to disappear into an internal world so that we can pretend that the unfolding of history does not affect us. It can feel overwhelming, if not impossible, to pay attention to all of this at once. 
 </div>
 <p></p>
 
 <div style="text-align: justify"> 
-The goal of this project is to equip people with knowledge and skills that make it possible to engage with all of these critical moments, and to do so effectively. 
+The goal of this project is to equip people with knowledge and skills that make it possible to engage with the entirety of the critical moment, primarily through mindfulness meditation. 
 </div>
 <p></p>
 
