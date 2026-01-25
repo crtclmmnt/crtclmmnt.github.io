@@ -5,8 +5,6 @@ permalink: /about/
 
 <img src="/images/pano5.jpg" alt="About header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center; margin-top: 0;">
 
-<h1>About Me</h1>
-
 <div style="display: flex; 
   gap: 30px; 
   align-items: flex-start; 
@@ -16,6 +14,7 @@ permalink: /about/
   </div>
   
   <div>
+    <h1>About Me</h1>
     <p>A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass.</p>
   </div>
 </div>
