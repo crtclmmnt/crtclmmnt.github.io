@@ -12,13 +12,13 @@ The goal of this project is to empower people who are already rising to the occa
 
 The critical moment I’m referencing is not just political or ecological. It is also spiritual and philosophical. Spiritually, it is the moment where we interface with the universe. Philosophically, it is the only reality we can prove. The past is an idea we will never see again. The future is an idea we could be wrong about. 
 
-Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can often distract us from engaging fully with the critical moment at hand. 
+Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can distract us from engaging with the present, the moment that everything has led to, the moment where every future is possible. How do we engage fully with the critical moment at hand?
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
 ---
 
-<h2>Free Mindfulness Meditation Workshops for Community Organizations and Organizers</h2>
+<h2>Free Mindfulness Meditation Workshops for Community Organizers</h2>
 
 This offering is the main point of this project. 
 
