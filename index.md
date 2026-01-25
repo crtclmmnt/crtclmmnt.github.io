@@ -14,7 +14,7 @@ This statement is political and ecological, in an obvious way. In a more subtle 
 <p></p>
 
 <div style="text-align: justify"> 
-Many people are concerned with one or two of these critical moments. Some of us are frantically looking for ways to fix the issues at hand, becoming absorbed by them. Others of us are trying to disappear into an internal world so that we can pretend that the unfolding of history does not affect us. It can feel overwhelming, if not impossible, to pay attention to all of this at once. 
+Many people are concerned with one or two of these critical moments. Some of us are frantically looking for ways to fix the political and environmental issues at hand, but we become so absorbed by them that we fail to live in the present. Others of us are trying to disappear into an internal world of spirituality and philosophy so we can pretend that the unfolding of history will not affect us. These tendencies contradict each other when we don't engage with them appropriately, but there is another way. 
 </div>
 <p></p>
 
