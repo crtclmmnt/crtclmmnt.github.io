@@ -18,5 +18,5 @@ This is how I will advertise to the tech companies of the bay. Give me money for
 ---
 
 <h1>Frequently Asked Questions</h1>
-<h4>Will meditation make me smell weird?</h4>
+<h6>Will meditation make me smell weird?</h6>
 This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
