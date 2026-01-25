@@ -8,12 +8,11 @@ permalink: /
 
 <h1>We are living in a Critical Moment.</h1>
 
-This statement is political and ecological, in an obvious way. In a more subtle way, it is also philosophical, and spiritual. It means a different thing in each of those contexts. 
+The goal of this project is to empower people who are already rising to the occasion of this critical moment, and to give them new skills for responding to the unfolding crises effectively, sustainably, and mindfully. 
 
-Many people focus on one or two of these critical moments. Some frantically try to fix the political and environmental crises at hand, but become so absorbed by them that they fail to live in the present. Others try to disappear into an internal world of spirituality and philosophy, pretending that the unfolding of history will not affect them. These tendencies contradict each other when we don't engage with them appropriately, but there is another way. 
+The critical moment I’m referencing is not just the political or the ecological one. It is also spiritual and philosophical. Spiritually, it is the moment where we interface with the universe. Philosophically, it is the only reality we can prove. The past is an idea we will never see again. The future is an idea we could be wrong about. 
 
-The goal of this project is to equip people with knowledge and skills that make it possible to engage with the entirety of the critical moment, primarily through mindfulness meditation. 
-
+Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can often distract us from engaging fully with the critical moment at hand. 
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
