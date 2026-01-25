@@ -1,9 +1,9 @@
 ---
 layout: post
-title: An Introduction to Critical Moment
+title: Introducing the Critical Moment
 ---
 
-<h4>We are living in a Critical Moment.</h4>
+<h5>We are living in a Critical Moment.</h5>
 
 The political and ecological interpretations of that statement should be obvious, so I won't belabor them.
 

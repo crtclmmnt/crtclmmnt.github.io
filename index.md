@@ -8,31 +8,22 @@ permalink: /
 
 <h1>We are living in a Critical Moment.</h1>
 
-<div style="text-align: justify"> 
 This statement is political and ecological, in an obvious way. In a more subtle way, it is also philosophical, and spiritual. It means a different thing in each of those contexts. 
-</div>
-<p></p>
 
-<div style="text-align: justify"> 
 Many people focus on one or two of these critical moments. Some frantically try to fix the political and environmental crises at hand, but become so absorbed by them that they fail to live in the present. Others try to disappear into an internal world of spirituality and philosophy, pretending that the unfolding of history will not affect them. These tendencies contradict each other when we don't engage with them appropriately, but there is another way. 
-</div>
-<p></p>
 
-<div style="text-align: justify"> 
 The goal of this project is to equip people with knowledge and skills that make it possible to engage with the entirety of the critical moment, primarily through mindfulness meditation. 
-</div>
-<p></p>
+
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
 ---
 
-<details style="margin-bottom: 30px;">
-    <summary style="font-size: 30px; font-weight: normal; font-family:'ZTNature';">Free Mindfulness Meditation Workshops for Community Organizations</summary>
-    <p>Description...</p>
-    </details>
+<h1>Free Mindfulness Meditation Workshops for Community Organizations and Organizers</h1>
 
 ---
+
+<h2>Other Services</h2>
 
 <div class="services-layout">
   <div>

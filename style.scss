@@ -180,6 +180,7 @@ body {
   font: 18px/1.4 'Roboto';
   font-weight: 400;
   color: $darkGray;
+  text-align: justify;
 
   @include mobile {
     padding-left: 20px;
