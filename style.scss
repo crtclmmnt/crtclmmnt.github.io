@@ -495,16 +495,22 @@ nav {
   
   @include mobile {
     flex-direction: column;
+    align-items: center;  /* Centers both divs */
+  }
+  
+  > div:last-child {
+    @include mobile {
+      text-align: center;  /* Centers the image inside its div */
+    }
   }
   
   img {
     @include mobile {
       display: block;
-      margin: 0 auto;  /* Centers the image on mobile */
+      margin: 0 auto;
     }
   }
 }
-
 //
 // .main
 //
