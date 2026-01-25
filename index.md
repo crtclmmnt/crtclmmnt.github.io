@@ -14,7 +14,7 @@ The critical moment I’m referencing is not just political or ecological. It is
 
 Being political and ecological requires us to think about the past and the future. But getting lost in the past or the future can distract us from engaging with the present, the moment that everything has led to, the moment where every future is possible. 
 
-How do we engage fully with the critical moment at hand?
+So, how do we engage fully with the critical moment at hand?
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
