@@ -24,4 +24,4 @@ A place to include any other types of information...
 
 ## Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[joshua@thecriticalmoment.org](mailto:joshua@thecriticalmoment.org)
