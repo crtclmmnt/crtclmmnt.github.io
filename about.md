@@ -10,7 +10,7 @@ permalink: /about/
   align-items: flex-start; 
   margin-bottom: 30px;">
   <div style="flex-shrink: 0;">
-    <img src="/images/bio.JPG" alt="Joshua" style="width: 250px; height: auto;">
+    <img src="/images/bio2.JPG" alt="Joshua" style="width: 250px; height: auto;">
   </div>
   
   <div>
