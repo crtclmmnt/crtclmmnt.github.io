@@ -19,12 +19,11 @@ The goal of this project is to equip people with knowledge and skills that make 
 
 ---
 
-<h1>Free Mindfulness Meditation Workshops for Community Organizations and Organizers</h1>
+<h2>Free Mindfulness Meditation Workshops for Community Organizations and Organizers</h2>
+
+This offering is the main point of this project. 
 
 ---
-
-<h2>Other Services</h2>
-
 <div class="services-layout">
   <div>
     <img src="/images/critmomnotxt.png" alt="Meditation" width="300">
