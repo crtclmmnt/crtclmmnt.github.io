@@ -6,13 +6,13 @@ permalink: /about/
 <img src="/images/pano4.jpg" alt="About header" class="hero-image" style="max-height: 300px; object-fit: cover; object-position: center; margin-top: 0;">
 
 <div class="about-layout">
-  <div style="flex-shrink: 0;">
-    <img src="/images/bio2.JPG" alt="Joshua" style="width: 250px; height: auto;">
-  </div>
-  
   <div>
     <h1>About Me</h1>
     <p>A long description about the man, the myth, the legend, JOSHUA ESTESSSSSSSSSSSS. This description is going to be so long that reading it will take an amount of time that, if that amount of time were to pass.</p>
+  </div>
+  
+  <div style="flex-shrink: 0;">
+    <img src="/images/bio2.JPG" alt="Joshua" style="width: 250px; height: auto;">
   </div>
 </div>
 
