@@ -23,7 +23,7 @@ The goal of this project is to equip people with knowledge and skills that make 
 </div>
 <p></p>
 
-**[READ MORE](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
+**[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
 ---
 
