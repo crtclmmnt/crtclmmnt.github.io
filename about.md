@@ -71,6 +71,7 @@ The wisdom that comes from a meditation practice is something that can’t readi
 <li><em>Capitalist Realism</em> by Mark Fisher</li>
 <li><em>Pedagogy of the Oppressed</em> by Paulo Freire</li>
 <li><em>Debt</em> by David Graeber</li>
+<li><em>The Hundred Years' War on Palestine</em> by Rashid Khalidi</li>
 <li><em>Blackshirts and Reds</em> by Michael Parenti</li>
 <li><em>Ministry for the Future</em> by Kim Stanley Robinson</li>
 <li><em>How Europe Underdeveloped Africa</em> by Walter Rodney</li>
