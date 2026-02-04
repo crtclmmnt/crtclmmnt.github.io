@@ -23,7 +23,7 @@ So, I started meditating. It quickly became clear to me that this practice was g
 
 <p>Once I opened my mind to the value of spiritual practice, I finally read the book that had been recommended to me. Reading it changed the trajectory of my life.</p>
 
-<img src="/images/oaklandsunset.JPG" alt="A man and his dog looking over the Oakland hills at sunset" style="width: 90%; max-width: 800px; margin: 30px auto; display: block;">
+<img src="/images/oaklandsunset.JPG" alt="A man and his dog looking over the Oakland hills at sunset" style="width: 75%; max-width: 800px; margin: 30px auto; display: block;">
 
 <p>Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the interactions between my radical politics and my deep sense of connection with nature. Meditation and contemplation became important tools for understanding those interactions.</p>
 
