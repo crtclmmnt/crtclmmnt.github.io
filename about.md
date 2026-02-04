@@ -42,8 +42,8 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 
 <details>
 <summary><strong>See more</strong></summary>
-
-Books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity.
+<br>
+These are books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity.
 
 <h3>Contemplative Practice & Spirituality:</h3>
 <ul>
