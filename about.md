@@ -23,9 +23,11 @@ So, I started meditating. It quickly became clear to me that this practice was g
 
 Once I opened my mind to the value of spiritual practice, I finally read the book that had been recommended to me. Reading it changed the trajectory of my life.
 
-Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the connection between my radical politics and my deep sense of connection with nature. 
+<p>Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the connection between my radical politics and my deep sense of connection with nature.</p>
 
-The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded. 
+<img src="/images/oaklandsunset.jpeg" alt="Contemplating over Oakland at sunset" style="width: 100%; max-width: 800px; margin: 30px auto; display: block;">
+
+<p>The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded.</p>
 
 The only certainty I have left is that this practice is valuable, especially for the people doing or trying to do the hard work of fomenting social change. So I’ve become a certified meditation teacher, with the goal of cultivating this practice with other people who want to make the world a better, safer, more just place for all living beings. 
 
