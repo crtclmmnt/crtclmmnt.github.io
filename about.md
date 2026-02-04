@@ -38,7 +38,7 @@ I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after
 This site has two main components: my Blog, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my Offerings, which include free mindfulness meditation workshops, individual meditation instruction, and meditation instruction for large groups. If any of these things interest you, or you have questions, please fill out the interest form below. 
 
 
-<h2>Recommended Reading</h2>
+<h2>Book Recommendations</h2>
 
 <details>
 <summary><strong>Books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity</strong></summary>
