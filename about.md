@@ -8,8 +8,7 @@ permalink: /about/
 <div class="about-layout">
   <div>
     <h1>About Me</h1>
-    <p>In 2022, I was worrying about climate change on a weekly basis. I was watching an incessant series of natural disasters unfold through short video clips, because Instagram’s algorithm had learned that I couldn’t look away from them. I was in my final year of college, working in research, and I had become disillusioned with the academic establishment’s ability to respond to the unfolding climate crisis. I couldn’t imagine a future where we found a way out. 
-</p>
+    In 2022, I was worrying about climate change on a weekly basis. I was watching an incessant series of natural disasters unfold through short video clips, because Instagram’s algorithm had learned that I couldn’t look away from them. I was in my final year of college, working in research, and I had become disillusioned with the academic establishment’s ability to respond to the unfolding climate crisis. I couldn’t imagine a future where we found a way out. 
   </div>
   
   <div style="flex-shrink: 0;">
@@ -20,7 +19,17 @@ permalink: /about/
 
 Two friends came to my rescue. They both noticed my deteriorating mental health. One recommended the book World as Lover, World as Self by Joanna Macy. The other recommended that I start a meditation practice. 
 
-And then the rest of the information in my bio is going to exist outside of the double column formatting. It's going to take up the full span of the page as a continuation of whatever I will write in this part.
+So, I started meditating. It quickly became clear to me that this practice was giving me something I was missing. I started developing more clarity about where my anxiety came from, and how I was projecting my internal state onto my understanding of the world. I realized that the world wasn’t making me anxious, I was just anxious, and lonely, and lost. My feelings could very easily justify their control over my life with all the horrible things I was witnessing. Seeing these feelings with clarity gave me a newfound confidence.
+
+Once I opened my mind to the value of spiritual practice, I finally read the book that had been recommended to me. Reading it changed the trajectory of my life.
+
+Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the connection between my radical politics and my deep sense of connection with nature. 
+
+The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded. 
+
+The only certainty I have left is that this practice is valuable, especially for the people who are doing or want to be doing the hard work of fomenting social change. So I’ve become a certified meditation teacher, with the goal of cultivating this practice with other people who want to make the world a better, safer, more just place for all living beings. 
+
+The world doesn’t need people to worry over her, she needs people who have the stability and confidence to fight for her. She doesn’t need witnesses, she needs collaborators. 
 
 ## More Information
 
