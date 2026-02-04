@@ -90,6 +90,6 @@ These are books that have shaped my thinking on radical politics, contemplative 
 
 </details>
 
-## Contact me
+## Contact Me
 
 [joshua@thecriticalmoment.org](mailto:joshua@thecriticalmoment.org)
