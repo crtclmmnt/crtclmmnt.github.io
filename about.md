@@ -43,7 +43,7 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 <details>
 <summary><strong>See more</strong></summary>
 <br>
-These are books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity.
+The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
 
 <h3>Contemplative Practice & Spirituality:</h3>
 <ul>
