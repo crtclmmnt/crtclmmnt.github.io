@@ -38,37 +38,50 @@ I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after
 This site has two main components: my Blog, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my Offerings, which include free mindfulness meditation workshops, individual meditation instruction, and meditation instruction for large groups. If any of these things interest you, or you have questions, please fill out the interest form below. 
 
 
-## Recommended Reading
+<h2>Recommended Reading</h2>
 
-Books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
+<details>
+<summary><strong>Books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity</strong></summary>
 
-### Contemplative Practice & Spirituality:
-- *World as Lover, World as Self* by Joanna Macy
-- *Cutting Through Spiritual Materialism* by Chögyam Trungpa Rinpoche
-- *The Wisdom of No Escape* by Pema Chödrön
+<h3>Contemplative Practice & Spirituality:</h3>
+<ul>
+<li><em>World as Lover, World as Self</em> by Joanna Macy</li>
+<li><em>Cutting Through Spiritual Materialism</em> by Chögyam Trungpa Rinpoche</li>
+<li><em>The Wisdom of No Escape</em> by Pema Chödrön</li>
+</ul>
 
-### Ecology & Earth Systems:
-- *Becoming Earth* by Ferris Jabr
-- *Braiding Sweetgrass* by Robin Wall Kimmerer
-- *The Unsettling of America* by Wendell Berry
-- *Entangled Life* by Merlin Sheldrake
+<h3>Ecology & Earth Systems:</h3>
+<ul>
+<li><em>Becoming Earth</em> by Ferris Jabr</li>
+<li><em>Braiding Sweetgrass</em> by Robin Wall Kimmerer</li>
+<li><em>The Unsettling of America</em> by Wendell Berry</li>
+<li><em>Entangled Life</em> by Merlin Sheldrake</li>
+</ul>
 
-### Politics & Social Change:
-- *Pedagogy of the Oppressed* by Paulo Freire
-- *Caliban and the Witch* by Silvia Federici
-- *How Europe Underdeveloped Africa* by Walter Rodney
-- *Debt* by David Graeber
-- *Ministry for the Future* by Kim Stanley Robinson
+<h3>Politics & Social Change:</h3>
+<ul>
+<li><em>Pedagogy of the Oppressed</em> by Paulo Freire</li>
+<li><em>Caliban and the Witch</em> by Silvia Federici</li>
+<li><em>How Europe Underdeveloped Africa</em> by Walter Rodney</li>
+<li><em>Debt</em> by David Graeber</li>
+<li><em>Ministry for the Future</em> by Kim Stanley Robinson</li>
+</ul>
 
-### Psychology & Human Nature:
-- *In the Realm of Hungry Ghosts* by Gabor Maté
-- *No Bad Parts* by Richard Schwartz
-- *Humankind: A Hopeful History* by Rutger Bregman
-- *The Master and His Emissary* by Iain McGilchrist
+<h3>Psychology & Human Nature:</h3>
+<ul>
+<li><em>In the Realm of Hungry Ghosts</em> by Gabor Maté</li>
+<li><em>No Bad Parts</em> by Richard Schwartz</li>
+<li><em>Humankind: A Hopeful History</em> by Rutger Bregman</li>
+<li><em>The Master and His Emissary</em> by Iain McGilchrist</li>
+</ul>
 
-### Systems Thinking & Philosophy:
-- *The Patterning Instinct* by Jeremy Lent
-- *The Tao of Physics* by Fritjof Capra
+<h3>Systems Thinking & Philosophy:</h3>
+<ul>
+<li><em>The Patterning Instinct</em> by Jeremy Lent</li>
+<li><em>The Tao of Physics</em> by Fritjof Capra</li>
+</ul>
+
+</details>
 
 ## Contact me
 
