@@ -21,11 +21,11 @@ Two friends came to my rescue. They both noticed my deteriorating mental health.
 
 So, I started meditating. It quickly became clear to me that this practice was giving me something I was missing. I started developing more clarity about where my anxiety came from, and how I was projecting my internal state onto my understanding of the world. I realized that the world wasn’t making me anxious, I was just anxious, and lonely, and lost. My feelings could very easily justify their control over my life with all the horrible things I was witnessing. Seeing these feelings with clarity gave me a newfound confidence.
 
-Once I opened my mind to the value of spiritual practice, I finally read the book that had been recommended to me. Reading it changed the trajectory of my life.
-
-<p>Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the connection between my radical politics and my deep sense of connection with nature.</p>
+<p>Once I opened my mind to the value of spiritual practice, I finally read the book that had been recommended to me. Reading it changed the trajectory of my life.</p>
 
 <img src="/images/oaklandsunset.JPG" alt="A man and his dog looking over the Oakland hills at sunset" style="width: 90%; max-width: 800px; margin: 30px auto; display: block;">
+
+<p>Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the interactions between my radical politics and my deep sense of connection with nature. Meditation and contemplation became important tools for understanding those interactions.</p>
 
 <p>The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded.</p>
 
