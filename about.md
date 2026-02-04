@@ -33,7 +33,42 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 ## More Information
 
-A place to include any other types of information...
+I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after studying with David Nichtern and the many other wonderful teachers in that organization. I have degrees in Economics and Sustainable Agriculture & Food Systems, so I’m not trained in religious studies, philosophy, or political science. I’m not a therapist. I’ve been involved in various kinds of political organizing since 2020, most recently through the Democratic Socialists of America. If you’re interested in getting involved in political organizing work, I’m happy to point you in the right direction. 
+
+This site has two main components: my Blog, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my Offerings, which include free mindfulness meditation workshops, individual meditation instruction, and meditation instruction for large groups. If any of these things interest you, or you have questions, please fill out the interest form below. 
+
+
+## Recommended Reading
+
+Books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
+
+### Contemplative Practice & Spirituality:
+- *World as Lover, World as Self* by Joanna Macy
+- *Cutting Through Spiritual Materialism* by Chögyam Trungpa Rinpoche
+- *The Wisdom of No Escape* by Pema Chödrön
+
+### Ecology & Earth Systems:
+- *Becoming Earth* by Ferris Jabr
+- *Braiding Sweetgrass* by Robin Wall Kimmerer
+- *The Unsettling of America* by Wendell Berry
+- *Entangled Life* by Merlin Sheldrake
+
+### Politics & Social Change:
+- *Pedagogy of the Oppressed* by Paulo Freire
+- *Caliban and the Witch* by Silvia Federici
+- *How Europe Underdeveloped Africa* by Walter Rodney
+- *Debt* by David Graeber
+- *Ministry for the Future* by Kim Stanley Robinson
+
+### Psychology & Human Nature:
+- *In the Realm of Hungry Ghosts* by Gabor Maté
+- *No Bad Parts* by Richard Schwartz
+- *Humankind: A Hopeful History* by Rutger Bregman
+- *The Master and His Emissary* by Iain McGilchrist
+
+### Systems Thinking & Philosophy:
+- *The Patterning Instinct* by Jeremy Lent
+- *The Tao of Physics* by Fritjof Capra
 
 ## Contact me
 
