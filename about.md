@@ -33,6 +33,8 @@ The only certainty I have left is that this practice is valuable, especially for
 
 The world doesn’t need people to worry over her, she needs people who have the stability and confidence to fight for her. She doesn’t need witnesses, she needs collaborators. 
 
+<br>
+
 ## More Information
 
 I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after studying with David Nichtern and the many other wonderful teachers in that organization. I have degrees in Economics and Sustainable Agriculture & Food Systems, so I’m not trained in religious studies, philosophy, or political science. I’m not a therapist. I’ve been involved in various kinds of political organizing since 2020, most recently through the Democratic Socialists of America. If you’re interested in getting involved in political organizing work, I’m happy to point you in the right direction. 
