@@ -25,7 +25,7 @@ Once I opened my mind to the value of spiritual practice, I finally read the boo
 
 <p>Joanna Macy’s book synthesized my seemingly disparate values into a cohesive worldview. Suddenly, I was able to make sense of the connection between my radical politics and my deep sense of connection with nature.</p>
 
-<img src="/images/oaklandsunset.jpeg" alt="Contemplating over Oakland at sunset" style="width: 100%; max-width: 800px; margin: 30px auto; display: block;">
+<img src="/images/oaklandsunset.jpg" alt="Contemplating over Oakland at sunset" style="width: 90%; max-width: 800px; margin: 30px auto; display: block;">
 
 <p>The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded.</p>
 
