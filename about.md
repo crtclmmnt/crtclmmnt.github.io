@@ -35,7 +35,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after studying with David Nichtern and the many other wonderful teachers in that organization. I have degrees in Economics and Sustainable Agriculture & Food Systems, so I’m not trained in religious studies, philosophy, or political science. I’m not a therapist. I’ve been involved in various kinds of political organizing since 2020, most recently through the Democratic Socialists of America. If you’re interested in getting involved in political organizing work, I’m happy to point you in the right direction. 
 
-This site has two main components: my Blog, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my Offerings, which include free mindfulness meditation workshops, individual meditation instruction, and meditation instruction for large groups. If any of these things interest you, or you have questions, please fill out the interest form below. 
+This site has two main components: my [Blog](https://thecriticalmoment.org/blog/), where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my [Offerings](https://thecriticalmoment.org/offerings/), which include free mindfulness meditation workshops, individual meditation instruction, and meditation instruction for large groups. If any of these things interest you, or you have questions, please fill out the interest form below. 
 
 
 <h2>Book Recommendations</h2>
