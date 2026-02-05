@@ -17,7 +17,7 @@ permalink: /about/
 </div>
 
 
-Two friends came to my rescue. They both noticed my deteriorating mental health. One recommended the book World as Lover, World as Self by Joanna Macy. The other recommended that I start a meditation practice. 
+Two friends came to my rescue. They both noticed my deteriorating mental health. One recommended the book *World as Lover, World as Self* by Joanna Macy. The other recommended that I start a meditation practice. 
 
 So, I started meditating. It quickly became clear to me that this practice was giving me something I was missing. I started developing more clarity about where my anxiety came from, and how I was projecting my internal state onto my understanding of the world. I realized that the world wasn’t making me anxious, I was just anxious, and lonely, and lost. My feelings could very easily justify their control over my life with all the horrible things I was witnessing. Seeing these feelings with clarity gave me a newfound confidence.
 
@@ -44,6 +44,7 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 
 <h2>Book Recommendations</h2>
 
+<div style="max-width: 600px; margin: 0 auto;">
 <details>
 <summary><strong>See more</strong></summary>
 <br>
@@ -94,6 +95,7 @@ The wisdom that comes from a meditation practice is something that can’t readi
 </ul>
 
 </details>
+</div>
 
 ## Contact Me
 
