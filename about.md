@@ -41,6 +41,7 @@ I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after
 
 This site has two main components: my **[Blog](https://thecriticalmoment.org/blog/)**, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my **[Offerings](https://thecriticalmoment.org/offerings/)**, which include free mindfulness meditation workshops for community organizations, individual meditation instruction, and meditation workshops for large groups. If any of these things interest you, or if you have questions, please fill out the interest form below. 
 
+<br>
 
 <h2>Book Recommendations</h2>
 
@@ -49,7 +50,7 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 <br>
 The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
 
-<div style="max-width: 700px; margin: 0 auto;">
+<div style="max-width: 750px; margin: 0 auto;">
 
 <h3>Contemplative Practice & Spirituality:</h3>
 <ul>
@@ -99,6 +100,7 @@ The wisdom that comes from a meditation practice is something that can’t readi
 
 </details>
 
+<br>
 
 ## Contact Me
 
