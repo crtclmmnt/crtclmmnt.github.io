@@ -20,8 +20,7 @@ So, how do we fully engage with the critical moment at hand?
 
 ---
 
-<h2>Free Mindfulness Meditation Workshops</h2>
-<h2>for Community Organizers</h2>
+<h2>Free Mindfulness Meditation Workshops<br>for Community Organizers</h2>
 
 This offering is the main point of this project. 
 
