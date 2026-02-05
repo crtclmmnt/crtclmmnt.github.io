@@ -555,17 +555,16 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  margin-bottom: 30px;
   background-color: $mint;
 
   @include mobile {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 
 footer {
-  padding: 0 0;
+  padding: 20 20;
   text-align: center;
 }
 
