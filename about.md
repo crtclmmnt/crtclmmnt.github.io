@@ -44,11 +44,10 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 <br>
 
 <h2>Book Recommendations</h2>
+The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
 
 <details>
 <summary><strong>See more</strong></summary>
-<br>
-The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
 
 <div style="max-width: 750px; margin: 0 auto;">
 
