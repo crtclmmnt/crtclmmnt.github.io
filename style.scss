@@ -422,13 +422,13 @@ img {
 .site-description {
   margin: 8px 0 0 0;
   color: $gray;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Roboto';
-  font-weight: 400;
+  font-weight: 500;
 
   @include mobile {
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
