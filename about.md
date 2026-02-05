@@ -44,11 +44,12 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 
 <h2>Book Recommendations</h2>
 
-<div style="max-width: 600px; margin: 0 auto;">
 <details>
 <summary><strong>See more</strong></summary>
 <br>
 The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
+
+<div style="max-width: 600px; margin: 0 auto;">
 
 <h3>Contemplative Practice & Spirituality:</h3>
 <ul>
@@ -94,8 +95,10 @@ The wisdom that comes from a meditation practice is something that can’t readi
 <li><em>The Patterning Instinct</em> by Jeremy Lent</li>
 </ul>
 
-</details>
 </div>
+
+</details>
+
 
 ## Contact Me
 
