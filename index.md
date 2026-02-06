@@ -25,9 +25,12 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 ---
 
-<img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; max-width: 850px; margin: 30px auto; display: block;">
-
-<h2>Meditation for liberation</h2>
+<div style="position: relative; width: 100%; max-width: 800px;">
+  <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block;">
+  <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6); padding: 20px; box-sizing: border-box;">
+    <h2 style="color: white; margin: 0;">Meditation for Liberation</h2>
+  </div>
+</div>
 
 A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and helps you reconnect with your role in the world’s ecology.
 
