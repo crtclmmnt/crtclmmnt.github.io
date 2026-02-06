@@ -32,7 +32,7 @@ This offering is the main point of this project.
 ---
 <div class="services-layout">
   <div>
-    <img src="/images/critmomnotxt.png" alt="Meditation" width="300">
+    <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300">
   </div>
   
   <div class="services-content">
