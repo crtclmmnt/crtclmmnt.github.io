@@ -21,7 +21,7 @@ The goal of this project is to empower people who are rising to the occasion of 
 Everything that has ever happened has brought you to the critical moment, the one you are living in. A future where we win starts now.   
  
 
-**[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
+**[Read the Introduction](https://thecriticalmoment.org/introducing-the-critical-moment/)**
 
 ---
 
@@ -34,7 +34,8 @@ A meditation practice can make you more present, patient, and disciplined. It ca
 Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.
 
 For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers. 
- 
+
+**[Learn More](https://thecriticalmoment.org/offerings/)** 
 
 ---
 <div class="services-layout">
