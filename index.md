@@ -49,6 +49,8 @@ For these reasons, I offer free mindfulness meditation workshops to community or
   <div class="services-content">
     <h1>Build A Meditation Practice</h1>
 
+I want you to meditate. So do it. Please!
+
     <details style="margin-bottom: 20px;">
     <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
     <p>Description...</p>
