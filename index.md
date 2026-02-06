@@ -23,8 +23,9 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 **[Read the Introduction](https://thecriticalmoment.org/introducing-the-critical-moment/)**
 
----
+<br>
 
+---
 <div style="position: relative; width: 100%; max-width: 850px;">
   <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block;">
   <div style="position: absolute; bottom: 0; width: 100%; padding: 10px; box-sizing: border-box;">
@@ -39,6 +40,8 @@ Whether you’re a long time organizer or fresh on the scene, a meditation pract
 For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers. 
 
 **[Learn More](https://thecriticalmoment.org/offerings/)** 
+
+<br>
 
 ---
 <div class="services-layout">
