@@ -25,6 +25,8 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 ---
 
+<img src="/images/monkkickcop.jpg" alt="A buddhist monk delivers a flying kick to a police officer's riot shield" style="width: 75%; max-width: 800px; margin: 30px auto; display: block;">
+
 <h2>Meditation for liberation</h2>
 
 A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and helps you reconnect with your role in the world’s ecology.
