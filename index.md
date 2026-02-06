@@ -26,6 +26,9 @@ Everything that has ever happened has brought you to the critical moment, the on
 <br>
 
 ---
+
+<br>
+
 <div style="position: relative; width: 100%; max-width: 850px;">
   <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block;">
   <div style="position: absolute; bottom: 0; width: 100%; padding: 10px; box-sizing: border-box;">
@@ -44,6 +47,9 @@ For these reasons, I offer free mindfulness meditation workshops to community or
 <br>
 
 ---
+
+<br>
+
 <div class="services-layout">
   <div>
     <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300">
@@ -66,6 +72,8 @@ For these reasons, I offer free mindfulness meditation workshops to community or
     </details>
   </div>
 </div>
+
+<br>
 
 ---
 
