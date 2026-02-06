@@ -48,8 +48,6 @@ For these reasons, I offer free mindfulness meditation workshops to community or
 
 ---
 
-<br>
-
 <div class="services-layout">
   <div>
     <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300">
