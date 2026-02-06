@@ -61,15 +61,17 @@ For these reasons, I offer free mindfulness meditation workshops to community or
 <p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
 
 
-    <details style="margin-bottom: 20px;">
-    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
-    <p>Description...</p>
-    </details>
+  <ul>
+    <li>
+      <strong>Individual Meditation Instruction</strong><br>
+      Description of what this is and who it's for...
+    </li>
+    <li>
+      <strong>Meditation Workshops for Workplaces</strong><br>
+      Description of what this is and who it's for...
+    </li>
+  </ul>
 
-    <details style="margin-bottom: 20px;">
-    <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Meditation Workshops for Workplaces</summary>
-    <p>Description...</p>
-    </details>
   </div>
 </div>
 
