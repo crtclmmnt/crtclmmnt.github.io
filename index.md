@@ -55,7 +55,7 @@ For these reasons, I offer free mindfulness meditation workshops to community or
     <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300">
   </div>
   
-  <div class="services-content" style="max-width: 450px;">
+  <div class="services-content" style="max-width: 500px;">
     <h1>Build A Meditation Practice</h1>
 
 <p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
