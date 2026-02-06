@@ -10,7 +10,9 @@ permalink: /
 
 The crises facing us are numerous. Boiling oceans, collapsing ecosystems, a new gilded age, genocide funded with our tax dollars, the rise of techno-feudalism, and so many other horrors.
 
-It’s hard to face all this without falling apart. It should be even harder to turn a blind eye. 
+It’s hard to face all this without falling apart, or turning a blind eye. 
+
+But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. It’s not enough to be on the right side of history. We have a moral duty to win.
 
 We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill.
 
@@ -23,7 +25,7 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 ---
 
-<h2>Free Mindfulness Meditation Workshops <span class="desktop-break"><br></span>for Community Organizers</h2>
+<h2>Meditation for liberation</h2>
 
 This offering is the main point of this project. 
 
