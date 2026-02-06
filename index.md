@@ -36,7 +36,7 @@ Everything that has ever happened has brought you to the critical moment, the on
   </div>
 </div>
 
-A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and helps you reconnect with your role in the world’s ecology.
+A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique and commit to the practice.
 
 Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.
 
