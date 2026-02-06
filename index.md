@@ -12,11 +12,12 @@ The crises facing us are numerous. Boiling oceans, collapsing ecosystems, a new 
 
 It’s hard to face all this without falling apart. It should be even harder to turn a blind eye. 
 
-The goal of this project is to empower people who are rising to the occasion of this critical moment, and to give them skills for responding to the unfolding crises effectively, sustainably, and mindfully. 
+We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill.
 
-We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. It’s where we live. Learning how to live in the moment is an indispensable skill.
+The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience, so that you can see the world and its problems with clarity and without bias. 
 
-Everything that has ever happened has brought you to the critical moment, and anything that could ever happen will start here.  
+Everything that has ever happened has brought you to the critical moment, the one you are living in. A future where we win starts now.   
+ 
 
 **[Read the Introduction](https://crtclmmnt.github.io/introducing-the-critical-moment/)**
 
