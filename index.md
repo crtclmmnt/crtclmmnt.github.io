@@ -25,7 +25,7 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 ---
 
-<img src="/images/block2.JPG" alt="A buddhist monk delivers a flying kick to a police officer's riot shield" style="width: 50%; max-width: 500px; margin: 30px auto; display: block;">
+<img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; max-width: 850px; margin: 30px auto; display: block;">
 
 <h2>Meditation for liberation</h2>
 
