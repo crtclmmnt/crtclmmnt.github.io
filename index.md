@@ -27,7 +27,14 @@ Everything that has ever happened has brought you to the critical moment, the on
 
 <h2>Meditation for liberation</h2>
 
-This offering is the main point of this project. 
+Mindfulness meditation is an incredibly powerful practice. Everyone will benefit from a meditation practice, but I believe that this practice is a necessity for people who are organizing their communities or engaging in liberatory work. 
+
+A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and helps you reconnect with your role in the world’s ecology.
+
+Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.
+
+For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers. 
+ 
 
 ---
 <div class="services-layout">
