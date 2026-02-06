@@ -49,8 +49,8 @@ For these reasons, I offer free mindfulness meditation workshops to community or
   <div class="services-content">
     <h1>Build A Meditation Practice</h1>
 
-I want you to meditate. So do it. Please!
-<br>
+<p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
+
 
     <details style="margin-bottom: 20px;">
     <summary style="font-size: 24px; font-weight: normal; font-family: 'ZTNature';">Individual Meditation Instruction</summary>
