@@ -28,7 +28,7 @@ Everything that has ever happened has brought you to the critical moment, the on
 <div style="position: relative; width: 100%; max-width: 850px;">
   <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block;">
   <div style="position: absolute; bottom: 0; width: 100%; padding: 10px; box-sizing: border-box;">
-    <h2 style="color: white; margin: 0;">Meditation for Liberation</h2>
+    <h1 style="color: white; margin: 0;">Meditation for Liberation</h1>
   </div>
 </div>
 
