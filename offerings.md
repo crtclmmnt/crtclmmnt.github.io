@@ -2,12 +2,11 @@
 layout: default
 permalink: /offerings/
 ---
-
 <img src="/images/pano3.jpg" alt="About header" class="hero-image">
 
-<h1>Learn More About My Offerings</h1>
+<h1 style="margin: 1em auto 15px auto;">Learn More About My Offerings</h1>
 
-<h5><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
 
 <div class="zigzag-left">
 <h2 id="free-workshops" style="margin-bottom: 0px;">Meditation <br class="mobile-break">for Liberation:</h2>
@@ -42,7 +41,7 @@ permalink: /offerings/
 
 <br>
 
-<h1 id="faq">Frequently Asked Questions</h1>
+<h1 id="faq" style="margin: 1em auto 15px auto;">Frequently Asked Questions</h1>
 <details><summary><h6>Will meditation make me smell weird?</h6></summary>
 This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
 </details>
