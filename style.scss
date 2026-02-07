@@ -614,6 +614,15 @@ nav {
   }
 }
 
+.mobile-break {
+  display: none; /* Hide breaks on desktop */
+  
+  @include mobile {
+    display: block; /* Show breaks on mobile */
+  }
+}
+
+
 .zigzag-left {
   max-width: 700px;
   margin: 40px 150px 40px auto;
