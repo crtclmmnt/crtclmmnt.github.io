@@ -291,9 +291,9 @@ em, i {
 hr {
   border: none;
   height: 4px;
-  background: linear-gradient(to right, $peach, $peach, $rose, $darkRose, $darkBlue);
-  margin: 0.5em auto; /* Change to "auto" to center it */
-  width: 80%;
+  background: linear-gradient(to left, $white, $peach, $rose, $darkRose, $darkBlue);
+  margin: 0.5em 0; /* Change to "auto" to center it */
+  width: 90%;
 }
 
 strong, b {
