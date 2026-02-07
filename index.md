@@ -4,6 +4,8 @@ permalink: /
 ---
 <img src="/images/pano1.JPG" alt="Sunset over taubate" class="hero-image">
 
+<br>
+
 <h1 style="margin-top: 0px;">We are living in a Critical Moment.</h1>
 
 The crises facing us are numerous: boiling oceans, collapsing ecosystems, a new gilded age, genocide funded with our tax dollars, the rise of techno-feudalism, and so many other horrors.
