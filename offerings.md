@@ -11,6 +11,8 @@ permalink: /offerings/
 
 ---
 
+<br>
+
 <div class="zigzag-left">
 <h2 id="free-workshops" style="margin-bottom: 0px;">Meditation for Liberation:</h2>
 <h4 style="margin-top: 0px;">Free Workshops for Community Organizations and Community Organizers</h4>
