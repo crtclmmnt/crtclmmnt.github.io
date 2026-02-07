@@ -7,21 +7,21 @@ permalink: /offerings/
 
 <h1>Learn More About My Offerings</h1>
 
-<div style="max-width: 650px; margin: auto 200 auto auto;">
+<div style="max-width: 650px; margin: auto 200px auto auto;">
 <h3 id="free-workshops">Meditation Instruction for Community Organizations and Organizers</h3>
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
 
-<div style="max-width: 650px; margin: auto auto auto 200;">
+<div style="max-width: 650px; margin: auto auto auto 200px;">
 <h3 id="individual-instruction">Individual Meditation Instruction</h3>
 <p>This is a longer description of what meditation instruction for individuals/small groups will look like. I'm imagining making this available to groups of four at most.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
 
-<div style="max-width: 650px; margin: auto 200 auto auto;">
+<div style="max-width: 650px; margin: auto 200px auto auto;">
 <h3 id="large-groups">Meditation Workshops for Workplaces</h3>
 <p>This is how I will advertise to the tech companies of the bay. Give me money for my noble cause!</p>
 
