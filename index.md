@@ -51,28 +51,24 @@ For these reasons, I offer free mindfulness meditation workshops to community or
 <br>
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 
+<p style="max-width: 650px;">I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
+
 <div class="services-layout">
   <div>
     <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300" style="margin-top: 10px;">
   </div>
   
   <div class="services-content" style="max-width: 500px;">
-    
-
-<p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
-
-
-  <ul>
-    <li>
-      <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
-      I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-    </li>
-    <li>
-      <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
-      I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-    </li>
-  </ul>
-
+    <ul>
+      <li>
+        <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
+        I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
+      </li>
+      <li>
+        <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
+        I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
+      </li>
+    </ul>
   </div>
 </div>
 
