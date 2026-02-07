@@ -62,11 +62,13 @@ For these reasons, I offer free mindfulness meditation workshops to community or
     <ul>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
-        I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
+        <p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.</p>
+        <strong>Learn More</strong>
       </li>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
-        I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
+        <p>I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.</p>
+        <strong>Learn More</strong>
       </li>
     </ul>
   </div>
