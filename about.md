@@ -3,7 +3,7 @@ layout: default
 permalink: /about/
 ---
 
-<img src="/images/pano4.jpg" alt="About header" class="hero-image" style="margin-top: 0;">
+<img src="/images/pano4.jpg" alt="About header" class="hero-image">
 
 <div class="about-layout">
   <div>

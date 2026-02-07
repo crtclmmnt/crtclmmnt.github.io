@@ -3,7 +3,7 @@ layout: default
 permalink: /offerings/
 ---
 
-<img src="/images/pano3.jpg" alt="About header" class="hero-image" style="margin-top: 0;">
+<img src="/images/pano3.jpg" alt="About header" class="hero-image">
 
 <h1>Learn More About My Offerings</h1>
 
