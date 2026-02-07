@@ -247,16 +247,6 @@ h6 {
   font-style: italic;
 }
 
-summary h6 {
-  display: inline;
-  margin: 0;
-}
-
-summary {
-  cursor: pointer;
-  list-style-position: outside;
-}
-
 p {
   margin: 15px 0;
 }
@@ -301,6 +291,46 @@ strong, b {
 
 img {
   max-width: 100%;
+}
+
+summary h6 {
+  display: inline;
+  margin: 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style-position: outside;
+  margin-bottom: 10px;
+  list-style: none; /* Removes default marker */
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Add custom arrow */
+summary::before {
+  content: "▸ ";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+details[open] summary::before {
+  content: "▾ ";
+}
+
+#faq {
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+details {
+  @include mobile {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 // Fixes images in popup boxes from Google Translate
