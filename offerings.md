@@ -5,8 +5,11 @@ permalink: /offerings/
 
 <img src="/images/pano3.jpg" alt="About header" class="hero-image" style="margin-top: 0;">
 
-<h1 style="text-align: center">Learn More About My Offerings</h1>
+<h1>Learn More About My Offerings</h1>
 
+<br>
+
+<a href="https://thecriticalmoment.org/offerings#faq"><h3>Skip to FAQ</h3></a>
 ---
 
 <div class="zigzag-left">
@@ -18,16 +21,12 @@ permalink: /offerings/
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
 
-<br>
-
 <div class="zigzag-right">
 <h3 id="individual-instruction">Individual Meditation Instruction</h3>
 <p>This is a longer description of what meditation instruction for individuals/small groups will look like. I'm imagining making this available to groups of four at most.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
-
-<br>
 
 <div class="zigzag-left">
 <h3 id="large-groups">Meditation Workshops for Workplaces</h3>
@@ -40,6 +39,28 @@ permalink: /offerings/
 
 ---
 
-<h1>Frequently Asked Questions</h1>
-<h6>Will meditation make me smell weird?</h6>
+<h1 id="faq">Frequently Asked Questions</h1>
+<details>
+<summary><h6>Will meditation make me smell weird?</h6></summary>
 This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
+</details>
+---
+<details>
+<summary><h6>Will meditation make me smell weird?</h6></summary>
+This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
+</details>
+---
+<details>
+<summary><h6>Will meditation make me smell weird?</h6></summary>
+This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
+</details>
+---
+<details>
+<summary><h6>Will meditation make me smell weird?</h6></summary>
+This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
+</details>
+---
+<details>
+<summary><h6>Will meditation make me smell weird?</h6></summary>
+This question gets asked a lot. It is very rare that meditation might make someone smell weird. But it could happen. It changes for every person. 
+</details>
