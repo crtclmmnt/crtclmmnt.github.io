@@ -291,9 +291,9 @@ em, i {
 hr {
   border: none;
   height: 3px;
-  background: linear-gradient(to left, $rose, $peach, $mint); /*alternate: $peach, $peach, $rose, $rose, $darkRose, $darkBlue*/
+  background: linear-gradient(to left, $peach, $peach, $rose, $rose, $darkRose, $darkBlue); /*alternate: $rose, $peach, $mint*/
   margin: 0.5em auto; /* Change to "auto" to center it, 0 to align it on left */
-  width: 80%;
+  width: 100%;
 }
 
 strong, b {
