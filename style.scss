@@ -665,6 +665,14 @@ nav {
   -webkit-column-break-inside: avoid;
 }
 
+.mobile-full-width-image {
+  @include mobile {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    max-width: none;
+  }
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
