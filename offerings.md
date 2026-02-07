@@ -20,12 +20,16 @@ permalink: /offerings/
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
 
+<br>
+
 <div class="zigzag-right">
 <h2 id="individual-instruction">Individual Meditation Instruction</h2>
 <p>This is a longer description of what meditation instruction for individuals/small groups will look like. I'm imagining making this available to groups of four at most.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 </div>
+
+<br>
 
 <div class="zigzag-left">
 <h2 id="large-groups">Meditation Workshops for Workplaces</h2>
