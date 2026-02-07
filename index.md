@@ -50,7 +50,7 @@ For these reasons, I offer free mindfulness meditation workshops to community or
 
 <div class="services-layout">
   <div>
-    <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300">
+    <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300" style="margin-top: 30px;">
   </div>
   
   <div class="services-content" style="max-width: 500px;">
