@@ -8,7 +8,7 @@ permalink: /
 
 <h1>We are living in a Critical Moment.</h1>
 
-The crises facing us are numerous. Boiling oceans, collapsing ecosystems, a new gilded age, genocide funded with our tax dollars, the rise of techno-feudalism, and so many other horrors.
+The crises facing us are numerous: boiling oceans, collapsing ecosystems, a new gilded age, genocide funded with our tax dollars, the rise of techno-feudalism, and so many other horrors.
 
 It’s hard to face all this without falling apart, or turning a blind eye. 
 
