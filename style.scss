@@ -557,6 +557,24 @@ nav {
   }
 }
 
+.zigzag-left {
+  max-width: 700px;
+  margin: 40px 150px 40px auto;
+  
+  @include mobile {
+    margin: 20px auto;
+  }
+}
+
+.zigzag-right {
+  max-width: 700px;
+  margin: 40px auto 40px 150px;
+  
+  @include mobile {
+    margin: 20px auto;
+  }
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
