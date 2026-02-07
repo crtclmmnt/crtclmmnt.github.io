@@ -18,7 +18,7 @@ We are living in the critical moment. Despite our memories of the past, and our 
 
 The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience, so that you can see the world and its problems with clarity and without bias. 
 
-Everything that has ever happened has brought you to the critical moment, the one you are living in. A future where we win starts now.   
+A future where we win starts now, in the critical moment.   
  
 
 **[Read the Introduction](https://thecriticalmoment.org/introducing-the-critical-moment/)**
