@@ -53,54 +53,54 @@ The wisdom that comes from a meditation practice is something that can’t readi
 <h3>Contemplative Practice & Spirituality:</h3>
 <div class="book-columns">
 <ul>
-<li><em>The Wisdom of No Escape</em><br>by Pema Chödrön</li>
-<li><em>World as Lover, World as Self</em><br>by Joanna Macy</li>
-<li><em>Cutting Through Spiritual Materialism</em><br>by Chögyam Trungpa Rinpoche</li>
-<li><em>The Book</em><br>by Alan Watts</li>
+<li><h6>The Wisdom of No Escape</h6>by Pema Chödrön</li>
+<li><h6>World as Lover, World as Self</h6>by Joanna Macy</li>
+<li><h6>Cutting Through Spiritual Materialism</h6>by Chögyam Trungpa Rinpoche</li>
+<li><h6>The Book</h6>by Alan Watts</li>
 </ul>
 </div>
 
 <h3>Ecology & Earth Systems:</h3>
 <div class="book-columns">
 <ul>
-<li><em>The Unsettling of America</em><br>by Wendell Berry</li>
-<li><em>Becoming Earth</em><br>by Ferris Jabr</li>
-<li><em>Braiding Sweetgrass</em><br>by Robin Wall Kimmerer</li>
-<li><em>Entangled Life</em><br>by Merlin Sheldrake</li>
+<li><h6>The Unsettling of America</h6>by Wendell Berry</li>
+<li><h6>Becoming Earth</h6>by Ferris Jabr</li>
+<li><h6>Braiding Sweetgrass</h6>by Robin Wall Kimmerer</li>
+<li><h6>Entangled Life</h6>by Merlin Sheldrake</li>
 </ul>
 </div>
 
 <h3>Politics & Social Change:</h3>
 <div class="book-columns">
 <ul>
-<li><em>The New Jim Crow</em><br>by Michelle Alexander</li>
-<li><em>Wretched of the Earth</em><br>by Frantz Fanon</li>
-<li><em>Caliban and the Witch</em><br>by Silvia Federici</li>
-<li><em>Capitalist Realism</em><br>by Mark Fisher</li>
-<li><em>Pedagogy of the Oppressed</em><br>by Paulo Freire</li>
-<li><em>Debt</em><br>by David Graeber</li>
-<li><em>The Hundred Years' War on Palestine</em><br>by Rashid Khalidi</li>
-<li><em>Blackshirts and Reds</em><br>by Michael Parenti</li>
-<li><em>Ministry for the Future</em><br>by Kim Stanley Robinson</li>
-<li><em>How Europe Underdeveloped Africa</em><br>by Walter Rodney</li>
+<li><h6>The New Jim Crow</h6>by Michelle Alexander</li>
+<li><h6>Wretched of the Earth</h6>by Frantz Fanon</li>
+<li><h6>Caliban and the Witch</h6>by Silvia Federici</li>
+<li><h6>Capitalist Realism</h6>by Mark Fisher</li>
+<li><h6>Pedagogy of the Oppressed</h6>by Paulo Freire</li>
+<li><h6>Debt</h6>by David Graeber</li>
+<li><h6>The Hundred Years' War on Palestine</h6>by Rashid Khalidi</li>
+<li><h6>Blackshirts and Reds</h6>by Michael Parenti</li>
+<li><h6>Ministry for the Future</h6>by Kim Stanley Robinson</li>
+<li><h6>How Europe Underdeveloped Africa</h6>by Walter Rodney</li>
 </ul>
 </div>
 
 <h3>Psychology & Human Nature:</h3>
 <div class="book-columns">
 <ul>
-<li><em>Humankind: A Hopeful History</em><br>by Rutger Bregman</li>
-<li><em>In the Realm of Hungry Ghosts</em><br>by Gabor Maté</li>
-<li><em>The Master and His Emissary</em><br>by Iain McGilchrist</li>
-<li><em>No Bad Parts</em><br>by Richard Schwartz</li>
+<li><h6>Humankind: A Hopeful History</h6>by Rutger Bregman</li>
+<li><h6>In the Realm of Hungry Ghosts</h6>by Gabor Maté</li>
+<li><h6>The Master and His Emissary</h6>by Iain McGilchrist</li>
+<li><h6>No Bad Parts</h6>by Richard Schwartz</li>
 </ul>
 </div>
 
 <h3>Systems Thinking & Philosophy:</h3>
 <div class="book-columns">
 <ul>
-<li><em>The Tao of Physics</em><br>by Fritjof Capra</li>
-<li><em>The Patterning Instinct</em><br>by Jeremy Lent</li>
+<li><h6>The Tao of Physics</h6>by Fritjof Capra</li>
+<li><h6>The Patterning Instinct</h6>by Jeremy Lent</li>
 </ul>
 </div>
 
