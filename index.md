@@ -51,7 +51,7 @@ A future where we win starts now, in the critical moment.
 ---
 
 <br>
-<h1 style="text-align: center;">Build A Meditation Practice</h1>
+<h1 style="text-align: center !important;">Build A Meditation Practice</h1>
 
 <p style="max-width: 600px; margin: 0 auto; bottom-margin: 0px;">I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
 
