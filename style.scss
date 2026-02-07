@@ -301,7 +301,8 @@ summary h6 {
 
 .book-columns h6 {
   margin: 0;
-  display: block;
+  display: inline-block;
+  vertical-align: top;
 }
 
 summary {
