@@ -546,7 +546,7 @@ nav {
   
   img {
     @include mobile {
-      max-width: 85%;
+      max-width: 100%;
       display: block;
       margin: 0 auto;  /* Center the image */
     }
