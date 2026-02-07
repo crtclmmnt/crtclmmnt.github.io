@@ -30,7 +30,7 @@ A future where we win starts now, in the critical moment.
 <div style="position: relative; width: 100%; max-width: 850px; margin: 0 -20px;">
   <img src="/images/block2.JPG" alt="foggy hills" style="width: calc(100% + 40px); display: block; min-height: 150px; object-fit: cover;">
   <div style="position: absolute; bottom: 0; width: 100%; padding: 10px; box-sizing: border-box;">
-    <h1 style="color: white; margin: 0; font-weight: 500; text-shadow: none;">Meditation <br class="mobile-break";>for Liberation</h1>
+    <h1 style="color: white; margin: 0; font-weight: 500; text-shadow: none;">Meditation <br class="mobile-break">for Liberation</h1>
   </div>
 </div>
 
