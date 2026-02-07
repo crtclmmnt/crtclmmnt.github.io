@@ -197,7 +197,7 @@ body {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'ZTNature';
   color: $darkerGray;
   font-weight: normal;
@@ -632,7 +632,6 @@ nav {
 .book-columns {
   columns: 2;
   column-gap: 40px;
-  column-fill: auto; /* Prevents auto-balancing */
   
   @include mobile {
     columns: 1;
