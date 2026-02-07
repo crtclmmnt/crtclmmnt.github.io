@@ -623,6 +623,20 @@ nav {
   }
 }
 
+.book-columns {
+  columns: 2;
+  column-gap: 40px;
+  
+  @include mobile {
+    columns: 1;
+  }
+}
+
+.book-columns li {
+  margin-bottom: 15px; /* Adds gap between bullets */
+  break-inside: avoid; /* Keeps title and author together */
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
