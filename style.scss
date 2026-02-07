@@ -246,7 +246,6 @@ h6 {
   font-weight: 500;
   font-style: italic;
   text-align: left;
-  margin: 0 0;
 }
 
 p {
@@ -298,6 +297,11 @@ img {
 summary h6 {
   display: inline;
   margin: 0;
+}
+
+.book-columns h6 {
+  margin: 0;
+  display: inline-block;
 }
 
 summary {
