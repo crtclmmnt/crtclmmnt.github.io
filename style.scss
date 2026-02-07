@@ -329,11 +329,7 @@ details[open] summary::before {
   content: "▾ ";
 }
 
-#faq {
-  @include mobile {
-    padding: 0 10px;
-  }
-}
+
 
 details {
   margin-bottom: 20px;
