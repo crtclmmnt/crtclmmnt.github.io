@@ -8,6 +8,7 @@ permalink: /offerings/
 <h1>Learn More About My Offerings</h1>
 
 <h5><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
+
 ---
 
 <div class="zigzag-left">
