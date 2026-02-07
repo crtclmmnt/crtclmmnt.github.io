@@ -65,12 +65,12 @@ A future where we win starts now, in the critical moment.
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
         I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-        <p><strong>Learn More</strong></p>
+        <a href="https://thecriticalmoment.org/offerings/"><h5>Learn More</h5></a>
       </li>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
         I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-        <p><strong>Learn More</strong></p>
+        <a href="https://thecriticalmoment.org/offerings/"><h5>Learn More</h5></a>
       </li>
     </ul>
   </div>
