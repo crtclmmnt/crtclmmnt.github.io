@@ -215,22 +215,10 @@ h1 {
   font-size: 36px;
   text-shadow: 2px 2px 0 $lightGray;
   padding-bottom: 15px;
+  border-bottom: 4px solid $darkRose;
   a {
     color: inherit;
   }
-}
-
-h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0; /* Aligns with left edge of text */
-  width: 60px; /* Same "length" as the vertical bar width */
-  height: 4px; /* Thickness of the line */
-  background: $darkRose;
-
-  @include mobile {
-    left: 20px;
 }
 
 h2 {
