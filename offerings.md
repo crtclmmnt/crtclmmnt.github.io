@@ -10,7 +10,8 @@ permalink: /offerings/
 <br>
 
 <div style="max-width: 650px; margin: auto 200px auto auto;">
-<h3 id="free-workshops">Meditation Instruction for Community Organizations and Organizers</h3>
+<h3 id="free-workshops">Meditation for Liberation:</h3>
+<h4>Free Workshops for Community Organizations and Community Organizers<h4>
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
