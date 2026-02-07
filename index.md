@@ -36,14 +36,14 @@ A future where we win starts now, in the critical moment.
   </div>
 </div>
 
-<div style="width: 95%;">
-A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique, and commit to the practice.
+<div style="width: 95%; margin: 0 auto;">
+<p>A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique, and commit to the practice.</p>
 
-Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.
+<p>Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.</p>
 
-For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers. 
+<p>For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers.</p> 
 
-**[Learn More](https://thecriticalmoment.org/offerings/)** 
+<a href="https://thecriticalmoment.org/offerings/"><h5>Learn More</h5></a>
 </div>
 
 <br>
