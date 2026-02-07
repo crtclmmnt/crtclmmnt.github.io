@@ -11,9 +11,10 @@ permalink: /offerings/
 
 <br>
 
-<div style="max-width: 700px; margin: auto 150px auto auto;">
+<div class="zigzag-left">
 <h3 id="free-workshops" style="margin-bottom: 0px;">Meditation for Liberation:</h3>
 <h6 style="text-color: gray;">Free Workshops for Community Organizations and Community Organizers</h6>
+
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
 
 <p>This is a longer description of what meditation instruction for community organizations and organizers will look like. I'm sure there's a lot to say! Like if you want to get involved with these workshops, there will be a form for you to fill out. And other things to do. Surely.</p>
@@ -21,7 +22,7 @@ permalink: /offerings/
 
 <br>
 
-<div style="max-width: 700px; margin: auto auto auto 150px;">
+<div class="zigzag-right">
 <h3 id="individual-instruction">Individual Meditation Instruction</h3>
 <p>This is a longer description of what meditation instruction for individuals/small groups will look like. I'm imagining making this available to groups of four at most.</p>
 
@@ -30,7 +31,7 @@ permalink: /offerings/
 
 <br>
 
-<div style="max-width: 700px; margin: auto 150px auto auto;">
+<div class="zigzag-left">
 <h3 id="large-groups">Meditation Workshops for Workplaces</h3>
 <p>This is how I will advertise to the tech companies of the bay. Give me money for my noble cause!</p>
 
