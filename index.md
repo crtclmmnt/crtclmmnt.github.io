@@ -43,7 +43,7 @@ A future where we win starts now, in the critical moment.
 
 <p>For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers.</p> 
 
-<a href="https://thecriticalmoment.org/offerings#free-workshops"><h5>Learn More</h5></a>
+<h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Learn More</a></h5>
 </div>
 
 <br>
@@ -65,12 +65,12 @@ A future where we win starts now, in the critical moment.
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
         I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-        <a href="https://thecriticalmoment.org/offerings#individual-instruction"><h5>Learn More</h5></a>
+        <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Learn More</a></h5>
       </li>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
         I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
-        <a href="https://thecriticalmoment.org/offerings#large-groups"><h5>Learn More</h5></a>
+        <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Learn More</a></h5>
       </li>
     </ul>
   </div>
