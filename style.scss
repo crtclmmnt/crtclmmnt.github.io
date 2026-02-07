@@ -198,7 +198,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, {
-  font-family: 'ZTNature', $helveticaNeue;
+  font-family: 'ZTNature';
   color: $darkerGray;
   font-weight: normal;
 
@@ -230,6 +230,11 @@ h4 {
   font-size: 19px;
   font-weight: 500;
   color: $lightGray;
+  line-height: 1;
+
+  @include-mobile {
+    line-height: 1.2;
+  }
 }
 
 h5 {
