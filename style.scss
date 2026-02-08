@@ -668,7 +668,7 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $mint;
+  background-color: linear-gradient(to right, $darkPeach, $darkRose, $darkBlue);
 
   @include mobile {
     margin-left: -20px;
