@@ -666,6 +666,8 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
+  border-top: 1px solid #ddd;        /* ADD THIS */
+  border-bottom: 1px solid #ddd;     /* ADD THIS */
   background: linear-gradient(to right, $darkPeach, $darkRose, $rose);
 
   @include mobile {
