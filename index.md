@@ -5,6 +5,7 @@ permalink: /
 <img src="/images/pano1.JPG" alt="Sunset over taubate" class="hero-image">
 
 <br>
+<br>
 
 <h1 style="margin-top: 0px;">We are living in a Critical Moment.</h1>
 
