@@ -15,7 +15,7 @@ It’s hard to face all this without falling apart, or turning a blind eye.
 
 But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. It’s not enough to be on the right side of history. We have a moral duty to win.
 
-We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill.
+We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill for anyone trying to correct the course of history.
 
 The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience, so that you can see the world and its problems with clarity and without bias. 
 
