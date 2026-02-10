@@ -54,7 +54,7 @@ A future where we win starts now, in the critical moment.
 <br>
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 
-<p style="max-width: 600px; margin: 0 auto;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free programming to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
+<p style="max-width: 600px; margin: 0 auto;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
 
 <div class="services-layout">
   <div>
