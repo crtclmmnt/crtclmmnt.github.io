@@ -54,7 +54,7 @@ A future where we win starts now, in the critical moment.
 <br>
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 
-<p style="max-width: 600px; margin: 0 auto; bottom-margin: 0px;">I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them. It makes you a little bit taller, it makes you a baller. etc.</p>
+<p style="max-width: 600px; margin: 0 auto; bottom-margin: 0px;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you. But my time is limited, and I can't always give it away for free. If you're interested in meditation outside of the context of a community organization, I have additional public-facing offerings, detailed below.</p>
 
 <div class="services-layout">
   <div>
