@@ -70,7 +70,6 @@ A future where we win starts now, in the critical moment.
 <p>Individual instruction is available to small groups (1-4 people) at one rate, so bring your friends!</p>
 
 <p><strong>$50-$120 per session</strong>, sliding scale. Please pay what feels sustainable for your circumstances.</p>
-
         <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Learn More</a></h5>
       </li>
       <li>
