@@ -65,11 +65,11 @@ A future where we win starts now, in the critical moment.
     <ul>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
-Individual meditation instruction is an opportunity to cultivate and deepen your meditation practice with the help of a guide. While it is possible to embark on this journey alone, it can be more fruitful and less confusing to bring along someone who has walked the path before you.
+<p>Individual meditation instruction is an opportunity to cultivate and deepen your meditation practice with the help of a guide. While it is possible to embark on this journey alone, it can be more fruitful and less confusing to bring along someone who has walked the path before you.</p>
 
-Individual instruction is available to small groups (1-4 people) at one rate, so bring your friends!
+<p>Individual instruction is available to small groups (1-4 people) at one rate, so bring your friends!</p>
 
-$50-$120 per session, sliding scale. Please pay what feels sustainable for your circumstances.
+<p>$50-$120 per session, sliding scale. Please pay what feels sustainable for your circumstances.</p>
 
         <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Learn More</a></h5>
       </li>
