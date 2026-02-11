@@ -54,7 +54,7 @@ A future where we win starts now, in the critical moment.
 <br>
 <h1 style="text-align: left;">Build A Meditation Practice</h1>
 
-<p style="max-width: 725px;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
+<p style="max-width: 725px; margin: 0 auto;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
 
 <div class="services-layout">
   <div>
@@ -87,6 +87,6 @@ A future where we win starts now, in the critical moment.
 ---
 
 <br>
-No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?
+<p style="text-align: center; max-width: 600px;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
 
-**[Fill out the interest form](https://forms.gle/your-form-link)**
+<strong><a href="https://forms.gle/your-form-link" style="text-align: center; margin: 0 auto;">Fill out the interest form</a></strong>
