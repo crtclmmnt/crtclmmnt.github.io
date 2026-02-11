@@ -34,7 +34,7 @@ A future where we win starts now, in the critical moment.
     <h1 style="color: white; margin: 0; font-weight: 500; text-shadow: none;">Meditation <br class="mobile-break">for Liberation</h1>
   </div>
 </div>
-<br>
+
 <div style="width: 100%; margin: 0 auto;">
 <p>A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique, and commit to the practice.</p>
 
