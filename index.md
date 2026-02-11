@@ -54,7 +54,7 @@ A future where we win starts now, in the critical moment.
 <br>
 <h1 style="text-align: left;">Build A Meditation Practice</h1>
 
-<p style="max-width: 725px; margin: 0 auto;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
+<p style="max-width: 725px;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
 
 <div class="services-layout">
   <div>
@@ -74,7 +74,8 @@ A future where we win starts now, in the critical moment.
       </li>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
-<p>I offer group workshops for any group of people, whether that’s a workplace, a club, an affinity group, or just a big group of friends. These workshops range from 4 to 6 weeks, and the sessions vary in length. If you’re interested in a group workshop, please fill out the interest form. </p>
+<p>I offer group workshops for any group of people, whether that’s a workplace, a club, an affinity group, or just a big group of friends. These workshops range from 4 to 6 weeks, and the sessions vary in length.</p>
+<p>If you’re interested in a group workshop, please fill out the interest form. </p>
         <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Learn More</a></h5>
       </li>
     </ul>
