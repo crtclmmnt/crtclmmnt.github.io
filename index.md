@@ -74,7 +74,7 @@ A future where we win starts now, in the critical moment.
       </li>
       <li>
         <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
-        I want you to meditate. So do it. Please! There are so many benefits to meditation I can't even begin to describe them.
+<p>I offer group workshops for any group of people, whether that’s a workplace, a club, an affinity group, or just a big group of friends. These workshops range from 4 to 6 weeks, and the sessions vary in length. If you’re interested in a group workshop, please fill out the interest form. </p>
         <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Learn More</a></h5>
       </li>
     </ul>
@@ -86,6 +86,6 @@ A future where we win starts now, in the critical moment.
 ---
 
 <br>
-No matter your experience level, regardless of your goals, cultivating a meditation practice can help you do things and stuff. Ready to get started?
+No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?
 
 **[Fill out the interest form](https://forms.gle/your-form-link)**
