@@ -73,7 +73,7 @@ A future where we win starts now, in the critical moment.
         <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Learn More</a></h5>
       </li>
       <li>
-        <h3 style="text-align: left; margin-bottom: 5px;">Meditation Workshops for Workplaces</h3>
+        <h3 style="text-align: left; margin-bottom: 5px;">Group Meditation Workshops</h3>
 <p>I offer group workshops for any group of people, whether that’s a workplace, a club, an affinity group, or just a big group of friends. These workshops range from 4 to 6 weeks, and the sessions vary in length.</p>
 <p>If you’re interested in a group workshop, please fill out the interest form. </p>
         <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Learn More</a></h5>
