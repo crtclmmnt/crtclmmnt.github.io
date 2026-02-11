@@ -87,6 +87,6 @@ A future where we win starts now, in the critical moment.
 ---
 
 <br>
-<p style="text-align: center; max-width: 600px;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
+<p style="text-align: center; max-width: 600px; margin: 0 auto;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
 
 <strong><a href="https://forms.gle/your-form-link" style="text-align: center; margin: 0 auto;">Fill out the interest form</a></strong>
