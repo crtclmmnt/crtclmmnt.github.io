@@ -34,7 +34,7 @@ A future where we win starts now, in the critical moment.
     <h1 style="color: white; margin: 0; font-weight: 500; text-shadow: none;">Meditation <br class="mobile-break">for Liberation</h1>
   </div>
 </div>
-
+<br>
 <div style="width: 100%; margin: 0 auto;">
 <p>A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique, and commit to the practice.</p>
 
@@ -89,6 +89,6 @@ A future where we win starts now, in the critical moment.
 <br>
 <div style="max-width: 600px; margin: 0 auto;">
 <p style="max-width: 600px; margin: 0 auto;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
-
+<br>
 <strong><a href="https://forms.gle/your-form-link">Fill out the interest form</a></strong>
 </div>
