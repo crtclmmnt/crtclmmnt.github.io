@@ -24,6 +24,24 @@ A future where we win starts now, in the critical moment.
 
 **[Read the Introduction](https://thecriticalmoment.org/introducing-the-critical-moment/)**
 
+<div class="services-layout">
+  <div>
+    <img src="/images/bio2.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="300" style="margin-top: 0px;">
+  </div>
+  
+  <div class="services-content" style="max-width: 500px;">
+    <ul>
+      <li>
+        <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
+<p>I started my own meditation practice a little over 2 years ago. At the time I was despairing about the state of our world, to the extent that I gave up on political organizing. It's not that I didn't want to get organized, or that I didn't see any value to it. I was just so paralyzed by anxiety on a weekly if not daily basis that organizing felt like admitting to myself that the world was ending. I was especially frustrated at the way Climate Change seemed to be a distraction in most organizing spaces. </p>
+
+<p>Building a meditation practice helped me live with my anxiety in a way that prevented me from being paralyzed by it. It helped me return to organizing with confidence of mind and clarity of vision. Once I had felt the transformative benefits of this practice, I realized it was something I wanted to share with other organizers. Thus, the Critical Moment was born.</p>
+        <h5><a href="https://thecriticalmoment.org/about/">Read More</a></h5>
+    </ul>
+  </div>
+</div>
+
+
 <br>
 
 <br>
