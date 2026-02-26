@@ -27,11 +27,9 @@ A future where we win starts now, in the critical moment.
 
 ---
 
-<br>
-
 <div class="services-layout">
   <div>
-    <img src="/images/bio1.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="250" style="margin-top: 0px;">
+    <img src="/images/bio1.JPG" alt="A picture of a man meditating in a meadow at sunset." width="250" style="margin-top: 0px;">
   </div>
   
   <div class="services-content" style="max-width: 550px;">
@@ -47,6 +45,36 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
+
+<h1>Build A Meditation Practice</h1>
+I have three main offerings that you can read about below. My primary focus is the first offering, Meditation for Liberation, which is a free workshop available to community organizations and community organizers. 
+For people interested in more personalized instruction for individuals or groups, please see my other offerings. 
+
+<div style="max-width: 725px; margin: 0 auto;">
+
+<h3>Meditation for Liberation</h3>
+<h4>Free Mindfulness Meditation Workshops for Community Organizers</h4>
+<details>
+<summary><strong>Read more</strong></summary>
+A brief description of this offering, and an invitation to read the full description.
+<h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Read the full description</a></h5>
+</details>
+
+<h3>Individual Meditation Instruction</h3>
+<details>
+<summary><strong>Read more</strong></summary>
+A brief description of this offering, and an invitation to read the full description.
+<h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Read the full description</a></h5>
+</details>
+
+<h3>Group Meditation Workshops</h3>
+<details>
+<summary><strong>Read more</strong></summary>
+A brief description of this offering, and an invitation to read the full description.
+<h5><a href="https://thecriticalmoment.org/offerings#large-groups">Read the full description</a></h5>
+</details>
+
+</div>
 
 <div style="position: relative; width: calc(100% + 40px); margin-left: -20px; max-width: 900px;">
   <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block; min-height: 150px; object-fit: cover;">
