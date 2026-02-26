@@ -47,23 +47,21 @@ A future where we win starts now, in the critical moment.
 ---
 
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
-I offer free meditation workshops for community organizers, and sliding scale individual and group instruction for those seeking more personalized instruction and discussion.
 
 <div style="max-width: 725px; margin: 0 auto;">
+<p>I offer free meditation workshops for community organizers, and sliding scale individual and group instruction for those seeking more personalized instruction and discussion.</p>
 
-<hr>
-
-<h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops">Meditation or Liberation: Free Workshops for Community Organizers</a></h3>
-
-<hr>
+<h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops">Meditation for Liberation:<br>Free Workshops for Community Organizers</a></h3>
 
 <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
 
-<hr>
-
 <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups">Group Meditation Workshops</a></h3>
 
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/">All Offerings</h5>
+
 </div>
+
+---
 
 <br>
 
@@ -71,5 +69,5 @@ I offer free meditation workshops for community organizers, and sliding scale in
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <br>
   <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. If you have questions or concerns, address them here. Ready to get started?</p>
-  <h5 style="text-align: center;"><a href="https://forms.gle/your-form-link">Fill out the interest form</a></h5>
+  <h3 style="text-align: center;"><a href="https://forms.gle/your-form-link">Fill out the interest form</a></h3>
 </div>
