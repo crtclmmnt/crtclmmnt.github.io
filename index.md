@@ -20,13 +20,8 @@ We are living in the critical moment. Despite our memories of the past, and our 
 The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience—so that you can see the world and its problems with clarity and without bias. 
 
 A future where we win starts now, in the critical moment.   
- 
 
 <h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
-
-<br>
-
----
 
 <br>
 
@@ -46,10 +41,6 @@ A future where we win starts now, in the critical moment.
     </ul>
   </div>
 </div>
-
-<br>
-
----
 
 <br>
 
@@ -109,10 +100,10 @@ A future where we win starts now, in the critical moment.
 
 ---
 
-<h1>I Want to Hear From You</h1>
 <br>
 <div style="max-width: 725px; margin: 0 auto;">
-<p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
+  <h1>I Want to Hear From You</h1>
+  <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
 <br>
-<strong><a href="https://forms.gle/your-form-link">Fill out the interest form</a></strong>
+  <strong><a href="https://forms.gle/your-form-link">Fill out the interest form</a></strong>
 </div>
