@@ -35,7 +35,7 @@ A future where we win starts now, in the critical moment.
     <img src="/images/bio1.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="250" style="margin-top: 0px;">
   </div>
   
-  <div class="services-content" style="max-width: 500px;">
+  <div class="services-content" style="max-width: 550px;">
     <ul>
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
 <p>I started my own meditation practice a little over 2 years ago. At the time I was despairing about the state of our world, to the extent that I gave up on political organizing.</p>
