@@ -31,7 +31,6 @@ A future where we win starts now, in the critical moment.
   
   <div class="services-content" style="max-width: 500px;">
     <ul>
-      <li>
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
 <p>I started my own meditation practice a little over 2 years ago. At the time I was despairing about the state of our world, to the extent that I gave up on political organizing. It's not that I didn't want to get organized, or that I didn't see any value to it. I was just so paralyzed by anxiety on a weekly if not daily basis that organizing felt like admitting to myself that the world was ending. I was especially frustrated at the way Climate Change seemed to be a distraction in most organizing spaces. </p>
 
