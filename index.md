@@ -25,6 +25,10 @@ A future where we win starts now, in the critical moment.
 
 <br>
 
+---
+
+<br>
+
 <div class="services-layout">
   <div>
     <img src="/images/bio1.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="250" style="margin-top: 0px;">
@@ -60,10 +64,6 @@ A future where we win starts now, in the critical moment.
 
 <h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Learn More</a></h5>
 </div>
-
-<br>
-
----
 
 <br>
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
