@@ -301,9 +301,9 @@ hr {
 hr.short {
   border: none;
   height: 10px;
-  background: linear-gradient(to right, $peach, $rose, $darkRose);
+  background: $darkRose;
   margin: 0.5em auto;
-  width: 50px;
+  width: 100px;
 }
 
 
