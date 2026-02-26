@@ -22,7 +22,13 @@ The goal of this project is to empower people who are rising to the occasion of 
 A future where we win starts now, in the critical moment.   
  
 
-**[Read the Introduction](https://thecriticalmoment.org/introducing-the-critical-moment/)**
+<h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
+
+<br>
+
+---
+
+<br>
 
 <div class="services-layout">
   <div>
@@ -42,11 +48,8 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
-<br>
 
 ---
-
-<br>
 
 <br>
 
