@@ -26,7 +26,7 @@ A future where we win starts now, in the critical moment.
 
 <div class="services-layout">
   <div>
-    <img src="/images/bio2.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="300" style="margin-top: 0px;">
+    <img src="/images/bio1.JPG" alt="A portrait of Joshua, the founder of The Critical Moment." width="250" style="margin-top: 0px;">
   </div>
   
   <div class="services-content" style="max-width: 500px;">
