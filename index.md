@@ -33,14 +33,12 @@ A future where we win starts now, in the critical moment.
   </div>
   
   <div class="services-content" style="max-width: 550px;">
-    <ul>
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
 <p>I started my own meditation practice a little over 2 years ago. At the time I was so paralyzed by anxiety about the state of our world that I gave up on political organizing.</p>
 <p>It's not that I didn't want to get organized, or that I didn't see any value to it. I wanted to hide from my worries, and showing up felt like admitting to myself that the world was ending.</p>
 <p>Building a meditation practice helped me live with my anxiety without being ruled by it. It helped me return to organizing with confidence of mind and clarity of vision. Once I had experienced the transformative benefits of a mindfulness meditation practice, I realized it was something I wanted to share with other organizers.</p>
 <p>Thus, the Critical Moment was born.</p>
         <h5><a href="https://thecriticalmoment.org/about/">Read More</a></h5>
-    </ul>
   </div>
 </div>
 
@@ -48,48 +46,30 @@ A future where we win starts now, in the critical moment.
 
 ---
 
-<h1>Build A Meditation Practice</h1>
-I have three main offerings that you can read about below. My primary focus is the first offering, Meditation for Liberation, which is a free workshop available to community organizations and community organizers. 
-For people interested in more personalized instruction for individuals or groups, please see my other offerings. 
+<h1 style="text-align: center;">Build A Meditation Practice</h1>
+I offer free meditation workshops for community organizers, and sliding scale individual and group instruction for those seeking more personalized instruction and discussion.
 
 <div style="max-width: 725px; margin: 0 auto;">
 
 <hr>
 
-<h3>Meditation for Liberation</h3>
-<details>
-<summary><strong>see more</strong></summary>
-A brief description of this offering, and an invitation to read the full description.
-<h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Read the full description</a></h5>
-</details>
+<h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops">Meditation or Liberation: Free Workshops for Community Organizers</a></h3>
 
 <hr>
 
-<h3>Individual Meditation Instruction</h3>
-<details>
-<summary><strong>see more</strong></summary>
-A brief description of this offering, and an invitation to read the full description.
-<h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Read the full description</a></h5>
-</details>
+<h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
 
 <hr>
 
-<h3>Group Meditation Workshops</h3>
-<details>
-<summary><strong>see more</strong></summary>
-A brief description of this offering, and an invitation to read the full description.
-<h5><a href="https://thecriticalmoment.org/offerings#large-groups">Read the full description</a></h5>
-</details>
+<h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups">Group Meditation Workshops</a></h3>
 
 </div>
 
----
-
-
 <br>
+
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
-  <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
-<br>
+  <br>
+  <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. If you have questions or concerns, address them here. Ready to get started?</p>
   <h5 style="text-align: center;"><a href="https://forms.gle/your-form-link">Fill out the interest form</a></h5>
 </div>
