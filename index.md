@@ -35,9 +35,9 @@ A future where we win starts now, in the critical moment.
   <div class="services-content" style="max-width: 550px;">
     <ul>
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
-<p>I started my own meditation practice a little over 2 years ago. At the time I was despairing about the state of our world, to the extent that I gave up on political organizing.</p>
-<p>It's not that I didn't want to get organized, or that I didn't see any value to it. I was just so paralyzed by anxiety on a weekly if not daily basis that organizing felt like admitting to myself that the world was ending.</p>
-<p>Building a meditation practice helped me live with my anxiety in a way that prevented me from being paralyzed by it. It helped me return to organizing with confidence of mind and clarity of vision. Once I had experienced the transformative benefits of a mindfulness meditation practice, I realized it was something I wanted to share with other organizers.</p>
+<p>I started my own meditation practice a little over 2 years ago. At the time I was so paralyzed by anxiety about the state of our world that I gave up on political organizing.</p>
+<p>It's not that I didn't want to get organized, or that I didn't see any value to it. I wanted to hide from my worries, and showing up felt like admitting to myself that the world was ending.</p>
+<p>Building a meditation practice helped me live with my anxiety without being ruled by it. It helped me return to organizing with confidence of mind and clarity of vision. Once I had experienced the transformative benefits of a mindfulness meditation practice, I realized it was something I wanted to share with other organizers.</p>
 <p>Thus, the Critical Moment was born.</p>
         <h5><a href="https://thecriticalmoment.org/about/">Read More</a></h5>
     </ul>
@@ -45,6 +45,8 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
+
+---
 
 <h1>Build A Meditation Practice</h1>
 I have three main offerings that you can read about below. My primary focus is the first offering, Meditation for Liberation, which is a free workshop available to community organizations and community organizers. 
@@ -54,11 +56,10 @@ For people interested in more personalized instruction for individuals or groups
 
 <h3>Meditation for Liberation</h3>
 <h4>Free Mindfulness Meditation Workshops for Community Organizers</h4>
-<details>
-<summary><strong>Read more</strong></summary>
 A brief description of this offering, and an invitation to read the full description.
 <h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Read the full description</a></h5>
-</details>
+
+<hr>
 
 <h3>Individual Meditation Instruction</h3>
 <details>
@@ -66,6 +67,8 @@ A brief description of this offering, and an invitation to read the full descrip
 A brief description of this offering, and an invitation to read the full description.
 <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Read the full description</a></h5>
 </details>
+
+<hr>
 
 <h3>Group Meditation Workshops</h3>
 <details>
@@ -76,62 +79,8 @@ A brief description of this offering, and an invitation to read the full descrip
 
 </div>
 
-<div style="position: relative; width: calc(100% + 40px); margin-left: -20px; max-width: 900px;">
-  <img src="/images/block2.JPG" alt="foggy hills" style="width: 100%; display: block; min-height: 150px; object-fit: cover;">
-  <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px 20px; box-sizing: border-box;">
-    <h1 style="color: white; margin: 0; font-weight: 500; text-shadow: none;">Meditation <br class="mobile-break">for Liberation</h1>
-  </div>
-</div>
-
-<div style="width: 100%; margin: 0 auto;">
-<p>A meditation practice can make you more present, patient, and disciplined. It can make you less reactive, distracted, and confused. It gives you clarity to see the world without judgement or bias, and it can help you reconnect with your role in the world’s ecology. But it only works if you learn the technique, and commit to the practice.</p>
-
-<p>Whether you’re a long time organizer or fresh on the scene, a meditation practice can help sustain you and make you more effective as you show up for your community.</p>
-
-<p>For these reasons, I offer free mindfulness meditation workshops to community organizations and community organizers.</p> 
-
-<h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Learn More</a></h5>
-</div>
-
-<br>
-
 ---
 
-<br>
-
-<h1 style="text-align: center;">Build A Meditation Practice</h1>
-
-<p style="max-width: 725px; margin: 0 auto;">Meditation is a practice that most people will benefit from, and if you're interested in cultivating your own practice, I want to help you.<br><br>While I offer free workshops to community organizations doing liberatory work, I also provide individual instruction and group workshops for those seeking more personalized instruction, offered at a sliding scale.</p>
-
-<div class="services-layout">
-  <div>
-    <img src="/images/block4.JPG" alt="A tree sitting at the top of a misty hill" width="300" style="margin-top: 0px;">
-  </div>
-  
-  <div class="services-content" style="max-width: 500px;">
-    <ul>
-      <li>
-        <h3 style="text-align: left; margin-bottom: 5px;">Individual Meditation Instruction</h3>
-<p>Individual meditation instruction is an opportunity to cultivate and deepen your meditation practice with the help of a guide. While it is possible to embark on this journey alone, it can be more fruitful and less confusing to bring along someone who has walked the path before you.</p>
-
-<p>Individual instruction is available to small groups (1-4 people) at one rate, so bring your friends!</p>
-
-<p><strong>$50-$120 per session</strong>, sliding scale. Please pay what feels sustainable for your circumstances.</p>
-        <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Learn More</a></h5>
-      </li>
-      <li>
-        <h3 style="text-align: left; margin-bottom: 5px;">Group Meditation Workshops</h3>
-<p>I offer group workshops for any group of people, whether that’s a workplace, a club, an affinity group, or just a big group of friends. These workshops range from 4 to 6 weeks, and the sessions vary in length.</p>
-<p>If you’re interested in a group workshop, please fill out the interest form. </p>
-        <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Learn More</a></h5>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<br>
-
----
 
 <br>
 <div style="max-width: 725px; margin: 0 auto;">
