@@ -54,16 +54,20 @@ For people interested in more personalized instruction for individuals or groups
 
 <div style="max-width: 725px; margin: 0 auto;">
 
+<hr>
+
 <h3>Meditation for Liberation</h3>
-<h4>Free Mindfulness Meditation Workshops for Community Organizers</h4>
+<details>
+<summary><strong>see more</strong></summary>
 A brief description of this offering, and an invitation to read the full description.
 <h5><a href="https://thecriticalmoment.org/offerings#free-workshops">Read the full description</a></h5>
+</details>
 
 <hr>
 
 <h3>Individual Meditation Instruction</h3>
 <details>
-<summary><strong>Read more</strong></summary>
+<summary><strong>see more</strong></summary>
 A brief description of this offering, and an invitation to read the full description.
 <h5><a href="https://thecriticalmoment.org/offerings#individual-instruction">Read the full description</a></h5>
 </details>
@@ -72,7 +76,7 @@ A brief description of this offering, and an invitation to read the full descrip
 
 <h3>Group Meditation Workshops</h3>
 <details>
-<summary><strong>Read more</strong></summary>
+<summary><strong>see more</strong></summary>
 A brief description of this offering, and an invitation to read the full description.
 <h5><a href="https://thecriticalmoment.org/offerings#large-groups">Read the full description</a></h5>
 </details>
@@ -84,8 +88,8 @@ A brief description of this offering, and an invitation to read the full descrip
 
 <br>
 <div style="max-width: 725px; margin: 0 auto;">
-  <h1>I Want to Hear From You</h1>
+  <h1 style="text-align: center;">I Want to Hear From You</h1>
   <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
 <br>
-  <strong><a href="https://forms.gle/your-form-link">Fill out the interest form</a></strong>
+  <h5 style="text-align: center;"><a href="https://forms.gle/your-form-link">Fill out the interest form</a></h5>
 </div>
