@@ -81,7 +81,7 @@ A future where we win starts now, in the critical moment.
 
 <div class="services-layout">
   <div>
-    <img src="/images/critmomnotxt.png" alt="The Critical Moment logo, displaying a person in a sitting meditation, holding a rose in their right hand, and a loaf of bread in their left hand." width="300" style="margin-top: 0px;">
+    <img src="/images/block4.JPG" alt="A tree sitting at the top of a misty hill" width="300" style="margin-top: 0px;">
   </div>
   
   <div class="services-content" style="max-width: 500px;">
