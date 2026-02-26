@@ -301,7 +301,7 @@ hr {
 hr.short {
   border: none;
   height: 10px;
-  background: linear-gradient(to left, $peach, $peach, $rose, $rose, $darkRose, $darkBlue);
+  background: linear-gradient(to right, $peach, $rose, $darkRose);
   margin: 0.5em auto;
   width: 50px;
 }
