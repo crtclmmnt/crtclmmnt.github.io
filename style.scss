@@ -177,8 +177,9 @@ html {
 
 body {
 	background: $white;
-  font: 20px/1.4 'Roboto';
+  font: 18px/1.4 'Roboto';
   font-weight: 400;
+  font-style: bold;
   color: $darkGray;
   text-align: justify;
 
@@ -229,7 +230,7 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   color: $gray;
 
@@ -240,7 +241,7 @@ h4 {
 }
 
 h5 {
-  font-size: 22px;
+  font-size: 24px;
   font-style: bold;
 }
 
