@@ -64,6 +64,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Alan Watts</p>
     </div>
   </div>
+
+  <br>
+
   <h3>Ecology & Earth Systems</h3>
   <div class="book-grid">
     <div class="book-card">
@@ -83,6 +86,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Merlin Sheldrake</p>
     </div>
   </div>
+
+  <br>
+
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
@@ -126,6 +132,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Walter Rodney</p>
     </div>
   </div>
+
+  <br>
+
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
@@ -145,6 +154,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Richard Schwartz</p>
     </div>
   </div>
+
+  <br>
+
   <h3>Systems Thinking & Philosophy</h3>
   <div class="book-grid">
     <div class="book-card">
