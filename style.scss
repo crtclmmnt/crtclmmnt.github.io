@@ -694,7 +694,7 @@ nav {
   h5 {
     margin: 0 0 0.25rem 0;
     font-style: italic;
-    color: $darkGray;
+    color: $black;
     font-size: 1.4rem; // CUSTOMIZE: adjust title size
   }
 
@@ -702,7 +702,7 @@ nav {
     margin: 0;
     font-size: 1.1rem; // CUSTOMIZE: adjust author name size
     font-weight: bold;
-    color: $black; // CUSTOMIZE: adjust author name color
+    color: $darkGray; // CUSTOMIZE: adjust author name color
   }
 }
 
