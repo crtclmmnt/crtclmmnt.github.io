@@ -124,10 +124,6 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Michael Parenti</p>
     </div>
     <div class="book-card">
-      <h5>Ministry for the Future</h5>
-      <p>Kim Stanley Robinson</p>
-    </div>
-    <div class="book-card">
       <h5>How Europe Underdeveloped Africa</h5>
       <p>Walter Rodney</p>
     </div>
@@ -168,8 +164,21 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p>Jeremy Lent</p>
     </div>
   </div>
-</div>
 
+  <br>
+
+  <h3>Inspiring Fiction</h3>
+  <div class="book-grid">
+    <div class="book-card">
+      <h5>The Ministry for the Future</h5>
+      <p>Kim Stanley Robinson</p>
+    </div>
+    <div class="book-card">
+      <h5>The Dispossessed</h5>
+      <p>Ursula K. Le Guin</p>
+    </div>
+  </div>
+</div>
 <br>
 
 ## Contact Me
