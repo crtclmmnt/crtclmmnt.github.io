@@ -679,7 +679,7 @@ nav {
 // Book recommendation grid and cards
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); // CUSTOMIZE: increase minmax first value to make cards wider, decrease for more columns
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); // CUSTOMIZE: increase minmax first value to make cards wider, decrease for more columns
   gap: 1rem; // CUSTOMIZE: increase for more space between cards
   margin-bottom: 2rem;
 }
@@ -690,16 +690,15 @@ nav {
   padding: 1rem; // CUSTOMIZE: increase for more breathing room inside cards
   background-color: #fafafa; // CUSTOMIZE: change to a light tint of your brand color if desired
 
-  h6 {
+  h5 {
     margin: 0 0 0.25rem 0;
-    font-size: 0.9rem; // CUSTOMIZE: adjust title size
-    font-weight: bold;
+    font-size: 1rem; // CUSTOMIZE: adjust title size
   }
 
   p {
     margin: 0;
-    font-size: 0.8rem; // CUSTOMIZE: adjust author name size
-    color: #666; // CUSTOMIZE: adjust author name color
+    font-size: 0.9rem; // CUSTOMIZE: adjust author name size
+    color: $darkRose; // CUSTOMIZE: adjust author name color
   }
 }
 

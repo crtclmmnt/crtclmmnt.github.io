@@ -48,124 +48,118 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 
 <div style="max-width: 750px; margin: 0 auto;">
-
   <h3>Contemplative Practice & Spirituality</h3>
   <!-- CUSTOMIZE: add or remove book-card divs to add or remove books -->
   <div class="book-grid">
     <div class="book-card">
-      <h6>The Wisdom of No Escape</h6>
+      <h5>The Wisdom of No Escape</h5>
       <p>Pema Chödrön</p>
     </div>
     <div class="book-card">
-      <h6>World as Lover, World as Self</h6>
+      <h5>World as Lover, World as Self</h5>
       <p>Joanna Macy</p>
     </div>
     <div class="book-card">
-      <h6>Cutting Through Spiritual Materialism</h6>
+      <h5>Cutting Through Spiritual Materialism</h5>
       <p>Chögyam Trungpa Rinpoche</p>
     </div>
     <div class="book-card">
-      <h6>The Book</h6>
+      <h5>The Book</h5>
       <p>Alan Watts</p>
     </div>
   </div>
-
   <h3>Ecology & Earth Systems</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h6>The Unsettling of America</h6>
+      <h5>The Unsettling of America</h5>
       <p>Wendell Berry</p>
     </div>
     <div class="book-card">
-      <h6>Becoming Earth</h6>
+      <h5>Becoming Earth</h5>
       <p>Ferris Jabr</p>
     </div>
     <div class="book-card">
-      <h6>Braiding Sweetgrass</h6>
+      <h5>Braiding Sweetgrass</h5>
       <p>Robin Wall Kimmerer</p>
     </div>
     <div class="book-card">
-      <h6>Entangled Life</h6>
+      <h5>Entangled Life</h5>
       <p>Merlin Sheldrake</p>
     </div>
   </div>
-
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h6>The New Jim Crow</h6>
+      <h5>The New Jim Crow</h5>
       <p>Michelle Alexander</p>
     </div>
     <div class="book-card">
-      <h6>Wretched of the Earth</h6>
+      <h5>Wretched of the Earth</h5>
       <p>Frantz Fanon</p>
     </div>
     <div class="book-card">
-      <h6>Caliban and the Witch</h6>
+      <h5>Caliban and the Witch</h5>
       <p>Silvia Federici</p>
     </div>
     <div class="book-card">
-      <h6>Capitalist Realism</h6>
+      <h5>Capitalist Realism</h5>
       <p>Mark Fisher</p>
     </div>
     <div class="book-card">
-      <h6>Pedagogy of the Oppressed</h6>
+      <h5>Pedagogy of the Oppressed</h5>
       <p>Paulo Freire</p>
     </div>
     <div class="book-card">
-      <h6>Debt: The First 5,000 Years</h6>
+      <h5>Debt: The First 5,000 Years</h5>
       <p>David Graeber</p>
     </div>
     <div class="book-card">
-      <h6>The Hundred Years' War on Palestine</h6>
+      <h5>The Hundred Years' War on Palestine</h5>
       <p>Rashid Khalidi</p>
     </div>
     <div class="book-card">
-      <h6>Blackshirts and Reds</h6>
+      <h5>Blackshirts and Reds</h5>
       <p>Michael Parenti</p>
     </div>
     <div class="book-card">
-      <h6>Ministry for the Future</h6>
+      <h5>Ministry for the Future</h5>
       <p>Kim Stanley Robinson</p>
     </div>
     <div class="book-card">
-      <h6>How Europe Underdeveloped Africa</h6>
+      <h5>How Europe Underdeveloped Africa</h5>
       <p>Walter Rodney</p>
     </div>
   </div>
-
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h6>Humankind: A Hopeful History</h6>
+      <h5>Humankind: A Hopeful History</h5>
       <p>Rutger Bregman</p>
     </div>
     <div class="book-card">
-      <h6>In the Realm of Hungry Ghosts</h6>
+      <h5>In the Realm of Hungry Ghosts</h5>
       <p>Gabor Maté</p>
     </div>
     <div class="book-card">
-      <h6>The Master and His Emissary</h6>
+      <h5>The Master and His Emissary</h5>
       <p>Iain McGilchrist</p>
     </div>
     <div class="book-card">
-      <h6>No Bad Parts</h6>
+      <h5>No Bad Parts</h5>
       <p>Richard Schwartz</p>
     </div>
   </div>
-
   <h3>Systems Thinking & Philosophy</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h6>The Tao of Physics</h6>
+      <h5>The Tao of Physics</h5>
       <p>Fritjof Capra</p>
     </div>
     <div class="book-card">
-      <h6>The Patterning Instinct</h6>
+      <h5>The Patterning Instinct</h5>
       <p>Jeremy Lent</p>
     </div>
   </div>
-
 </div>
 
 <br>
