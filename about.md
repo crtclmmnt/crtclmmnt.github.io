@@ -63,7 +63,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
     </div>
     <div class="book-card">
-      <h5>The Book:<br><span style=" font-size: 1.25rem;">On the Taboo Against Knowing Who You Are</span></h5>
+      <h5>The Book:<br><span style=" font-size: 1.1rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
       <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
     </div>
@@ -130,7 +130,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
     <div class="book-card">
-      <h5>Blackshirts and Reds:<br>Rational Fascism and the Overthrow of Communism</h5>
+      <h5>Blackshirts and Reds:<br><span style=" font-size: 1.1rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
@@ -156,7 +156,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-author">Richard Schwartz</p>
       <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
     </div>
-      <h5>Humankind:<br>A Hopeful History</h5>
+      <h5>Humankind:<br><span style=" font-size: 1.1rem;">A Hopeful History</span></h5>
       <p class="book-author">Rutger Bregman</p>
       <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
     </div>
