@@ -63,7 +63,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
     </div>
     <div class="book-card">
-      <h5>The Book:<br><span style=" font-size: 1.1rem;">On the Taboo Against Knowing Who You Are</span></h5>
+      <h5>The Book:<span style=" font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
       <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
     </div>
@@ -100,7 +100,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Caliban and the Witch:<br>Women, the Body and Primitive Accumulation</h5>
+      <h5>Caliban and the Witch:<span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women and the destruction of the commons.</p>
     </div>
@@ -115,7 +115,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Freire argues that education is never neutral — it either domesticates or liberates.</p>
     </div>
     <div class="book-card">
-      <h5>Debt:<br>The First 5,000 Years</h5>
+      <h5>Debt:<br><span style=" font-size: 1.2rem;">The First 5,000 Years</span></h5>
       <p class="book-author">David Graeber</p>
       <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable.</p>
     </div>
@@ -130,7 +130,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
     <div class="book-card">
-      <h5>Blackshirts and Reds:<br><span style=" font-size: 1.1rem;">Rational Fascism and the Overthrow of Communism</span></h5>
+      <h5>Blackshirts and Reds:<span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
@@ -146,7 +146,6 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-    <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
       <p class="book-description">McGilchrist argues that the left hemisphere of the brain has staged a kind of coup over Western civilization — dense but worth it.</p>
@@ -156,7 +155,8 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-author">Richard Schwartz</p>
       <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
     </div>
-      <h5>Humankind:<br><span style=" font-size: 1.1rem;">A Hopeful History</span></h5>
+    <div class="book-card">
+      <h5>Humankind:<br><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
       <p class="book-author">Rutger Bregman</p>
       <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
     </div>
