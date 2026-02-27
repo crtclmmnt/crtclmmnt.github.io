@@ -688,7 +688,7 @@ nav {
   border: 2px solid $darkMint; // CUSTOMIZE: change thickness by adjusting the px value
   border-radius: 10px; // CUSTOMIZE: increase for rounder corners, decrease for sharper
   padding: 1rem; // CUSTOMIZE: increase for more breathing room inside cards
-  background-color: #fafafa; // CUSTOMIZE: change to a light tint of your brand color if desired
+  background-color: $babyYellow; // CUSTOMIZE: change to a light tint of your brand color if desired
 
   h5 {
     margin: 0 0 0.25rem 0;
