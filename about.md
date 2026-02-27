@@ -30,17 +30,13 @@ So, I started meditating. It quickly became clear to me that this practice was g
 
 <p>The most valuable lesson I’ve learned on my journey with meditation has been letting go of certainty and embracing acceptance. I used to think being consumed by the world’s problems was the same as confronting them. But the paralysis that came from that was indistinguishable from complacency. Softening my convictions slowly gave me the confidence to act. Organizing is hard when you’re panicked, it’s easy when you’re grounded.</p>
 
-The only certainty I have left is that this practice is valuable, especially for the people doing or trying to do the hard work of fomenting social change. So I’ve become a certified meditation teacher, with the goal of cultivating this practice with other people who want to make the world a better, safer, more just place for all living beings. 
+The only certainty I have left is that this practice is valuable, especially for the people doing or trying to do the hard work of fomenting social change. So I became a certified meditation teacher after studying with David Nichtern and many other wonderful teachers at Dharma Moon. Now my only goal is to cultivate this practice with other people who want to make the world a better, safer, more just place for all living beings. 
 
 The world doesn’t need people to worry over her, she needs people who have the stability and confidence to fight for her. She doesn’t need witnesses, she needs collaborators. 
 
 <br>
 
-## More Information
-
-I received my Mindfulness Meditation Teacher certificate from Dharma Moon, after studying with David Nichtern and the many other wonderful teachers in that organization. I have degrees in Economics and Sustainable Agriculture & Food Systems, so I’m not trained in religious studies, philosophy, or political science. I’m not a therapist. I’ve been involved in various kinds of political organizing since 2020, most recently through the Democratic Socialists of America. If you’re interested in getting involved in political organizing work, I’m happy to point you in the right direction. 
-
-This site has two main components: my **[Blog](https://thecriticalmoment.org/blog/)**, where I write about radical politics, contemplative wisdom, and what it means to have an integrated ecological identity, and my **[Offerings](https://thecriticalmoment.org/offerings/)**, which include free mindfulness meditation workshops for community organizations, individual meditation instruction, and meditation workshops for large groups. If any of these things interest you, or if you have questions, please fill out the interest form below. 
+<hr>
 
 <br>
 
