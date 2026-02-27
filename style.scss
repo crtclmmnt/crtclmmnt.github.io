@@ -687,7 +687,7 @@ nav {
 .book-card {
   border: 3px solid $darkRose; // CUSTOMIZE: change thickness by adjusting the px value
   border-radius: 10px; // CUSTOMIZE: increase for rounder corners, decrease for sharper
-  padding: 1rem 1rem 2.5rem; // CUSTOMIZE: increase for more breathing room inside cards, last value controls bottom padding.
+  padding: 1rem 1rem 2.5rem; // CUSTOMIZE: increase for more breathing room inside cards, last value controls bottom padding
   background-color: $white; // CUSTOMIZE: change to a light tint of your brand color if desired
   text-align: left;
 
@@ -698,11 +698,20 @@ nav {
     font-size: 1.4rem; // CUSTOMIZE: adjust title size
   }
 
-  p {
-    margin: 0;
+  .book-author {
+    margin: 0 0 0.5rem 0;
     font-size: 1.1rem; // CUSTOMIZE: adjust author name size
     font-weight: bold;
     color: $darkGray; // CUSTOMIZE: adjust author name color
+  }
+
+  .book-description {
+    margin: 0;
+    font-size: 0.9rem; // CUSTOMIZE: adjust description size
+    font-weight: normal;
+    color: $darkGray; // CUSTOMIZE: adjust description color
+    font-style: italic; // CUSTOMIZE: remove if you prefer non-italic descriptions
+    line-height: 1.4; // CUSTOMIZE: adjust for more or less space between description lines
   }
 }
 
