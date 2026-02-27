@@ -63,7 +63,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
     </div>
     <div class="book-card">
-      <h5>The Book</h5>
+      <h5>The Book:<br>On the Taboo Against Knowing Who You Are</h5>
       <p class="book-author">Alan Watts</p>
       <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
     </div>
@@ -110,7 +110,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Fanon understood that colonialism doesn't just steal land and labor — it colonizes the mind.</p>
     </div>
     <div class="book-card">
-      <h5>Caliban and the Witch</h5>
+      <h5>Caliban and the Witch:<br>Women, the Body and Primitive Accumulation</h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women and the destruction of the commons.</p>
     </div>
@@ -125,7 +125,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Freire argues that education is never neutral — it either domesticates or liberates.</p>
     </div>
     <div class="book-card">
-      <h5>Debt: The First 5,000 Years</h5>
+      <h5>Debt:<br>The First 5,000 Years</h5>
       <p class="book-author">David Graeber</p>
       <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable.</p>
     </div>
@@ -135,7 +135,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A rigorous and necessary history of Palestinian dispossession, told by one of the leading scholars of the Arab world.</p>
     </div>
     <div class="book-card">
-      <h5>Blackshirts and Reds</h5>
+      <h5>Blackshirts and Reds:<br>Rational Fascism and the Overthrow of Communism</h5>
       <p class="book-author">Michael Parenti</p>
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
@@ -151,7 +151,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Humankind: A Hopeful History</h5>
+      <h5>Humankind:<br>A Hopeful History</h5>
       <p class="book-author">Rutger Bregman</p>
       <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
     </div>
