@@ -63,7 +63,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
     </div>
     <div class="book-card">
-      <h5>The Book:<span style=" font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
+      <h5>The Book:<br><span style=" font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
       <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
     </div>
@@ -100,7 +100,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Caliban and the Witch:<span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
+      <h5>Caliban and the Witch:<br><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women and the destruction of the commons.</p>
     </div>
@@ -130,7 +130,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
     <div class="book-card">
-      <h5>Blackshirts and Reds:<span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
+      <h5>Blackshirts and Reds:<br><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
