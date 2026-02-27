@@ -56,7 +56,7 @@ A future where we win starts now, in the critical moment.
 
 <p>I offer free meditation workshops for community organizers, and sliding scale individual and group instruction for those seeking more personalized instruction and discussion.</p>
 <div style="max-width: 600px; margin: 0 auto;">
-    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops">Meditation for Liberation:<br><span style="font-size: 22px;">Free Workshops for Community Organizers</span></a></h3>
+    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops"><span style="font-size: 22px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Workshops for Community Organizers</span></a></h3>
     <hr class="short">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
     <hr class="short">
