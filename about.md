@@ -45,67 +45,128 @@ This site has two main components: my **[Blog](https://thecriticalmoment.org/blo
 <br>
 
 <h2>Book Recommendations</h2>
-The wisdom that comes from a meditation practice is something that can’t readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:
+<p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 
-<details>
-<summary><strong>See more</strong></summary>
 <div style="max-width: 750px; margin: 0 auto;">
 
-<h3>Contemplative Practice & Spirituality:</h3>
-<div class="book-columns">
-<ul>
-<li><h6>The Wisdom of No Escape</h6><br>by Pema Chödrön</li>
-<li><h6>World as Lover, World as Self</h6><br>by Joanna Macy</li>
-<li><h6>Cutting Through Spiritual Materialism</h6><br>by Chögyam Trungpa Rinpoche</li>
-<li><h6>The Book</h6><br>by Alan Watts</li>
-</ul>
-</div>
+  <h3>Contemplative Practice & Spirituality</h3>
+  <!-- CUSTOMIZE: add or remove book-card divs to add or remove books -->
+  <div class="book-grid">
+    <div class="book-card">
+      <h6>The Wisdom of No Escape</h6>
+      <p>Pema Chödrön</p>
+    </div>
+    <div class="book-card">
+      <h6>World as Lover, World as Self</h6>
+      <p>Joanna Macy</p>
+    </div>
+    <div class="book-card">
+      <h6>Cutting Through Spiritual Materialism</h6>
+      <p>Chögyam Trungpa Rinpoche</p>
+    </div>
+    <div class="book-card">
+      <h6>The Book</h6>
+      <p>Alan Watts</p>
+    </div>
+  </div>
 
-<h3>Ecology & Earth Systems:</h3>
-<div class="book-columns">
-<ul>
-<li><h6>The Unsettling of America</h6><br>by Wendell Berry</li>
-<li><h6>Becoming Earth</h6><br>by Ferris Jabr</li>
-<li><h6>Braiding Sweetgrass</h6><br>by Robin Wall Kimmerer</li>
-<li><h6>Entangled Life</h6><br>by Merlin Sheldrake</li>
-</ul>
-</div>
+  <h3>Ecology & Earth Systems</h3>
+  <div class="book-grid">
+    <div class="book-card">
+      <h6>The Unsettling of America</h6>
+      <p>Wendell Berry</p>
+    </div>
+    <div class="book-card">
+      <h6>Becoming Earth</h6>
+      <p>Ferris Jabr</p>
+    </div>
+    <div class="book-card">
+      <h6>Braiding Sweetgrass</h6>
+      <p>Robin Wall Kimmerer</p>
+    </div>
+    <div class="book-card">
+      <h6>Entangled Life</h6>
+      <p>Merlin Sheldrake</p>
+    </div>
+  </div>
 
-<h3>Politics & Social Change:</h3>
-<div class="book-columns">
-<ul>
-<li><h6>The New Jim Crow</h6><br>by Michelle Alexander</li>
-<li><h6>Wretched of the Earth</h6><br>by Frantz Fanon</li>
-<li><h6>Caliban and the Witch</h6><br>by Silvia Federici</li>
-<li><h6>Capitalist Realism</h6><br>by Mark Fisher</li>
-<li><h6>Pedagogy of the Oppressed</h6><br>by Paulo Freire</li>
-<li><h6>Debt</h6><br>by David Graeber</li>
-<li><h6>The Hundred Years' War on Palestine</h6><br>by Rashid Khalidi</li>
-<li><h6>Blackshirts and Reds</h6><br>by Michael Parenti</li>
-<li><h6>Ministry for the Future</h6><br>by Kim Stanley Robinson</li>
-<li><h6>How Europe Underdeveloped Africa</h6><br>by Walter Rodney</li>
-</ul>
-</div>
+  <h3>Politics & Social Change</h3>
+  <div class="book-grid">
+    <div class="book-card">
+      <h6>The New Jim Crow</h6>
+      <p>Michelle Alexander</p>
+    </div>
+    <div class="book-card">
+      <h6>Wretched of the Earth</h6>
+      <p>Frantz Fanon</p>
+    </div>
+    <div class="book-card">
+      <h6>Caliban and the Witch</h6>
+      <p>Silvia Federici</p>
+    </div>
+    <div class="book-card">
+      <h6>Capitalist Realism</h6>
+      <p>Mark Fisher</p>
+    </div>
+    <div class="book-card">
+      <h6>Pedagogy of the Oppressed</h6>
+      <p>Paulo Freire</p>
+    </div>
+    <div class="book-card">
+      <h6>Debt: The First 5,000 Years</h6>
+      <p>David Graeber</p>
+    </div>
+    <div class="book-card">
+      <h6>The Hundred Years' War on Palestine</h6>
+      <p>Rashid Khalidi</p>
+    </div>
+    <div class="book-card">
+      <h6>Blackshirts and Reds</h6>
+      <p>Michael Parenti</p>
+    </div>
+    <div class="book-card">
+      <h6>Ministry for the Future</h6>
+      <p>Kim Stanley Robinson</p>
+    </div>
+    <div class="book-card">
+      <h6>How Europe Underdeveloped Africa</h6>
+      <p>Walter Rodney</p>
+    </div>
+  </div>
 
-<h3>Psychology & Human Nature:</h3>
-<div class="book-columns">
-<ul>
-<li><h6>Humankind: A Hopeful History</h6><br>by Rutger Bregman</li>
-<li><h6>In the Realm of Hungry Ghosts</h6><br>by Gabor Maté</li>
-<li><h6>The Master and His Emissary</h6><br>by Iain McGilchrist</li>
-<li><h6>No Bad Parts</h6><br>by Richard Schwartz</li>
-</ul>
-</div>
+  <h3>Psychology & Human Nature</h3>
+  <div class="book-grid">
+    <div class="book-card">
+      <h6>Humankind: A Hopeful History</h6>
+      <p>Rutger Bregman</p>
+    </div>
+    <div class="book-card">
+      <h6>In the Realm of Hungry Ghosts</h6>
+      <p>Gabor Maté</p>
+    </div>
+    <div class="book-card">
+      <h6>The Master and His Emissary</h6>
+      <p>Iain McGilchrist</p>
+    </div>
+    <div class="book-card">
+      <h6>No Bad Parts</h6>
+      <p>Richard Schwartz</p>
+    </div>
+  </div>
 
-<h3>Systems Thinking & Philosophy:</h3>
-<div class="book-columns">
-<ul>
-<li><h6>The Tao of Physics</h6><br>by Fritjof Capra</li>
-<li><h6>The Patterning Instinct</h6><br>by Jeremy Lent</li>
-</ul>
+  <h3>Systems Thinking & Philosophy</h3>
+  <div class="book-grid">
+    <div class="book-card">
+      <h6>The Tao of Physics</h6>
+      <p>Fritjof Capra</p>
+    </div>
+    <div class="book-card">
+      <h6>The Patterning Instinct</h6>
+      <p>Jeremy Lent</p>
+    </div>
+  </div>
+
 </div>
-</div>
-</details>
 
 <br>
 
