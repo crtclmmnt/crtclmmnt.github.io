@@ -48,14 +48,14 @@ The world doesn’t need people to worry over her, she needs people who have the
   <!-- CUSTOMIZE: add or remove book-card divs to add or remove books -->
   <div class="book-grid">
     <div class="book-card">
-      <h5>The Wisdom of No Escape</h5>
-      <p class="book-author">Pema Chödrön</p>
-      <p class="book-description">The path forward isn't about becoming a better version of yourself — it's about making friends with who you already are.</p>
-    </div>
-    <div class="book-card">
       <h5>World as Lover, World as Self</h5>
       <p class="book-author">Joanna Macy</p>
       <p class="book-description">Joanna Macy changed the way I understand my relationship to the Earth, and to the crisis we're living through.</p>
+    </div>
+    <div class="book-card">
+      <h5>The Wisdom of No Escape</h5>
+      <p class="book-author">Pema Chödrön</p>
+      <p class="book-description">The path forward isn't about becoming a better version of yourself — it's about making friends with who you already are.</p>
     </div>
     <div class="book-card">
       <h5>Cutting Through Spiritual Materialism</h5>
@@ -63,7 +63,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
     </div>
     <div class="book-card">
-      <h5>The Book:<br>On the Taboo Against Knowing Who You Are</h5>
+      <h5>The Book:<br><span style=" font-size: 1.25rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
       <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
     </div>
@@ -74,6 +74,11 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Ecology & Earth Systems</h3>
   <div class="book-grid">
     <div class="book-card">
+      <h5>Braiding Sweetgrass</h5>
+      <p class="book-author">Robin Wall Kimmerer</p>
+      <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources.</p>
+    </div>
+    <div class="book-card">
       <h5>The Unsettling of America</h5>
       <p class="book-author">Wendell Berry</p>
       <p class="book-description">Written in 1977, it reads like it was written yesterday — a devastating critique of industrial agriculture that is really a critique of how we've chosen to live.</p>
@@ -82,11 +87,6 @@ The world doesn’t need people to worry over her, she needs people who have the
       <h5>Becoming Earth</h5>
       <p class="book-author">Ferris Jabr</p>
       <p class="book-description">A reminder that the planet isn't just a backdrop for life — it is life, and we are part of it.</p>
-    </div>
-    <div class="book-card">
-      <h5>Braiding Sweetgrass</h5>
-      <p class="book-author">Robin Wall Kimmerer</p>
-      <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources.</p>
     </div>
     <div class="book-card">
       <h5>Entangled Life</h5>
@@ -100,24 +100,14 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>The New Jim Crow</h5>
-      <p class="book-author">Michelle Alexander</p>
-      <p class="book-description">Essential reading for understanding how the United States rebuilt a racial caste system after the civil rights movement without most people noticing.</p>
-    </div>
-    <div class="book-card">
-      <h5>Wretched of the Earth</h5>
-      <p class="book-author">Frantz Fanon</p>
-      <p class="book-description">Fanon understood that colonialism doesn't just steal land and labor — it colonizes the mind.</p>
-    </div>
-    <div class="book-card">
       <h5>Caliban and the Witch:<br>Women, the Body and Primitive Accumulation</h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women and the destruction of the commons.</p>
     </div>
     <div class="book-card">
-      <h5>Capitalist Realism</h5>
-      <p class="book-author">Mark Fisher</p>
-      <p class="book-description">Fisher asks why it's easier to imagine the end of the world than the end of capitalism — short, sharp, and hard to shake.</p>
+      <h5>Wretched of the Earth</h5>
+      <p class="book-author">Frantz Fanon</p>
+      <p class="book-description">Fanon understood that colonialism doesn't just steal land and labor — it colonizes the mind.</p>
     </div>
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
@@ -130,9 +120,14 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable.</p>
     </div>
     <div class="book-card">
-      <h5>The Hundred Years' War on Palestine</h5>
-      <p class="book-author">Rashid Khalidi</p>
-      <p class="book-description">A rigorous and necessary history of Palestinian dispossession, told by one of the leading scholars of the Arab world.</p>
+      <h5>Capitalist Realism</h5>
+      <p class="book-author">Mark Fisher</p>
+      <p class="book-description">Fisher asks why it's easier to imagine the end of the world than the end of capitalism — short, sharp, and hard to shake.</p>
+    </div>
+    <div class="book-card">
+      <h5>How Europe Underdeveloped Africa</h5>
+      <p class="book-author">Walter Rodney</p>
+      <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
     <div class="book-card">
       <h5>Blackshirts and Reds:<br>Rational Fascism and the Overthrow of Communism</h5>
@@ -140,9 +135,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
     <div class="book-card">
-      <h5>How Europe Underdeveloped Africa</h5>
-      <p class="book-author">Walter Rodney</p>
-      <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
+      <h5>The Hundred Years' War on Palestine</h5>
+      <p class="book-author">Rashid Khalidi</p>
+      <p class="book-description">A rigorous and necessary history of Palestinian dispossession, told by one of the leading scholars of the Arab world.</p>
     </div>
   </div>
 
@@ -151,15 +146,6 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Humankind:<br>A Hopeful History</h5>
-      <p class="book-author">Rutger Bregman</p>
-      <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
-    </div>
-    <div class="book-card">
-      <h5>In the Realm of Hungry Ghosts</h5>
-      <p class="book-author">Gabor Maté</p>
-      <p class="book-description">This book will change how you think about addiction, trauma, and compassion.</p>
-    </div>
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
@@ -170,6 +156,15 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-author">Richard Schwartz</p>
       <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
     </div>
+      <h5>Humankind:<br>A Hopeful History</h5>
+      <p class="book-author">Rutger Bregman</p>
+      <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
+    </div>
+    <div class="book-card">
+      <h5>In the Realm of Hungry Ghosts</h5>
+      <p class="book-author">Gabor Maté</p>
+      <p class="book-description">This book will change how you think about addiction, trauma, and compassion.</p>
+    </div>
   </div>
 
   <br>
@@ -177,14 +172,14 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Systems Thinking & Philosophy</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>The Tao of Physics</h5>
-      <p class="book-author">Fritjof Capra</p>
-      <p class="book-description">Capra noticed that modern physics and ancient Eastern philosophy were describing the same thing in different languages.</p>
-    </div>
-    <div class="book-card">
       <h5>The Patterning Instinct</h5>
       <p class="book-author">Jeremy Lent</p>
       <p class="book-description">Lent argues that the stories a civilization tells about its relationship to nature determine whether it survives.</p>
+    </div>
+    <div class="book-card">
+      <h5>The Tao of Physics</h5>
+      <p class="book-author">Fritjof Capra</p>
+      <p class="book-description">Capra noticed that modern physics and ancient Eastern philosophy were describing the same thing in different languages.</p>
     </div>
   </div>
 
