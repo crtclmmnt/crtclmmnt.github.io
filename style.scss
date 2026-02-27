@@ -685,7 +685,7 @@ nav {
 }
 
 .book-card {
-  border: 2px solid $darkMint; // CUSTOMIZE: change thickness by adjusting the px value
+  border: 2px solid $darkRose; // CUSTOMIZE: change thickness by adjusting the px value
   border-radius: 10px; // CUSTOMIZE: increase for rounder corners, decrease for sharper
   padding: 1rem; // CUSTOMIZE: increase for more breathing room inside cards
   background-color: $babyYellow; // CUSTOMIZE: change to a light tint of your brand color if desired
@@ -693,7 +693,7 @@ nav {
 
   h5 {
     margin: 0 0 0.25rem 0;
-    font-style: italics;
+    font-style: italic;
     color: $darkGray;
     font-size: 1.4rem; // CUSTOMIZE: adjust title size
   }
