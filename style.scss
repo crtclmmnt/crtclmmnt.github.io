@@ -689,17 +689,18 @@ nav {
   border-radius: 10px; // CUSTOMIZE: increase for rounder corners, decrease for sharper
   padding: 1rem; // CUSTOMIZE: increase for more breathing room inside cards
   background-color: $babyYellow; // CUSTOMIZE: change to a light tint of your brand color if desired
+  text-align: left;
 
   h5 {
     margin: 0 0 0.25rem 0;
     font-style: italics;
     color: $darkGray;
-    font-size: 1.2rem; // CUSTOMIZE: adjust title size
+    font-size: 1.4rem; // CUSTOMIZE: adjust title size
   }
 
   p {
     margin: 0;
-    font-size: 1rem; // CUSTOMIZE: adjust author name size
+    font-size: 1.1rem; // CUSTOMIZE: adjust author name size
     font-weight: bold;
     color: $black; // CUSTOMIZE: adjust author name color
   }
