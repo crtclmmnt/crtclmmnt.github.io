@@ -57,7 +57,9 @@ A future where we win starts now, in the critical moment.
 <p>I offer free meditation workshops for community organizers, and sliding scale individual and group instruction for those seeking more personalized instruction and discussion.</p>
 <div style="max-width: 600px; margin: 0 auto;">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops">Meditation for Liberation:<br>Free Workshops for Community Organizers</a></h3>
+    <hr class="short">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
+    <hr class="short">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups">Group Meditation Workshops</a></h3>
   <hr class="short">
     <h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/">All Offerings</a></h5>
@@ -75,7 +77,8 @@ A future where we win starts now, in the critical moment.
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <br>
-  <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace. Ready to get started?</p>
+  <p>No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop more stability, clarity, and inner peace.</p>
+  <p>Ready to get started?</p>
   <h3 style="text-align: center;"><a href="https://forms.gle/your-form-link">Fill out the interest form</a></h3>
 </div>
 
