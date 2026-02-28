@@ -49,7 +49,9 @@ permalink: /offerings/
   <div style="min-width: 220px; max-width: 260px;">
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
     <hr class="short">
-    <h3 style="margin-top: 0.25rem;">Sliding Scale · $50–$120 per session · Up to 4 people</h3>
+    <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
+    <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
+    <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
     <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
   </div>
   <div class="services-content">
@@ -69,7 +71,8 @@ permalink: /offerings/
   <div style="min-width: 220px; max-width: 260px;">
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
     <hr class="short">
-    <h3 style="margin-top: 0.25rem;">Sliding Scale · For workplaces, nonprofits, clubs, affinity groups, and more</h3>
+    <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
+    <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
     <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
   </div>
   <div class="services-content">
