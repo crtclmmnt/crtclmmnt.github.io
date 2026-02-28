@@ -18,7 +18,7 @@ permalink: /offerings/
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
-    <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+    <h3 style="margin-top: 0.25rem; font-size: 0.8rem;">Free Workshops for Community Organizations and Organizers</h3>
     <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
@@ -78,7 +78,7 @@ permalink: /offerings/
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
-    <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
+    <h3 style="margin-top: 0.25rem; font-size: 0.8rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
     <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
