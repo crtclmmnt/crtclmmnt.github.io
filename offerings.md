@@ -95,7 +95,11 @@ permalink: /offerings/
 
 <h2 id="faq">Frequently Asked Questions</h2>
 
+<hr class="short">
+
 <h3>About This Offering</h3>
+
+<div style="max-width: 725px; margin: 0 auto;">
 
 <details><summary><h6>Is this religious? Do I have to be Buddhist?</h6></summary>
 <p>Answer</p>
@@ -113,7 +117,11 @@ permalink: /offerings/
 <p>Answer</p>
 </details>
 
+</div>
+
 <h3>Getting Started</h3>
+
+<div style="max-width: 725px; margin: 0 auto;">
 
 <details><summary><h6>Do I need prior experience with meditation?</h6></summary>
 <p>Answer</p>
@@ -131,7 +139,11 @@ permalink: /offerings/
 <p>For beginners, 20 minutes a day is a great place to start. If 10 minutes is all you can manage, that's still worth doing. Regularity matters more than duration — a short daily practice is more valuable than a long occasional one. If you miss a day, don't beat yourself up. Just start again.</p>
 </details>
 
+</div>
+
 <h3>About the Practice</h3>
+
+<div style="max-width: 725px; margin: 0 auto;">
 
 <details><summary><h6>My mind won't stop racing. Am I doing it wrong?</h6></summary>
 <p>You're not doing it wrong — a busy mind is exactly why most people start meditating. The practice isn't about stopping your thoughts. It's about noticing when you've gotten lost in them, labeling them "thinking," and gently returning to your breath. The noticing and coming back is the practice. It doesn't matter how many times you wander — what matters is that you keep returning.</p>
@@ -152,3 +164,5 @@ permalink: /offerings/
 <details><summary><h6>Can I meditate lying down or while walking?</h6></summary>
 <p>Sitting upright is recommended because the posture itself supports the quality of being both relaxed and awake. That said, you can bring mindfulness to any activity — walking, eating, even doing the dishes. Think of formal sitting practice and informal mindfulness as two parts of the same effort. They work best together.</p>
 </details>
+
+</div>
