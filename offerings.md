@@ -47,6 +47,7 @@ permalink: /offerings/
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
     <p class="book-description">An expanded version of the above that weaves in Robin Wall Kimmerer's <em>Braiding Sweetgrass</em>, deepening the ecological identity component with indigenous perspectives on reciprocity and relationship with the natural world.</p>
+    <br>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
   </div>
 </div>
