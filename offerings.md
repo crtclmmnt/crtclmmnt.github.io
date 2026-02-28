@@ -42,7 +42,7 @@ permalink: /offerings/
     <h6>4 weeks / 6 weeks</h6>
     <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, transforms burnout and despair into grounded, sustainable action.</p>
     <br>
-    <p class="book-description">The core idea explored is what Macy identifies as the four ways we are taught to see the world: World as Battlefield, World as Trap, World as Lover, and World as Self.</p>
+    <p class="book-description">The core idea explored is what Macy identifies as the four views through which we see the world: the limiting views — World as Battlefield, World as Trap, and the liberating views — World as Lover, World as Self.</p>
   </div>
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
