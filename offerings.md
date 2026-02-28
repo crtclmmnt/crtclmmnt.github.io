@@ -6,7 +6,7 @@ permalink: /offerings/
 
 <h1>Learn More About My Offerings</h1>
 
-<p>Teaching meditation is mostly an interpersonal exchange. Whether you're an organization looking to support your members, or an individual looking to cultivate a personal practice, I want to help you find an approach that works for you. <a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a> and we'll figure it out together.</p>
+<p>The main thing I want is to help more people meditate. Whether you're a community organization, a concerned citizen, a labor union, or a group of friends, I have an offering for you.</p>
 
 <h5><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
 
