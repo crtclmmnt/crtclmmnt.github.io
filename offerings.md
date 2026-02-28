@@ -95,7 +95,7 @@ permalink: /offerings/
 
 <h2 id="faq">Frequently Asked Questions</h2>
 
-<hr class="short">
+<hr class="short" style="margin-left: 0;">
 
 <h3>About This Offering</h3>
 

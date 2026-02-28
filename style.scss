@@ -320,6 +320,11 @@ summary h6 {
   margin: 0;
 }
 
+details summary h6 {
+  display: inline;
+  margin: 0;
+}
+
 .book-columns h6 {
   margin: 0;
   display: inline-block;
