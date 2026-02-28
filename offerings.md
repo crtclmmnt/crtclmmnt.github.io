@@ -35,15 +35,19 @@ permalink: /offerings/
 <div class="book-grid curriculum-grid">
   <div class="book-card">
     <h5>Gentleness, Precision, and Letting Go</h5>
-    <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their experience with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes. Available as a 4-week or 6-week series.</p>
+    <h6>4 weeks / 6 weeks</h6>
+    <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
   </div>
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
-    <p class="book-description">Based on Joanna Macy's <em>World as Lover, World as Self</em>, this curriculum explores how shifting our sense of identity — from isolated individual to living member of the Earth community — can transform burnout and despair into grounded, sustainable action. Available as a 4-week or 6-week series.</p>
+    <h6>4 weeks / 6 weeks</h6>
+    <p class="book-description">Based on Joanna Macy's book<em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identity as part of the living Earth, can transform burnout and despair into grounded, sustainable action.</p>
   </div>
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
-    <p class="book-description">An expanded version of the above that weaves in Robin Wall Kimmerer's <em>Braiding Sweetgrass</em>, deepening the ecological identity component with indigenous perspectives on reciprocity and relationship with the natural world. Available as a 6-week or 8-week series. This is my favorite workshop to teach.</p>
+    <h6>6 weeks / 8 weeks</h6>
+    <p class="book-description">An expanded version of the above that weaves in Robin Wall Kimmerer's <em>Braiding Sweetgrass</em>, deepening the ecological identity component with indigenous perspectives on reciprocity and relationship with the natural world.</p>
+    <p>This is my favorite workshop to teach.</p>
   </div>
 </div>
 
