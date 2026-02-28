@@ -13,8 +13,6 @@ permalink: /offerings/
 
 ---
 
-<br>
-
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
@@ -42,16 +40,16 @@ permalink: /offerings/
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
     <h6>4 weeks / 6 weeks</h6>
+    <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
+    <br>
     <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, can transform burnout and despair into grounded, sustainable action.</p>
   </div>
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
-    <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. Capitalism tries to convince us that we are individuals, entities that exist above and outside of the natural world. But we can remember that we are the world. And we can love the world as an extension of ourselves.</p>
+    <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. Capitalism tries to convince us that we are individuals, entities that exist above and outside of the natural world. I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with all living beings.</p>
     <br>
-    <p class="book-description">I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with all living beings. Remembering this, we might find that we have more to fight for than we realized.</p>
-    <br>
-    <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
+    <p class="book-description">Remembering this, we might find that we have more to fight for than we realized.</p>
   </div>
 </div>
 
