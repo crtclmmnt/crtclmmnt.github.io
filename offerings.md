@@ -21,8 +21,8 @@ permalink: /offerings/
     <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Meditation for Liberation is what I'm calling the free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) although all curriculums have been developed with the intention of helping organizers stay grounded, clear-headed, and resilient under pressure.</p>
-    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help connect you with an organization that is already hosting one. As I build my roster of partner organizations, I will be hosting these workshops for anyone to join.</p>
+    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) all of which have been developed with the intention of teaching skills that help organizers stay grounded, clear-headed, and resilient under pressure.</p>
+    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help connect you with an organization that is already hosting one. I will also be hosting these workshops publicly as I build my roster of partner organizations.</p>
   </div>
 </div>
 
@@ -49,9 +49,9 @@ permalink: /offerings/
     <h6>6 weeks / 8 weeks</h6>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
     <br>
-    <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. Capitalism tries to convince us that we are individuals — separate and alone — entities that exist above and outside of the natural world. I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with each other.</p>
+    <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. </p>
     <br>
-    <p class="book-description">When we remember our connection to all living beings, we find that we have more to fight for than we realized.</p>
+    <p class="book-description">Capitalism tries to convince us that we are individuals — separate and alone — entities that exist above and outside of the natural world. I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with each other. When we remember our connection to all living beings, we may find that we have much more to fight for.</p>
   </div>
 </div>
 
