@@ -19,7 +19,7 @@ permalink: /offerings/
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
-    <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Meditation for Liberation is a free workshop series designed for community organizations engaged in social justice work, and for the individual organizers who make that work possible. Organizers need these skills more than anyone — the ability to stay grounded, clear-headed, and resilient under pressure is what separates movements that burn out from movements that win.</p>
@@ -65,7 +65,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
-    <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the process clearer, less confusing, and more sustainable.</p>
@@ -86,7 +86,7 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
-    <h5><a href="https://thecriticalmoment.org/interest-form">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together — whether that's a workplace, a nonprofit, a club, a volunteer group, or a big group of friends. These workshops follow the same curriculum options as Meditation for Liberation (see above), adapted for a general audience rather than an explicitly organizing context.</p>
