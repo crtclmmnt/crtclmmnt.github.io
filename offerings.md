@@ -6,7 +6,8 @@ permalink: /offerings/
 
 <h1>Learn More About My Offerings</h1>
 
-<p>The main thing I want is to help more people meditate. Whether you're a community organization, a concerned citizen, a labor union, or a group of friends, I have an offering for you.</p>
+<p>The main thing I want is to help more people meditate.</p>
+<p>Whether you're a community organization, a concerned citizen, a labor union, or a group of friends, I have an offering for you.</p>
 
 <h5><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
 
@@ -22,13 +23,13 @@ permalink: /offerings/
     <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Meditation for Liberation is a free workshop series designed for community organizations engaged in social justice work, and for the individual organizers who make that work possible. Organizers need these skills more than anyone — the ability to stay grounded, clear-headed, and resilient under pressure is what separates movements that burn out from movements that win.</p>
-    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help connect you with an organization that is already hosting one. While I'm still building my roster of partner organizations, I'm also hosting open workshops available to anyone interested in showing up.</p>
+    <p>Meditation for Liberation is what I'm calling the free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) although all curriculums have been developed with the intention of helping organizers stay grounded, clear-headed, and resilient under pressure.</p>
+    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help connect you with an organization that is already hosting one. As I build my roster of partner organizations, I will be hosting these workshops for anyone to join.</p>
   </div>
 </div>
 
-<p>These workshops are offered free of charge to organizations engaging in liberatory work. I don't have a specific definition for what that means — I leave that for you to decide.</p>
-<p>Sessions are available in 40, 60, or 90 minute formats, and workshops run between 4 and 8 weeks depending on the curriculum. Both in-person (Bay Area) and online options are available.</p>
+<p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
+<p>Workshops run between 4 and 8 weeks depending on the curriculum, and the duration of each session is 60 - 90 minutes. Both in-person (Bay Area) and online options are available.</p>
 
 <h1>Curriculum Options</h1>
 
