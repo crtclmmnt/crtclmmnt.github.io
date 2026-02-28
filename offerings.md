@@ -41,7 +41,7 @@ permalink: /offerings/
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
     <h6>4 weeks / 6 weeks</h6>
-    <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identity as part of the living Earth, can transform burnout and despair into grounded, sustainable action.</p>
+    <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, can transform burnout and despair into grounded, sustainable action.</p>
   </div>
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
