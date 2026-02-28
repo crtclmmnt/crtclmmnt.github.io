@@ -69,8 +69,8 @@ permalink: /offerings/
     <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the process clearer, less confusing, and more sustainable.</p>
-    <p>Unlike the workshop offerings, individual instruction doesn't follow a set curriculum — it's tailored to you. Sessions typically combine a guided meditation sit with a debrief and discussion, and the focus evolves as your practice develops. This offering is available to individuals and small groups of up to four people at the same rate, so feel free to bring a friend or partner.</p>
+    <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
+    <p>Unlike the workshop offerings, individual instruction doesn't follow a set curriculum. Sessions typically combine a guided meditation sit with a debrief or discussion, and the focus evolves as your practice develops. This offering is available to individuals and small groups of up to four people at the same rate, so feel free to bring friends or partners.</p>
   </div>
 </div>
 
