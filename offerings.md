@@ -30,7 +30,7 @@ permalink: /offerings/
 <p>These workshops are offered free of charge to organizations engaging in liberatory work. I don't have a specific definition for what that means — I leave that for you to decide.</p>
 <p>Sessions are available in 40, 60, or 90 minute formats, and workshops run between 4 and 8 weeks depending on the curriculum. Both in-person (Bay Area) and online options are available.</p>
 
-<h3>Curriculum Options</h3>
+<h1>Curriculum Options</h1>
 
 <div class="book-grid curriculum-grid">
   <div class="book-card">
