@@ -636,34 +636,16 @@ nav {
   }
 }
 
-
-.book-columns {
-  columns: 2;
-  column-gap: 40px;
-  
-  @include mobile {
-    columns: 1;
-  }
-}
-
-.book-columns ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.book-columns li {
-  margin-bottom: 15px;
-  break-inside: avoid;
-  page-break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-}
-
 // Book recommendation grid and cards
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); // CUSTOMIZE: increase minmax first value to make cards wider, decrease for more columns
   gap: 1rem; // CUSTOMIZE: increase for more space between cards
   margin-bottom: 2rem;
+}
+
+.book-grid.curriculum-grid {
+  grid-template-columns: 1fr;
 }
 
 .book-card {
