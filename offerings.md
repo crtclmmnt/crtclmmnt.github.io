@@ -47,7 +47,7 @@ permalink: /offerings/
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
     <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. I believe that a meditation practice can dissolve the barriers that keep us separate from the living world. Capitalism tries to convince us that we are individuals, entities that exist above and outside of the natural world.</p>
-    <p class="book-description">But we can remember that we are the world. And we can love the world as an extension of ourselves. Knowing this, we might find that we have more to fight for than we thought.</p>
+    <p class="book-description">But we can remember that we are the world. And we can love the world as an extension of ourselves. Knowing this, we might find that we have more to fight for than we realized.</p>
     <br>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
   </div>
