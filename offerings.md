@@ -40,14 +40,15 @@ permalink: /offerings/
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
     <h6>4 weeks / 6 weeks</h6>
-    <br>
     <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, transforms burnout and despair into grounded, sustainable action.</p>
+    <br>
     <p class="book-description">The core idea explored is what Macy identifies as the four ways we are taught to see the world: World as Battlefield, World as Trap, World as Lover, and World as Self.</p>
   </div>
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
+    <br>
     <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. Capitalism tries to convince us that we are individuals — separate and alone — entities that exist above and outside of the natural world. I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with each other.</p>
     <br>
     <p class="book-description">When we remember our connection to all living beings, we find that we have more to fight for than we realized.</p>
