@@ -42,8 +42,8 @@ permalink: /offerings/
     <p class="book-description">Based on Joanna Macy's <em>World as Lover, World as Self</em>, this curriculum explores how shifting our sense of identity — from isolated individual to living member of the Earth community — can transform burnout and despair into grounded, sustainable action. Available as a 4-week or 6-week series.</p>
   </div>
   <div class="book-card">
-    <h5>World as Lover, World as Self and Braiding Sweetgrass</h5>
-    <p class="book-description">An expanded version of the above that weaves in Robin Wall Kimmerer's <em>Braiding Sweetgrass</em>, deepening the ecological identity component with indigenous perspectives on reciprocity and relationship with the natural world. Available as a 6-week or 8-week series. Recommended for organizations with the capacity for a longer commitment.</p>
+    <h5>We Are the Earth Defending Itself</h5>
+    <p class="book-description">An expanded version of the above that weaves in Robin Wall Kimmerer's <em>Braiding Sweetgrass</em>, deepening the ecological identity component with indigenous perspectives on reciprocity and relationship with the natural world. Available as a 6-week or 8-week series. This is my favorite workshop to teach.</p>
   </div>
 </div>
 
