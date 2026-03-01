@@ -29,7 +29,7 @@ permalink: /offerings/
 <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
 <p>Workshops run between 4 and 8 weeks depending on the curriculum, and the duration of each session is 60 - 90 minutes. Both in-person (Bay Area) and online options are available.</p>
 
-<h1>Curriculum Options</h1>
+<h1 id="curriculum">Curriculum Options</h1>
 
 <div class="book-grid curriculum-grid">
   <div class="book-card">
@@ -74,7 +74,7 @@ permalink: /offerings/
   </div>
 </div>
 
-<p>Individual instruction is offered on a sliding scale of $50–$120 per session. I want this to be accessible, so please pay what feels sustainable for your circumstances. If this price range doesn't work for you, I can help connect you with other meditation resources or notify you when a free Meditation for Liberation workshop is being offered.</p>
+<p>Individual instruction is offered on a sliding scale of $40–$120 per session. I want this to be accessible, so please pay what feels sustainable for your circumstances. If this price range doesn't work for you, I can help connect you with other meditation resources or notify you when a free Meditation for Liberation workshop is being offered.</p>
 <p>Sessions are available in 40, 60, or 90 minute formats, both in-person (Bay Area) and online.</p>
 
 <br>
@@ -90,8 +90,8 @@ permalink: /offerings/
     <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together — whether that's a workplace, a nonprofit, a club, a volunteer group, or a big group of friends. These workshops follow the same curriculum options as Meditation for Liberation (see above), adapted for a general audience rather than an explicitly organizing context.</p>
-    <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and affinity groups, $100–250 per session for funded nonprofits and workplaces, or much more if you're one of the big businesses wreaking havoc on society (I still have compassion for you). We can discuss specifics when I follow up.</p>
+    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together — whether that's a workplace, a nonprofit, a club, a volunteer group, or a big group of friends. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
+    <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or much more if you're one of the big businesses wreaking havoc on society (although I still have compassion for you).</p>
   </div>
 </div>
 
