@@ -14,11 +14,11 @@ permalink: /faq/
 
 ---
 
-<div style="max-width: 750px; margin: 0 auto;">
+<div style="max-width: 850px; margin: 0 auto;">
 
 <h3>About This Offering</h3>
 
-<div style="max-width: 700px; margin: 0 auto;">
+<div style="max-width: 800px; margin: 0 auto;">
 
 <details><summary><h6>Is this religious? Do I have to be Buddhist?</h6></summary>
 <p>Answer</p>
@@ -37,7 +37,7 @@ permalink: /faq/
 
 <h3>Getting Started</h3>
 
-<div style="max-width: 700px; margin: 0 auto;">
+<div style="max-width: 800px; margin: 0 auto;">
 
 <details><summary><h6>Do I need prior experience with meditation?</h6></summary>
 <p>Answer</p>
@@ -56,7 +56,7 @@ permalink: /faq/
 
 <h3>About the Practice</h3>
 
-<div style="max-width: 700px; margin: 0 auto;">
+<div style="max-width: 800px; margin: 0 auto;">
 
 <details><summary><h6>My mind won't stop racing. Am I doing it wrong?</h6></summary>
 <p>You're not doing it wrong — a busy mind is exactly why most people start meditating. The practice isn't about stopping your thoughts. It's about noticing when you've gotten lost in them, labeling them "thinking," and gently returning to your breath. The noticing and coming back is the practice. It doesn't matter how many times you wander — what matters is that you keep returning.</p>
