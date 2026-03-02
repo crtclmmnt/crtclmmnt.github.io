@@ -4,7 +4,7 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano6.jpg" alt="About header" class="hero-image">
+<img src="/images/pano7.JPG" alt="About header" class="hero-image">
 
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
 
