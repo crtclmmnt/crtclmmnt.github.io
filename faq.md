@@ -4,13 +4,15 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano7.JPG" alt="About header" class="hero-image">
+<img src="/images/pano7.JPG" alt="A mossy tree branch." class="hero-image">
 
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
 
 <hr class="short" style="margin-left: 0;">
 
 <p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
+
+<br>
 
 ---
 
@@ -21,16 +23,24 @@ permalink: /faq/
 <div style="max-width: 800px; margin: 0 auto;">
 
 <details><summary><h6>Is this religious? Do I have to be Buddhist?</h6></summary>
-<p>Answer</p>
+<p>Mindfulness meditation, known in sanskrit as Shamatha, is a foundational practice in the Buddhist tradition.</p>
+<p>That being said, the practice itself is completely secular. Shamatha literally translates to calm abiding, or peacefully remaining. When we practice mindfulness meditation, we are simply rehearsing stillness, and we are practicing guiding our attention with intention.</p>
+<p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (look it up), which makes you more patient and attentive.
 </details>
 <details><summary><h6>I'm skeptical that sitting still is going to help me with political work. Why should I bother?</h6></summary>
-<p>Answer</p>
+<p>I see XXXXX main reasons why this practice is important for political work.</p>
+<p>First, coalition building requires you to get along with people who are obnoxious, opinionated, and stubborn. Getting along with people who are different from you, but are nonetheless in common cause with you, is easier when you have a daily practice that makes you more patient, more open, and more at ease. I view mindfulness as an anti-reactivity exercise.</p>
+<p>Second, we have all been raised in a Capitalist society. If you're visiting this site, I have reason to suspect that you have a critical view of the Capitalist system. Because we on the left are so learned, and so smart, we often forget that we have blind spots. And because we have all been raised in a Capitalist society, there are many reactionary views we may have internalized in our youth. If we have failed to adequately address these reactionary views, and if our self-righteousness encourages us to find nominally "progressive" ways of justifying these reactionary views, we may continue to reinforce aspects of capitalist enculturation without noticing it.</p>
+<p>Mindfulness meditation is a practice that helps you notice more of your inner and outer life. Committing to the practice eventually gets you to a place where you are better equipped to notice when you are speaking from a place of wisdom or thoughtfulness, rather than reacting from a place of self-righteousness and indignation. And I believe this is a useful skill for people doing political work, which has a tendency to ellicit feelings of self-righteousness and indignation.</p>
 </details>
 <details><summary><h6>What does a session actually look like?</h6></summary>
-<p>Answer</p>
+<p>Depending on the setting, a session will typically start with a brief introduction or check-in, then transition into meditation instruction (assuming the individual/group needs it) which leads to the practice.</p>
+<p>After the practice has concluded (which will usually take up the bulk of the session), there will be a dharma talk, a discussion, or another quick check-in depending on the wants and needs of the given individual/group.
 </details>
 <details><summary><h6>Is this therapy? What's the difference between meditation instruction and mental health care?</h6></summary>
-<p>Answer</p>
+<p>Meditation instruction is not therapy, nor is it a substitution for therapy, psychiatric care, or medical treatment.</p>
+<p>If you are experiencing any sort of mental health crisis or medical emergency, DO NOT try to contact me or any other meditation instructor. Seek professional mental health support or medical care if that is the case.</p>
+<p>I am a certified meditation teacher, and nothing more. Think of me like a yoga teacher, but instead of helping you stretch your body, I can help you stretch your mind.</p>
 </details>
 
 </div>
