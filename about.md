@@ -101,9 +101,9 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
+      <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span><span class="text-dark-rose">*</span></h5>
       <p class="book-author">Silvia Federici</p>
-      <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for its global expansion.</p>
+      <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for the system's global expansion.</p>
     </div>
     <div class="book-card">
       <h5>Wretched of the Earth</h5>
@@ -131,7 +131,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
     <div class="book-card">
-      <h5>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
+      <h5><span class="text-dark-rose">*</span>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
       <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
     </div>
