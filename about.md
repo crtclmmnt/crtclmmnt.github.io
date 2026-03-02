@@ -40,7 +40,8 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <br>
 
-<h2>Book Recommendations</h2>
+<h2>Recommended Reading</h2>
+<h5><span style="color: $darkRose;">*</span>Highly Recommended Reading</h5>
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 
 <div style="max-width: 750px; margin: 0 auto;">
@@ -48,17 +49,17 @@ The world doesn’t need people to worry over her, she needs people who have the
   <!-- CUSTOMIZE: add or remove book-card divs to add or remove books -->
   <div class="book-grid">
     <div class="book-card">
-      <h5>World as Lover, World as Self</h5>
+      <h5><span style="color: $darkRose;">*</span>World as Lover, World as Self</h5>
       <p class="book-author">Joanna Macy</p>
       <p class="book-description">Joanna Macy changed the way I understand humanity's relationship to the Earth and to the crisis we've created. It's the most important book I've read for understanding how to be an activist without losing yourself.</p>
     </div>
     <div class="book-card">
-      <h5>The Wisdom of No Escape</h5>
+      <h5><span style="color: $darkRose;">*</span>The Wisdom of No Escape</h5>
       <p class="book-author">Pema Chödrön</p>
       <p class="book-description">A book about how to work with your neuroses rather than fighting them, with important lessons for meditation and for daily life.</p>
     </div>
     <div class="book-card">
-      <h5>Cutting Through Spiritual Materialism</h5>
+      <h5><span style="color: $darkRose;">*</span>Cutting Through Spiritual Materialism</h5>
       <p class="book-author">Chögyam Trungpa Rinpoche</p>
       <p class="book-description">A book that shows how the ego will co-opt anything, including spirituality, in service of its own comfort and expansion. The lessons can be extended to political materialism.</p>
     </div>
@@ -74,12 +75,12 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Ecology & Earth Systems</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Braiding Sweetgrass</h5>
+      <h5><span style="color: $darkRose;">*</span>Braiding Sweetgrass</h5>
       <p class="book-author">Robin Wall Kimmerer</p>
       <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources. This book shows what a different relationship to the Earth looks like, not as theory, but as practice.</p>
     </div>
     <div class="book-card">
-      <h5>The Unsettling of America</h5>
+      <h5><span style="color: $darkRose;">*</span>The Unsettling of America</h5>
       <p class="book-author">Wendell Berry</p>
       <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of societies ails can be traced back to the abandonment of our relationship to other living things.</p>
     </div>
@@ -100,7 +101,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
+      <h5><span style="color: $darkRose;">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for its global expansion.</p>
     </div>
@@ -146,12 +147,12 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>The Master and His Emissary</h5>
+      <h5><span style="color: $darkRose;">*</span>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
       <p class="book-description">McGilchrist argues that the left hemisphere of the brain has staged a kind of coup over Western civilization — dense but worth it.</p>
     </div>
     <div class="book-card">
-      <h5>No Bad Parts</h5>
+      <h5><span style="color: $darkRose;">*</span>No Bad Parts</h5>
       <p class="book-author">Richard Schwartz</p>
       <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
     </div>
@@ -172,7 +173,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Systems Thinking & Philosophy</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5>The Patterning Instinct</h5>
+      <h5><span style="color: $darkRose;">*</span>The Patterning Instinct</h5>
       <p class="book-author">Jeremy Lent</p>
       <p class="book-description">Lent argues that the stories a civilization tells about its relationship to nature determine whether it survives.</p>
     </div>
