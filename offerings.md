@@ -86,12 +86,12 @@ permalink: /offerings/
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
-    <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
+    <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, and more</h3>
     <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together — whether that's a workplace, a nonprofit, a club, a volunteer group, or a big group of friends. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
-    <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or much more if you're one of the big businesses wreaking havoc on society (although I still have compassion for you).</p>
+    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
+    <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if you're part of one of the corporations wreaking havoc on society (although I still have compassion for you).</p>
   </div>
 </div>
 

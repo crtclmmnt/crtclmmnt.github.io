@@ -65,7 +65,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style=" font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
-      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the whole.</p>
+      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the divine whole, i.e. the universe (in the secular sense).</p>
     </div>
   </div>
 
