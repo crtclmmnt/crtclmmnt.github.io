@@ -41,7 +41,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 <br>
 
 <h2>Recommended Reading</h2>
-<h5><span class="text-dark-rose">*</span>Highly Recommended Reading</h5>
+<h5><span class="text-dark-rose">*</span>start with these</h5>
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 
 <div style="max-width: 750px; margin: 0 auto;">
@@ -59,7 +59,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">A book about how to work with your neuroses rather than fighting them, with important lessons for meditation and for daily life.</p>
     </div>
     <div class="book-card">
-      <h5><span class="text-dark-rose">*</span>Cutting Through Spiritual Materialism</h5>
+      <h5>Cutting Through Spiritual Materialism</h5>
       <p class="book-author">Chögyam Trungpa Rinpoche</p>
       <p class="book-description">A book that shows how the ego will co-opt anything, including spirituality, in service of its own comfort and expansion. The lessons can be extended to political materialism.</p>
     </div>
@@ -80,9 +80,9 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources. This book shows what a different relationship to the Earth looks like, not as theory, but as practice.</p>
     </div>
     <div class="book-card">
-      <h5>The Unsettling of America</h5>
+      <h5><span class="text-dark-rose">*</span>The Unsettling of America</h5>
       <p class="book-author">Wendell Berry</p>
-      <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of societies ails can be traced back to the abandonment of our relationship to other living things.</p>
+      <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of societies ails are the result of using machines for work we used to accomplish through relationships with other living things.</p>
     </div>
     <div class="book-card">
       <h5>Becoming Earth</h5>
@@ -106,7 +106,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for its global expansion.</p>
     </div>
     <div class="book-card">
-      <h5><span class="text-dark-rose">Wretched of the Earth</h5>
+      <h5>Wretched of the Earth</h5>
       <p class="book-author">Frantz Fanon</p>
       <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer.</p>
     </div>
@@ -126,7 +126,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">Fisher asks why it's easier to imagine the end of the world than the end of capitalism — short, sharp, and hard to shake.</p>
     </div>
     <div class="book-card">
-      <h5>How Europe Underdeveloped Africa</h5>
+      <h5><span class="text-dark-rose">*</span>How Europe Underdeveloped Africa</h5>
       <p class="book-author">Walter Rodney</p>
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
     </div>
@@ -147,7 +147,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Psychology & Human Nature</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5><span class="text-dark-rose">*</span>The Master and His Emissary</h5>
+      <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
       <p class="book-description">McGilchrist argues that the left hemisphere of the brain has staged a kind of coup over Western civilization — dense but worth it.</p>
     </div>
@@ -157,7 +157,7 @@ The world doesn’t need people to worry over her, she needs people who have the
       <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
     </div>
     <div class="book-card">
-      <h5>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
+      <h5><span class="text-dark-rose">*</span>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
       <p class="book-author">Rutger Bregman</p>
       <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
     </div>
