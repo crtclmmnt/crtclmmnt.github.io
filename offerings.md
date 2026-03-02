@@ -18,10 +18,10 @@ permalink: /offerings/
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
-    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) all of which have been developed with the intention of teaching basic mindfulness meditation techniques that help organizers stay grounded, clear-headed, and resilient under pressure.</p>
+    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
     <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
   </div>
 </div>
@@ -66,7 +66,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
-    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
@@ -87,7 +87,7 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, affinity groups, and more</h3>
-    <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
+    <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together — whether that's a workplace, a nonprofit, a club, a volunteer group, or a big group of friends. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
