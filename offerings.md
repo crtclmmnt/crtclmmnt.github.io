@@ -7,7 +7,7 @@ permalink: /offerings/
 <h1>Learn More About My Offerings</h1>
 
 <p>The main thing I want is to help more people meditate.</p>
-<p>Whether you're a community organization, a concerned citizen, a labor union, or a group of friends, I have an offering for you.</p>
+<p>Maybe you're a community organizer, a concerned citizen, or a group of friends. Maybe you represent a labor union, or a gardening club, or you're the Chief Fun Officer for a Non-profit. Regardless of which describes you, I have an offering for you.</p>
 
 <h5><a href="https://thecriticalmoment.org/offerings#faq">Skip to FAQ</a></h5>
 
@@ -21,8 +21,8 @@ permalink: /offerings/
     <h5><a href="https://tally.so/r/ODAAQp">Fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) all of which have been developed with the intention of teaching skills that help organizers stay grounded, clear-headed, and resilient under pressure.</p>
-    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help connect you with an organization that is already hosting one. I will also be hosting these workshops publicly as I build my roster of partner organizations.</p>
+    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are a couple different curriculums to choose from (described below) all of which have been developed with the intention of teaching basic mindfulness meditation techniques that help organizers stay grounded, clear-headed, and resilient under pressure.</p>
+    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
   </div>
 </div>
 
