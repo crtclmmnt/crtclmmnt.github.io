@@ -66,7 +66,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style="font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
-      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the divine whole, i.e. the universe (in the secular sense).</p>
+      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the divine whole, i.e. the universe.</p>
     </div>
   </div>
 
@@ -101,7 +101,7 @@ The world doesn’t need people to worry over her, she needs people who have the
   <h3>Politics & Social Change</h3>
   <div class="book-grid">
     <div class="book-card">
-      <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span><span class="text-dark-rose">*</span></h5>
+      <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for the system's global expansion.</p>
     </div>
