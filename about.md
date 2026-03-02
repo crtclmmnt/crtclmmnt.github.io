@@ -50,22 +50,22 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>World as Lover, World as Self</h5>
       <p class="book-author">Joanna Macy</p>
-      <p class="book-description">Joanna Macy changed the way I understand my relationship to the Earth, and to the crisis we're living through.</p>
+      <p class="book-description">Joanna Macy changed the way I understand humanity's relationship to the Earth and to the crisis we've created. It's the most important book I've read for understanding how to be an activist without losing yourself.</p>
     </div>
     <div class="book-card">
       <h5>The Wisdom of No Escape</h5>
       <p class="book-author">Pema Chödrön</p>
-      <p class="book-description">The path forward isn't about becoming a better version of yourself — it's about making friends with who you already are.</p>
+      <p class="book-description">A book about how to work with your neuroses rather than fighting them, with important lessons for meditation and for daily life.</p>
     </div>
     <div class="book-card">
       <h5>Cutting Through Spiritual Materialism</h5>
       <p class="book-author">Chögyam Trungpa Rinpoche</p>
-      <p class="book-description">A necessary corrective for anyone drawn to meditation for the wrong reasons.</p>
+      <p class="book-description">A book that shows how the ego will co-opt anything, including spirituality, in service of its own comfort and expansion. The lessons can be extended to political materialism.</p>
     </div>
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style=" font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
-      <p class="book-description">Alan Watts makes the case that the self you think you are is a polite fiction — and somehow makes it feel liberating.</p>
+      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the whole.</p>
     </div>
   </div>
 
@@ -76,22 +76,22 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Braiding Sweetgrass</h5>
       <p class="book-author">Robin Wall Kimmerer</p>
-      <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources.</p>
+      <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources. This book shows what a different relationship to the Earth looks like, not as theory, but as practice.</p>
     </div>
     <div class="book-card">
       <h5>The Unsettling of America</h5>
       <p class="book-author">Wendell Berry</p>
-      <p class="book-description">Written in 1977, it reads like it was written yesterday — a devastating critique of industrial agriculture that is really a critique of how we've chosen to live.</p>
+      <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of societies ails can be traced back to the abandonment of our relationship to other living things.</p>
     </div>
     <div class="book-card">
       <h5>Becoming Earth</h5>
       <p class="book-author">Ferris Jabr</p>
-      <p class="book-description">A reminder that the planet isn't just a backdrop for life — it is life, and we are part of it.</p>
+      <p class="book-description">This book is an exhilarating scientific history of how life evolved on our planet, and it makes the argument that the planet is a self-regulating living system that we are a part of.</p>
     </div>
     <div class="book-card">
       <h5>Entangled Life</h5>
       <p class="book-author">Merlin Sheldrake</p>
-      <p class="book-description">Everything you thought you knew about individuality is wrong, and fungi are the reason why.</p>
+      <p class="book-description">This book challenges the simple Darwinian view of life as "survival of the fittest," instead showing how life works through networks, symbiosis, and mutual dependence rather than competition and isolation.</p>
     </div>
   </div>
 
@@ -102,12 +102,12 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici</p>
-      <p class="book-description">Federici traces the origins of capitalism through the persecution of women and the destruction of the commons.</p>
+      <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for its global expansion.</p>
     </div>
     <div class="book-card">
       <h5>Wretched of the Earth</h5>
       <p class="book-author">Frantz Fanon</p>
-      <p class="book-description">Fanon understood that colonialism doesn't just steal land and labor — it colonizes the mind.</p>
+      <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer.</p>
     </div>
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
