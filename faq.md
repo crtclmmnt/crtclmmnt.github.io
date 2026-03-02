@@ -4,14 +4,13 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano3.jpg" alt="About header" class="hero-image">
+<img src="/images/pano6.jpg" alt="About header" class="hero-image">
 
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
 
 <hr class="short" style="margin-left: 0;">
 
-<p>If you have a question that isn't answered on this page, please fill out the interest form so I can answer you.</p>
-<h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
+<p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
 
 ---
 
