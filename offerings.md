@@ -4,7 +4,7 @@ permalink: /offerings/
 ---
 <img src="/images/pano3.jpg" alt="About header" class="hero-image">
 
-<h1>Learn More About My Offerings</h1>
+<h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
 
 <p>The main thing I want is to help more people meditate.</p>
 <p>Maybe you're a community organizer, a concerned citizen, or a group of friends. Maybe you represent a labor union, or a gardening club, or you're the Chief Fun Officer for a Non-profit. Regardless of which describes you, I have an offering for you.</p>
