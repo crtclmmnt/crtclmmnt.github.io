@@ -31,6 +31,7 @@ permalink: /faq/
 <p>That being said, the practice itself is completely secular. Shamatha literally translates to calm abiding, or peacefully remaining. When we practice mindfulness meditation, we are simply rehearsing stillness, and we are practicing guiding our attention with intention.</p>
 <p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (look it up), which makes you more patient and attentive.</p>
 </details>
+
 <details><summary><h6>I'm skeptical that sitting still is going to help me with political work. Why should I bother?</h6></summary>
 <p>I see two main reasons why this practice is important for political work.</p>
 <p>First, coalition building requires you to get along with people who are obnoxious, opinionated, and stubborn. Getting along with people who are different from you, but are nonetheless in common cause with you, is easier when you have a daily practice that makes you more patient, more open, and more at ease. I view mindfulness as an anti-reactivity exercise.</p>
@@ -39,6 +40,7 @@ permalink: /faq/
 <p>And I don't just mean internalized racism, homophobia, transphobia. I think this applies to our assumptions too. We are raised to assume that the nuclear family is normal, that independence is desirable, that consumption is inevitable, that sacrifice is unnecessary, and that other people's suffering doesn't affect you. When was the last time you caught yourself reinforcing an idea that serves the system?</p>
 <p>I also address this concern at length in <strong><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">the introduction to The Critical Moment.</a></strong></p>
 </details>
+
 <details><summary><h6>What does a session actually look like?</h6></summary>
 <p>Picture yourself on a boat in a river...</p>
 <p>I'm kidding. Depending on the setting, a session will typically start with a brief introduction or check-in. This is where I talk a little bit about my background, why I teach meditation, or if I'm with an individual/group that I've already been working with, I will take some time at the top to check-in with everyone about how their practice is going.</p>
@@ -46,11 +48,19 @@ permalink: /faq/
 <p>The practice usually lasts 20-30 minutes, although this is flexible depending on your needs. Mindfulness meditation is not guided meditation, so after the instructions are given, we sit in silence. After the practice has concluded (which will usually take up the bulk of the session), there will be a dharma talk, a discussion, or another quick check-in depending on the wants and needs of the given individual/group.</p>
 <p>My practice is primarily secular, although I do have some spiritual feelings towards the natural world. Even if you're very skeptical of woo-woo stuff, I think you will feel very comfortable with my teaching style.</p>
 </details>
+
 <details><summary><h6>Is this therapy? What's the difference between meditation instruction and mental health care?</h6></summary>
 <p>Meditation instruction is not therapy, nor is it a substitution for therapy, psychiatric care, or medical treatment.</p>
 <p>If you are experiencing any sort of mental health crisis or medical emergency, do not try to contact me or any other meditation instructor. Seek professional mental health support or medical care if that is the case.</p>
 <p>I am a certified meditation teacher, and nothing more. Think of me like a yoga teacher, but instead of helping you stretch your body, I can help you stretch your mind.</p>
 </details>
+
+<details><summary><h6>What makes you qualified to teach meditation?</h6></summary>
+<p>I received my certification to teach Mindfulness Meditation from Dharma Moon and Tibet House US.</p>
+<p>I was taught by David Nichtern and a number of other wonderful teachers at Dharma Moon as part of their 100-hour Mindfulness Meditation Teacher Training course. So, I'm qualified to teach the basic techniques and help people deepen their practice, but I am by no means a zen priest or a master meditator or anything of the sort.</p>
+<p>But I think my most important qualification is that I am someone who was so scared of the future that I didn't want to fight for it, until I found a practice that in some ways brought me back to life. And now I've learned how to teach that practice to others.</p>
+</details>
+
 
 </div>
 
