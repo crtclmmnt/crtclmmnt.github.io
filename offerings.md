@@ -17,7 +17,7 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">FILL OUT THE INTEREST FORM</a>
+    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
     <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
@@ -67,7 +67,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">$40–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">Fill Out the Interest Form</a>
+    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
