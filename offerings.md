@@ -16,6 +16,7 @@ permalink: /offerings/
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+    <br>
     <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
@@ -64,6 +65,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
+    <br>
     <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
@@ -85,6 +87,7 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
+    <br>
     <h5><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></h5>
   </div>
   <div class="services-content" style="flex: 1.2;">
