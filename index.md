@@ -33,10 +33,10 @@ A future where we win starts now, in the critical moment.
 
 <div class="services-layout">
   <div>
-    <img src="/images/bio1.JPG" alt="A picture of a man meditating in a meadow at sunset." width="250" style="margin-top: 0px;">
+    <img src="/images/bio1.JPG" alt="A picture of a man meditating in a meadow at sunset." width="350" style="margin-top: 0px;">
   </div>
   
-  <div class="services-content" style="max-width: 550px;">
+  <div class="services-content" style="max-width: 450px;">
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
 <p>I started my own meditation practice a little over 2 years ago. At the time I was so paralyzed by anxiety about the state of our world that I gave up on political organizing.</p>
 <p>It's not that I didn't want to get organized, or that I didn't see any value to it. I wanted to hide from my worries, and showing up felt like admitting to myself that the world was ending.</p>
@@ -60,7 +60,7 @@ A future where we win starts now, in the critical moment.
 <div style="max-width: 500px; margin: 0 auto;">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops"><span style="font-size: 28px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a></h3>
     <hr class="short">
-    <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn">Individual Meditation Instruction</a>
+    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
     <hr class="short">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups">Group Meditation Workshops</a></h3>
   <hr class="short">
