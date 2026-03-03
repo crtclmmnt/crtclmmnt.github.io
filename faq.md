@@ -36,8 +36,11 @@ permalink: /faq/
 <p>I also address this concern at length in <strong><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">the introduction to The Critical Moment.</a></strong></p>
 </details>
 <details><summary><h6>What does a session actually look like?</h6></summary>
-<p>Depending on the setting, a session will typically start with a brief introduction or check-in, then transition into meditation instruction (assuming the individual/group needs it) which leads to the practice.</p>
-<p>After the practice has concluded (which will usually take up the bulk of the session), there will be a dharma talk, a discussion, or another quick check-in depending on the wants and needs of the given individual/group.</p>
+<p>Picture yourself on a boat in a river...</p>
+<p>I'm kidding. Depending on the setting, a session will typically start with a brief introduction or check-in. This is where I talk a little bit about my background, why I teach meditation, or if I'm with an individual/group that I've already been working with, I will take some time at the top to check-in with everyone about how their practice is going.</p>
+<p>Afterwards, we transition into meditation instruction (assuming the individual/group needs it) which starts with your posture (basically the same regardless of whether you're on a cushion or in a chair), then goes to your breath (your breath being the "Object" of the meditation), and then goes onto the basic technique of noticing/labeling your thoughts.</p>
+<p>The practice usually lasts 20-30 minutes, although this is flexible depending on your needs. Mindfulness meditation is not guided meditation, so after the instructions are given, we sit in silence. After the practice has concluded (which will usually take up the bulk of the session), there will be a dharma talk, a discussion, or another quick check-in depending on the wants and needs of the given individual/group.</p>
+<p>My practice is primarily secular, although I do have some spiritual feelings towards the natural world. Even if you're very skeptical of woo-woo stuff, I think you will feel very comfortable with my teaching style.</p>
 </details>
 <details><summary><h6>Is this therapy? What's the difference between meditation instruction and mental health care?</h6></summary>
 <p>Meditation instruction is not therapy, nor is it a substitution for therapy, psychiatric care, or medical treatment.</p>
@@ -51,17 +54,19 @@ permalink: /faq/
 
 <div style="max-width: 800px; margin: 0 auto;">
 
-<details><summary><h6>Do I need prior experience with meditation?</h6></summary>
-<p>Answer</p>
+<details><summary><h6>Do I need prior experience with mindfulness meditation?</h6></summary>
+<p>Absolutely not!</p>
+<p>I will teach you everything you need to know about the technique of mindfulness meditation, and if you want to explore dharma more deeply, I'm happy to embark on that journey alongside you.</p>
 </details>
 <details><summary><h6>What if I can't afford the sliding scale?</h6></summary>
-<p>If the sliding scale doesn't work for your circumstances, reach out anyway. I can help connect you with other meditation resources, or notify you when a free Meditation for Liberation workshop is being offered.</p>
+<p>If the sliding scale doesn't work for your circumstances, reach out anyway. I can help connect you with other meditation resources, or notify you when a free Meditation for Liberation workshop is being offered to the general public.</p>
 </details>
 <details><summary><h6>Can my whole organization participate?</h6></summary>
-<p>Answer</p>
+<p>I want to teach this practice to as many people as possible, so barring logistical constraints, yes.</p>
+<p>The main challenges for getting whole organizations to participate would be the limitations of available physical space, or the digital limitations of a Zoom call. But I am more than happy to work with you to get as many people meditating as possible.</p>
 </details>
 <details><summary><h6>How long and how often should I practice?</h6></summary>
-<p>For beginners, 20 minutes a day is a great place to start. If 10 minutes is all you can manage, that's still worth doing. Regularity matters more than duration — a short daily practice is more valuable than a long occasional one. If you miss a day, don't beat yourself up. Just start again.</p>
+<p>For beginners, 20 minutes a day is a great place to start. If 10 minutes is all you can manage, that's still worth doing. Regularity matters more than duration, and being kind to yourself matters more than letting the taskmaster in your mind turn you into the world's best meditator. A short daily practice is more fruitful than a long occasional one. If you miss a day, don't beat yourself up. Just start again.</p>
 </details>
 
 </div>
