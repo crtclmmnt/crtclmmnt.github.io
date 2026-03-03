@@ -17,7 +17,7 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">fill out the interest form</a>
+    <a href="https://tally.so/r/ODAAQp" class="btn">FILL OUT THE INTEREST FORM</a>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
@@ -66,7 +66,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">fill out the interest form</a>
+    <a href="https://tally.so/r/ODAAQp" class="btn">Fill Out the Interest Form</a>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
@@ -88,7 +88,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">fill out the interest form</a>
+    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
