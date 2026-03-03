@@ -9,7 +9,7 @@ permalink: /
 
 <h1 style="margin-top: 0px;">We are living in a Critical Moment.</h1>
 
-The crises facing us are numerous: boiling oceans, collapsing ecosystems, a new gilded age, genocide funded with our tax dollars, the rise of techno-feudalism, and so many other horrors.
+The crises facing us are numerous: ecological collapse, a new gilded age, an economy that has abandoned the working class, state-sponsored violence against immigrants, the rise of techno-feudalism, genocide funded by our taxes, and so many other horrors.
 
 It’s hard to face all this without falling apart, or turning a blind eye. 
 
@@ -28,6 +28,8 @@ A future where we win starts now, in the critical moment.
 <br>
 
 ---
+
+<br>
 
 <div class="services-layout">
   <div>
@@ -58,7 +60,7 @@ A future where we win starts now, in the critical moment.
 <div style="max-width: 500px; margin: 0 auto;">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops"><span style="font-size: 28px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a></h3>
     <hr class="short">
-    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction">Individual Meditation Instruction</a></h3>
+    <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn">Individual Meditation Instruction</a>
     <hr class="short">
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups">Group Meditation Workshops</a></h3>
   <hr class="short">
