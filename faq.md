@@ -6,6 +6,8 @@ permalink: /faq/
 
 <img src="/images/pano7.JPG" alt="A mossy tree branch." class="hero-image">
 
+<div style="max-width: 950px; margin: 0 auto;">
+
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
 
 <hr class="short" style="margin-left: 0;">
@@ -14,11 +16,13 @@ permalink: /faq/
 
 <br>
 
----
+<hr>
+
+</div>
 
 <div style="max-width: 850px; margin: 0 auto;">
 
-<h3>About My Approach</h3>
+<h3>My Approach</h3>
 
 <div style="max-width: 800px; margin: 0 auto;">
 
@@ -96,4 +100,5 @@ permalink: /faq/
 </details>
 
 </div>
+
 </div>
