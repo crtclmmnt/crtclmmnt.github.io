@@ -8,6 +8,7 @@ permalink: /
     <h1>We are living in a Critical Moment.</h1>
   </div>
 </div>
+
 **The crises facing us are numerous:** ecological collapse, a new gilded age, an economy that has abandoned the working class, state-sponsored violence against immigrants, the rise of techno-feudalism, genocide funded by our taxes, and so many other horrors.
 
 It’s hard to face all this without falling apart, or turning a blind eye. 

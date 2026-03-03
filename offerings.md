@@ -2,10 +2,12 @@
 layout: default
 permalink: /offerings/
 ---
-<img src="/images/pano3.jpg" alt="About header" class="hero-image">
-
-<h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
-
+<div class="hero-wrapper">
+  <img src="/images/pano3.jpg" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
+  </div>
+</div>
 <p>The main thing I want is to help more people meditate.</p>
 <p>Maybe you're a community organizer, a concerned citizen, or a group of friends. Maybe you represent a labor union, or a gardening club, or you're the Chief Fun Officer for a Non-profit. Regardless of which describes you, I have an offering for you.</p>
 
