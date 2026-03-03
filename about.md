@@ -41,7 +41,10 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <br>
 
-<h2>Recommended Reading</h2>
+<h2 style="font-size: 4rem; margin-bottom: 0px;>Recommended Reading</h2>
+
+<hr class="short" style="margin: 0.5em 0;">
+
 <h5><span class="text-dark-rose">*</span>start with these</h5>
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 
