@@ -18,7 +18,7 @@ permalink: /faq/
 
 <div style="max-width: 850px; margin: 0 auto;">
 
-<h3>About This Offering</h3>
+<h3>About My Approach</h3>
 
 <div style="max-width: 800px; margin: 0 auto;">
 
@@ -76,19 +76,23 @@ permalink: /faq/
 <div style="max-width: 800px; margin: 0 auto;">
 
 <details><summary><h6>My mind won't stop racing. Am I doing it wrong?</h6></summary>
-<p>You're not doing it wrong — a busy mind is exactly why most people start meditating. The practice isn't about stopping your thoughts. It's about noticing when you've gotten lost in them, labeling them "thinking," and gently returning to your breath. The noticing and coming back is the practice. It doesn't matter how many times you wander — what matters is that you keep returning.</p>
+<p>You're not doing it wrong. Noticing that you're thinking is exactly the point of a meditation practice.</p>
+<p>Specifically, the practice is about noticing that you're thinking, and then making the conscious effort to guide your attention back to the object of your meditation (usually the breath). When you do this over and over again — letting your mind wander, noticing that it's wandering, labeling your thoughts "thinking," and then bringing your attention back to your breath — you are rewiring your brain so that you can actually decide where to direct your attention, rather than living at the whims of your anxieties and impulses.</p>
+<p>It doesn't matter how many times you wander, it matters that you keep returning.</p>
 </details>
 <details><summary><h6>Why do you recommend keeping the eyes open?</h6></summary>
-<p>The goal of this practice isn't to retreat into an inner world or achieve a trance state — it's to be present with your experience as it actually is. Keeping the eyes open with a soft downward gaze keeps you connected to your surroundings, so that the mindfulness you cultivate on the cushion can carry over into your everyday life.</p>
+<p>The goal of meditation is to be more present in the moment, and to pay more attention to the world around you without getting lost in thoughts, symbols, and abstractions.</p>
+<p>Keeping your eyes open during meditation makes it better practice for your normal life. Meditation isn't supposed to be an insular practice, it's supposed to be a rehearsal for how you live normally. And for those of us who have the privilege of sight, we tend to live with our eyes open.</p>
 </details>
 <details><summary><h6>What do I do with strong emotions that come up during practice?</h6></summary>
-<p>You don't need to label emotions away or push them down. Emotions have both a narrative component and a felt, energetic quality in the body. The practice is to let go of the storyline — the who, what, when, and why — and simply be with the felt sense of the emotion. From there, you can let it go and return to your breath. If an emotion becomes too overwhelming, it's okay to pause the practice.</p>
+<p>You don't need to label emotions away or push them down. Emotions have both a narrative component and a felt, energetic quality in the body. The practice is to feel the emotions without projecting them onto some story you tell about yourself. From there, you can let it go and return to your breath. If an emotion becomes too overwhelming, it's okay to pause the practice.</p>
 </details>
 <details><summary><h6>What about physical pain? My back is killing me.</h6></summary>
-<p>Be kind to yourself. This practice asks for discipline, but not self-torture. If you're in real pain, shift your posture and take a fresh start. There are three posture options — cross-legged on a cushion, kneeling on a bench, or seated in a chair — and none of them is better than the others. The right posture is the one that lets you feel both relaxed and alert.</p>
+<p>Mindfulness meditation is not a grim duty. Be kind to yourself. This practice asks for discipline, but not self-torture. If you're in real pain, shift your posture and take a fresh start. You can meditate on a chair, on a cushion, or in a supported kneeling posture, and all of them are perfectly valid postures for meditation. The right posture is the one that lets you feel both relaxed and alert.</p>
 </details>
 <details><summary><h6>Can I meditate lying down or while walking?</h6></summary>
 <p>Sitting upright is recommended because the posture itself supports the quality of being both relaxed and awake. That said, you can bring mindfulness to any activity — walking, eating, even doing the dishes. Think of formal sitting practice and informal mindfulness as two parts of the same effort. They work best together.</p>
+<p>"Before enlightenment, I chopped wood and carried water. After enlightenment, I chopped wood and carried water." -Something Buddhists always say</p>
 </details>
 
 </div>
