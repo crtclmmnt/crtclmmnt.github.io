@@ -18,6 +18,7 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
     <br>
     <a href="https://tally.so/r/ODAAQp" class="btn">FILL OUT THE INTEREST FORM</a>
+    <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
@@ -63,7 +64,7 @@ permalink: /offerings/
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
-    <h3 style="margin-top: 0.25rem;">$50–$120 per session</h3>
+    <h3 style="margin-top: 0.25rem;">$40–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
     <br>
     <a href="https://tally.so/r/ODAAQp" class="btn">Fill Out the Interest Form</a>
@@ -89,14 +90,14 @@ permalink: /offerings/
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
     <br>
     <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
     <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
+    <p>Sessions are available in 40, 60, or 90 minute formats, and workshops run between 4 and 8 weeks. Both in-person (Bay Area) and online options are available.</p>
   </div>
 </div>
-
-<p>Sessions are available in 40, 60, or 90 minute formats, and workshops run between 4 and 8 weeks. Both in-person (Bay Area) and online options are available.</p>
 
 <br>
 
