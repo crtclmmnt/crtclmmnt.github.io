@@ -460,6 +460,32 @@ details {
   }
 }
 
+.hero-wrapper {
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 850px;
+  max-width: 100%;
+  padding: 0 10px;
+  color: $white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+
+  h1 {
+    color: $white;
+    margin: 0;
+  }
+
+  @include mobile {
+    bottom: 15px;
+    padding: 0 20px;
+  }
+}
+
 .site-info {
   float: left;
   display: flex;
