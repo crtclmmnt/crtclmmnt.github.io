@@ -18,7 +18,7 @@ permalink: /offerings/
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
     <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
   </div>
@@ -61,12 +61,13 @@ permalink: /offerings/
 
 ---
 
-<div class="services-layout" style="align-items: flex-start;">
+<div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    <br>
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">$40–$120 per session</h3>
@@ -85,12 +86,13 @@ permalink: /offerings/
 
 ---
 
-<div class="services-layout" style="align-items: flex-start;">
+<div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
-    <hr class="short" style="margin: 0.5em 0;">
     <br>
     <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    <br>
+    <hr class="short" style="margin: 0.5em 0;">
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
