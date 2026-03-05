@@ -68,7 +68,7 @@ One of the most exhausting parts of living in a Capitalist society is the fact t
 <br>
 <h3>Planting the Seeds of Leftist Culture</h3>
 
-I believe that meditation is the substrate within which our new culture can grow. Creating and participating in a new culture would require all of us to approach the project with open minds, which is something a meditation practice can foster in you.
+I believe that meditation is the substrate within which our new culture can grow. Creating and participating in a new culture would require all of us to approach the project with open minds, which is something that a consistent meditation practice fosters in us.
 
 Meditation is supposed to make you more compassionate, which is an essential quality of progressive politics according to **[this article from Nature](https://www.nature.com/articles/s41467-019-12227-0).** Meditation is also supposed to help you cultivate beginner’s mind—an attitude of openness, eagerness, and lack of bias when encountering new knowledge, or new experiences. Beginner’s mind can also be understood as a kind of intense curiosity, curiosity being the Yin to compassion’s Yang. When you have compassion for someone or something, you are more likely to be curious about (and pay attention to) their circumstances. When you’re curious about something or someone, it requires you to perceive them without judgement (i.e. with compassion) if you want to really learn something.
 
