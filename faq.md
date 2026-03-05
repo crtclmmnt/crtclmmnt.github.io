@@ -124,7 +124,7 @@ permalink: /faq/
 <hr>
 <br>
 
-<div style="max-width: 300px; margin: 0 auto;">
+<div style="max-width: 400px; margin: 0 auto;">
   <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
   <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
 </div>
