@@ -200,7 +200,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 </div>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
+<h5><a href="https://thecriticalmoment.org/about">Back to the top</a></h5>
 <hr>
 
 <div style="max-width: 725px; margin: 0 auto;">

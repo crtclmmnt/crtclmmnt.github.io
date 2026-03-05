@@ -65,7 +65,6 @@ permalink: /offerings/
 </div>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
 <hr>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -90,7 +89,6 @@ permalink: /offerings/
 <p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, both <strong>in-person (Bay Area) and online.</strong></p>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
 <hr>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -112,7 +110,7 @@ permalink: /offerings/
 </div>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
 <br>
 
