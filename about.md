@@ -4,8 +4,6 @@ permalink: /about/
 ---
 <img src="/images/pano7.JPG" alt="About header" class="hero-image">
 
-<br>
-
 <div class="about-layout" style="align-items: flex-end;">
   <div>
     <h1 style="font-size: 4rem; margin-bottom: 0px;">About Me</h1>
