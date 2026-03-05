@@ -4,11 +4,12 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano9.JPG" alt="A mossy tree branch." class="hero-image">
-
-<div style="max-width: 950px; margin: 0 auto;">
-
-<h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
+<div class="hero-wrapper">
+  <img src="/images/pano9.JPG" alt="A black and white panorama of snow capped mountains in the Sierra range." class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
+  </div>
+</div>
 
 <hr class="short" style="margin-left: 0;">
 
