@@ -48,7 +48,7 @@ My fingers hurt. Anyways. We have developed our analysis. We have read so many b
 
 One of my least favorite phrases is “there is no ethical consumption under Capitalism.” I think a more accurate version, or a more useful version, would be “there is no reciprocity under Capitalism.” The former version seems like an excuse for continued participation in Capitalist society. The latter points to what we can build instead: a culture of reciprocity. 
 
->There is no reciprocity under Capitalism.
+>"There is no reciprocity under Capitalism."
 
 This kind of culture is something we are perfectly capable of building, if we make it a priority. And I have a feeling that building an alternative culture to the capitalist culture is more important than building a political party. Culture and community are what people crave, and the political movements that succeed tend to offer both things to their participants. 
 
