@@ -4,7 +4,7 @@ title: Introducing the Critical Moment
 ---
 I chose the name The Critical Moment for two reasons.
 <br>
-<h3>The First Reason...</h3>
+<h3>A Critical Moment in History</h3>
 
 The first reason I chose this name is that it communicates that we are living in a critical moment, in the historical sense. Depending on who you talk to, the defining feature of our time could be the end of Neoliberal Globalization, the beginning of Techno-feudalism, the end of American hegemony, the beginning of multipolarity, the end of nature, the beginning of AI God, or any number of other cataclysmic, world-shaking, mind-boggling events. 
 
@@ -17,7 +17,7 @@ Our goals are popular, and many people seem to be on board. So why has the left 
 I think it comes down to two things: we on the left (especially online) spend a lot of time arguing with each other, and we on the left are resistant to letting our politics change us. That second point also very much influences the first. I’m not exactly sure what it would mean to let our politics change us, but I think developing some sort of contemplative practice and engaging in introspection is an important first step. But I’ll say more about that later.
 
 <br>
-<h3>The Second Reason...</h3>
+<h3>A Critical Moment in Practice</h3>
 
 The second reason I chose the name “Critical Moment” is because it describes something I have viscerally experienced since starting my meditation practice. 
 
@@ -39,7 +39,6 @@ I don’t want to make it seem like I think every organizer is a mess. There are
 My reason for emphasizing the power of mindfulness meditation is that we need movements that bring in as many people as possible. And if we’re going for sheer numbers, we must be able to teach and model skills and behaviors that help new people organize sustainably, especially when people’s anxieties, fears, and frustrations have stopped them from showing up in the past.  
 
 <br>
-
 <h3>Letting Our Politics Change Us</h3>
 
 So, why has the left failed to build a mass movement? Like I said before, I think the most important reason is that we struggle to let our politics change us.  
@@ -50,7 +49,7 @@ My fingers hurt. Anyways. We have developed our analysis. We have read so many b
 
 One of my least favorite phrases is “there is no ethical consumption under Capitalism.” I think a more accurate version, or a more useful version, would be “there is no reciprocity under Capitalism.” The former version seems like an excuse for continued participation in Capitalist society. The latter points to what we can build instead: a culture of reciprocity. 
 
->"There is no reciprocity under Capitalism."
+>There is no reciprocity under Capitalism.
 
 This kind of culture is something we are perfectly capable of building, if we make it a priority. And I have a feeling that building an alternative culture to the capitalist culture is more important than building a political party. Culture and community are what people crave, and the political movements that succeed tend to offer both things to their participants. 
 
@@ -58,7 +57,10 @@ I am a big fan of Kim Stanley Robinson’s novels, especially the Mars trilogy. 
 
 I like this scene because it’s so small compared to the story it lives in, but it demonstrates something incredibly important: how simple acts can signal our commitment to building an alternative to oppressive systems. 
 
-One of the most exhausting parts of living in a Capitalist society is the fact that we are constantly asked to make moral compromises to continue existing. And so much of what we consider to be “culture” is actually just a preference in methods of consumption. “What’s your favorite brand, band, show, car, flavor, etc.” This kind of culture feels hollow, it doesn’t really connect us to each other, but it’s what we’re used to. Participating in it is easier than building something new. 
+One of the most exhausting parts of living in a Capitalist society is the fact that we are constantly asked to make moral compromises to continue existing. And so much of what we consider to be “culture” is actually just a preference in methods of consumption. “What’s your favorite brand, band, show, car, flavor, etc.” This kind of culture feels hollow, it doesn’t really connect us to each other, but it’s what we’re used to. Participating in it is easier than building something new.
+
+<br>
+<h3>Planting the Seeds of Leftist Culture</h3>
 
 I believe that meditation is the substrate within which our new culture can grow. Creating and participating in a new culture would require all of us to approach the project with open minds, which is something a meditation practice can foster in you.
 
