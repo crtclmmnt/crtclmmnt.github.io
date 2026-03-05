@@ -4,7 +4,7 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano7.JPG" alt="A mossy tree branch." class="hero-image">
+<img src="/images/pano9.JPG" alt="A mossy tree branch." class="hero-image">
 
 <div style="max-width: 950px; margin: 0 auto;">
 
