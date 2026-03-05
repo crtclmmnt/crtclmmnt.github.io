@@ -11,7 +11,7 @@ permalink: /about/
     In 2022, I was worrying about climate change on a weekly basis. I was watching an incessant series of natural disasters unfold through short video clips, because Instagram’s algorithm had learned that I couldn’t look away from them. I was in my final year of college, working in research, and I had become disillusioned with the academic establishment’s ability to respond to the unfolding climate crisis. I couldn’t imagine a future where we found a way out, and my certainty of this reality caused me a great deal of despair.  
   </div>
   
-  <div style="flex-shrink: 0; text-align: center; width: 100%;">
+  <div style="flex-shrink: 0; text-align: center;">
     <img src="/images/bio2.JPG" alt="Joshua" style="width: 250px; height: auto;">
   </div>
 </div>
