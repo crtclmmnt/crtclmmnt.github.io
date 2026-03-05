@@ -57,11 +57,11 @@ A future where we win starts now, in the critical moment.
 <div style="max-width: 700px; margin: 0 auto;">
 
 <p>I offer free meditation workshops for community organizers, which I call Meditation for Liberation, and sliding scale individual and group instruction for those seeking a more personalized experience.</p>
-<div style="max-width: 500px; margin: 0 auto;">
-    <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
-    <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn">Individual Meditation Instruction</a>
-    <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn">Group Meditation Workshops</a>
-    <a href="https://thecriticalmoment.org/offerings/" class="btn">All Offerings</a>
+<div style="max-width: 500px; margin: 0 auto; display: flex; justify-content: center;">
+    <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px; line-height: 1.1;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
+    <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn"><span style="font-size: 28px; line-height: 1.1;">Individual Meditation Instruction</a>
+    <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn"><span style="font-size: 28px; line-height: 1.1;">Group Meditation Workshops</a>
+    <a href="https://thecriticalmoment.org/offerings/" class="btn"><span style="font-size: 22px; line-height: 1.1;">All Offerings</a>
 </div>
 </div>
 
