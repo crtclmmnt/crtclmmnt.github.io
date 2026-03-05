@@ -4,13 +4,11 @@ title: FAQ
 permalink: /faq/
 ---
 
-<div class="hero-wrapper">
-  <img src="/images/pano9.JPG" alt="Sunset over taubate." class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size: 3rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
-    <hr class="short" style="margin: 0.5em 0;">
-  </div>
-</div>
+<img src="/images/pano9.JPG" alt="About header" class="hero-image">
+
+<h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
+
+<hr class="short" style="margin: 0.5em 0;">
 
 <br>
 
@@ -64,6 +62,11 @@ permalink: /faq/
 
 </div>
 
+<br>
+<hr>
+<br>
+
+
 <h3>Getting Started</h3>
 
 <div style="max-width: 800px; margin: 0 auto;">
@@ -84,6 +87,10 @@ permalink: /faq/
 </details>
 
 </div>
+
+<br>
+<hr>
+<br>
 
 <h3>About the Practice</h3>
 
