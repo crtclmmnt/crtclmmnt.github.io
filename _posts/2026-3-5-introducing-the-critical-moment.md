@@ -36,7 +36,9 @@ I don’t want to make it seem like I think every organizer is a mess. There are
 
 My reason for emphasizing the power of mindfulness meditation is that we need movements that bring in as many people as possible. And if we’re going for sheer numbers, we must be able to teach and model skills and behaviors that help new people organize sustainably, especially when people’s anxieties, fears, and frustrations have stopped them from showing up in the past.  
 
-<h5>Letting Our Politics Change Us</h5>
+<br>
+
+<h3>Letting Our Politics Change Us</h3>
 
 So, why has the left failed to build a mass movement? Like I said before, I think the most important reason is that we struggle to let our politics change us.  
 

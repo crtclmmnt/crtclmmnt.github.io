@@ -648,10 +648,12 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 10px solid $darkRose;
     padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
+    color: $darkRose;
+    font-size: 24px;
+    font-family: 'ZTNature';
+    font-weight: 900;
     font-style: italic;
   }
 
