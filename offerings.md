@@ -36,12 +36,15 @@ permalink: /offerings/
 
 <h1 id="curriculum">Curriculum Options</h1>
 
+<hr class="short" style="margin: 0.5em 0;">
+
 <div class="book-grid curriculum-grid">
   <div class="book-card">
     <h5>Gentleness, Precision, and Letting Go</h5>
     <h6>4 weeks / 6 weeks</h6>
     <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
   </div>
+
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
     <h6>4 weeks / 6 weeks</h6>
@@ -49,6 +52,7 @@ permalink: /offerings/
     <br>
     <p class="book-description">The core idea explored is what Macy identifies as the four views through which we see the world: the limiting views — World as Battlefield, World as Trap, and the liberating views — World as Lover, World as Self.</p>
   </div>
+
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
