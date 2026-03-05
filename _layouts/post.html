@@ -9,12 +9,15 @@ layout: default
     {{ page.date | date: "%B %e, %Y" }}
   </div>
   <p>
+  <br>
+  <a href="{{ site.baseurl }}/blog" class="back-button"><strong>BACK TO BLOG</strong></a>
   <hr>
   <div class="entry">
     {{ content }}
   </div>
-
-  <a href="{{ site.baseurl }}/blog" class="back-button"><strong>BACK</strong></a>
+  <br>
+  <hr>
+  <a href="{{ site.baseurl }}/blog" class="back-button"><strong>BACK TO BLOG</strong></a>
 
   {% include disqus.html %}
 </article>
