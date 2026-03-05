@@ -1,11 +1,12 @@
 ---
 layout: post
 title: Introducing the Critical Moment
+description: "Why has the left failed to build a mass movement, and can meditation be a remedy to that failure?"
 hero_image: /images/blogpics/pano12.JPG
 ---
 Welcome to The Critical Moment. Welcome to Cutting Through Political Materialism. This is my first post on this blog, and since I have a lot of explaining to do, it goes on a little long. But I promise the payoff is worth it. 
 
-I chose the name <strong>The Critical Moment</strong> for two reasons.
+So, I chose the name <strong>The Critical Moment</strong> for two reasons.
 <br>
 <h3>A Critical Moment in History</h3>
 
@@ -15,7 +16,7 @@ Most of these things are gestures towards some real issue, and regardless of whi
 
 If most people agree that we need to drastically reform (or completely reinvent) our political and economic system, what are we waiting for? Most left-wing policies poll incredibly well, especially on economic issues. Every day I hear people talk about revolution, although I hear a lot more about the <em>need</em> for a revolution than the <em>plan</em> for a revolution. 
 
-Our goals are popular, and many people seem to be on board. So why has the left failed to organize the mass movement that everyone seems to be waiting for?
+If our goals are popular, and many people seem to be on board, why has the left failed to organize the mass movement that everyone seems to be waiting for?
 
 I think it comes down to two things: we on the left (especially online) spend a lot of time arguing with each other, and we on the left are resistant to letting our politics change us. That second point also very much influences the first. I’m not exactly sure what it would mean to let our politics change us, but I think developing some sort of contemplative practice and engaging in introspection is an important first step. But I’ll say more about that later.
 
