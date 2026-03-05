@@ -58,13 +58,13 @@ A future where we win starts now, in the critical moment.
 
 <p>I offer free meditation workshops for community organizers, which I call Meditation for Liberation, and sliding scale individual and group instruction for those seeking a more personalized experience.</p>
 <div style="max-width: 500px; margin: 0 auto;">
-    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a></h3>
+    <h3 style="text-align: center; font-weight: 200;"><a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a></h3>
     <br>
-    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn">Individual Meditation Instruction</a></h3>
+    <h3 style="text-align: center; font-weight: 200;"><a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn">Individual Meditation Instruction</a></h3>
     <br>
-    <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups" class="btn">Group Meditation Workshops</a></h3>
+    <h3 style="text-align: center; font-weight: 200;"><a href="https://thecriticalmoment.org/offerings#large-groups" class="btn">Group Meditation Workshops</a></h3>
     <br>
-    <h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/" class="btn">All Offerings</a></h5>
+    <h5 style="text-align: center; font-weight: 200;"><a href="https://thecriticalmoment.org/offerings/" class="btn">All Offerings</a></h5>
 </div>
 </div>
 
