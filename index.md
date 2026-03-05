@@ -61,6 +61,7 @@ A future where we win starts now, in the critical moment.
   <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
   <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Individual Meditation Instruction</span></a>
   <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Group Meditation Workshops</span></a>
+  <hr class="short">
   <a href="https://thecriticalmoment.org/offerings/" class="btn"><span style="font-size: 22px; line-height: 0.8rem;">All Offerings</span></a>
 </div>
 <br>
@@ -71,6 +72,7 @@ A future where we win starts now, in the critical moment.
 
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
+  <hr class="short">
   <br>
   <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
   <p style="text-align: center;">Ready to get started?</p>
