@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Introducing the Critical Moment
+hero_image: /images/blogpics/pano12.JPG
 ---
+Welcome to The Critical Moment. Welcome to Cutting Through Political Materialism. This is my first post on this blog, and since I have a lot of explaining to do, it goes on a little long. But I promise the payoff is worth it. 
+
 I chose the name <strong>The Critical Moment</strong> for two reasons.
 <br>
 <h3>A Critical Moment in History</h3>

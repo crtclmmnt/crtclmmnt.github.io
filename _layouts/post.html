@@ -2,7 +2,11 @@
 layout: default
 ---
 
-<img src="/images/pano12.JPG" alt="A cottage surrounded by jungle vegetation." class="hero-image">
+{% if page.hero_image %}
+<div class="hero-wrapper">
+  <img src="{{ page.hero_image }}" class="hero-image" alt="{{ page.title }}">
+</div>
+{% endif %}
 
 <article class="post">
   <a href="{{ site.baseurl }}/blog" class="back-button"><strong>BACK TO BLOG</strong></a>
