@@ -2,7 +2,7 @@
 layout: post
 title: Introducing the Critical Moment
 ---
-I chose the name The Critical Moment for two reasons.
+I chose the name <strong>The Critical Moment</strong> for two reasons.
 <br>
 <h3>A Critical Moment in History</h3>
 
@@ -45,9 +45,9 @@ So, why has the left failed to build a mass movement? Like I said before, I thin
 
 We were all raised in a Capitalist society. The culture we were raised in has been shaped by Capitalism, for Capitalism. Many of us understand this on an intellectual level. We understand that the nuclear family was contrived as a way to create more consumers (because an intergenerational household shares far more resources than a nuclear family does) and give men control over women’s reproductive organs (so that men could be in charge of expanding the labor pool). We understand that there is an entire advertising industry built around trying to fill the spiritual vacuum in our daily lives by manipulating us into worshiping the Gods of money, fame, and consumption. We understand that industrial agriculture exploits migrants and produces artificially cheap food as a way to displace rural farm owners around the globe, and push people into cities where their labor can be exploited more profitably. We understand that cities are planned around improving real estate values and protecting wealthy enclaves from the unwashed masses, and that local governments often dedicate most of their time and resources to protecting property and wealth rather than taking care of their most vulnerable citizens. We understand that borders are fake, and most latine immigrants are more likely to be indigenous to this continent than any white nativist who wants to build a wall and superfund ICE. We understand that…
 
-My fingers hurt. Anyways. We have developed our analysis. We have read so many books. We understand what’s wrong, and love to talk about it. So, what are we doing about it?
+My fingers hurt. Anyways. We have developed our analysis. We have read so many books. We understand what’s wrong, and love to talk about it. But what are we going to do about it?
 
-One of my least favorite phrases is “there is no ethical consumption under Capitalism.” I think a more accurate version, or a more useful version, would be “there is no reciprocity under Capitalism.” The former version seems like an excuse for continued participation in Capitalist society. The latter points to what we can build instead: a culture of reciprocity. 
+One of my least favorite phrases is <em>there is no ethical consumption under Capitalism.</em> I think a more accurate version, or a more useful version, would be <em>there is no reciprocity under Capitalism.</em> The former version seems like an excuse for continued participation in Capitalist society. The latter points to what we can build instead: a culture of reciprocity. 
 
 >There is no reciprocity under Capitalism.
 
@@ -64,11 +64,10 @@ One of the most exhausting parts of living in a Capitalist society is the fact t
 
 I believe that meditation is the substrate within which our new culture can grow. Creating and participating in a new culture would require all of us to approach the project with open minds, which is something a meditation practice can foster in you.
 
-Meditation is supposed to make you more compassionate, which is the defining feature of progressive politics according to <strong>[this article from Nature](https://www.nature.com/articles/s41467-019-12227-0).</strong> Meditation is also supposed to help you cultivate beginner’s mind—an attitude of openness, eagerness, and lack of bias when encountering new knowledge, or new experiences. Beginner’s mind can also be understood as a kind of intense curiosity, curiosity being the Yin to compassion’s Yang. When you have compassion for someone or something, you are more likely to be curious about (and pay attention to) their circumstances. When you’re curious about something or someone, it requires you to perceive them without judgement (i.e. with compassion) if you want to really learn something.
+Meditation is supposed to make you more compassionate, which is the defining feature of progressive politics according to **[this article from Nature](https://www.nature.com/articles/s41467-019-12227-0).** Meditation is also supposed to help you cultivate beginner’s mind—an attitude of openness, eagerness, and lack of bias when encountering new knowledge, or new experiences. Beginner’s mind can also be understood as a kind of intense curiosity, curiosity being the Yin to compassion’s Yang. When you have compassion for someone or something, you are more likely to be curious about (and pay attention to) their circumstances. When you’re curious about something or someone, it requires you to perceive them without judgement (i.e. with compassion) if you want to really learn something.
 
 Meditation can make us more curious about each other, which will make us more compassionate towards each other, which will make us more open-minded with each other, which will make us better at listening to each other. Imagine what this kind of shift in attitudes would mean for leftist infighting, for coalition building, and for communicating our goals to the broader public? Imagine a left-wing movement that models stability, kindness, and respect, rather than modeling anger, self-righteousness, and insufferable debate obsession. It’s not that these feelings have no place on the left, it’s just that they’re not effective advertisements.  
 
 This is why I started The Critical Moment. I believe meditation practice will help us build the left’s culture, and I think a strong cultural movement will inevitably become a political one. People build successful political movements in community: in situations where they’re talking, sharing ideas, and making plans. I think a movement that feels like home is necessary to counter the alienation that runs rampant in society since the pandemic. Joining a movement should feel like an irresistible invitation, not a grim duty.
 
 Capitalist culture wants us to keep pouring our own water. <strong>What would it mean to fill each other’s cups?</strong>
-
