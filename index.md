@@ -76,7 +76,6 @@ A future where we win starts now, in the critical moment.
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <hr class="short">
-  <br>
   <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
   <p style="text-align: center;">Ready to get started?</p>
 <div style="display: flex; justify-content: center;">

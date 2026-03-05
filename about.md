@@ -90,7 +90,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Entangled Life</h5>
       <p class="book-author">Merlin Sheldrake</p>
-      <p class="book-description">This book challenges the simple Darwinian view of life as "survival of the fittest," instead showing how life works through networks, symbiosis, and mutual dependence rather than competition and isolation.</p>
+      <p class="book-description">This book challenges the simple Darwinian view of life as "survival of the fittest," instead showing how life works through networks, symbiosis, and interdependence rather than competition and selfishness.</p>
     </div>
   </div>
 
@@ -106,32 +106,32 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Wretched of the Earth</h5>
       <p class="book-author">Frantz Fanon</p>
-      <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer.</p>
+      <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer. The most memorable insight from this book is the idea that when a colonizer dehumanizes a colonized people, they themselves become dehumanized.</p>
     </div>
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
       <p class="book-author">Paulo Freire</p>
-      <p class="book-description">Freire argues that education is never neutral — it either domesticates or liberates.</p>
+      <p class="book-description">Freire argues that a liberatory education cannot be a simple transference of knowledge from one teacher to the other, instead it must engage students and empower them to learn for themselves.</p>
     </div>
     <div class="book-card">
       <h5>Debt: <br class="mobile-break"><span style=" font-size: 1.2rem;">The First 5,000 Years</span></h5>
       <p class="book-author">David Graeber</p>
-      <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable.</p>
+      <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable, tracing the history of how debt has been used to manipulate the masses.</p>
     </div>
     <div class="book-card">
       <h5>Capitalist Realism</h5>
       <p class="book-author">Mark Fisher</p>
-      <p class="book-description">Fisher asks why it's easier to imagine the end of the world than the end of capitalism — short, sharp, and hard to shake.</p>
+      <p class="book-description">Fisher investigates why it's easier to imagine the end of the world than the end of capitalism.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>How Europe Underdeveloped Africa</h5>
       <p class="book-author">Walter Rodney</p>
-      <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development — it's the direct result of deliberate extraction.</p>
+      <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development, it's the direct result of the extraction of humans and resources from the African continent.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
-      <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century — worth reading even if you disagree with him.</p>
+      <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century, and presents a nuanced analysis of actually existing socialist projects.</p>
     </div>
     <div class="book-card">
       <h5>The Hundred Years' War on Palestine</h5>
@@ -147,17 +147,17 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
-      <p class="book-description">McGilchrist argues that the left hemisphere of the brain has staged a kind of coup over Western civilization — dense but worth it.</p>
+      <p class="book-description">McGilchrist argues that the left hemisphere (the analytical, data oriented, logical hemisphere) of the brain has staged a kind of coup over Western civilization, causing us to suppress our engagement with the right hemisphere (the holistic, big-picture, emotional hemisphere). Dense but worth it.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>No Bad Parts</h5>
       <p class="book-author">Richard Schwartz</p>
-      <p class="book-description">One of the most useful frameworks I've encountered for understanding why we act against our own interests.</p>
+      <p class="book-description">One of the most useful frameworks I've encountered for understanding how and why we act the way we do.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
       <p class="book-author">Rutger Bregman</p>
-      <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on a lie about who we are.</p>
+      <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on the cynicism of a few, rather than the selfishness of the masses.</p>
     </div>
     <div class="book-card">
       <h5>In the Realm of Hungry Ghosts</h5>
@@ -173,12 +173,12 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Patterning Instinct</h5>
       <p class="book-author">Jeremy Lent</p>
-      <p class="book-description">Lent argues that the stories a civilization tells about its relationship to nature determine whether it survives.</p>
+      <p class="book-description">Lent traces the evolution of human cognition back to the earliest civilizations. He argues that the stories a civilization tells about its relationship to nature determine whether it survives.</p>
     </div>
     <div class="book-card">
       <h5>The Tao of Physics</h5>
       <p class="book-author">Fritjof Capra</p>
-      <p class="book-description">Capra noticed that modern physics and ancient Eastern philosophy were describing the same thing in different languages.</p>
+      <p class="book-description">Capra noticed that modern physics and ancient Eastern philosophy were describing similar ideas in different languages.</p>
     </div>
   </div>
 
@@ -189,12 +189,12 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Ministry for the Future</h5>
       <p class="book-author">Kim Stanley Robinson</p>
-      <p class="book-description">Robinson imagines what it would actually take to avoid climate catastrophe — the politics, the economics, the grief, the ingenuity.</p>
+      <p class="book-description">Robinson imagines the next few decades of humanity's efforts to address climate change: the politics, the economics, the grief, the ingenuity.</p>
     </div>
     <div class="book-card">
       <h5>The Dispossessed</h5>
       <p class="book-author">Ursula K. Le Guin</p>
-      <p class="book-description">Le Guin builds two worlds — one anarchist, one capitalist — and asks what freedom actually costs.</p>
+      <p class="book-description">Le Guin tells us about a society of dispossessed anarchists living on a moon with scarce resources, and one man's journey back to the home planet where a proxy war  between Capitalist and Communist world powers threatens to upend a fragile society.</p>
     </div>
   </div>
 </div>
@@ -202,11 +202,10 @@ The world doesn’t need people to worry over her, she needs people who have the
 <br>
 <h5><a href="https://thecriticalmoment.org/about">Back to the top</a></h5>
 <hr>
-
+<br>
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <hr class="short">
-  <br>
   <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
   <p style="text-align: center;">Ready to get started?</p>
 <div style="display: flex; justify-content: center;">
