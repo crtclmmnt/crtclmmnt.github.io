@@ -11,7 +11,7 @@ permalink: /about/
     In 2022, I was worrying about climate change on a weekly basis. I was watching an incessant series of natural disasters unfold through short video clips, because Instagram’s algorithm had learned that I couldn’t look away from them. I was in my final year of college, working in research, and I had become disillusioned with the academic establishment’s ability to respond to the unfolding climate crisis. I couldn’t imagine a future where we found a way out, and my certainty of this reality caused me a great deal of despair.  
   </div>
   
-  <div style="flex-shrink: 0; text-align: center;">
+  <div style="flex-shrink: 0; text-align: center; width: 100%;">
     <img src="/images/bio2.JPG" alt="Joshua" style="width: 250px; height: auto;">
   </div>
 </div>
@@ -64,7 +64,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style="font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
-      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are just one part of the divine whole, i.e. the universe.</p>
+      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are not separate selves but expressions of a single living universe.</p>
     </div>
   </div>
 
@@ -80,7 +80,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Unsettling of America</h5>
       <p class="book-author">Wendell Berry</p>
-      <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of societies ails are the result of using machines for work we used to accomplish through relationships with other living things.</p>
+      <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of society's ills are the result of using machines for work we used to accomplish through relationships with other living things.</p>
     </div>
     <div class="book-card">
       <h5>Becoming Earth</h5>
@@ -111,7 +111,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
       <p class="book-author">Paulo Freire</p>
-      <p class="book-description">Freire argues that a liberatory education cannot be a simple transference of knowledge from one teacher to the other, instead it must engage students and empower them to learn for themselves.</p>
+      <p class="book-description">Freire argues traditional education reproduces oppression by treating students as empty vessels to be filled with knowledge. True liberation requires an education where students and teachers learn from each other, and focus on developing a critical consciousness.</p>
     </div>
     <div class="book-card">
       <h5>Debt: <br class="mobile-break"><span style=" font-size: 1.2rem;">The First 5,000 Years</span></h5>
@@ -131,7 +131,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti</p>
-      <p class="book-description">Parenti challenges comfortable left-liberal assumptions about the 20th century, and presents a nuanced analysis of actually existing socialist projects.</p>
+      <p class="book-description">Parenti challenges the liberal left's reflexive anticommunism, arguing that it has more in common with ruling class ideology than with genuine solidarity.</p>
     </div>
     <div class="book-card">
       <h5>The Hundred Years' War on Palestine</h5>
@@ -147,12 +147,12 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist</p>
-      <p class="book-description">McGilchrist argues that the left hemisphere (the analytical, data oriented, logical hemisphere) of the brain has staged a kind of coup over Western civilization, causing us to suppress our engagement with the right hemisphere (the holistic, big-picture, emotional hemisphere). Dense but worth it.</p>
+      <p class="book-description">McGilchrist argues that the left hemisphere (the analytical, data oriented, logical hemisphere) of the brain has staged a kind of coup over Western civilization, causing us to suppress our engagement with the right hemisphere (the holistic, big-picture, emotional hemisphere).</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>No Bad Parts</h5>
       <p class="book-author">Richard Schwartz</p>
-      <p class="book-description">One of the most useful frameworks I've encountered for understanding how and why we act the way we do.</p>
+      <p class="book-description">Family Therapist Richard Schwartz describes a framework for understanding the human psyche as an Internal Family System: a conglomeration of sub-personalities that have to learn to get along with each other. With meditation as a foundational practice for meeting your parts, I find this framework of therapy indispensable for getting to know yourself.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
@@ -162,7 +162,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>In the Realm of Hungry Ghosts</h5>
       <p class="book-author">Gabor Maté</p>
-      <p class="book-description">This book will change how you think about addiction, trauma, and compassion.</p>
+      <p class="book-description">Maté pioneers a view of addiction as a response to social alienation and pain, rather than a moral failing. This book will change how you think about addiction, trauma, and compassion.</p>
     </div>
   </div>
 
@@ -194,7 +194,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Dispossessed</h5>
       <p class="book-author">Ursula K. Le Guin</p>
-      <p class="book-description">Le Guin tells us about a society of dispossessed anarchists living on a moon with scarce resources, and one man's journey back to the home planet where a proxy war  between Capitalist and Communist world powers threatens to upend a fragile society.</p>
+      <p class="book-description">By imagining a society of anarchists that are given a moon upon which to build their utopia, Le Guin explores the reality of building alternative political, economic, and cultural systems. She explores the real cost of freedom, and why it must be chosen over and over again.</p>
     </div>
   </div>
 </div>
