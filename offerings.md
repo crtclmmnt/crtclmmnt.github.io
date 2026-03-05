@@ -5,7 +5,7 @@ permalink: /offerings/
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
-    <h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
+    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
   </div>
 </div>
 
@@ -65,7 +65,7 @@ permalink: /offerings/
 </div>
 
 <br>
-
+<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
 <hr>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -90,8 +90,8 @@ permalink: /offerings/
 <p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, both <strong>in-person (Bay Area) and online.</strong></p>
 
 <br>
-
----
+<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
+<hr>
 
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
@@ -111,7 +111,9 @@ permalink: /offerings/
   </div>
 </div>
 
-
+<br>
+<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
+<hr>
 <br>
 
 

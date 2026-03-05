@@ -206,10 +206,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
-  <hr class="short">
-  <br>
   <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
-  <br>
   <p style="text-align: center;">Or reach out to me directly:</p>
   <h5 style="text-align: center;"><a href="mailto:joshua@thecriticalmoment.org">joshua@thecriticalmoment.org</a></h5>
 </div>
