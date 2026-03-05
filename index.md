@@ -17,7 +17,7 @@ It’s hard to face all this without falling apart, or turning a blind eye.
 
 But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. It’s not enough to be on the right side of history. We have a moral duty to win.
 
-We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill for anyone trying to correct the course of history.
+**We are living in the critical moment.** Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill for anyone trying to correct the course of history.
 
 Liberation is an endeavor that requires more than confrontation, it also requires construction. It requires us to build a culture of reciprocity to replace the culture of consumption and scarcity. It requires a revolution in how we relate to power, and how we relate to each other.
 
