@@ -693,8 +693,9 @@ nav {
 .btn-large {
   @extend .btn;
   text-align: center;
+  background-color: $rose;
   padding: 24px 32px;
-  border: 3px solid $darkerGray;
+  border: 0px solid $darkerGray;
   border-radius: 30px;
 }
 
