@@ -4,19 +4,20 @@ title: FAQ
 permalink: /faq/
 ---
 
-<img src="/images/pano9.JPG" alt="A mossy tree branch." class="hero-image">
-
-<div style="max-width: 950px; margin: 0 auto;">
-
-<h1 style="font-size: 4rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
-
-<hr class="short" style="margin-left: 0;">
-
-<p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
+<div class="hero-wrapper">
+  <img src="/images/pano9.JPG" alt="Sunset over taubate." class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size: 3rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
+  </div>
+</div>
 
 <br>
 
-</div>
+<p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
+
+<hr>
+
+<br>
 
 <div style="max-width: 850px; margin: 0 auto;">
 
