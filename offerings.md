@@ -89,12 +89,12 @@ permalink: /offerings/
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
-    <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
-    <br>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
+    <br>
+    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    <br>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
   </div>
   <div class="services-content" style="flex: 1.2;">
