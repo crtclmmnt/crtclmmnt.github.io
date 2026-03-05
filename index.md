@@ -65,7 +65,7 @@ A future where we win starts now, in the critical moment.
   <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
   <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
   <hr class="short">
-  <a href="https://thecriticalmoment.org/offerings/" class="btn-large"><span style="font-size: 28px; line-height: 1;">All Offerings</span></a>
+  <a href="https://thecriticalmoment.org/offerings/" class="btn-large"><span style="font-size: 22px; line-height: 1;">All Offerings</span></a>
 </div>
 <br>
 
