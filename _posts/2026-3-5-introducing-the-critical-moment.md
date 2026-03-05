@@ -2,12 +2,11 @@
 layout: post
 title: Introducing the Critical Moment
 ---
+I chose the name The Critical Moment for two reasons.
+<br>
+<h3>The First Reason...</h3>
 
-<h5>We are living in a Critical Moment.</h5>
-
-I chose the name “Critical Moment” because it communicates two important things.
-
-The first thing it communicates is that we are living in a critical moment, in the historical sense. Depending on who you talk to, the defining feature of our time could be the end of Neoliberal Globalization, the beginning of Techno-feudalism, the end of American hegemony, the beginning of multipolarity, the end of nature, the beginning of AI God, or any number of other cataclysmic, world-shaking, mind-boggling events. 
+The first reason I chose this name is that it communicates that we are living in a critical moment, in the historical sense. Depending on who you talk to, the defining feature of our time could be the end of Neoliberal Globalization, the beginning of Techno-feudalism, the end of American hegemony, the beginning of multipolarity, the end of nature, the beginning of AI God, or any number of other cataclysmic, world-shaking, mind-boggling events. 
 
 Most of these things are gestures towards some real issue, and regardless of which one you care most about, you probably agree that your favorite issue won’t be solved until we give a new system a try. With every day that passes, events seem to validate this perspective.
 
@@ -16,6 +15,9 @@ If most people agree that we need to drastically reform (or completely reinvent)
 Our goals are popular, and many people seem to be on board. So why has the left failed to organize the mass movement that everyone seems to be waiting for?
 
 I think it comes down to two things: we on the left (especially online) spend a lot of time arguing with each other, and we on the left are resistant to letting our politics change us. That second point also very much influences the first. I’m not exactly sure what it would mean to let our politics change us, but I think developing some sort of contemplative practice and engaging in introspection is an important first step. But I’ll say more about that later.
+
+<br>
+<h3>The Second Reason...</h3>
 
 The second reason I chose the name “Critical Moment” is because it describes something I have viscerally experienced since starting my meditation practice. 
 
