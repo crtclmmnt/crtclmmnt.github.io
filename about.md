@@ -35,7 +35,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <br>
 
-<h2 style="font-size: 4rem; margin-bottom: 0px;">Recommended Reading</h2>
+<h1 style="margin-bottom: 0px;">Recommended Reading</h1>
 
 <hr class="short" style="margin: 0.5em 0;">
 
