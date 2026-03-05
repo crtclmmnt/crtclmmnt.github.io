@@ -13,7 +13,7 @@ permalink: /offerings/
 
 ---
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
@@ -61,7 +61,7 @@ permalink: /offerings/
 
 ---
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
     <hr class="short" style="margin: 0.5em 0;">
@@ -84,7 +84,7 @@ permalink: /offerings/
 
 ---
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
     <hr class="short" style="margin: 0.5em 0;">

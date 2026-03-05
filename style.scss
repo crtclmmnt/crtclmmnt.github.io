@@ -293,7 +293,7 @@ em, i {
 hr {
   border: none;
   height: 3px;
-  background: linear-gradient(to left, $peach, $peach, $rose, $rose, $darkRose, $darkBlue); /*alternate: $rose, $peach, $mint*/
+  background: $darkRose; // linear-gradient(to left, $peach, $peach, $rose, $rose, $darkRose, $darkBlue); /*alternate: $rose, $peach, $mint*/
   margin: 0.5em auto; /* Change to "auto" to center it, 0 to align it on left */
   width: 100%;
 }

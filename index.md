@@ -64,7 +64,7 @@ A future where we win starts now, in the critical moment.
     <br>
     <h3 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings#large-groups" class="btn">Group Meditation Workshops</a></h3>
     <br>
-    <h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/ class="btn">All Offerings</a></h5>
+    <h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/" class="btn">All Offerings</a></h5>
 </div>
 </div>
 
