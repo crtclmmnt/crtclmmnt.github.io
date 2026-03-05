@@ -770,20 +770,29 @@ nav {
   
   label {
     color: $white;
-    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'ZT-Nature';
   }
   
   input[type="email"] {
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid $darkerGray;
+    padding: 20px;
+    border-radius: 0px;
+    border: 0px solid $darkerGray;
+    font-size: 1.5rem;
     font-family: 'Roboto';
-    width: 300px;
+    width: 400px;
   }
   
   input[type="submit"] {
     @extend .btn;
-    cursor: pointer;
+    background-color: $babyYellow;
+    color: $darkerGray;
+    font-size: 1.5rem;
+    padding: 8px 16px;
+    border: 3px solid $darkerGray;
+    border-radius: 15px;
+      cursor: pointer;
   }
   
   a {
