@@ -8,11 +8,13 @@ permalink: /offerings/
     <h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
   </div>
 </div>
-<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Maybe you're a community organizer, a concerned citizen, or  just someone curious about meditation. Regardless of who you are, I have an offering for you.</p>
 
 <br>
 
+<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Maybe you're a community organizer, a concerned citizen, or  just someone curious about meditation. Regardless of who you are, I have an offering for you.</p>
+
 <hr>
+
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
