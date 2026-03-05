@@ -2,7 +2,7 @@
 layout: default
 permalink: /about/
 ---
-<img src="/images/pano4.jpg" alt="About header" class="hero-image">
+<img src="/images/pano8.JPG" alt="About header" class="hero-image">
 
 <br>
 
