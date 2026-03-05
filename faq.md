@@ -16,8 +16,6 @@ permalink: /faq/
 
 <br>
 
-<hr>
-
 </div>
 
 <div style="max-width: 850px; margin: 0 auto;">
