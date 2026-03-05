@@ -10,8 +10,6 @@ permalink: /faq/
 
 <hr class="short" style="margin: 0.5em 0;">
 
-<br>
-
 <p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
 
 <hr>
