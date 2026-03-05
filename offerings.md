@@ -29,7 +29,7 @@ permalink: /offerings/
 </div>
 
 <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
-<p>Workshops run between 4 and 8 weeks depending on the curriculum, and the duration of each session is 60 - 90 minutes. Both in-person (Bay Area) and online options are available.</p>
+<p>Workshops run between <strong>4 and 8 weeks</strong> depending on the curriculum, and the duration of each session is <strong>60 - 90 minutes.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
 
 <h1 id="curriculum">Curriculum Options</h1>
 
@@ -77,8 +77,8 @@ permalink: /offerings/
   </div>
 </div>
 
-<p>Individual instruction is offered on a sliding scale of $40–$120 per session. I want this to be accessible, so please pay what feels sustainable for your circumstances. If this price range doesn't work for you, I can help connect you with other meditation resources or notify you when a free Meditation for Liberation workshop is being offered.</p>
-<p>Sessions are available in 40, 60, or 90 minute formats, both in-person (Bay Area) and online.</p>
+<p>Individual instruction is offered on a <strong>sliding scale of $40–$120 per session.</strong> I want this to be accessible, so please pay what feels sustainable for your circumstances. If this price range doesn't work for you, I can help connect you with other meditation resources or notify you when a free Meditation for Liberation workshop is being offered.</p>
+<p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, both <strong>in-person (Bay Area) and online.</strong></p>
 
 <br>
 
@@ -96,10 +96,10 @@ permalink: /offerings/
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
-    <p>Pricing is sliding scale based on your organization's capacity. Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
+    <p>Pricing is <strong>sliding scale based on your organization's capacity.</strong> Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
   </div>
 </div>
-<p>Sessions are available in 40, 60, or 90 minute formats, and workshops run between 4 and 8 weeks. Both in-person (Bay Area) and online options are available.</p>
+<p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, and workshops run between <strong>4 and 8 weeks.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
 
 <br>
 
