@@ -92,10 +92,10 @@ permalink: /offerings/
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
-    <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
-    <br>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
+    <br>
+    <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
