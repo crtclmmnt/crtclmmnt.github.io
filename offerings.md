@@ -18,9 +18,10 @@ permalink: /offerings/
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
+    <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+    <br>
     <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
-    <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
@@ -66,12 +67,12 @@ permalink: /offerings/
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
-    <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
-    <br>
-    <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">$40–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
+    <br>
+    <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
@@ -100,9 +101,10 @@ permalink: /offerings/
   <div class="services-content" style="flex: 1.2;">
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
     <p>Pricing is <strong>sliding scale based on your organization's capacity.</strong> Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
+    <p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, and workshops run between <strong>4 and 8 weeks.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
   </div>
 </div>
-<p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, and workshops run between <strong>4 and 8 weeks.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
+
 
 <br>
 
