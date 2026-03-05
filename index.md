@@ -19,6 +19,8 @@ But it’s also not enough to simply witness these things, and to have the right
 
 We are living in the critical moment. Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill for anyone trying to correct the course of history.
 
+Liberation is an endeavor that requires more than confrontation, it also requires construction. It requires us to build a culture of reciprocity to replace the culture of consumption and scarcity. It requires a revolution in how we relate to power, and how we relate to each other.
+
 The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias. 
 
 A future where we win starts now, in the critical moment.   
@@ -29,7 +31,7 @@ A future where we win starts now, in the critical moment.
 
 <br>
 
----
+<hr>
 
 <br>
 
@@ -40,8 +42,8 @@ A future where we win starts now, in the critical moment.
   
   <div class="services-content" style="max-width: 450px;">
         <h1 style="text-align: left; margin-bottom: 5px;">My Background</h1>
-<p>I started my own meditation practice a little over 2 years ago. At the time I was so paralyzed by anxiety about the state of our world that I gave up on political organizing.</p>
-<p>It's not that I didn't want to get organized, or that I didn't see any value to it. I wanted to hide from my worries, and showing up felt like admitting to myself that the world was ending.</p>
+<p>I started my own meditation practice a little over 2 years ago. At the time I was paralyzed by anxiety about the state of our world, to the extent that I gave up on political organizing.</p>
+<p>It's not that I didn't want to organize, or that I didn't see any value to it. I wanted to hide from my worries, and showing up felt like admitting to myself that the world was ending.</p>
 <p>Building a meditation practice helped me live with my anxiety without being ruled by it. It helped me return to organizing with confidence of mind and clarity of vision. Once I had experienced the transformative benefits of a mindfulness meditation practice, I realized it was something I wanted to share with other organizers.</p>
 <p>Thus, the Critical Moment was born.</p>
         <h5><a href="https://thecriticalmoment.org/about/">Read More</a></h5>
@@ -50,8 +52,9 @@ A future where we win starts now, in the critical moment.
 
 <br>
 
+<hr>
 
----
+<br>
 
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 
@@ -69,7 +72,7 @@ A future where we win starts now, in the critical moment.
 </div>
 <br>
 
----
+<hr>
 
 <br>
 
