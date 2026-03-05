@@ -477,7 +477,12 @@ details {
 
   h1 {
     color: $white;
-    margin: 0;
+    margin: 0 0 5px 0;
+  }
+
+  h3 {
+    color: $white;
+    margin: 0 0 5px 0;
   }
 
   @include mobile {
