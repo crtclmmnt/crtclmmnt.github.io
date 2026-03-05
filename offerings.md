@@ -3,7 +3,7 @@ layout: default
 permalink: /offerings/
 ---
 <div class="hero-wrapper">
-  <img src="/images/pano3.jpg" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
+  <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
     <h1 style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
   </div>
@@ -11,8 +11,9 @@ permalink: /offerings/
 <p>The main thing I want is to help more people meditate. The world needs more level-headed people.</p>
 <p>Maybe you're a community organizer, a concerned citizen, or  just someone curious about meditation. Regardless of who you are, I have an offering for you.</p>
 
----
+<br>
 
+<hr>
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
@@ -60,7 +61,7 @@ permalink: /offerings/
 
 <br>
 
----
+<hr>
 
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
