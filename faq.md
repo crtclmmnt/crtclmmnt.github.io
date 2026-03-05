@@ -8,6 +8,7 @@ permalink: /faq/
   <img src="/images/pano9.JPG" alt="Sunset over taubate." class="hero-image">
   <div class="hero-text">
     <h1 style="font-size: 3rem; margin-bottom: 0px;">Frequently Asked Questions</h1>
+    <hr class="short" style="margin: 0.5em 0;">
   </div>
 </div>
 
