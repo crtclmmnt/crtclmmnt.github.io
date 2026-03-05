@@ -198,11 +198,10 @@ The world doesn’t need people to worry over her, she needs people who have the
     </div>
   </div>
 </div>
-<br>
 
+<br>
+<h5><a href="https://thecriticalmoment.org/offerings#offerings">Back to the top</a></h5>
 <hr>
-
-<br>
 
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
