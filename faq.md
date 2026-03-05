@@ -127,6 +127,6 @@ permalink: /faq/
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
   <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
-  <p style="text-align: center;">Or reach out to me directly:</p>
-  <h5 style="text-align: center;"><a href="mailto:joshua@thecriticalmoment.org">joshua@thecriticalmoment.org</a></h5>
 </div>
+
+<br>
