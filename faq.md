@@ -27,7 +27,7 @@ permalink: /faq/
 <details><summary><h6>Is this religious? Do I have to be Buddhist?</h6></summary>
 <p>Mindfulness meditation, known in sanskrit as Shamatha, is a foundational practice in the Buddhist tradition.</p>
 <p>That being said, the practice itself is completely secular. Shamatha literally translates to calm abiding, or peacefully remaining. When we practice mindfulness meditation, we are simply rehearsing stillness, and we are practicing guiding our attention with intention.</p>
-<p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (look it up), which makes you more patient and attentive.</p>
+<p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (<em>noun</em> - calmness and composure, especially in a difficult situation).</p>
 </details>
 
 <details><summary><h6>I'm skeptical that sitting still is going to help me with political work. Why should I bother?</h6></summary>
