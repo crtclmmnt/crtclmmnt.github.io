@@ -58,11 +58,11 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 10px;">
-  <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Meditation for Liberation:</span><br><span style="font-size: 22px;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
-  <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Individual Meditation Instruction</span></a>
-  <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn"><span style="font-size: 28px; line-height: 0.8rem;">Group Meditation Workshops</span></a>
+  <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation:</span><br><span style="font-size: 22px; line-height: 1;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
+  <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
+  <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
   <hr class="short">
-  <a href="https://thecriticalmoment.org/offerings/" class="btn"><span style="font-size: 22px; line-height: 0.8rem;">All Offerings</span></a>
+  <a href="https://thecriticalmoment.org/offerings/" class="btn-large"><span style="font-size: 28px; line-height: 1;">All Offerings</span></a>
 </div>
 <br>
 
