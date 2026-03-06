@@ -51,13 +51,10 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
-
 <hr>
 
-<br>
-
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
-
+<hr class="short" style="text-align: center;">
 <div style="max-width: 700px; margin: 0 auto;">
   <p>I offer free meditation workshops for community organizers, which I call Meditation for Liberation, and sliding scale individual and group instruction for those seeking a more personalized experience.</p>
 </div>
