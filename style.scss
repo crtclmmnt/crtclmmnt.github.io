@@ -683,7 +683,7 @@ nav {
 
 .btn {
   display: inline-block;
-  background-color: $babyYellow;
+  background-color: $babyPeach;
   color: $darkerGray;
   padding: 8px 16px;
   border: 0px solid $darkerGray;
@@ -701,7 +701,6 @@ nav {
 
 .btn-large {
   @extend .btn;
-  background-color: $rose;
   text-align: center;
   padding: 24px 32px;
   border: 0px solid $darkerGray;
