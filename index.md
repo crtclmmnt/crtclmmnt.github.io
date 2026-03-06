@@ -37,7 +37,7 @@ A future where we win starts now, in the critical moment.
 
 <div class="services-layout">
   <div>
-    <img src="/images/bio1.JPG" alt="A picture of a man meditating in a meadow at sunset." width="350" style="margin-top: 0px;">
+    <img src="/images/block5.JPG" alt="A waterfall pours into a small lake surrounded by pine forests" width="350" style="margin-top: 0px;">
   </div>
   
   <div class="services-content" style="max-width: 450px;">

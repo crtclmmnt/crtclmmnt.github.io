@@ -112,7 +112,3 @@ permalink: /offerings/
 <br>
 <h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
-<br>
-
-
-
