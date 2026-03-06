@@ -35,9 +35,6 @@ permalink: /offerings/
 <p>Workshops run between <strong>4 and 8 weeks</strong> depending on the curriculum, and the duration of each session is <strong>60 - 90 minutes.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
 
 <h1 id="curriculum">Curriculum Options</h1>
-
-<hr class="short" style="margin: 0.5em 0;">
-
 <div class="book-grid curriculum-grid">
   <div class="book-card">
     <h5>Gentleness, Precision, and Letting Go</h5>
