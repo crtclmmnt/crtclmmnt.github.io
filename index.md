@@ -11,7 +11,7 @@ permalink: /
 
 <br>
 
-**The crises facing us are numerous:** ecological collapse, a new gilded age, an economy that has abandoned the working class, state-sponsored violence against immigrants, the rise of techno-feudalism, genocide funded by our taxes, and so many other horrors.
+**The crises facing us are numerous:** ecological collapse, a new gilded age, an economy that has abandoned the working class, state-sponsored violence against immigrants, the rise of technofeudalism, genocide funded by our taxes, and so many other horrors.
 
 It’s hard to face all this without falling apart, or turning a blind eye. 
 
@@ -19,9 +19,9 @@ But it’s also not enough to simply witness these things, and to have the right
 
 **We are living in the critical moment.** Despite our memories of the past, and our expectations for the future, the present moment is all we have. Learning how to live in this moment is an indispensable skill for anyone trying to correct the course of history.
 
-Liberation is an endeavor that requires more than confrontation, it also requires construction. It requires us to build a culture of reciprocity to replace the culture of consumption and scarcity. It requires a revolution in how we relate to power, and how we relate to each other.
+Liberation is an endeavor that requires more than confrontation, it also requires construction. I think that means being serious about letting our politics change us. It means building a new culture based on our values: one that emphasizes reciprocity, mutual aid, and learning how to treat each other differently than capitalism has taught us to.
 
-The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias. 
+The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias; and so that you can begin to peel away the layers of enculturation, and become more in tune with your core values. 
 
 A future where we win starts now, in the critical moment.   
 
