@@ -596,13 +596,16 @@ nav {
     }
   }
   
-  img {
-    @include mobile {
-      max-width: 100%;
-      display: block;
-      margin: 0 auto;  /* Center the image */
-    }
+img {
+  @include mobile {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
   }
+}
 }
 
 .about-layout {
