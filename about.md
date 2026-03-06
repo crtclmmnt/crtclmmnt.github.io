@@ -62,7 +62,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style="font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
       <p class="book-author">Alan Watts</p>
-      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that the self is an illusion, and that we are not separate selves but expressions of a single living universe.</p>
+      <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that we are not separate selves but expressions of a single living universe.</p>
     </div>
   </div>
 
@@ -109,7 +109,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
       <p class="book-author">Paulo Freire</p>
-      <p class="book-description">Freire argues traditional education reproduces oppression by treating students as empty vessels to be filled with knowledge. True liberation requires an education where students and teachers learn from each other, and focus on developing a critical consciousness.</p>
+      <p class="book-description">Freire argues traditional education reproduces oppression by treating students as empty vessels to be filled with knowledge. True liberation requires focusing on developing a critical consciousness.</p>
     </div>
     <div class="book-card">
       <h5>Debt: <br class="mobile-break"><span style=" font-size: 1.2rem;">The First 5,000 Years</span></h5>
@@ -134,7 +134,7 @@ The world doesn’t need people to worry over her, she needs people who have the
     <div class="book-card">
       <h5>The Hundred Years' War on Palestine</h5>
       <p class="book-author">Rashid Khalidi</p>
-      <p class="book-description">A rigorous and necessary history of Palestinian dispossession, told by one of the leading scholars of the Arab world.</p>
+      <p class="book-description">A rigorous and necessary history of Palestinian dispossession by the state of Israel, told by one of the leading scholars of the Arab world.</p>
     </div>
   </div>
 
