@@ -27,7 +27,7 @@ permalink: /faq/
 <details><summary><h6>Is this religious? Do I have to be Buddhist?</h6></summary>
 <p>Mindfulness meditation, known in sanskrit as Shamatha, is a foundational practice in the Buddhist tradition.</p>
 <p>That being said, the practice itself is completely secular. Shamatha literally translates to calm abiding, or peacefully remaining. When we practice mindfulness meditation, we are simply rehearsing stillness, and we are practicing guiding our attention with intention.</p>
-<p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (<em>noun</em> - calmness and composure, especially in a difficult situation).</p>
+<p>When you practice these ways of being, you can proceed into your life with an enhanced sense of equanimity (<em>calmness and composure, especially in a difficult situation</em>).</p>
 </details>
 
 <details><summary><h6>I'm skeptical that sitting still is going to help me with political work. Why should I bother?</h6></summary>
@@ -36,7 +36,7 @@ permalink: /faq/
 <p>Second, mindfulness meditation is a practice that helps you notice more of your inner and outer life. Committing to the practice eventually gets you to a place where you are better equipped to notice when you are speaking from a place of wisdom or thoughtfulness, rather than reacting from a place of self-righteousness and self-importance. And I believe this is a useful skill for people doing political work, which has a tendency to elicit feelings of self-righteousness and self-importance. The ego's favorite!</p>
 <p>This second one is especially important because we have all been raised in a Capitalist society. There are many reactionary views we may have internalized in our youth, due to being raised in this society. If we have failed to adequately address these reactionary views, and if our self-righteousness encourages us to find nominally "progressive" ways of justifying these reactionary views, we may continue to reinforce aspects of capitalist enculturation without noticing it.</p>
 <p>And I don't just mean internalized racism, homophobia, transphobia. I think this applies to our assumptions too. We are raised to assume that the nuclear family is normal, that independence is desirable, that consumption is inevitable, that sacrifice is unnecessary, and that other people's suffering doesn't affect you. When was the last time you caught yourself reinforcing an idea that serves the system?</p>
-<p>I also address this concern at length in <strong><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">the introduction to The Critical Moment.</a></strong></p>
+<p>I also address this concern at length in <strong><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">the Introduction to The Critical Moment.</a></strong></p>
 </details>
 
 <details><summary><h6>What does a session actually look like?</h6></summary>
@@ -98,7 +98,7 @@ permalink: /faq/
 
 <details><summary><h6>My mind won't stop racing. Am I doing it wrong?</h6></summary>
 <p>You're not doing it wrong. Noticing that you're thinking is exactly the point of a meditation practice.</p>
-<p>Specifically, the practice is about noticing that you're thinking, and then making the conscious effort to guide your attention back to the object of your meditation (usually the breath). When you do this over and over again — letting your mind wander, noticing that it's wandering, labeling your thoughts "thinking," and then bringing your attention back to your breath — you are rewiring your brain so that you can actually decide where to direct your attention, rather than living at the whims of your anxieties and impulses.</p>
+<p>Specifically, the practice is about noticing that you're thinking, and then making the conscious effort to guide your attention back to the object of your meditation (usually the breath). When you do this over and over again—letting your mind wander, noticing that it's wandering, labeling your thoughts "thinking," and then bringing your attention back to your breath—you are rewiring your brain so that you can actually decide where to direct your attention, rather than living at the whims of your anxieties and impulses.</p>
 <p>It doesn't matter how many times you wander, it matters that you keep returning.</p>
 </details>
 <details><summary><h6>Why do you recommend keeping the eyes open?</h6></summary>
