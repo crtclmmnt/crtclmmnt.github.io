@@ -72,22 +72,22 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Braiding Sweetgrass</h5>
-      <p class="book-author">Robin Wall Kimmerer</p>
+      <p class="book-author">Robin Wall Kimmerer (2013)</p>
       <p class="book-description">Kimmerer asks what it would mean to treat the natural world as a community of relatives rather than a collection of resources. This book shows what a different relationship to the Earth looks like, not as theory, but as practice.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Unsettling of America</h5>
-      <p class="book-author">Wendell Berry</p>
+      <p class="book-author">Wendell Berry (1977)</p>
       <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of society's ills are the result of using machines for work we used to accomplish through relationships with other living things.</p>
     </div>
     <div class="book-card">
       <h5>Becoming Earth</h5>
-      <p class="book-author">Ferris Jabr</p>
+      <p class="book-author">Ferris Jabr (2025)</p>
       <p class="book-description">This book is an exhilarating scientific history of how life evolved on our planet, and it makes the argument that the planet is a self-regulating living system that we are a part of.</p>
     </div>
     <div class="book-card">
       <h5>Entangled Life</h5>
-      <p class="book-author">Merlin Sheldrake</p>
+      <p class="book-author">Merlin Sheldrake (2021)</p>
       <p class="book-description">This book challenges the simple Darwinian view of life as "survival of the fittest," instead showing how life works through networks, symbiosis, and interdependence rather than competition and selfishness.</p>
     </div>
   </div>
@@ -98,27 +98,27 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
-      <p class="book-author">Silvia Federici</p>
+      <p class="book-author">Silvia Federici (2004)</p>
       <p class="book-description">Federici traces the origins of capitalism through the persecution of women, the destruction of the commons, and mind-body dualism in enlightenment-era philosophy. This book shows how Capitalism's first genocide against the indigenous women of Europe laid the groundwork for the system's global expansion.</p>
     </div>
     <div class="book-card">
-      <h5>Wretched of the Earth</h5>
-      <p class="book-author">Frantz Fanon</p>
+      <h5><span class="text-dark-rose">*</span>Wretched of the Earth</h5>
+      <p class="book-author">Frantz Fanon (1961)</p>
       <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer. The most memorable insight from this book is the idea that when a colonizer dehumanizes a colonized people, they themselves become dehumanized.</p>
     </div>
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
-      <p class="book-author">Paulo Freire</p>
+      <p class="book-author">Paulo Freire (1968)</p>
       <p class="book-description">Freire argues traditional education reproduces oppression by treating students as empty vessels to be filled with knowledge. True liberation requires focusing on developing a critical consciousness.</p>
     </div>
     <div class="book-card">
       <h5>Debt: <br class="mobile-break"><span style=" font-size: 1.2rem;">The First 5,000 Years</span></h5>
-      <p class="book-author">David Graeber</p>
+      <p class="book-author">David Graeber (2011)</p>
       <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable, tracing the history of how debt has been used to manipulate the masses.</p>
     </div>
     <div class="book-card">
       <h5>Capitalist Realism</h5>
-      <p class="book-author">Mark Fisher</p>
+      <p class="book-author">Mark Fisher (2009)</p>
       <p class="book-description">Fisher investigates why it's easier to imagine the end of the world than the end of capitalism.</p>
     </div>
     <div class="book-card">
@@ -128,12 +128,12 @@ The world doesn’t need people to worry over her, she needs people who have the
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
-      <p class="book-author">Michael Parenti</p>
+      <p class="book-author">Michael Parenti (1997)</p>
       <p class="book-description">Parenti challenges the liberal left's reflexive anticommunism, arguing that it has more in common with ruling class ideology than with genuine solidarity.</p>
     </div>
     <div class="book-card">
       <h5>The Hundred Years' War on Palestine</h5>
-      <p class="book-author">Rashid Khalidi</p>
+      <p class="book-author">Rashid Khalidi (2020)</p>
       <p class="book-description">A rigorous and necessary history of Palestinian dispossession by the state of Israel, told by one of the leading scholars of the Arab world.</p>
     </div>
   </div>
@@ -144,22 +144,22 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
-      <p class="book-author">Iain McGilchrist</p>
+      <p class="book-author">Iain McGilchrist (2009)</p>
       <p class="book-description">McGilchrist argues that the left hemisphere (the analytical, data oriented, logical hemisphere) of the brain has staged a kind of coup over Western civilization, causing us to suppress our engagement with the right hemisphere (the holistic, big-picture, emotional hemisphere).</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>No Bad Parts</h5>
-      <p class="book-author">Richard Schwartz</p>
+      <p class="book-author">Richard Schwartz (2021)</p>
       <p class="book-description">Family Therapist Richard Schwartz describes a framework for understanding the human psyche as an Internal Family System: a conglomeration of sub-personalities that have to learn to get along with each other. With meditation as a foundational practice for meeting your parts, I find this framework of therapy indispensable for getting to know yourself.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
-      <p class="book-author">Rutger Bregman</p>
+      <p class="book-author">Rutger Bregman (2019)</p>
       <p class="book-description">Bregman makes the evidence-based case that human beings are not fundamentally selfish, and that most of our institutions are built on the cynicism of a few, rather than the selfishness of the masses.</p>
     </div>
     <div class="book-card">
       <h5>In the Realm of Hungry Ghosts</h5>
-      <p class="book-author">Gabor Maté</p>
+      <p class="book-author">Gabor Maté (2009)</p>
       <p class="book-description">Maté pioneers a view of addiction as a response to social alienation and pain, rather than a moral failing. This book will change how you think about addiction, trauma, and compassion.</p>
     </div>
   </div>
@@ -170,12 +170,12 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Patterning Instinct</h5>
-      <p class="book-author">Jeremy Lent</p>
+      <p class="book-author">Jeremy Lent (2017)</p>
       <p class="book-description">Lent traces the evolution of human cognition back to the earliest civilizations. He argues that the stories a civilization tells about its relationship to nature determine whether it survives.</p>
     </div>
     <div class="book-card">
       <h5>The Tao of Physics</h5>
-      <p class="book-author">Fritjof Capra</p>
+      <p class="book-author">Fritjof Capra (1975)</p>
       <p class="book-description">Capra noticed that modern physics and ancient Eastern philosophy were describing similar ideas in different languages.</p>
     </div>
   </div>
@@ -186,12 +186,12 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5>The Ministry for the Future</h5>
-      <p class="book-author">Kim Stanley Robinson</p>
+      <p class="book-author">Kim Stanley Robinson (2020)</p>
       <p class="book-description">Robinson imagines the next few decades of humanity's efforts to address climate change: the politics, the economics, the grief, the ingenuity.</p>
     </div>
     <div class="book-card">
       <h5>The Dispossessed</h5>
-      <p class="book-author">Ursula K. Le Guin</p>
+      <p class="book-author">Ursula K. Le Guin (1974)</p>
       <p class="book-description">By imagining a society of anarchists that are given a moon upon which to build their utopia, Le Guin explores the reality of building alternative political, economic, and cultural systems. She explores the real cost of freedom, and why it must be chosen over and over again.</p>
     </div>
   </div>
