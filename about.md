@@ -46,22 +46,22 @@ The world doesn’t need people to worry over her, she needs people who have the
   <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>World as Lover, World as Self</h5>
-      <p class="book-author">Joanna Macy</p>
+      <p class="book-author">Joanna Macy (1991)</p>
       <p class="book-description">Joanna Macy changed the way I understand humanity's relationship to the Earth and to the crisis we've created. It's the most important book I've read for understanding how to be an activist without losing yourself.</p>
     </div>
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Wisdom of No Escape</h5>
-      <p class="book-author">Pema Chödrön</p>
+      <p class="book-author">Pema Chödrön (1991)</p>
       <p class="book-description">A book about how to work with your neuroses rather than fighting them, with important lessons for meditation and for daily life.</p>
     </div>
     <div class="book-card">
       <h5>Cutting Through Spiritual Materialism</h5>
-      <p class="book-author">Chögyam Trungpa Rinpoche</p>
+      <p class="book-author">Chögyam Trungpa Rinpoche (1973)</p>
       <p class="book-description">A book that shows how the ego will co-opt anything, including spirituality, in service of its own comfort and expansion. The lessons can be extended to political materialism.</p>
     </div>
     <div class="book-card">
       <h5>The Book: <br class="mobile-break"><span style="font-size: 1.2rem;">On the Taboo Against Knowing Who You Are</span></h5>
-      <p class="book-author">Alan Watts</p>
+      <p class="book-author">Alan Watts (1989)</p>
       <p class="book-description">A playful dismantling of the Western assumption that our sense of self is evidence of our individuality. Watts instead suggests that we are not separate selves but expressions of a single living universe.</p>
     </div>
   </div>
