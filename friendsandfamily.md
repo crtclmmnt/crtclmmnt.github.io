@@ -27,10 +27,10 @@ Cal("init", "friends-and-family-sit", {origin:"https://app.cal.com"});
 
   Cal.ns["friends-and-family-sit"]("inline", {
     elementOrSelector:"#my-cal-inline-friends-and-family-sit",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
     calLink: "thecriticalmoment/friends-and-family-sit",
   });
 
-  Cal.ns["friends-and-family-sit"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#a23c3f"},"dark":{"cal-brand":"#f1e6c9"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["friends-and-family-sit"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#a23c3f"},"dark":{"cal-brand":"#f1e6c9"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   <!-- Cal inline embed code ends -->
