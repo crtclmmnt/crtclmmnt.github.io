@@ -5,7 +5,7 @@ permalink: /friendsandfamily/
 
 <img src="/images/pano8.JPG" alt="About header" class="hero-image">
 
-<h1 style="font-size: 4rem; margin-bottom: 0px;">Meditation Sits for Friends and Family</h1>
+<h1 style="font-size: 4rem; margin-bottom: 0px;">Meditation for Friends and Family</h1>
 
 <hr class="short" style="margin: 0.5em 0;">
 
