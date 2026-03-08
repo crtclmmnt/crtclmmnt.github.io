@@ -1,0 +1,1518 @@
+---
+layout: default
+title: Big Table
+---
+
+<style>
+#big-table-root {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+#big-table-root * {
+  box-sizing: border-box;
+}
+#big-table-root h1,
+#big-table-root h2,
+#big-table-root h3 {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+  text-shadow: none;
+}
+#big-table-root input,
+#big-table-root select,
+#big-table-root textarea,
+#big-table-root button {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+#big-table-root ul,
+#big-table-root ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+<div id="big-table-root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+{% raw %}
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// ─── CONSTANTS ────────────────────────────────────────────────────────────────
+
+const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+const DIET_PRESETS = [
+  'Vegetarian', 'Vegan', 'Gluten-free', 'Nut-free', 'Dairy-free', 'Halal', 'Kosher'
+];
+
+const WORDS = [
+  'SAGE','FERN','REED','CLAY','PINE','MOSS','WREN','DOVE',
+  'DUSK','DAWN','TIDE','RAIN','MIST','IRIS','LARK','BRINE',
+  'ROUX','BROTH','CRESS','THYME'
+];
+
+// 15-min slots 5:00 PM – 9:00 PM  (17 total)
+const TIME_SLOTS = (() => {
+  const out = [];
+  for (let h = 17; h <= 21; h++) {
+    const mins = h === 21 ? [0] : [0, 15, 30, 45];
+    for (const m of mins) {
+      const h12 = h - 12;
+      const mm = m === 0 ? '00' : String(m);
+      out.push(`${h12}:${mm} PM`);
+    }
+  }
+  return out;
+})();
+
+const C = {
+  babyYellow : '#f1e6c9',
+  darkRose   : '#a23c3f',
+  darkerGray : '#222',
+  darkGray   : '#333',
+  gray       : '#666',
+  mint       : '#9DF4B0',
+  darkMint   : '#377048',
+  rose       : '#F5898D',
+  peach      : '#FBB965',
+  darkPeach  : '#ac7022',
+  lightGray  : '#eee',
+  white      : '#fff',
+};
+
+// ─── STORAGE ─────────────────────────────────────────────────────────────────
+// Uses localStorage; swap the methods below for a real backend in production.
+
+const Store = {
+  getPool(code) {
+    try { return JSON.parse(localStorage.getItem(`bt_pool_${code}`)); }
+    catch { return null; }
+  },
+  savePool(pool) {
+    try {
+      pool.lastActive = Date.now();
+      localStorage.setItem(`bt_pool_${pool.code}`, JSON.stringify(pool));
+    } catch {}
+  },
+  getSession() {
+    try { return JSON.parse(localStorage.getItem('bt_session')); }
+    catch { return null; }
+  },
+  saveSession(s) {
+    try { localStorage.setItem('bt_session', JSON.stringify(s)); } catch {}
+  },
+  clearSession() {
+    try { localStorage.removeItem('bt_session'); } catch {}
+  },
+  pruneOld() {
+    try {
+      const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('bt_pool_')) {
+          const p = JSON.parse(localStorage.getItem(k));
+          if (p && p.lastActive < cutoff) localStorage.removeItem(k);
+        }
+      }
+    } catch {}
+  }
+};
+
+// ─── UTILITIES ───────────────────────────────────────────────────────────────
+
+function genCode() {
+  const word = WORDS[Math.floor(Math.random() * WORDS.length)];
+  const num = String(Math.floor(Math.random() * 9000) + 1000);
+  return `${word}-${num}`;
+}
+
+function sanitizeName(s) {
+  return s.replace(/\s/g, '').slice(0, 6);
+}
+
+function slotIdx(t) {
+  return TIME_SLOTS.indexOf(t);
+}
+
+function allConsented(pool) {
+  return pool.members.length > 0 &&
+    pool.members.every(m => m.consent === 'creator' || m.consent === 'consented');
+}
+
+function buildSchedule(pool) {
+  const { members, settings } = pool;
+  const cooksPer = settings.cooksPer;
+  const names = members.map(m => m.name);
+  const nights = Math.ceil(names.length / cooksPer);
+
+  const DAY_NUM = { Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6, Sun:0 };
+  const activeDayNums = settings.days.map(d => DAY_NUM[d]);
+
+  const cursor = new Date();
+  cursor.setDate(cursor.getDate() + 1);
+  cursor.setHours(0, 0, 0, 0);
+
+  const dates = [];
+  while (dates.length < nights) {
+    if (activeDayNums.includes(cursor.getDay())) dates.push(new Date(cursor));
+    cursor.setDate(cursor.getDate() + 1);
+  }
+
+  const DAY_NAME = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MONTH = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  let ci = 0;
+  return dates.map(date => {
+    const cooks = [];
+    for (let j = 0; j < cooksPer && ci < names.length; j++) cooks.push(names[ci++]);
+    const guestRestrictions = members
+      .filter(m => !cooks.includes(m.name) && (m.diet?.presets?.length || m.diet?.note))
+      .map(m => ({ name: m.name, presets: m.diet?.presets || [], note: m.diet?.note || '' }));
+    return {
+      date: `${DAY_NAME[date.getDay()]} ${MONTH[date.getMonth()]} ${date.getDate()}`,
+      cooks,
+      agreedWindow: pool.agreedWindow || pool.settings.proposedWindow,
+      guestRestrictions,
+      meal: null
+    };
+  });
+}
+
+// ─── SHARED UI COMPONENTS ────────────────────────────────────────────────────
+
+function Btn({ children, onClick, variant = 'primary', disabled = false, fullWidth = false, style = {} }) {
+  const base = {
+    display: 'inline-block',
+    padding: '10px 22px',
+    borderRadius: '22px',
+    border: 'none',
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    fontFamily: "'Roboto', sans-serif",
+    fontSize: '15px',
+    fontWeight: '500',
+    opacity: disabled ? 0.5 : 1,
+    width: fullWidth ? '100%' : 'auto',
+    transition: 'filter 0.15s',
+    ...style,
+  };
+  const variants = {
+    primary : { background: C.babyYellow, color: C.darkerGray },
+    danger  : { background: C.rose,       color: C.darkRose   },
+    success : { background: C.mint,       color: C.darkMint   },
+    muted   : { background: C.lightGray,  color: C.gray       },
+    accent  : { background: C.peach,      color: C.darkPeach  },
+  };
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      style={{ ...base, ...(variants[variant] || variants.primary) }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function Card({ children, style = {} }) {
+  return (
+    <div style={{
+      background: C.babyYellow,
+      borderRadius: '16px',
+      padding: '20px',
+      marginBottom: '16px',
+      ...style
+    }}>
+      {children}
+    </div>
+  );
+}
+
+function SectionLabel({ children, style = {} }) {
+  return (
+    <div style={{
+      fontFamily: "'ZTNature', Helvetica, sans-serif",
+      fontSize: '20px',
+      fontWeight: '500',
+      color: C.darkerGray,
+      marginBottom: '8px',
+      lineHeight: 1.2,
+      ...style
+    }}>
+      {children}
+    </div>
+  );
+}
+
+function Field({ label, hint, children }) {
+  return (
+    <div style={{ marginBottom: '20px' }}>
+      <SectionLabel>{label}</SectionLabel>
+      {hint && <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>{hint}</div>}
+      {children}
+    </div>
+  );
+}
+
+function TextInput({ value, onChange, placeholder, maxLength, mono = false, style = {} }) {
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      placeholder={placeholder}
+      maxLength={maxLength}
+      style={{
+        width: '100%',
+        padding: '12px 16px',
+        borderRadius: '12px',
+        border: `2px solid ${C.lightGray}`,
+        fontFamily: mono ? 'monospace' : "'Roboto', sans-serif",
+        fontSize: mono ? '20px' : '16px',
+        letterSpacing: mono ? '2px' : 'normal',
+        color: C.darkGray,
+        outline: 'none',
+        background: C.white,
+        ...style
+      }}
+    />
+  );
+}
+
+function SelectInput({ value, onChange, children, style = {} }) {
+  return (
+    <select
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      style={{
+        padding: '10px 14px',
+        borderRadius: '12px',
+        border: `2px solid ${C.lightGray}`,
+        fontFamily: "'Roboto', sans-serif",
+        fontSize: '15px',
+        color: C.darkGray,
+        background: C.white,
+        cursor: 'pointer',
+        ...style
+      }}
+    >
+      {children}
+    </select>
+  );
+}
+
+function Tag({ label, bg = C.lightGray, color = C.darkGray }) {
+  return (
+    <span style={{
+      display: 'inline-block',
+      padding: '3px 10px',
+      borderRadius: '12px',
+      background: bg,
+      color,
+      fontSize: '13px',
+      fontWeight: '500',
+      marginRight: '4px',
+      marginBottom: '4px',
+    }}>
+      {label}
+    </span>
+  );
+}
+
+function StatusBadge({ status }) {
+  const map = {
+    creator   : { label: 'creator',   bg: C.peach,     color: C.darkPeach },
+    consented : { label: 'consented', bg: C.mint,      color: C.darkMint  },
+    objected  : { label: 'objected',  bg: C.rose,      color: C.darkRose  },
+    pending   : { label: 'pending',   bg: C.lightGray, color: C.gray      },
+  };
+  const s = map[status] || map.pending;
+  return <Tag label={s.label} bg={s.bg} color={s.color} />;
+}
+
+function Divider() {
+  return <div style={{ height: '2px', background: C.darkRose, margin: '16px 0', borderRadius: '1px' }} />;
+}
+
+function BackBtn({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        background: 'none', border: 'none', color: C.gray,
+        cursor: 'pointer', fontSize: '14px', padding: '0',
+        marginBottom: '20px', fontFamily: "'Roboto'",
+      }}
+    >
+      ← Back
+    </button>
+  );
+}
+
+function ErrorMsg({ msg }) {
+  if (!msg) return null;
+  return (
+    <div style={{
+      color: C.darkRose,
+      background: '#fdf0f0',
+      border: `1.5px solid ${C.rose}`,
+      borderRadius: '10px',
+      padding: '10px 14px',
+      marginBottom: '16px',
+      fontSize: '14px',
+    }}>
+      {msg}
+    </div>
+  );
+}
+
+function ToggleChip({ label, active, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        padding: '7px 16px',
+        borderRadius: '20px',
+        border: `2px solid ${active ? C.darkMint : C.lightGray}`,
+        background: active ? C.mint : C.white,
+        color: active ? C.darkMint : C.gray,
+        cursor: 'pointer',
+        fontFamily: "'Roboto'",
+        fontSize: '14px',
+        fontWeight: active ? '600' : '400',
+        transition: 'all 0.15s',
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+
+// ─── HOME SCREEN ─────────────────────────────────────────────────────────────
+
+function HomeScreen({ onCreate, onJoin }) {
+  return (
+    <div style={{ textAlign: 'center', paddingTop: '32px' }}>
+      <h1 style={{
+        fontFamily: "'ZTNature', Helvetica, sans-serif",
+        fontSize: '52px',
+        fontWeight: '500',
+        color: C.darkerGray,
+        lineHeight: 1.1,
+        marginBottom: '12px',
+      }}>
+        Big Table
+      </h1>
+      <p style={{ color: C.gray, fontSize: '18px', marginBottom: '36px', lineHeight: 1.5 }}>
+        Coordinate a recurring dinner pool<br />with your people.
+      </p>
+      <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <Btn onClick={onCreate} style={{ fontSize: '17px', padding: '14px 32px' }}>
+          Start a new table
+        </Btn>
+        <Btn onClick={onJoin} variant="muted" style={{ fontSize: '17px', padding: '14px 32px' }}>
+          Join a table
+        </Btn>
+      </div>
+      <p style={{ color: C.lightGray, marginTop: '56px', fontSize: '13px', fontStyle: 'italic' }}>
+        Named for the commons — where everyone cooks, everyone eats.
+      </p>
+    </div>
+  );
+}
+
+// ─── CREATE SCREEN ────────────────────────────────────────────────────────────
+
+function CreateScreen({ onBack, onEnterRoom }) {
+  const [tableName, setTableName] = useState('');
+  const [myName,    setMyName]    = useState('');
+  const [days,      setDays]      = useState([]);
+  const [startTime, setStartTime] = useState('6:00 PM');
+  const [endTime,   setEndTime]   = useState('8:00 PM');
+  const [cooksPer,  setCooksPer]  = useState(1);
+  const [error,     setError]     = useState('');
+
+  const toggleDay = d => setDays(prev =>
+    prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]
+  );
+
+  const endOptions = TIME_SLOTS.filter((_, i) => i > slotIdx(startTime));
+
+  const handleSubmit = () => {
+    if (!tableName.trim())       return setError('Give your table a name.');
+    if (!myName.trim())          return setError('What should we call you?');
+    if (days.length === 0)       return setError('Pick at least one active day.');
+    if (slotIdx(startTime) >= slotIdx(endTime))
+      return setError('End time must be after start time.');
+    setError('');
+
+    const code = genCode();
+    const name = sanitizeName(myName);
+    const pool = {
+      code,
+      name: tableName.trim(),
+      settings: {
+        days,
+        cooksPer,
+        proposedWindow: { earliest: startTime, latest: endTime }
+      },
+      members: [{
+        name,
+        diet: { presets: [], note: '' },
+        consent: 'creator',
+        objection: '',
+        windowObjection: null,
+        isCreator: true,
+        joinedAt: Date.now()
+      }],
+      agreedWindow: null,
+      schedule: null,
+      createdAt: Date.now(),
+      lastActive: Date.now()
+    };
+    Store.savePool(pool);
+    Store.saveSession({ code, name });
+    onEnterRoom(pool, { code, name });
+  };
+
+  return (
+    <div style={{ maxWidth: '520px', margin: '0 auto' }}>
+      <BackBtn onClick={onBack} />
+      <h2 style={{
+        fontFamily: "'ZTNature', Helvetica, sans-serif",
+        fontSize: '34px', fontWeight: '500',
+        color: C.darkerGray, marginBottom: '28px',
+      }}>
+        Create a new table
+      </h2>
+
+      <Field label="Table name">
+        <TextInput
+          value={tableName}
+          onChange={setTableName}
+          placeholder="Mission St Suppers"
+          maxLength={40}
+        />
+      </Field>
+
+      <Field
+        label="Your name"
+        hint="Up to 6 characters, no spaces — a nod to The Dispossessed."
+      >
+        <TextInput
+          value={myName}
+          onChange={v => setMyName(sanitizeName(v))}
+          placeholder="Shevek"
+          maxLength={6}
+        />
+        {myName && (
+          <div style={{ fontSize: '13px', color: C.gray, marginTop: '5px' }}>
+            Will appear as: <strong>{sanitizeName(myName)}</strong>
+          </div>
+        )}
+      </Field>
+
+      <Field label="Active days">
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          {DAYS.map(d => (
+            <ToggleChip
+              key={d}
+              label={d}
+              active={days.includes(d)}
+              onClick={() => toggleDay(d)}
+            />
+          ))}
+        </div>
+      </Field>
+
+      <Field label="Proposed dinner window">
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <SelectInput
+            value={startTime}
+            onChange={v => {
+              setStartTime(v);
+              if (slotIdx(v) >= slotIdx(endTime)) {
+                const nextIdx = slotIdx(v) + 1;
+                setEndTime(TIME_SLOTS[nextIdx] || TIME_SLOTS[TIME_SLOTS.length - 1]);
+              }
+            }}
+          >
+            {TIME_SLOTS.slice(0, -1).map(t => <option key={t} value={t}>{t}</option>)}
+          </SelectInput>
+          <span style={{ color: C.gray }}>to</span>
+          <SelectInput value={endTime} onChange={setEndTime}>
+            {endOptions.map(t => <option key={t} value={t}>{t}</option>)}
+          </SelectInput>
+        </div>
+      </Field>
+
+      <Field label="Cooks per night">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+          <button
+            onClick={() => setCooksPer(p => Math.max(1, p - 1))}
+            style={{
+              width: '36px', height: '36px', borderRadius: '50%',
+              border: `2px solid ${C.lightGray}`, background: C.white,
+              fontSize: '22px', cursor: 'pointer', lineHeight: '1',
+              color: C.darkGray,
+            }}
+          >−</button>
+          <span style={{
+            fontSize: '26px', fontFamily: "'ZTNature', Helvetica, sans-serif",
+            minWidth: '28px', textAlign: 'center', color: C.darkerGray,
+          }}>
+            {cooksPer}
+          </span>
+          <button
+            onClick={() => setCooksPer(p => Math.min(4, p + 1))}
+            style={{
+              width: '36px', height: '36px', borderRadius: '50%',
+              border: `2px solid ${C.lightGray}`, background: C.white,
+              fontSize: '22px', cursor: 'pointer', lineHeight: '1',
+              color: C.darkGray,
+            }}
+          >+</button>
+        </div>
+      </Field>
+
+      <ErrorMsg msg={error} />
+
+      <Btn onClick={handleSubmit} fullWidth style={{ fontSize: '17px', padding: '14px' }}>
+        Create table
+      </Btn>
+    </div>
+  );
+}
+
+// ─── JOIN SCREEN ──────────────────────────────────────────────────────────────
+
+function JoinScreen({ onBack, onEnterRoom }) {
+  const [code,     setCode]     = useState('');
+  const [myName,   setMyName]   = useState('');
+  const [presets,  setPresets]  = useState([]);
+  const [dietNote, setDietNote] = useState('');
+  const [error,    setError]    = useState('');
+
+  const togglePreset = p => setPresets(prev =>
+    prev.includes(p) ? prev.filter(x => x !== p) : [...prev, p]
+  );
+
+  const handleJoin = () => {
+    const trimCode = code.trim().toUpperCase();
+    if (!trimCode)     return setError('Enter a room code.');
+    if (!myName.trim()) return setError('What should we call you?');
+
+    const pool = Store.getPool(trimCode);
+    if (!pool) return setError("Can't find a table with that code. Double-check with whoever shared it.");
+
+    const name = sanitizeName(myName);
+    if (pool.members.find(m => m.name === name))
+      return setError('That name is already taken at this table. Try a variation.');
+
+    const newMember = {
+      name,
+      diet: { presets, note: dietNote.trim() },
+      consent: 'pending',
+      objection: '',
+      windowObjection: null,
+      isCreator: false,
+      joinedAt: Date.now()
+    };
+    pool.members.push(newMember);
+    Store.savePool(pool);
+    Store.saveSession({ code: trimCode, name });
+    onEnterRoom(pool, { code: trimCode, name });
+  };
+
+  return (
+    <div style={{ maxWidth: '520px', margin: '0 auto' }}>
+      <BackBtn onClick={onBack} />
+      <h2 style={{
+        fontFamily: "'ZTNature', Helvetica, sans-serif",
+        fontSize: '34px', fontWeight: '500',
+        color: C.darkerGray, marginBottom: '28px',
+      }}>
+        Join a table
+      </h2>
+
+      <Field label="Room code">
+        <TextInput
+          value={code}
+          onChange={v => setCode(v.toUpperCase())}
+          placeholder="SAGE-4827"
+          maxLength={12}
+          mono
+        />
+      </Field>
+
+      <Field
+        label="Your name"
+        hint="Up to 6 characters, no spaces."
+      >
+        <TextInput
+          value={myName}
+          onChange={v => setMyName(sanitizeName(v))}
+          placeholder="Takver"
+          maxLength={6}
+        />
+        {myName && (
+          <div style={{ fontSize: '13px', color: C.gray, marginTop: '5px' }}>
+            Will appear as: <strong>{sanitizeName(myName)}</strong>
+          </div>
+        )}
+      </Field>
+
+      <Field label="Dietary restrictions" hint="Optional — helps whoever's cooking plan their menu.">
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' }}>
+          {DIET_PRESETS.map(p => (
+            <ToggleChip
+              key={p}
+              label={p}
+              active={presets.includes(p)}
+              onClick={() => togglePreset(p)}
+            />
+          ))}
+        </div>
+        <TextInput
+          value={dietNote}
+          onChange={setDietNote}
+          placeholder="Anything else? (e.g. no shellfish, low FODMAP)"
+          maxLength={100}
+        />
+      </Field>
+
+      <ErrorMsg msg={error} />
+
+      <Btn onClick={handleJoin} fullWidth style={{ fontSize: '17px', padding: '14px' }}>
+        Join table
+      </Btn>
+    </div>
+  );
+}
+
+// ─── PROPOSAL TAB ─────────────────────────────────────────────────────────────
+
+function WindowSlotPill({ time, state }) {
+  const styles = {
+    consented : { bg: C.mint,       text: C.darkMint, border: C.darkMint },
+    objected  : { bg: C.rose,       text: C.darkRose, border: C.darkRose },
+    pending   : { bg: C.babyYellow, text: C.gray,     border: C.gray     },
+  };
+  const s = styles[state] || styles.pending;
+  return (
+    <span style={{
+      display: 'inline-block',
+      padding: '4px 10px',
+      borderRadius: '12px',
+      background: s.bg,
+      color: s.text,
+      border: `1.5px solid ${s.border}`,
+      fontSize: '13px',
+      fontWeight: '500',
+      marginRight: '4px',
+      marginBottom: '4px',
+    }}>
+      {time}
+    </span>
+  );
+}
+
+function ProposalTab({ pool, myName, onUpdate }) {
+  const me = pool.members.find(m => m.name === myName);
+
+  // Main consent form state
+  const [showObjForm,    setShowObjForm]    = useState(false);
+  const [objReason,      setObjReason]      = useState('');
+
+  // Window objection form state
+  const [showWinForm,    setShowWinForm]    = useState(false);
+  const [winBoundary,    setWinBoundary]    = useState('');
+  const [winReason,      setWinReason]      = useState('');
+  const [winProposed,    setWinProposed]    = useState('');
+
+  const [error, setError] = useState('');
+
+  const { settings } = pool;
+  const { proposedWindow } = settings;
+  const startIdx = slotIdx(proposedWindow.earliest);
+  const endIdx   = slotIdx(proposedWindow.latest);
+  const windowSlots = TIME_SLOTS.slice(startIdx, endIdx + 1);
+
+  const startObjectors = pool.members.filter(
+    m => m.windowObjection?.boundary === 'start'
+  );
+  const endObjectors = pool.members.filter(
+    m => m.windowObjection?.boundary === 'end'
+  );
+  const everybodyIn = allConsented(pool);
+
+  function slotState(slotTime) {
+    if (slotTime === proposedWindow.earliest) {
+      if (startObjectors.length > 0) return 'objected';
+      if (everybodyIn) return 'consented';
+      return 'pending';
+    }
+    if (slotTime === proposedWindow.latest) {
+      if (endObjectors.length > 0) return 'objected';
+      if (everybodyIn) return 'consented';
+      return 'pending';
+    }
+    return everybodyIn ? 'consented' : 'pending';
+  }
+
+  const canAct     = me && me.consent !== 'creator';
+  const hasConsented = me && me.consent === 'consented';
+  const hasObjected  = me && me.consent === 'objected';
+  const hasWinObj    = me && !!me.windowObjection;
+
+  // Replacement time options (directional)
+  function replacementOptions(boundary) {
+    if (boundary === 'start')
+      return TIME_SLOTS.filter((_, i) => i > startIdx && i <= endIdx);
+    if (boundary === 'end')
+      return TIME_SLOTS.filter((_, i) => i >= startIdx && i < endIdx);
+    return [];
+  }
+
+  const handleConsent = () => {
+    const updated = {
+      ...pool,
+      members: pool.members.map(m =>
+        m.name === myName
+          ? { ...m, consent: 'consented', objection: '' }
+          : m
+      )
+    };
+    if (allConsented(updated)) {
+      updated.agreedWindow = updated.settings.proposedWindow;
+      updated.schedule = buildSchedule(updated);
+    }
+    Store.savePool(updated);
+    onUpdate(updated);
+  };
+
+  const handleObject = () => {
+    if (!objReason.trim()) return setError('Please explain your concern.');
+    setError('');
+    const updated = {
+      ...pool,
+      members: pool.members.map(m =>
+        m.name === myName
+          ? { ...m, consent: 'objected', objection: objReason.trim() }
+          : m
+      )
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+    setShowObjForm(false);
+  };
+
+  const handleWinObj = () => {
+    if (!winBoundary)        return setError('Choose which boundary you object to.');
+    if (!winReason.trim())   return setError('Explain your concern.');
+    if (!winProposed)        return setError('Propose a replacement time.');
+    setError('');
+    const updated = {
+      ...pool,
+      members: pool.members.map(m =>
+        m.name === myName
+          ? { ...m, windowObjection: { boundary: winBoundary, reason: winReason.trim(), proposed: winProposed } }
+          : m
+      )
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+    setShowWinForm(false);
+  };
+
+  const clearWinObj = () => {
+    const updated = {
+      ...pool,
+      members: pool.members.map(m =>
+        m.name === myName ? { ...m, windowObjection: null } : m
+      )
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+  };
+
+  const winObjors = pool.members.filter(m => m.windowObjection);
+
+  return (
+    <div>
+      {/* Table summary card */}
+      <Card>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
+          <SectionLabel style={{ marginBottom: 0 }}>{pool.name}</SectionLabel>
+          <span style={{ fontFamily: 'monospace', fontSize: '14px', color: C.gray, letterSpacing: '1px' }}>
+            {pool.code}
+          </span>
+        </div>
+        <Divider />
+
+        <div style={{ marginBottom: '14px' }}>
+          <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px', fontWeight: '500' }}>Active days</div>
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+            {settings.days.map(d => <Tag key={d} label={d} />)}
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '14px' }}>
+          <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px', fontWeight: '500' }}>
+            Proposed dinner window
+          </div>
+          <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
+            {windowSlots.map(t => (
+              <WindowSlotPill key={t} time={t} state={slotState(t)} />
+            ))}
+          </div>
+          <div style={{ fontSize: '11px', color: C.gray, marginTop: '6px' }}>
+            Green = consented &nbsp;·&nbsp; Red = objected &nbsp;·&nbsp; Beige = pending
+          </div>
+        </div>
+
+        <div>
+          <span style={{ fontSize: '13px', color: C.gray, fontWeight: '500' }}>
+            Cooks per night:
+          </span>{' '}
+          <strong>{settings.cooksPer}</strong>
+        </div>
+      </Card>
+
+      {/* Window objections from other members */}
+      {winObjors.length > 0 && (
+        <div style={{ marginBottom: '8px' }}>
+          <SectionLabel style={{ fontSize: '16px', color: C.gray, marginBottom: '8px' }}>
+            Time window concerns
+          </SectionLabel>
+          {winObjors.map(m => (
+            <Card key={m.name} style={{
+              background: '#fdf0f0',
+              borderLeft: `4px solid ${C.darkRose}`,
+              padding: '14px 16px',
+            }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'baseline', marginBottom: '4px' }}>
+                <strong style={{ fontSize: '15px' }}>{m.name}</strong>
+                <span style={{ fontSize: '13px', color: C.gray }}>
+                  objects to the {m.windowObjection.boundary} time
+                </span>
+              </div>
+              <div style={{ fontSize: '14px', color: C.darkGray, fontStyle: 'italic', marginBottom: '4px' }}>
+                "{m.windowObjection.reason}"
+              </div>
+              <div style={{ fontSize: '14px' }}>
+                Proposes: <strong>{m.windowObjection.proposed}</strong>
+              </div>
+            </Card>
+          ))}
+        </div>
+      )}
+
+      {/* Consent / objection actions for non-creator */}
+      {canAct && (
+        <Card style={{ background: C.white, border: `2px solid ${C.babyYellow}` }}>
+          <SectionLabel style={{ marginBottom: '14px' }}>What do you think?</SectionLabel>
+
+          {/* Already acted — show summary, allow re-action */}
+          {hasConsented && !showObjForm && (
+            <div style={{ marginBottom: '12px' }}>
+              <div style={{
+                padding: '10px 14px', background: C.mint, borderRadius: '10px',
+                color: C.darkMint, fontWeight: '600', marginBottom: '10px', fontSize: '14px',
+              }}>
+                You've consented to this proposal.
+              </div>
+              <Btn onClick={() => setShowObjForm(true)} variant="muted" style={{ fontSize: '14px', padding: '8px 16px' }}>
+                Change my mind
+              </Btn>
+            </div>
+          )}
+
+          {hasObjected && !showObjForm && (
+            <div style={{ marginBottom: '12px' }}>
+              <div style={{
+                padding: '10px 14px', background: C.rose, borderRadius: '10px',
+                color: C.darkRose, fontWeight: '600', marginBottom: '6px', fontSize: '14px',
+              }}>
+                You've objected.
+              </div>
+              <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic', marginBottom: '10px' }}>
+                "{me.objection}"
+              </div>
+              <Btn onClick={handleConsent} variant="success" style={{ fontSize: '14px', padding: '8px 16px', marginRight: '8px' }}>
+                Consent instead
+              </Btn>
+            </div>
+          )}
+
+          {/* Fresh — not yet acted */}
+          {!hasConsented && !hasObjected && !showObjForm && !showWinForm && (
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <Btn onClick={handleConsent} variant="success">Consent</Btn>
+              <Btn onClick={() => { setShowObjForm(true); setShowWinForm(false); setError(''); }} variant="danger">
+                Object
+              </Btn>
+            </div>
+          )}
+
+          {/* Objection form */}
+          {showObjForm && (
+            <div>
+              <div style={{ fontSize: '14px', color: C.darkGray, marginBottom: '8px' }}>
+                What's your concern with this proposal?
+              </div>
+              <textarea
+                value={objReason}
+                onChange={e => setObjReason(e.target.value)}
+                placeholder="e.g. Wednesdays don't work for me..."
+                rows={3}
+                style={{
+                  width: '100%', padding: '12px', borderRadius: '10px',
+                  border: `2px solid ${C.lightGray}`, fontFamily: "'Roboto'",
+                  fontSize: '15px', resize: 'vertical', color: C.darkGray,
+                  background: C.white,
+                }}
+              />
+              <ErrorMsg msg={error} />
+              <div style={{ display: 'flex', gap: '8px', marginTop: '8px', flexWrap: 'wrap' }}>
+                <Btn onClick={handleObject} variant="danger">Submit objection</Btn>
+                <Btn onClick={() => { setShowObjForm(false); setError(''); }} variant="muted">Cancel</Btn>
+              </div>
+            </div>
+          )}
+
+          {/* Window objection toggle (independent of main consent) */}
+          {!showObjForm && !showWinForm && (
+            <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: `1px solid ${C.lightGray}` }}>
+              {hasWinObj ? (
+                <div>
+                  <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>
+                    Your time concern is on record.
+                  </div>
+                  <Btn onClick={clearWinObj} variant="muted" style={{ fontSize: '13px', padding: '6px 14px' }}>
+                    Remove my time concern
+                  </Btn>
+                </div>
+              ) : (
+                <Btn
+                  onClick={() => { setShowWinForm(true); setShowObjForm(false); setError(''); }}
+                  variant="muted"
+                  style={{ fontSize: '13px', padding: '7px 16px' }}
+                >
+                  Flag a concern about the dinner window
+                </Btn>
+              )}
+            </div>
+          )}
+
+          {/* Window objection form */}
+          {showWinForm && (
+            <div>
+              <div style={{ fontSize: '14px', color: C.darkGray, marginBottom: '10px' }}>
+                Which time boundary is the problem?
+              </div>
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
+                {['start', 'end'].map(b => (
+                  <button
+                    key={b}
+                    onClick={() => { setWinBoundary(b); setWinProposed(''); }}
+                    style={{
+                      padding: '7px 18px', borderRadius: '18px', cursor: 'pointer',
+                      border: `2px solid ${winBoundary === b ? C.darkRose : C.lightGray}`,
+                      background: winBoundary === b ? C.rose : C.white,
+                      color: winBoundary === b ? C.darkRose : C.gray,
+                      fontFamily: "'Roboto'", fontSize: '14px',
+                    }}
+                  >
+                    {b === 'start' ? 'Start time (too early)' : 'End time (too late)'}
+                  </button>
+                ))}
+              </div>
+
+              {winBoundary && (
+                <>
+                  <div style={{ marginBottom: '12px' }}>
+                    <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>Why?</div>
+                    <TextInput
+                      value={winReason}
+                      onChange={setWinReason}
+                      placeholder="I can't make it that early..."
+                    />
+                  </div>
+                  <div style={{ marginBottom: '14px' }}>
+                    <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>
+                      {winBoundary === 'start'
+                        ? 'Propose a later start time:'
+                        : 'Propose an earlier end time:'}
+                    </div>
+                    <SelectInput value={winProposed} onChange={setWinProposed}>
+                      <option value="">Select a time...</option>
+                      {replacementOptions(winBoundary).map(t =>
+                        <option key={t} value={t}>{t}</option>
+                      )}
+                    </SelectInput>
+                  </div>
+                </>
+              )}
+
+              <ErrorMsg msg={error} />
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <Btn
+                  onClick={handleWinObj}
+                  variant="danger"
+                  disabled={!winBoundary || !winReason.trim() || !winProposed}
+                >
+                  Submit concern
+                </Btn>
+                <Btn onClick={() => { setShowWinForm(false); setError(''); }} variant="muted">Cancel</Btn>
+              </div>
+            </div>
+          )}
+        </Card>
+      )}
+
+      {/* Overall consent status */}
+      <Card>
+        <SectionLabel style={{ marginBottom: '12px' }}>Consent status</SectionLabel>
+        {pool.members.map(m => (
+          <div key={m.name} style={{
+            display: 'flex', alignItems: 'flex-start', gap: '10px',
+            marginBottom: '10px', flexWrap: 'wrap',
+          }}>
+            <strong style={{ minWidth: '60px', fontSize: '15px' }}>{m.name}</strong>
+            <StatusBadge status={m.consent} />
+            {m.objection && (
+              <span style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic' }}>
+                "{m.objection}"
+              </span>
+            )}
+          </div>
+        ))}
+      </Card>
+
+      {everybodyIn && pool.schedule && (
+        <div style={{
+          padding: '16px 20px', background: C.mint, borderRadius: '12px',
+          color: C.darkMint, fontWeight: '600', textAlign: 'center', fontSize: '16px',
+        }}>
+          Everyone's in. Check the Schedule tab to see who's cooking.
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── MEMBERS TAB ──────────────────────────────────────────────────────────────
+
+function MembersTab({ pool }) {
+  return (
+    <div>
+      <SectionLabel style={{ marginBottom: '16px' }}>
+        {pool.members.length} {pool.members.length === 1 ? 'person' : 'people'} at this table
+      </SectionLabel>
+      {pool.members.map(m => (
+        <Card key={m.name}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', flexWrap: 'wrap' }}>
+            <span style={{
+              fontFamily: "'ZTNature', Helvetica, sans-serif",
+              fontSize: '20px', fontWeight: '500', color: C.darkerGray,
+            }}>
+              {m.name}
+            </span>
+            <StatusBadge status={m.consent} />
+          </div>
+
+          {(m.diet?.presets?.length > 0 || m.diet?.note) ? (
+            <div style={{ marginBottom: '8px' }}>
+              <div style={{ fontSize: '12px', color: C.gray, marginBottom: '4px', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Dietary needs
+              </div>
+              <div>
+                {m.diet.presets.map(p => <Tag key={p} label={p} />)}
+                {m.diet.note && (
+                  <span style={{ fontSize: '13px', color: C.darkGray, fontStyle: 'italic' }}>
+                    {m.diet.note}
+                  </span>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic', marginBottom: '8px' }}>
+              No dietary restrictions noted
+            </div>
+          )}
+
+          {m.objection && (
+            <div style={{
+              fontSize: '13px', color: C.darkRose, fontStyle: 'italic',
+              marginTop: '6px', paddingTop: '6px', borderTop: `1px solid ${C.rose}`,
+            }}>
+              Objection: "{m.objection}"
+            </div>
+          )}
+
+          {m.windowObjection && (
+            <div style={{
+              fontSize: '13px', color: C.darkRose, marginTop: '6px',
+              paddingTop: '6px', borderTop: `1px solid ${C.rose}`,
+            }}>
+              <span style={{ fontWeight: '600' }}>Time concern ({m.windowObjection.boundary}):</span>{' '}
+              "{m.windowObjection.reason}" — proposes <strong>{m.windowObjection.proposed}</strong>
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  );
+}
+
+// ─── SCHEDULE TAB ─────────────────────────────────────────────────────────────
+
+function MealPostForm({ entry, onPost, onCancel }) {
+  const [mealName,  setMealName]  = useState('');
+  const [startTime, setStartTime] = useState(entry.agreedWindow.earliest);
+  const [note,      setNote]      = useState('');
+  const [error,     setError]     = useState('');
+
+  const startI = slotIdx(entry.agreedWindow.earliest);
+  const endI   = slotIdx(entry.agreedWindow.latest);
+  const validTimes = TIME_SLOTS.filter((_, i) => i >= startI && i <= endI);
+
+  const handleSubmit = () => {
+    if (!mealName.trim()) return setError('What are you cooking?');
+    setError('');
+    onPost({ name: mealName.trim(), startTime, note: note.trim() });
+  };
+
+  return (
+    <div style={{
+      marginTop: '14px', padding: '16px',
+      background: C.white, borderRadius: '12px',
+      border: `2px solid ${C.lightGray}`,
+    }}>
+      <SectionLabel style={{ fontSize: '17px', marginBottom: '14px' }}>Post your meal</SectionLabel>
+
+      <Field label="What are you making?">
+        <TextInput
+          value={mealName}
+          onChange={setMealName}
+          placeholder="Big pot of red lentil soup"
+          maxLength={80}
+        />
+      </Field>
+
+      <Field label="Actual start time">
+        <SelectInput value={startTime} onChange={setStartTime}>
+          {validTimes.map(t => <option key={t} value={t}>{t}</option>)}
+        </SelectInput>
+      </Field>
+
+      <Field label="Any notes for guests?">
+        <TextInput
+          value={note}
+          onChange={setNote}
+          placeholder="Bring a bowl if you have one"
+          maxLength={120}
+        />
+      </Field>
+
+      <ErrorMsg msg={error} />
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        <Btn onClick={handleSubmit} variant="success">Post meal info</Btn>
+        <Btn onClick={onCancel} variant="muted">Cancel</Btn>
+      </div>
+    </div>
+  );
+}
+
+function ScheduleTab({ pool, myName, onUpdate }) {
+  const [postingIdx, setPostingIdx] = useState(null);
+
+  if (!pool.schedule) {
+    return (
+      <div style={{ textAlign: 'center', padding: '48px 20px', color: C.gray }}>
+        <div style={{
+          fontFamily: "'ZTNature', Helvetica, sans-serif",
+          fontSize: '24px', color: C.darkerGray, marginBottom: '10px',
+        }}>
+          Not yet
+        </div>
+        <div style={{ fontSize: '16px', lineHeight: 1.6 }}>
+          The schedule unlocks once everyone at the table has consented to the proposal.
+        </div>
+      </div>
+    );
+  }
+
+  const handlePostMeal = (idx, meal) => {
+    const updated = {
+      ...pool,
+      schedule: pool.schedule.map((e, i) => i === idx ? { ...e, meal } : e)
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+    setPostingIdx(null);
+  };
+
+  return (
+    <div>
+      <SectionLabel style={{ marginBottom: '16px' }}>Dinner schedule</SectionLabel>
+      {pool.schedule.map((entry, i) => {
+        const isCook = entry.cooks.includes(myName);
+        const hasMeal = !!entry.meal;
+        return (
+          <Card
+            key={i}
+            style={{ borderLeft: `4px solid ${isCook ? C.darkMint : C.darkRose}` }}
+          >
+            <div style={{
+              display: 'flex', justifyContent: 'space-between',
+              alignItems: 'flex-start', marginBottom: '10px', gap: '8px',
+            }}>
+              <div>
+                <div style={{
+                  fontFamily: "'ZTNature', Helvetica, sans-serif",
+                  fontSize: '19px', color: C.darkerGray, marginBottom: '2px',
+                }}>
+                  {entry.date}
+                </div>
+                <div style={{ fontSize: '13px', color: C.gray }}>
+                  {hasMeal
+                    ? `Starting at ${entry.meal.startTime}`
+                    : `${entry.agreedWindow.earliest} – ${entry.agreedWindow.latest}`
+                  }
+                </div>
+              </div>
+              {isCook && <Tag label="You're cooking" bg={C.mint} color={C.darkMint} />}
+            </div>
+
+            <div style={{ marginBottom: '10px', fontSize: '15px' }}>
+              <strong>Cook{entry.cooks.length > 1 ? 's' : ''}:</strong>{' '}
+              {entry.cooks.join(', ')}
+            </div>
+
+            {hasMeal && (
+              <div style={{
+                padding: '10px 14px', background: C.white, borderRadius: '10px',
+                marginBottom: '10px', border: `1px solid ${C.lightGray}`,
+              }}>
+                <div style={{ fontWeight: '600', fontSize: '15px', marginBottom: '3px' }}>
+                  {entry.meal.name}
+                </div>
+                {entry.meal.note && (
+                  <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic' }}>
+                    {entry.meal.note}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {entry.guestRestrictions.length > 0 && (
+              <div style={{ marginBottom: '10px' }}>
+                <div style={{
+                  fontSize: '12px', color: C.gray, fontWeight: '500',
+                  textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '5px',
+                }}>
+                  Guest dietary needs
+                </div>
+                {entry.guestRestrictions.map(g => (
+                  <div key={g.name} style={{ fontSize: '13px', marginBottom: '3px' }}>
+                    <strong>{g.name}:</strong>{' '}
+                    {[...g.presets, g.note].filter(Boolean).join(', ')}
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {isCook && !hasMeal && postingIdx !== i && (
+              <Btn
+                onClick={() => setPostingIdx(i)}
+                variant="accent"
+                style={{ fontSize: '14px', padding: '8px 18px' }}
+              >
+                Post meal info
+              </Btn>
+            )}
+
+            {postingIdx === i && (
+              <MealPostForm
+                entry={entry}
+                onPost={meal => handlePostMeal(i, meal)}
+                onCancel={() => setPostingIdx(null)}
+              />
+            )}
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── ROOM SCREEN ──────────────────────────────────────────────────────────────
+
+function RoomScreen({ pool: initialPool, session, onLeave }) {
+  const [pool, setPool] = useState(initialPool);
+  const [tab,  setTab]  = useState('proposal');
+
+  const handleUpdate = updated => setPool(updated);
+
+  const tabs = [
+    { id: 'proposal', label: 'Proposal'  },
+    { id: 'members',  label: 'Members'   },
+    { id: 'schedule', label: 'Schedule', locked: !pool.schedule },
+  ];
+
+  return (
+    <div>
+      {/* Header bar */}
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        marginBottom: '6px',
+      }}>
+        <div style={{ fontSize: '14px', color: C.gray }}>
+          Signed in as{' '}
+          <strong style={{ color: C.darkGray }}>{session.name}</strong>
+          <span style={{ marginLeft: '8px', fontFamily: 'monospace', fontSize: '13px' }}>
+            {pool.code}
+          </span>
+        </div>
+        <button
+          onClick={onLeave}
+          style={{
+            background: 'none', border: 'none', color: C.gray,
+            cursor: 'pointer', fontSize: '13px', fontFamily: "'Roboto'",
+          }}
+        >
+          Leave
+        </button>
+      </div>
+
+      <Divider />
+
+      {/* Tab bar */}
+      <div style={{
+        display: 'flex', gap: '0', marginBottom: '22px',
+        borderBottom: `2px solid ${C.lightGray}`,
+      }}>
+        {tabs.map(t => (
+          <button
+            key={t.id}
+            onClick={() => !t.locked && setTab(t.id)}
+            style={{
+              padding: '10px 18px',
+              background: 'none',
+              border: 'none',
+              borderBottom: tab === t.id ? `3px solid ${C.darkRose}` : '3px solid transparent',
+              marginBottom: '-2px',
+              cursor: t.locked ? 'not-allowed' : 'pointer',
+              fontFamily: "'ZTNature', Helvetica, sans-serif",
+              fontSize: '18px',
+              fontWeight: '500',
+              color: t.locked ? C.lightGray : tab === t.id ? C.darkRose : C.gray,
+              transition: 'color 0.15s, border-color 0.15s',
+            }}
+          >
+            {t.label}
+            {t.locked && <span style={{ fontSize: '12px', marginLeft: '4px' }}>(locked)</span>}
+          </button>
+        ))}
+      </div>
+
+      {tab === 'proposal' && (
+        <ProposalTab pool={pool} myName={session.name} onUpdate={handleUpdate} />
+      )}
+      {tab === 'members' && (
+        <MembersTab pool={pool} />
+      )}
+      {tab === 'schedule' && (
+        <ScheduleTab pool={pool} myName={session.name} onUpdate={handleUpdate} />
+      )}
+    </div>
+  );
+}
+
+// ─── APP ROOT ─────────────────────────────────────────────────────────────────
+
+function App() {
+  const [screen,  setScreen]  = useState('loading');
+  const [pool,    setPool]    = useState(null);
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    Store.pruneOld();
+    const sess = Store.getSession();
+    if (sess) {
+      const p = Store.getPool(sess.code);
+      if (p && p.members.find(m => m.name === sess.name)) {
+        setPool(p);
+        setSession(sess);
+        setScreen('room');
+        return;
+      }
+      Store.clearSession();
+    }
+    setScreen('home');
+  }, []);
+
+  const enterRoom = (p, sess) => {
+    setPool(p);
+    setSession(sess);
+    setScreen('room');
+  };
+
+  const handleLeave = () => {
+    Store.clearSession();
+    setPool(null);
+    setSession(null);
+    setScreen('home');
+  };
+
+  if (screen === 'loading') {
+    return (
+      <div style={{ padding: '48px', textAlign: 'center', color: C.gray, fontFamily: "'Roboto'" }}>
+        Loading...
+      </div>
+    );
+  }
+
+  return (
+    <div id="big-table-root">
+      {screen === 'home' && (
+        <HomeScreen
+          onCreate={() => setScreen('create')}
+          onJoin={() => setScreen('join')}
+        />
+      )}
+      {screen === 'create' && (
+        <CreateScreen
+          onBack={() => setScreen('home')}
+          onEnterRoom={enterRoom}
+        />
+      )}
+      {screen === 'join' && (
+        <JoinScreen
+          onBack={() => setScreen('home')}
+          onEnterRoom={enterRoom}
+        />
+      )}
+      {screen === 'room' && pool && session && (
+        <RoomScreen
+          pool={pool}
+          session={session}
+          onLeave={handleLeave}
+        />
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('big-table-root')).render(<App />);
+</script>
+{% endraw %}
