@@ -10,29 +10,15 @@ title: Big Table
   margin: 0 auto;
   padding-bottom: 60px;
 }
-#big-table-root * {
-  box-sizing: border-box;
+#big-table-root * { box-sizing: border-box; }
+#big-table-root h1, #big-table-root h2, #big-table-root h3 {
+  margin: 0; padding: 0; border-bottom: none; text-shadow: none;
 }
-#big-table-root h1,
-#big-table-root h2,
-#big-table-root h3 {
-  margin: 0;
-  padding: 0;
-  border-bottom: none;
-  text-shadow: none;
-}
-#big-table-root input,
-#big-table-root select,
-#big-table-root textarea,
-#big-table-root button {
+#big-table-root input, #big-table-root select,
+#big-table-root textarea, #big-table-root button {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
-#big-table-root ul,
-#big-table-root ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+#big-table-root ul, #big-table-root ol { list-style: none; margin: 0; padding: 0; }
 </style>
 
 <div id="big-table-root"></div>
@@ -48,74 +34,40 @@ const { useState, useEffect } = React;
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const DIET_PRESETS = ['Vegetarian','Vegan','Gluten-free','Nut-free','Dairy-free','Halal','Kosher'];
+const WORDS = ['SAGE','FERN','REED','CLAY','PINE','MOSS','WREN','DOVE','DUSK','DAWN',
+               'TIDE','RAIN','MIST','IRIS','LARK','BRINE','ROUX','BROTH','CRESS','THYME'];
 
-const DIET_PRESETS = [
-  'Vegetarian', 'Vegan', 'Gluten-free', 'Nut-free', 'Dairy-free', 'Halal', 'Kosher'
-];
-
-const WORDS = [
-  'SAGE','FERN','REED','CLAY','PINE','MOSS','WREN','DOVE',
-  'DUSK','DAWN','TIDE','RAIN','MIST','IRIS','LARK','BRINE',
-  'ROUX','BROTH','CRESS','THYME'
-];
-
-// 15-min slots 5:00 PM – 9:00 PM  (17 total)
 const TIME_SLOTS = (() => {
   const out = [];
   for (let h = 17; h <= 21; h++) {
-    const mins = h === 21 ? [0] : [0, 15, 30, 45];
-    for (const m of mins) {
-      const h12 = h - 12;
-      const mm = m === 0 ? '00' : String(m);
-      out.push(`${h12}:${mm} PM`);
+    for (const m of (h === 21 ? [0] : [0,15,30,45])) {
+      out.push(`${h-12}:${m===0?'00':m} PM`);
     }
   }
   return out;
 })();
 
 const C = {
-  babyYellow : '#f1e6c9',
-  darkRose   : '#a23c3f',
-  darkerGray : '#222',
-  darkGray   : '#333',
-  gray       : '#666',
-  mint       : '#9DF4B0',
-  darkMint   : '#377048',
-  rose       : '#F5898D',
-  peach      : '#FBB965',
-  darkPeach  : '#ac7022',
-  lightGray  : '#eee',
-  white      : '#fff',
+  babyYellow:'#f1e6c9', darkRose:'#a23c3f', darkerGray:'#222', darkGray:'#333',
+  gray:'#666', mint:'#9DF4B0', darkMint:'#377048', rose:'#F5898D',
+  peach:'#FBB965', darkPeach:'#ac7022', lightGray:'#eee', white:'#fff',
 };
 
-// ─── STORAGE ─────────────────────────────────────────────────────────────────
-// Uses localStorage; swap the methods below for a real backend in production.
+const DAY_THRESHOLD = 0.75;
+
+// ─── STORAGE ──────────────────────────────────────────────────────────────────
 
 const Store = {
-  getPool(code) {
-    try { return JSON.parse(localStorage.getItem(`bt_pool_${code}`)); }
-    catch { return null; }
-  },
-  savePool(pool) {
-    try {
-      pool.lastActive = Date.now();
-      localStorage.setItem(`bt_pool_${pool.code}`, JSON.stringify(pool));
-    } catch {}
-  },
-  getSession() {
-    try { return JSON.parse(localStorage.getItem('bt_session')); }
-    catch { return null; }
-  },
-  saveSession(s) {
-    try { localStorage.setItem('bt_session', JSON.stringify(s)); } catch {}
-  },
-  clearSession() {
-    try { localStorage.removeItem('bt_session'); } catch {}
-  },
+  getPool(code) { try { return JSON.parse(localStorage.getItem(`bt_pool_${code}`)); } catch { return null; } },
+  savePool(pool) { try { pool.lastActive=Date.now(); localStorage.setItem(`bt_pool_${pool.code}`,JSON.stringify(pool)); } catch {} },
+  getSession() { try { return JSON.parse(localStorage.getItem('bt_session')); } catch { return null; } },
+  saveSession(s) { try { localStorage.setItem('bt_session',JSON.stringify(s)); } catch {} },
+  clearSession() { try { localStorage.removeItem('bt_session'); } catch {} },
   pruneOld() {
     try {
-      const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
-      for (let i = localStorage.length - 1; i >= 0; i--) {
+      const cutoff = Date.now() - 30*24*60*60*1000;
+      for (let i = localStorage.length-1; i >= 0; i--) {
         const k = localStorage.key(i);
         if (k && k.startsWith('bt_pool_')) {
           const p = JSON.parse(localStorage.getItem(k));
@@ -126,302 +78,264 @@ const Store = {
   }
 };
 
-// ─── UTILITIES ───────────────────────────────────────────────────────────────
+// ─── UTILITIES / LOGIC ────────────────────────────────────────────────────────
 
 function genCode() {
-  const word = WORDS[Math.floor(Math.random() * WORDS.length)];
-  const num = String(Math.floor(Math.random() * 9000) + 1000);
-  return `${word}-${num}`;
+  return `${WORDS[Math.floor(Math.random()*WORDS.length)]}-${String(Math.floor(Math.random()*9000)+1000)}`;
+}
+function sanitizeName(s) { return s.replace(/\s/g,'').slice(0,6); }
+function slotIdx(t) { return TIME_SLOTS.indexOf(t); }
+
+function computeConsensus(pool, useRunoff = false) {
+  const members = pool.members;
+  const total = members.length;
+  const proposedDays = useRunoff
+    ? (pool.runoffSettings?.newDays || [])
+    : pool.settings.days;
+  const proposedWindow = useRunoff
+    ? (pool.runoffSettings?.newWindow || pool.settings.proposedWindow)
+    : pool.settings.proposedWindow;
+
+  const days = {};
+  for (const day of proposedDays) {
+    const accepting = members.filter(m =>
+      useRunoff ? (m.runoffDayVotes && m.runoffDayVotes[day]) : (m.dayVotes && m.dayVotes[day])
+    ).length;
+    const pct = total > 0 ? accepting / total : 0;
+    days[day] = { votes: accepting, total, pct, passes: pct >= DAY_THRESHOLD, zero: accepting === 0 };
+  }
+
+  let agreedStart = proposedWindow.earliest;
+  let agreedEnd   = proposedWindow.latest;
+  for (const m of members) {
+    const sv = useRunoff ? m.runoffStartVote : m.startVote;
+    const ev = useRunoff ? m.runoffEndVote   : m.endVote;
+    if (sv && slotIdx(sv) > slotIdx(agreedStart)) agreedStart = sv;
+    if (ev && slotIdx(ev) < slotIdx(agreedEnd))   agreedEnd   = ev;
+  }
+  const minuteSpan = (slotIdx(agreedEnd) - slotIdx(agreedStart)) * 15;
+  return { days, window: { agreedStart, agreedEnd, minuteSpan, tooNarrow: minuteSpan <= 30 } };
 }
 
-function sanitizeName(s) {
-  return s.replace(/\s/g, '').slice(0, 6);
-}
-
-function slotIdx(t) {
-  return TIME_SLOTS.indexOf(t);
-}
-
-function allConsented(pool) {
-  return pool.members.length > 0 &&
-    pool.members.every(m => m.consent === 'creator' || m.consent === 'consented');
-}
-
-function buildSchedule(pool) {
-  const { members, settings } = pool;
-  const cooksPer = settings.cooksPer;
+function buildSchedule(members, agreedDays, agreedWindow, cooksPer) {
   const names = members.map(m => m.name);
   const nights = Math.ceil(names.length / cooksPer);
-
-  const DAY_NUM = { Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6, Sun:0 };
-  const activeDayNums = settings.days.map(d => DAY_NUM[d]);
-
+  const DAY_NUM = { Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0 };
+  const activeDayNums = agreedDays.map(d => DAY_NUM[d]);
   const cursor = new Date();
-  cursor.setDate(cursor.getDate() + 1);
-  cursor.setHours(0, 0, 0, 0);
-
+  cursor.setDate(cursor.getDate()+1); cursor.setHours(0,0,0,0);
   const dates = [];
   while (dates.length < nights) {
     if (activeDayNums.includes(cursor.getDay())) dates.push(new Date(cursor));
-    cursor.setDate(cursor.getDate() + 1);
+    cursor.setDate(cursor.getDate()+1);
   }
-
-  const DAY_NAME = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const MONTH = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
+  const DN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   let ci = 0;
   return dates.map(date => {
     const cooks = [];
     for (let j = 0; j < cooksPer && ci < names.length; j++) cooks.push(names[ci++]);
     const guestRestrictions = members
       .filter(m => !cooks.includes(m.name) && (m.diet?.presets?.length || m.diet?.note))
-      .map(m => ({ name: m.name, presets: m.diet?.presets || [], note: m.diet?.note || '' }));
-    return {
-      date: `${DAY_NAME[date.getDay()]} ${MONTH[date.getMonth()]} ${date.getDate()}`,
-      cooks,
-      agreedWindow: pool.agreedWindow || pool.settings.proposedWindow,
-      guestRestrictions,
-      meal: null
-    };
+      .map(m => ({ name:m.name, presets:m.diet?.presets||[], note:m.diet?.note||'' }));
+    return { date:`${DN[date.getDay()]} ${MO[date.getMonth()]} ${date.getDate()}`,
+             cooks, agreedWindow, guestRestrictions, meal:null };
   });
 }
 
-// ─── SHARED UI COMPONENTS ────────────────────────────────────────────────────
+// Returns updated pool after creator finalizes decisions; may set status to 'scheduled' or 'runoff'
+function applyCreatorDecisions(pool, decisions, runoffProposal) {
+  // decisions: { [day]: 'include'|'drop' } for marginal days
+  // runoffProposal: { newDays, newWindow } | null
+  const report = pool.consensusReport;
 
-function Btn({ children, onClick, variant = 'primary', disabled = false, fullWidth = false, style = {} }) {
-  const base = {
-    display: 'inline-block',
-    padding: '10px 22px',
-    borderRadius: '22px',
-    border: 'none',
-    cursor: disabled ? 'not-allowed' : 'pointer',
-    fontFamily: "'Roboto', sans-serif",
-    fontSize: '15px',
-    fontWeight: '500',
-    opacity: disabled ? 0.5 : 1,
-    width: fullWidth ? '100%' : 'auto',
-    transition: 'filter 0.15s',
-    ...style,
-  };
+  // Build the list of agreed days from primary voting
+  const agreedDays = pool.settings.days.filter(day => {
+    const d = report.days[day];
+    if (d.passes) return true;
+    if (d.zero)   return false; // zero days go to runoff or are dropped
+    return decisions[day] === 'include';
+  });
+
+  const needsRunoff = runoffProposal && (
+    (runoffProposal.newDays && runoffProposal.newDays.length > 0) ||
+    runoffProposal.newWindow
+  );
+
+  if (needsRunoff) {
+    const resetMembers = pool.members.map(m => ({
+      ...m, runoffDayVotes: null, runoffStartVote: null,
+      runoffEndVote: null, runoffVoted: false
+    }));
+    return { ...pool, members: resetMembers, agreedDays,
+             runoffSettings: runoffProposal, status: 'runoff', creatorDecisions: decisions };
+  }
+
+  // No runoff — finalize immediately
+  const aw = { earliest: report.window.agreedStart, latest: report.window.agreedEnd };
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer);
+  return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled',
+           creatorDecisions: decisions };
+}
+
+function finalizeRunoff(pool) {
+  const rc = computeConsensus(pool, true);
+  const baseDays = pool.agreedDays || [];
+  const newDays = (pool.runoffSettings?.newDays || []).filter(d => rc.days[d]?.passes);
+  const agreedDays = [...new Set([...baseDays, ...newDays])];
+
+  let aw;
+  if (pool.runoffSettings?.newWindow && !rc.window.tooNarrow) {
+    aw = { earliest: rc.window.agreedStart, latest: rc.window.agreedEnd };
+  } else {
+    aw = pool.agreedWindow || { earliest: pool.consensusReport.window.agreedStart, latest: pool.consensusReport.window.agreedEnd };
+  }
+
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer);
+  return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled', runoffReport: rc };
+}
+
+// ─── SHARED UI ────────────────────────────────────────────────────────────────
+
+function Btn({ children, onClick, variant='primary', disabled=false, fullWidth=false, style={} }) {
   const variants = {
-    primary : { background: C.babyYellow, color: C.darkerGray },
-    danger  : { background: C.rose,       color: C.darkRose   },
-    success : { background: C.mint,       color: C.darkMint   },
-    muted   : { background: C.lightGray,  color: C.gray       },
-    accent  : { background: C.peach,      color: C.darkPeach  },
+    primary:{ background:C.babyYellow, color:C.darkerGray },
+    danger: { background:C.rose,       color:C.darkRose   },
+    success:{ background:C.mint,       color:C.darkMint   },
+    muted:  { background:C.lightGray,  color:C.gray       },
+    accent: { background:C.peach,      color:C.darkPeach  },
+    dark:   { background:C.darkRose,   color:C.white      },
   };
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      style={{ ...base, ...(variants[variant] || variants.primary) }}
-    >
-      {children}
-    </button>
+    <button onClick={onClick} disabled={disabled} style={{
+      display:'inline-block', padding:'10px 22px', borderRadius:'22px', border:'none',
+      cursor: disabled?'not-allowed':'pointer', fontFamily:"'Roboto',sans-serif",
+      fontSize:'15px', fontWeight:'500', opacity: disabled?0.5:1,
+      width: fullWidth?'100%':'auto',
+      ...(variants[variant]||variants.primary), ...style
+    }}>{children}</button>
   );
 }
 
-function Card({ children, style = {} }) {
-  return (
-    <div style={{
-      background: C.babyYellow,
-      borderRadius: '16px',
-      padding: '20px',
-      marginBottom: '16px',
-      ...style
-    }}>
-      {children}
-    </div>
-  );
+function Card({ children, style={} }) {
+  return <div style={{ background:C.babyYellow, borderRadius:'16px', padding:'20px', marginBottom:'16px', ...style }}>{children}</div>;
 }
 
-function SectionLabel({ children, style = {} }) {
-  return (
-    <div style={{
-      fontFamily: "'ZTNature', Helvetica, sans-serif",
-      fontSize: '20px',
-      fontWeight: '500',
-      color: C.darkerGray,
-      marginBottom: '8px',
-      lineHeight: 1.2,
-      ...style
-    }}>
-      {children}
-    </div>
-  );
+function SLabel({ children, style={} }) {
+  return <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'20px', fontWeight:'500', color:C.darkerGray, marginBottom:'8px', lineHeight:1.2, ...style }}>{children}</div>;
 }
 
 function Field({ label, hint, children }) {
   return (
-    <div style={{ marginBottom: '20px' }}>
-      <SectionLabel>{label}</SectionLabel>
-      {hint && <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>{hint}</div>}
+    <div style={{ marginBottom:'20px' }}>
+      <SLabel>{label}</SLabel>
+      {hint && <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>{hint}</div>}
       {children}
     </div>
   );
 }
 
-function TextInput({ value, onChange, placeholder, maxLength, mono = false, style = {} }) {
+function TInput({ value, onChange, placeholder, maxLength, mono=false, style={} }) {
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={e => onChange(e.target.value)}
-      placeholder={placeholder}
-      maxLength={maxLength}
-      style={{
-        width: '100%',
-        padding: '12px 16px',
-        borderRadius: '12px',
-        border: `2px solid ${C.lightGray}`,
-        fontFamily: mono ? 'monospace' : "'Roboto', sans-serif",
-        fontSize: mono ? '20px' : '16px',
-        letterSpacing: mono ? '2px' : 'normal',
-        color: C.darkGray,
-        outline: 'none',
-        background: C.white,
-        ...style
-      }}
-    />
+    <input type="text" value={value} onChange={e=>onChange(e.target.value)}
+      placeholder={placeholder} maxLength={maxLength} style={{
+        width:'100%', padding:'12px 16px', borderRadius:'12px',
+        border:`2px solid ${C.lightGray}`,
+        fontFamily: mono?"monospace":"'Roboto',sans-serif",
+        fontSize: mono?'20px':'16px', letterSpacing: mono?'2px':'normal',
+        color:C.darkGray, outline:'none', background:C.white, ...style
+      }} />
   );
 }
 
-function SelectInput({ value, onChange, children, style = {} }) {
+function NInput({ value, onChange, placeholder, min, max, style={} }) {
   return (
-    <select
-      value={value}
-      onChange={e => onChange(e.target.value)}
-      style={{
-        padding: '10px 14px',
-        borderRadius: '12px',
-        border: `2px solid ${C.lightGray}`,
-        fontFamily: "'Roboto', sans-serif",
-        fontSize: '15px',
-        color: C.darkGray,
-        background: C.white,
-        cursor: 'pointer',
-        ...style
-      }}
-    >
-      {children}
-    </select>
+    <input type="number" value={value} onChange={e=>onChange(e.target.value)}
+      placeholder={placeholder} min={min} max={max} style={{
+        width:'120px', padding:'12px 16px', borderRadius:'12px',
+        border:`2px solid ${C.lightGray}`, fontFamily:"'Roboto',sans-serif",
+        fontSize:'16px', color:C.darkGray, outline:'none', background:C.white, ...style
+      }} />
   );
 }
 
-function Tag({ label, bg = C.lightGray, color = C.darkGray }) {
+function SInput({ value, onChange, children, style={} }) {
   return (
-    <span style={{
-      display: 'inline-block',
-      padding: '3px 10px',
-      borderRadius: '12px',
-      background: bg,
-      color,
-      fontSize: '13px',
-      fontWeight: '500',
-      marginRight: '4px',
-      marginBottom: '4px',
-    }}>
-      {label}
-    </span>
+    <select value={value} onChange={e=>onChange(e.target.value)} style={{
+      padding:'10px 14px', borderRadius:'12px', border:`2px solid ${C.lightGray}`,
+      fontFamily:"'Roboto',sans-serif", fontSize:'15px', color:C.darkGray,
+      background:C.white, cursor:'pointer', ...style
+    }}>{children}</select>
   );
 }
 
-function StatusBadge({ status }) {
-  const map = {
-    creator   : { label: 'creator',   bg: C.peach,     color: C.darkPeach },
-    consented : { label: 'consented', bg: C.mint,      color: C.darkMint  },
-    objected  : { label: 'objected',  bg: C.rose,      color: C.darkRose  },
-    pending   : { label: 'pending',   bg: C.lightGray, color: C.gray      },
-  };
-  const s = map[status] || map.pending;
-  return <Tag label={s.label} bg={s.bg} color={s.color} />;
+function Tag({ label, bg=C.lightGray, color=C.darkGray }) {
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:'12px',
+    background:bg, color, fontSize:'13px', fontWeight:'500', marginRight:'4px', marginBottom:'4px' }}>{label}</span>;
+}
+
+function Chip({ label, active, onClick, activeColor=C.darkMint, activeBg=C.mint }) {
+  return (
+    <button onClick={onClick} style={{
+      padding:'7px 16px', borderRadius:'20px', cursor:'pointer',
+      border:`2px solid ${active ? activeColor : C.lightGray}`,
+      background: active ? activeBg : C.white,
+      color: active ? activeColor : C.gray,
+      fontFamily:"'Roboto'", fontSize:'14px', fontWeight: active?'600':'400',
+      transition:'all 0.15s',
+    }}>{label}</button>
+  );
 }
 
 function Divider() {
-  return <div style={{ height: '2px', background: C.darkRose, margin: '16px 0', borderRadius: '1px' }} />;
+  return <div style={{ height:'2px', background:C.darkRose, margin:'16px 0', borderRadius:'1px' }} />;
 }
 
 function BackBtn({ onClick }) {
   return (
-    <button
-      onClick={onClick}
-      style={{
-        background: 'none', border: 'none', color: C.gray,
-        cursor: 'pointer', fontSize: '14px', padding: '0',
-        marginBottom: '20px', fontFamily: "'Roboto'",
-      }}
-    >
+    <button onClick={onClick} style={{ background:'none', border:'none', color:C.gray,
+      cursor:'pointer', fontSize:'14px', padding:'0', marginBottom:'20px', fontFamily:"'Roboto'" }}>
       ← Back
     </button>
   );
 }
 
-function ErrorMsg({ msg }) {
+function ErrMsg({ msg }) {
   if (!msg) return null;
+  return <div style={{ color:C.darkRose, background:'#fdf0f0', border:`1.5px solid ${C.rose}`,
+    borderRadius:'10px', padding:'10px 14px', marginBottom:'16px', fontSize:'14px' }}>{msg}</div>;
+}
+
+function PctBar({ pct, passes, zero }) {
+  const color = zero ? C.rose : passes ? C.mint : C.peach;
+  const textColor = zero ? C.darkRose : passes ? C.darkMint : C.darkPeach;
   return (
-    <div style={{
-      color: C.darkRose,
-      background: '#fdf0f0',
-      border: `1.5px solid ${C.rose}`,
-      borderRadius: '10px',
-      padding: '10px 14px',
-      marginBottom: '16px',
-      fontSize: '14px',
-    }}>
-      {msg}
+    <div style={{ display:'flex', alignItems:'center', gap:'8px' }}>
+      <div style={{ flex:1, height:'8px', background:C.lightGray, borderRadius:'4px', overflow:'hidden' }}>
+        <div style={{ width:`${Math.round(pct*100)}%`, height:'100%', background:color, borderRadius:'4px', transition:'width 0.3s' }} />
+      </div>
+      <span style={{ fontSize:'13px', fontWeight:'600', color:textColor, minWidth:'36px' }}>
+        {Math.round(pct*100)}%
+      </span>
     </div>
   );
 }
 
-function ToggleChip({ label, active, onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        padding: '7px 16px',
-        borderRadius: '20px',
-        border: `2px solid ${active ? C.darkMint : C.lightGray}`,
-        background: active ? C.mint : C.white,
-        color: active ? C.darkMint : C.gray,
-        cursor: 'pointer',
-        fontFamily: "'Roboto'",
-        fontSize: '14px',
-        fontWeight: active ? '600' : '400',
-        transition: 'all 0.15s',
-      }}
-    >
-      {label}
-    </button>
-  );
-}
-
-// ─── HOME SCREEN ─────────────────────────────────────────────────────────────
+// ─── HOME SCREEN ──────────────────────────────────────────────────────────────
 
 function HomeScreen({ onCreate, onJoin }) {
   return (
-    <div style={{ textAlign: 'center', paddingTop: '32px' }}>
-      <h1 style={{
-        fontFamily: "'ZTNature', Helvetica, sans-serif",
-        fontSize: '52px',
-        fontWeight: '500',
-        color: C.darkerGray,
-        lineHeight: 1.1,
-        marginBottom: '12px',
-      }}>
-        Big Table
-      </h1>
-      <p style={{ color: C.gray, fontSize: '18px', marginBottom: '36px', lineHeight: 1.5 }}>
+    <div style={{ textAlign:'center', paddingTop:'32px' }}>
+      <h1 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'52px', fontWeight:'500',
+        color:C.darkerGray, lineHeight:1.1, marginBottom:'12px' }}>Big Table</h1>
+      <p style={{ color:C.gray, fontSize:'18px', marginBottom:'36px', lineHeight:1.5 }}>
         Coordinate a recurring dinner pool<br />with your people.
       </p>
-      <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-        <Btn onClick={onCreate} style={{ fontSize: '17px', padding: '14px 32px' }}>
-          Start a new table
-        </Btn>
-        <Btn onClick={onJoin} variant="muted" style={{ fontSize: '17px', padding: '14px 32px' }}>
-          Join a table
-        </Btn>
+      <div style={{ display:'flex', gap:'14px', justifyContent:'center', flexWrap:'wrap' }}>
+        <Btn onClick={onCreate} style={{ fontSize:'17px', padding:'14px 32px' }}>Start a new table</Btn>
+        <Btn onClick={onJoin} variant="muted" style={{ fontSize:'17px', padding:'14px 32px' }}>Join a table</Btn>
       </div>
-      <p style={{ color: C.lightGray, marginTop: '56px', fontSize: '13px', fontStyle: 'italic' }}>
+      <p style={{ color:C.lightGray, marginTop:'56px', fontSize:'13px', fontStyle:'italic' }}>
         Named for the commons — where everyone cooks, everyone eats.
       </p>
     </div>
@@ -437,45 +351,40 @@ function CreateScreen({ onBack, onEnterRoom }) {
   const [startTime, setStartTime] = useState('6:00 PM');
   const [endTime,   setEndTime]   = useState('8:00 PM');
   const [cooksPer,  setCooksPer]  = useState(1);
+  const [maxPax,    setMaxPax]    = useState('');
   const [error,     setError]     = useState('');
 
-  const toggleDay = d => setDays(prev =>
-    prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]
-  );
+  const toggleDay = d => setDays(prev => prev.includes(d) ? prev.filter(x=>x!==d) : [...prev,d]);
+  const endOpts = TIME_SLOTS.filter((_,i) => i > slotIdx(startTime));
 
-  const endOptions = TIME_SLOTS.filter((_, i) => i > slotIdx(startTime));
+  const maxPaxNum = maxPax === '' ? null : parseInt(maxPax, 10);
+  const maxPaxValid = maxPaxNum === null || (maxPaxNum > 0 && maxPaxNum % cooksPer === 0);
 
   const handleSubmit = () => {
-    if (!tableName.trim())       return setError('Give your table a name.');
-    if (!myName.trim())          return setError('What should we call you?');
-    if (days.length === 0)       return setError('Pick at least one active day.');
-    if (slotIdx(startTime) >= slotIdx(endTime))
-      return setError('End time must be after start time.');
+    if (!tableName.trim()) return setError('Give your table a name.');
+    if (!myName.trim())    return setError('What should we call you?');
+    if (days.length === 0) return setError('Pick at least one active day.');
+    if (slotIdx(startTime) >= slotIdx(endTime)) return setError('End time must be after start time.');
+    if (!maxPaxValid) return setError(`Max participants must be a multiple of ${cooksPer}.`);
     setError('');
 
     const code = genCode();
     const name = sanitizeName(myName);
+    const defaultDayVotes = {};
+    days.forEach(d => { defaultDayVotes[d] = true; });
+
     const pool = {
-      code,
-      name: tableName.trim(),
-      settings: {
-        days,
-        cooksPer,
-        proposedWindow: { earliest: startTime, latest: endTime }
-      },
+      code, name: tableName.trim(), status: 'open',
+      settings: { days, cooksPer, maxParticipants: maxPaxNum,
+                  proposedWindow: { earliest: startTime, latest: endTime } },
       members: [{
-        name,
-        diet: { presets: [], note: '' },
-        consent: 'creator',
-        objection: '',
-        windowObjection: null,
-        isCreator: true,
-        joinedAt: Date.now()
+        name, diet:{ presets:[], note:'' }, isCreator:true, joinedAt:Date.now(),
+        dayVotes: defaultDayVotes, startVote: startTime, endVote: endTime,
+        voted:true, runoffDayVotes:null, runoffStartVote:null, runoffEndVote:null, runoffVoted:false
       }],
-      agreedWindow: null,
-      schedule: null,
-      createdAt: Date.now(),
-      lastActive: Date.now()
+      consensusReport:null, creatorDecisions:{}, runoffSettings:null, runoffReport:null,
+      agreedWindow:null, agreedDays:null, schedule:null,
+      createdAt:Date.now(), lastActive:Date.now()
     };
     Store.savePool(pool);
     Store.saveSession({ code, name });
@@ -483,625 +392,749 @@ function CreateScreen({ onBack, onEnterRoom }) {
   };
 
   return (
-    <div style={{ maxWidth: '520px', margin: '0 auto' }}>
+    <div style={{ maxWidth:'520px', margin:'0 auto' }}>
       <BackBtn onClick={onBack} />
-      <h2 style={{
-        fontFamily: "'ZTNature', Helvetica, sans-serif",
-        fontSize: '34px', fontWeight: '500',
-        color: C.darkerGray, marginBottom: '28px',
-      }}>
-        Create a new table
-      </h2>
+      <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
+        color:C.darkerGray, marginBottom:'28px' }}>Create a new table</h2>
 
       <Field label="Table name">
-        <TextInput
-          value={tableName}
-          onChange={setTableName}
-          placeholder="Mission St Suppers"
-          maxLength={40}
-        />
+        <TInput value={tableName} onChange={setTableName} placeholder="Mission St Suppers" maxLength={40} />
       </Field>
 
-      <Field
-        label="Your name"
-        hint="Up to 6 characters, no spaces — a nod to The Dispossessed."
-      >
-        <TextInput
-          value={myName}
-          onChange={v => setMyName(sanitizeName(v))}
-          placeholder="Shevek"
-          maxLength={6}
-        />
-        {myName && (
-          <div style={{ fontSize: '13px', color: C.gray, marginTop: '5px' }}>
-            Will appear as: <strong>{sanitizeName(myName)}</strong>
-          </div>
-        )}
+      <Field label="Your name" hint="Up to 6 characters, no spaces — a nod to The Dispossessed.">
+        <TInput value={myName} onChange={v=>setMyName(sanitizeName(v))} placeholder="Shevek" maxLength={6} />
+        {myName && <div style={{ fontSize:'13px', color:C.gray, marginTop:'5px' }}>
+          Will appear as: <strong>{sanitizeName(myName)}</strong></div>}
       </Field>
 
       <Field label="Active days">
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          {DAYS.map(d => (
-            <ToggleChip
-              key={d}
-              label={d}
-              active={days.includes(d)}
-              onClick={() => toggleDay(d)}
-            />
-          ))}
+        <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+          {DAYS.map(d => <Chip key={d} label={d} active={days.includes(d)} onClick={()=>toggleDay(d)} />)}
         </div>
       </Field>
 
       <Field label="Proposed dinner window">
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <SelectInput
-            value={startTime}
-            onChange={v => {
-              setStartTime(v);
-              if (slotIdx(v) >= slotIdx(endTime)) {
-                const nextIdx = slotIdx(v) + 1;
-                setEndTime(TIME_SLOTS[nextIdx] || TIME_SLOTS[TIME_SLOTS.length - 1]);
-              }
-            }}
-          >
-            {TIME_SLOTS.slice(0, -1).map(t => <option key={t} value={t}>{t}</option>)}
-          </SelectInput>
-          <span style={{ color: C.gray }}>to</span>
-          <SelectInput value={endTime} onChange={setEndTime}>
-            {endOptions.map(t => <option key={t} value={t}>{t}</option>)}
-          </SelectInput>
+        <div style={{ display:'flex', gap:'12px', alignItems:'center', flexWrap:'wrap' }}>
+          <SInput value={startTime} onChange={v => {
+            setStartTime(v);
+            if (slotIdx(v) >= slotIdx(endTime)) setEndTime(TIME_SLOTS[slotIdx(v)+1] || TIME_SLOTS[TIME_SLOTS.length-1]);
+          }}>
+            {TIME_SLOTS.slice(0,-1).map(t => <option key={t} value={t}>{t}</option>)}
+          </SInput>
+          <span style={{ color:C.gray }}>to</span>
+          <SInput value={endTime} onChange={setEndTime}>
+            {endOpts.map(t => <option key={t} value={t}>{t}</option>)}
+          </SInput>
         </div>
       </Field>
 
       <Field label="Cooks per night">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
-          <button
-            onClick={() => setCooksPer(p => Math.max(1, p - 1))}
-            style={{
-              width: '36px', height: '36px', borderRadius: '50%',
-              border: `2px solid ${C.lightGray}`, background: C.white,
-              fontSize: '22px', cursor: 'pointer', lineHeight: '1',
-              color: C.darkGray,
-            }}
-          >−</button>
-          <span style={{
-            fontSize: '26px', fontFamily: "'ZTNature', Helvetica, sans-serif",
-            minWidth: '28px', textAlign: 'center', color: C.darkerGray,
-          }}>
-            {cooksPer}
-          </span>
-          <button
-            onClick={() => setCooksPer(p => Math.min(4, p + 1))}
-            style={{
-              width: '36px', height: '36px', borderRadius: '50%',
-              border: `2px solid ${C.lightGray}`, background: C.white,
-              fontSize: '22px', cursor: 'pointer', lineHeight: '1',
-              color: C.darkGray,
-            }}
-          >+</button>
+        <div style={{ display:'flex', alignItems:'center', gap:'18px' }}>
+          <button onClick={()=>setCooksPer(p=>Math.max(1,p-1))} style={{
+            width:'36px', height:'36px', borderRadius:'50%', border:`2px solid ${C.lightGray}`,
+            background:C.white, fontSize:'22px', cursor:'pointer', color:C.darkGray }}>−</button>
+          <span style={{ fontSize:'26px', fontFamily:"'ZTNature',Helvetica,sans-serif",
+            minWidth:'28px', textAlign:'center', color:C.darkerGray }}>{cooksPer}</span>
+          <button onClick={()=>setCooksPer(p=>Math.min(4,p+1))} style={{
+            width:'36px', height:'36px', borderRadius:'50%', border:`2px solid ${C.lightGray}`,
+            background:C.white, fontSize:'22px', cursor:'pointer', color:C.darkGray }}>+</button>
         </div>
       </Field>
 
-      <ErrorMsg msg={error} />
+      <Field label="Max participants" hint={`Optional. If set, must be a multiple of ${cooksPer} (cooks per night). Table closes automatically when full.`}>
+        <NInput value={maxPax} onChange={setMaxPax} placeholder="Leave blank for manual close" min={cooksPer} />
+        {maxPax !== '' && !maxPaxValid && (
+          <div style={{ fontSize:'13px', color:C.darkRose, marginTop:'5px' }}>
+            Must be a multiple of {cooksPer}. Try: {
+              [1,2,3,4,5,6,7,8,9,10].map(n=>n*cooksPer).filter(n=>n>=2).slice(0,4).join(', ')
+            }
+          </div>
+        )}
+      </Field>
 
-      <Btn onClick={handleSubmit} fullWidth style={{ fontSize: '17px', padding: '14px' }}>
-        Create table
-      </Btn>
+      <ErrMsg msg={error} />
+      <Btn onClick={handleSubmit} fullWidth style={{ fontSize:'17px', padding:'14px' }}>Create table</Btn>
     </div>
   );
 }
 
-// ─── JOIN SCREEN ──────────────────────────────────────────────────────────────
+// ─── JOIN: CODE + MEMBER SELECTION ───────────────────────────────────────────
 
-function JoinScreen({ onBack, onEnterRoom }) {
-  const [code,     setCode]     = useState('');
+function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
+  const [code,  setCode]  = useState('');
+  const [pool,  setPool]  = useState(null);
+  const [error, setError] = useState('');
+
+  const handleLookup = () => {
+    const c = code.trim().toUpperCase();
+    if (!c) return setError('Enter a room code.');
+    const p = Store.getPool(c);
+    if (!p) return setError("Can't find a table with that code. Double-check with whoever shared it.");
+    setPool(p); setError('');
+  };
+
+  if (pool) {
+    const canJoinNew = pool.status === 'open';
+    return (
+      <div style={{ maxWidth:'520px', margin:'0 auto' }}>
+        <BackBtn onClick={()=>setPool(null)} />
+        <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
+          color:C.darkerGray, marginBottom:'8px' }}>{pool.name}</h2>
+        <div style={{ fontSize:'14px', color:C.gray, marginBottom:'24px', fontFamily:'monospace', letterSpacing:'1px' }}>{pool.code}</div>
+
+        {pool.members.length > 0 && (
+          <>
+            <SLabel style={{ marginBottom:'12px' }}>Who are you?</SLabel>
+            <div style={{ display:'flex', flexDirection:'column', gap:'8px', marginBottom:'20px' }}>
+              {pool.members.map(m => (
+                <button key={m.name} onClick={()=>onSelectMember(pool, m.name)} style={{
+                  padding:'14px 20px', borderRadius:'12px', border:`2px solid ${C.lightGray}`,
+                  background:C.white, cursor:'pointer', textAlign:'left',
+                  fontFamily:"'Roboto'", fontSize:'16px', color:C.darkGray,
+                  display:'flex', justifyContent:'space-between', alignItems:'center',
+                }}>
+                  <span>I'm <strong>{m.name}</strong></span>
+                  <span style={{ fontSize:'13px', color:C.gray }}>→</span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+
+        {canJoinNew ? (
+          <Btn onClick={()=>onJoinNew(pool)} variant="muted" style={{ fontSize:'15px' }}>
+            Join as new member
+          </Btn>
+        ) : (
+          <div style={{ fontSize:'14px', color:C.gray, fontStyle:'italic' }}>
+            This table is no longer accepting new members.
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ maxWidth:'520px', margin:'0 auto' }}>
+      <BackBtn onClick={onBack} />
+      <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
+        color:C.darkerGray, marginBottom:'28px' }}>Join a table</h2>
+      <Field label="Room code">
+        <TInput value={code} onChange={v=>setCode(v.toUpperCase())} placeholder="SAGE-4827" maxLength={12} mono />
+      </Field>
+      <ErrMsg msg={error} />
+      <Btn onClick={handleLookup} style={{ fontSize:'17px', padding:'14px 32px' }}>Look up table</Btn>
+    </div>
+  );
+}
+
+// ─── JOIN: NEW MEMBER FORM + VOTING ──────────────────────────────────────────
+
+function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   const [myName,   setMyName]   = useState('');
   const [presets,  setPresets]  = useState([]);
   const [dietNote, setDietNote] = useState('');
   const [error,    setError]    = useState('');
 
-  const togglePreset = p => setPresets(prev =>
-    prev.includes(p) ? prev.filter(x => x !== p) : [...prev, p]
-  );
+  // Day votes: default all proposed days to true
+  const [dayVotes, setDayVotes] = useState(() => {
+    const v = {};
+    pool.settings.days.forEach(d => { v[d] = true; });
+    return v;
+  });
 
-  const handleJoin = () => {
-    const trimCode = code.trim().toUpperCase();
-    if (!trimCode)     return setError('Enter a room code.');
+  // Time votes: default to proposed window
+  const [startAccept, setStartAccept] = useState(true);
+  const [endAccept,   setEndAccept]   = useState(true);
+  const [startVote,   setStartVote]   = useState(TIME_SLOTS[slotIdx(pool.settings.proposedWindow.earliest)+1] || pool.settings.proposedWindow.earliest);
+  const [endVote,     setEndVote]     = useState(TIME_SLOTS[slotIdx(pool.settings.proposedWindow.latest)-1] || pool.settings.proposedWindow.latest);
+
+  const pw = pool.settings.proposedWindow;
+  const laterStarts  = TIME_SLOTS.filter((_,i) => i > slotIdx(pw.earliest));
+  const earlierEnds  = TIME_SLOTS.filter((_,i) => i >= slotIdx(pw.earliest) && i < slotIdx(pw.latest));
+
+  const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
+
+  const handleSubmit = () => {
     if (!myName.trim()) return setError('What should we call you?');
-
-    const pool = Store.getPool(trimCode);
-    if (!pool) return setError("Can't find a table with that code. Double-check with whoever shared it.");
-
     const name = sanitizeName(myName);
-    if (pool.members.find(m => m.name === name))
-      return setError('That name is already taken at this table. Try a variation.');
+    if (pool.members.find(m => m.name === name)) return setError('That name is already taken at this table. Try a variation.');
+    setError('');
 
-    const newMember = {
-      name,
-      diet: { presets, note: dietNote.trim() },
-      consent: 'pending',
-      objection: '',
-      windowObjection: null,
-      isCreator: false,
-      joinedAt: Date.now()
+    const member = {
+      name, diet:{ presets, note:dietNote.trim() }, isCreator:false, joinedAt:Date.now(),
+      dayVotes,
+      startVote: startAccept ? pw.earliest : startVote,
+      endVote:   endAccept   ? pw.latest   : endVote,
+      voted:true, runoffDayVotes:null, runoffStartVote:null, runoffEndVote:null, runoffVoted:false
     };
-    pool.members.push(newMember);
-    Store.savePool(pool);
-    Store.saveSession({ code: trimCode, name });
-    onEnterRoom(pool, { code: trimCode, name });
+
+    let updated = { ...pool, members:[...pool.members, member] };
+
+    // Auto-close on max participants
+    const max = updated.settings.maxParticipants;
+    if (max && updated.members.length >= max) {
+      const report = computeConsensus(updated);
+      updated = { ...updated, status:'closed', consensusReport:report, creatorDecisions:{} };
+    }
+
+    Store.savePool(updated);
+    Store.saveSession({ code:pool.code, name });
+    onEnterRoom(updated, { code:pool.code, name });
   };
 
   return (
-    <div style={{ maxWidth: '520px', margin: '0 auto' }}>
+    <div style={{ maxWidth:'520px', margin:'0 auto' }}>
       <BackBtn onClick={onBack} />
-      <h2 style={{
-        fontFamily: "'ZTNature', Helvetica, sans-serif",
-        fontSize: '34px', fontWeight: '500',
-        color: C.darkerGray, marginBottom: '28px',
-      }}>
-        Join a table
-      </h2>
+      <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
+        color:C.darkerGray, marginBottom:'8px' }}>Join {pool.name}</h2>
+      <div style={{ fontSize:'14px', color:C.gray, marginBottom:'24px', fontFamily:'monospace', letterSpacing:'1px' }}>{pool.code}</div>
 
-      <Field label="Room code">
-        <TextInput
-          value={code}
-          onChange={v => setCode(v.toUpperCase())}
-          placeholder="SAGE-4827"
-          maxLength={12}
-          mono
-        />
-      </Field>
-
-      <Field
-        label="Your name"
-        hint="Up to 6 characters, no spaces."
-      >
-        <TextInput
-          value={myName}
-          onChange={v => setMyName(sanitizeName(v))}
-          placeholder="Takver"
-          maxLength={6}
-        />
-        {myName && (
-          <div style={{ fontSize: '13px', color: C.gray, marginTop: '5px' }}>
-            Will appear as: <strong>{sanitizeName(myName)}</strong>
-          </div>
-        )}
+      <Field label="Your name" hint="Up to 6 characters, no spaces.">
+        <TInput value={myName} onChange={v=>setMyName(sanitizeName(v))} placeholder="Takver" maxLength={6} />
+        {myName && <div style={{ fontSize:'13px', color:C.gray, marginTop:'5px' }}>
+          Will appear as: <strong>{sanitizeName(myName)}</strong></div>}
       </Field>
 
       <Field label="Dietary restrictions" hint="Optional — helps whoever's cooking plan their menu.">
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '12px' }}>
+        <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'10px' }}>
           {DIET_PRESETS.map(p => (
-            <ToggleChip
-              key={p}
-              label={p}
-              active={presets.includes(p)}
-              onClick={() => togglePreset(p)}
-            />
+            <Chip key={p} label={p} active={presets.includes(p)} onClick={()=>togglePreset(p)} />
           ))}
         </div>
-        <TextInput
-          value={dietNote}
-          onChange={setDietNote}
-          placeholder="Anything else? (e.g. no shellfish, low FODMAP)"
-          maxLength={100}
-        />
+        <TInput value={dietNote} onChange={setDietNote} placeholder="Anything else? (e.g. no shellfish)" maxLength={100} />
       </Field>
 
-      <ErrorMsg msg={error} />
+      <Field label="Which of these days work for you?">
+        <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+          {pool.settings.days.map(d => (
+            <Chip key={d} label={d} active={!!dayVotes[d]}
+              onClick={()=>setDayVotes(prev=>({...prev,[d]:!prev[d]}))} />
+          ))}
+        </div>
+      </Field>
 
-      <Btn onClick={handleJoin} fullWidth style={{ fontSize: '17px', padding: '14px' }}>
-        Join table
-      </Btn>
+      <Field label="Dinner window">
+        <div style={{ marginBottom:'14px' }}>
+          <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+            Proposed start: <span style={{ color:C.darkMint }}>{pw.earliest}</span>
+          </div>
+          <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+            <Chip label={`${pw.earliest} works for me`} active={startAccept} onClick={()=>setStartAccept(true)} />
+            <Chip label="Too early for me" active={!startAccept}
+              onClick={()=>setStartAccept(false)}
+              activeColor={C.darkRose} activeBg={C.rose} />
+          </div>
+          {!startAccept && laterStarts.length > 0 && (
+            <div style={{ marginTop:'10px' }}>
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>I need a later start:</div>
+              <SInput value={startVote} onChange={setStartVote}>
+                {laterStarts.map(t => <option key={t} value={t}>{t}</option>)}
+              </SInput>
+            </div>
+          )}
+        </div>
+
+        <div>
+          <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+            Proposed end: <span style={{ color:C.darkMint }}>{pw.latest}</span>
+          </div>
+          <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+            <Chip label={`${pw.latest} works for me`} active={endAccept} onClick={()=>setEndAccept(true)} />
+            <Chip label="Too late for me" active={!endAccept}
+              onClick={()=>setEndAccept(false)}
+              activeColor={C.darkRose} activeBg={C.rose} />
+          </div>
+          {!endAccept && earlierEnds.length > 0 && (
+            <div style={{ marginTop:'10px' }}>
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>I need an earlier end:</div>
+              <SInput value={endVote} onChange={setEndVote}>
+                {[...earlierEnds].reverse().map(t => <option key={t} value={t}>{t}</option>)}
+              </SInput>
+            </div>
+          )}
+        </div>
+      </Field>
+
+      <ErrMsg msg={error} />
+      <Btn onClick={handleSubmit} fullWidth style={{ fontSize:'17px', padding:'14px' }}>Join table</Btn>
     </div>
   );
 }
 
-// ─── PROPOSAL TAB ─────────────────────────────────────────────────────────────
+// ─── TABLE TAB ────────────────────────────────────────────────────────────────
 
-function WindowSlotPill({ time, state }) {
-  const styles = {
-    consented : { bg: C.mint,       text: C.darkMint, border: C.darkMint },
-    objected  : { bg: C.rose,       text: C.darkRose, border: C.darkRose },
-    pending   : { bg: C.babyYellow, text: C.gray,     border: C.gray     },
-  };
-  const s = styles[state] || styles.pending;
+function VoteTally({ pool }) {
+  const report = computeConsensus(pool);
+  const voted = pool.members.filter(m => m.voted).length;
+  const total = pool.members.length;
   return (
-    <span style={{
-      display: 'inline-block',
-      padding: '4px 10px',
-      borderRadius: '12px',
-      background: s.bg,
-      color: s.text,
-      border: `1.5px solid ${s.border}`,
-      fontSize: '13px',
-      fontWeight: '500',
-      marginRight: '4px',
-      marginBottom: '4px',
-    }}>
-      {time}
-    </span>
+    <div>
+      <div style={{ fontSize:'13px', color:C.gray, marginBottom:'14px' }}>
+        {voted} of {total} {total===1?'person':'people'} have voted
+      </div>
+      <div style={{ marginBottom:'16px' }}>
+        <div style={{ fontSize:'13px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'8px' }}>Days</div>
+        {pool.settings.days.map(day => {
+          const d = report.days[day];
+          return (
+            <div key={day} style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'8px' }}>
+              <span style={{ minWidth:'36px', fontSize:'14px', fontWeight:'600', color:C.darkGray }}>{day}</span>
+              <div style={{ flex:1 }}><PctBar pct={d.pct} passes={d.passes} zero={d.zero} /></div>
+              <span style={{ fontSize:'12px', color:C.gray }}>{d.votes}/{d.total}</span>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <div style={{ fontSize:'13px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'8px' }}>Time window</div>
+        <div style={{ fontSize:'14px', color:C.darkGray }}>
+          Tightest so far: <strong>{report.window.agreedStart}</strong> – <strong>{report.window.agreedEnd}</strong>
+          {' '}
+          <span style={{ fontSize:'13px', color: report.window.tooNarrow ? C.darkRose : C.darkMint }}>
+            ({report.window.minuteSpan} min{report.window.tooNarrow ? ' — may be too narrow' : ''})
+          </span>
+        </div>
+      </div>
+    </div>
   );
 }
 
-function ProposalTab({ pool, myName, onUpdate }) {
-  const me = pool.members.find(m => m.name === myName);
-
-  // Main consent form state
-  const [showObjForm,    setShowObjForm]    = useState(false);
-  const [objReason,      setObjReason]      = useState('');
-
-  // Window objection form state
-  const [showWinForm,    setShowWinForm]    = useState(false);
-  const [winBoundary,    setWinBoundary]    = useState('');
-  const [winReason,      setWinReason]      = useState('');
-  const [winProposed,    setWinProposed]    = useState('');
-
+function ConsensusReport({ pool, isCreator, onFinalize }) {
+  const report = pool.consensusReport;
+  const [decisions, setDecisions] = useState(() => {
+    const d = { ...pool.creatorDecisions };
+    pool.settings.days.forEach(day => {
+      const dd = report.days[day];
+      if (!dd.passes && !dd.zero && !d[day]) d[day] = '';
+    });
+    return d;
+  });
+  const [showRunoffForm, setShowRunoffForm] = useState(false);
+  const [runoffDays, setRunoffDays] = useState({});
+  const [runoffWindowNeeded, setRunoffWindowNeeded] = useState(report.window.tooNarrow);
+  const [runoffStart, setRunoffStart] = useState(pool.settings.proposedWindow.earliest);
+  const [runoffEnd,   setRunoffEnd]   = useState(pool.settings.proposedWindow.latest);
   const [error, setError] = useState('');
 
-  const { settings } = pool;
-  const { proposedWindow } = settings;
-  const startIdx = slotIdx(proposedWindow.earliest);
-  const endIdx   = slotIdx(proposedWindow.latest);
-  const windowSlots = TIME_SLOTS.slice(startIdx, endIdx + 1);
+  const zeroDays = pool.settings.days.filter(d => report.days[d].zero);
+  const marginalDays = pool.settings.days.filter(d => !report.days[d].passes && !report.days[d].zero);
+  const allMarginalDecided = marginalDays.every(d => decisions[d] === 'include' || decisions[d] === 'drop');
 
-  const startObjectors = pool.members.filter(
-    m => m.windowObjection?.boundary === 'start'
-  );
-  const endObjectors = pool.members.filter(
-    m => m.windowObjection?.boundary === 'end'
-  );
-  const everybodyIn = allConsented(pool);
+  const runoffNeeded = zeroDays.length > 0 || report.window.tooNarrow;
+  const canProceed = allMarginalDecided;
 
-  function slotState(slotTime) {
-    if (slotTime === proposedWindow.earliest) {
-      if (startObjectors.length > 0) return 'objected';
-      if (everybodyIn) return 'consented';
-      return 'pending';
-    }
-    if (slotTime === proposedWindow.latest) {
-      if (endObjectors.length > 0) return 'objected';
-      if (everybodyIn) return 'consented';
-      return 'pending';
-    }
-    return everybodyIn ? 'consented' : 'pending';
-  }
-
-  const canAct     = me && me.consent !== 'creator';
-  const hasConsented = me && me.consent === 'consented';
-  const hasObjected  = me && me.consent === 'objected';
-  const hasWinObj    = me && !!me.windowObjection;
-
-  // Replacement time options (directional)
-  function replacementOptions(boundary) {
-    if (boundary === 'start')
-      return TIME_SLOTS.filter((_, i) => i > startIdx && i <= endIdx);
-    if (boundary === 'end')
-      return TIME_SLOTS.filter((_, i) => i >= startIdx && i < endIdx);
-    return [];
-  }
-
-  const handleConsent = () => {
-    const updated = {
-      ...pool,
-      members: pool.members.map(m =>
-        m.name === myName
-          ? { ...m, consent: 'consented', objection: '' }
-          : m
-      )
-    };
-    if (allConsented(updated)) {
-      updated.agreedWindow = updated.settings.proposedWindow;
-      updated.schedule = buildSchedule(updated);
-    }
-    Store.savePool(updated);
-    onUpdate(updated);
-  };
-
-  const handleObject = () => {
-    if (!objReason.trim()) return setError('Please explain your concern.');
+  const handleProceed = () => {
+    if (!canProceed) return setError('Make a decision for all flagged days first.');
     setError('');
-    const updated = {
-      ...pool,
-      members: pool.members.map(m =>
-        m.name === myName
-          ? { ...m, consent: 'objected', objection: objReason.trim() }
-          : m
-      )
-    };
-    Store.savePool(updated);
-    onUpdate(updated);
-    setShowObjForm(false);
+    if (runoffNeeded) {
+      setShowRunoffForm(true);
+    } else {
+      onFinalize(decisions, null);
+    }
   };
 
-  const handleWinObj = () => {
-    if (!winBoundary)        return setError('Choose which boundary you object to.');
-    if (!winReason.trim())   return setError('Explain your concern.');
-    if (!winProposed)        return setError('Propose a replacement time.');
+  const handleStartRunoff = () => {
+    const newDays = Object.entries(runoffDays).filter(([,v])=>v!=='drop').map(([,v])=>v).filter(Boolean);
+    const newWindow = runoffWindowNeeded ? { earliest:runoffStart, latest:runoffEnd } : null;
+    if (runoffWindowNeeded && slotIdx(runoffStart) >= slotIdx(runoffEnd))
+      return setError('End time must be after start time.');
+    const minuteSpan = runoffWindowNeeded ? (slotIdx(runoffEnd)-slotIdx(runoffStart))*15 : 999;
+    if (runoffWindowNeeded && minuteSpan <= 30)
+      return setError('New window must be wider than 30 minutes.');
     setError('');
-    const updated = {
-      ...pool,
-      members: pool.members.map(m =>
-        m.name === myName
-          ? { ...m, windowObjection: { boundary: winBoundary, reason: winReason.trim(), proposed: winProposed } }
-          : m
-      )
-    };
-    Store.savePool(updated);
-    onUpdate(updated);
-    setShowWinForm(false);
+    onFinalize(decisions, (newDays.length > 0 || newWindow) ? { newDays, newWindow } : null);
   };
 
-  const clearWinObj = () => {
-    const updated = {
-      ...pool,
-      members: pool.members.map(m =>
-        m.name === myName ? { ...m, windowObjection: null } : m
-      )
-    };
-    Store.savePool(updated);
-    onUpdate(updated);
-  };
-
-  const winObjors = pool.members.filter(m => m.windowObjection);
+  if (!isCreator) {
+    // Non-creator sees read-only report
+    return (
+      <Card>
+        <SLabel style={{ marginBottom:'12px' }}>Table has been closed</SLabel>
+        <div style={{ fontSize:'14px', color:C.gray }}>
+          The creator is reviewing the consensus and will finalize the schedule soon.
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <div>
-      {/* Table summary card */}
       <Card>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4px' }}>
-          <SectionLabel style={{ marginBottom: 0 }}>{pool.name}</SectionLabel>
-          <span style={{ fontFamily: 'monospace', fontSize: '14px', color: C.gray, letterSpacing: '1px' }}>
-            {pool.code}
-          </span>
-        </div>
-        <Divider />
+        <SLabel style={{ marginBottom:'14px' }}>Consensus report</SLabel>
 
-        <div style={{ marginBottom: '14px' }}>
-          <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px', fontWeight: '500' }}>Active days</div>
-          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-            {settings.days.map(d => <Tag key={d} label={d} />)}
-          </div>
+        <div style={{ marginBottom:'16px' }}>
+          <div style={{ fontSize:'13px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'8px' }}>Days</div>
+          {pool.settings.days.map(day => {
+            const d = report.days[day];
+            return (
+              <div key={day} style={{ marginBottom:'12px' }}>
+                <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'4px' }}>
+                  <span style={{ minWidth:'36px', fontSize:'14px', fontWeight:'600', color:C.darkGray }}>{day}</span>
+                  <div style={{ flex:1 }}><PctBar pct={d.pct} passes={d.passes} zero={d.zero} /></div>
+                  <span style={{ fontSize:'12px', color:C.gray }}>{d.votes}/{d.total}</span>
+                </div>
+                {d.passes && <div style={{ fontSize:'12px', color:C.darkMint, marginLeft:'46px' }}>Included</div>}
+                {d.zero && <div style={{ fontSize:'12px', color:C.darkRose, marginLeft:'46px' }}>Zero acceptance — needs a new round</div>}
+                {!d.passes && !d.zero && (
+                  <div style={{ display:'flex', gap:'8px', marginLeft:'46px', flexWrap:'wrap' }}>
+                    <Chip label="Include anyway" active={decisions[day]==='include'}
+                      onClick={()=>setDecisions(prev=>({...prev,[day]:'include'}))} />
+                    <Chip label="Drop this day" active={decisions[day]==='drop'}
+                      onClick={()=>setDecisions(prev=>({...prev,[day]:'drop'}))}
+                      activeColor={C.darkRose} activeBg={C.rose} />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        <div style={{ marginBottom: '14px' }}>
-          <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px', fontWeight: '500' }}>
-            Proposed dinner window
+        <div style={{ marginBottom:'16px' }}>
+          <div style={{ fontSize:'13px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'8px' }}>Dinner window</div>
+          <div style={{ fontSize:'14px', color:C.darkGray, marginBottom:'4px' }}>
+            Agreed: <strong>{report.window.agreedStart}</strong> – <strong>{report.window.agreedEnd}</strong>
+            {' '}({report.window.minuteSpan} min)
           </div>
-          <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-            {windowSlots.map(t => (
-              <WindowSlotPill key={t} time={t} state={slotState(t)} />
-            ))}
-          </div>
-          <div style={{ fontSize: '11px', color: C.gray, marginTop: '6px' }}>
-            Green = consented &nbsp;·&nbsp; Red = objected &nbsp;·&nbsp; Beige = pending
-          </div>
-        </div>
-
-        <div>
-          <span style={{ fontSize: '13px', color: C.gray, fontWeight: '500' }}>
-            Cooks per night:
-          </span>{' '}
-          <strong>{settings.cooksPer}</strong>
+          {report.window.tooNarrow
+            ? <div style={{ fontSize:'13px', color:C.darkRose }}>Too narrow — needs a new round with a wider window</div>
+            : <div style={{ fontSize:'13px', color:C.darkMint }}>Wide enough</div>
+          }
         </div>
       </Card>
 
-      {/* Window objections from other members */}
-      {winObjors.length > 0 && (
-        <div style={{ marginBottom: '8px' }}>
-          <SectionLabel style={{ fontSize: '16px', color: C.gray, marginBottom: '8px' }}>
-            Time window concerns
-          </SectionLabel>
-          {winObjors.map(m => (
-            <Card key={m.name} style={{
-              background: '#fdf0f0',
-              borderLeft: `4px solid ${C.darkRose}`,
-              padding: '14px 16px',
-            }}>
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'baseline', marginBottom: '4px' }}>
-                <strong style={{ fontSize: '15px' }}>{m.name}</strong>
-                <span style={{ fontSize: '13px', color: C.gray }}>
-                  objects to the {m.windowObjection.boundary} time
-                </span>
-              </div>
-              <div style={{ fontSize: '14px', color: C.darkGray, fontStyle: 'italic', marginBottom: '4px' }}>
-                "{m.windowObjection.reason}"
-              </div>
-              <div style={{ fontSize: '14px' }}>
-                Proposes: <strong>{m.windowObjection.proposed}</strong>
-              </div>
-            </Card>
-          ))}
-        </div>
+      {!showRunoffForm && (
+        <>
+          <ErrMsg msg={error} />
+          <Btn onClick={handleProceed} disabled={!canProceed} style={{ marginRight:'8px' }}>
+            {runoffNeeded ? 'Continue to round 2 setup →' : 'Generate schedule'}
+          </Btn>
+        </>
       )}
 
-      {/* Consent / objection actions for non-creator */}
-      {canAct && (
-        <Card style={{ background: C.white, border: `2px solid ${C.babyYellow}` }}>
-          <SectionLabel style={{ marginBottom: '14px' }}>What do you think?</SectionLabel>
+      {showRunoffForm && (
+        <Card style={{ border:`2px solid ${C.peach}` }}>
+          <SLabel style={{ marginBottom:'14px' }}>Round 2 setup</SLabel>
+          <div style={{ fontSize:'14px', color:C.gray, marginBottom:'16px' }}>
+            Propose new values for flagged items. Members will re-vote on these only.
+          </div>
 
-          {/* Already acted — show summary, allow re-action */}
-          {hasConsented && !showObjForm && (
-            <div style={{ marginBottom: '12px' }}>
-              <div style={{
-                padding: '10px 14px', background: C.mint, borderRadius: '10px',
-                color: C.darkMint, fontWeight: '600', marginBottom: '10px', fontSize: '14px',
-              }}>
-                You've consented to this proposal.
+          {zeroDays.map(day => (
+            <div key={day} style={{ marginBottom:'16px' }}>
+              <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+                {day} had 0% acceptance. Propose a replacement or drop it:
               </div>
-              <Btn onClick={() => setShowObjForm(true)} variant="muted" style={{ fontSize: '14px', padding: '8px 16px' }}>
-                Change my mind
-              </Btn>
-            </div>
-          )}
-
-          {hasObjected && !showObjForm && (
-            <div style={{ marginBottom: '12px' }}>
-              <div style={{
-                padding: '10px 14px', background: C.rose, borderRadius: '10px',
-                color: C.darkRose, fontWeight: '600', marginBottom: '6px', fontSize: '14px',
-              }}>
-                You've objected.
+              <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'8px' }}>
+                <Chip label="Drop it" active={runoffDays[day]==='drop'}
+                  onClick={()=>setRunoffDays(prev=>({...prev,[day]:'drop'}))}
+                  activeColor={C.darkRose} activeBg={C.rose} />
               </div>
-              <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic', marginBottom: '10px' }}>
-                "{me.objection}"
-              </div>
-              <Btn onClick={handleConsent} variant="success" style={{ fontSize: '14px', padding: '8px 16px', marginRight: '8px' }}>
-                Consent instead
-              </Btn>
-            </div>
-          )}
-
-          {/* Fresh — not yet acted */}
-          {!hasConsented && !hasObjected && !showObjForm && !showWinForm && (
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              <Btn onClick={handleConsent} variant="success">Consent</Btn>
-              <Btn onClick={() => { setShowObjForm(true); setShowWinForm(false); setError(''); }} variant="danger">
-                Object
-              </Btn>
-            </div>
-          )}
-
-          {/* Objection form */}
-          {showObjForm && (
-            <div>
-              <div style={{ fontSize: '14px', color: C.darkGray, marginBottom: '8px' }}>
-                What's your concern with this proposal?
-              </div>
-              <textarea
-                value={objReason}
-                onChange={e => setObjReason(e.target.value)}
-                placeholder="e.g. Wednesdays don't work for me..."
-                rows={3}
-                style={{
-                  width: '100%', padding: '12px', borderRadius: '10px',
-                  border: `2px solid ${C.lightGray}`, fontFamily: "'Roboto'",
-                  fontSize: '15px', resize: 'vertical', color: C.darkGray,
-                  background: C.white,
-                }}
-              />
-              <ErrorMsg msg={error} />
-              <div style={{ display: 'flex', gap: '8px', marginTop: '8px', flexWrap: 'wrap' }}>
-                <Btn onClick={handleObject} variant="danger">Submit objection</Btn>
-                <Btn onClick={() => { setShowObjForm(false); setError(''); }} variant="muted">Cancel</Btn>
-              </div>
-            </div>
-          )}
-
-          {/* Window objection toggle (independent of main consent) */}
-          {!showObjForm && !showWinForm && (
-            <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: `1px solid ${C.lightGray}` }}>
-              {hasWinObj ? (
-                <div>
-                  <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>
-                    Your time concern is on record.
-                  </div>
-                  <Btn onClick={clearWinObj} variant="muted" style={{ fontSize: '13px', padding: '6px 14px' }}>
-                    Remove my time concern
-                  </Btn>
-                </div>
-              ) : (
-                <Btn
-                  onClick={() => { setShowWinForm(true); setShowObjForm(false); setError(''); }}
-                  variant="muted"
-                  style={{ fontSize: '13px', padding: '7px 16px' }}
-                >
-                  Flag a concern about the dinner window
-                </Btn>
-              )}
-            </div>
-          )}
-
-          {/* Window objection form */}
-          {showWinForm && (
-            <div>
-              <div style={{ fontSize: '14px', color: C.darkGray, marginBottom: '10px' }}>
-                Which time boundary is the problem?
-              </div>
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
-                {['start', 'end'].map(b => (
-                  <button
-                    key={b}
-                    onClick={() => { setWinBoundary(b); setWinProposed(''); }}
-                    style={{
-                      padding: '7px 18px', borderRadius: '18px', cursor: 'pointer',
-                      border: `2px solid ${winBoundary === b ? C.darkRose : C.lightGray}`,
-                      background: winBoundary === b ? C.rose : C.white,
-                      color: winBoundary === b ? C.darkRose : C.gray,
-                      fontFamily: "'Roboto'", fontSize: '14px',
-                    }}
-                  >
-                    {b === 'start' ? 'Start time (too early)' : 'End time (too late)'}
-                  </button>
+              <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+                {DAYS.filter(d=>d!==day && !pool.settings.days.includes(d)).map(d => (
+                  <Chip key={d} label={d} active={runoffDays[day]===d}
+                    onClick={()=>setRunoffDays(prev=>({...prev,[day]:d}))} />
+                ))}
+                {pool.settings.days.filter(d=>d!==day).map(d => (
+                  <Chip key={d} label={`${d} again`} active={runoffDays[day]===d}
+                    onClick={()=>setRunoffDays(prev=>({...prev,[day]:d}))} />
                 ))}
               </div>
+            </div>
+          ))}
 
-              {winBoundary && (
-                <>
-                  <div style={{ marginBottom: '12px' }}>
-                    <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>Why?</div>
-                    <TextInput
-                      value={winReason}
-                      onChange={setWinReason}
-                      placeholder="I can't make it that early..."
-                    />
-                  </div>
-                  <div style={{ marginBottom: '14px' }}>
-                    <div style={{ fontSize: '13px', color: C.gray, marginBottom: '6px' }}>
-                      {winBoundary === 'start'
-                        ? 'Propose a later start time:'
-                        : 'Propose an earlier end time:'}
-                    </div>
-                    <SelectInput value={winProposed} onChange={setWinProposed}>
-                      <option value="">Select a time...</option>
-                      {replacementOptions(winBoundary).map(t =>
-                        <option key={t} value={t}>{t}</option>
-                      )}
-                    </SelectInput>
-                  </div>
-                </>
-              )}
-
-              <ErrorMsg msg={error} />
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <Btn
-                  onClick={handleWinObj}
-                  variant="danger"
-                  disabled={!winBoundary || !winReason.trim() || !winProposed}
-                >
-                  Submit concern
-                </Btn>
-                <Btn onClick={() => { setShowWinForm(false); setError(''); }} variant="muted">Cancel</Btn>
+          {report.window.tooNarrow && (
+            <div style={{ marginBottom:'16px' }}>
+              <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+                Propose a new wider dinner window:
+              </div>
+              <div style={{ display:'flex', gap:'12px', alignItems:'center', flexWrap:'wrap', marginBottom:'8px' }}>
+                <SInput value={runoffStart} onChange={v=>{
+                  setRunoffStart(v);
+                  if (slotIdx(v) >= slotIdx(runoffEnd)) setRunoffEnd(TIME_SLOTS[slotIdx(v)+1]||TIME_SLOTS[TIME_SLOTS.length-1]);
+                }}>
+                  {TIME_SLOTS.slice(0,-1).map(t=><option key={t} value={t}>{t}</option>)}
+                </SInput>
+                <span style={{ color:C.gray }}>to</span>
+                <SInput value={runoffEnd} onChange={setRunoffEnd}>
+                  {TIME_SLOTS.filter((_,i)=>i>slotIdx(runoffStart)).map(t=><option key={t} value={t}>{t}</option>)}
+                </SInput>
               </div>
             </div>
           )}
+
+          <ErrMsg msg={error} />
+          <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+            <Btn onClick={handleStartRunoff} variant="dark">Start round 2</Btn>
+            <Btn onClick={()=>setShowRunoffForm(false)} variant="muted">Back</Btn>
+          </div>
         </Card>
       )}
+    </div>
+  );
+}
 
-      {/* Overall consent status */}
+function RunoffVoting({ pool, myName, onUpdate }) {
+  const me = pool.members.find(m => m.name === myName);
+  const rs = pool.runoffSettings;
+  const isCreator = me?.isCreator;
+  const allRunoffVoted = pool.members.every(m => m.runoffVoted);
+
+  // Creator's runoff vote is auto-applied (they proposed the values)
+  useEffect(() => {
+    if (isCreator && !me.runoffVoted) {
+      const defaultDayVotes = {};
+      (rs.newDays||[]).forEach(d => { defaultDayVotes[d] = true; });
+      const updated = {
+        ...pool,
+        members: pool.members.map(m => m.name === myName ? {
+          ...m,
+          runoffDayVotes: defaultDayVotes,
+          runoffStartVote: rs.newWindow ? rs.newWindow.earliest : null,
+          runoffEndVote:   rs.newWindow ? rs.newWindow.latest   : null,
+          runoffVoted: true
+        } : m)
+      };
+      Store.savePool(updated);
+      onUpdate(updated);
+    }
+  }, []);
+
+  // Non-creator voting form
+  const [dayVotes, setDayVotes] = useState(() => {
+    const v = {};
+    (rs.newDays||[]).forEach(d => { v[d] = true; });
+    return v;
+  });
+  const [startAccept, setStartAccept] = useState(true);
+  const [endAccept,   setEndAccept]   = useState(true);
+  const nw = rs.newWindow;
+  const [startVote, setStartVote] = useState(nw ? (TIME_SLOTS[slotIdx(nw.earliest)+1]||nw.earliest) : '');
+  const [endVote,   setEndVote]   = useState(nw ? (TIME_SLOTS[slotIdx(nw.latest)-1]||nw.latest) : '');
+
+  const handleSubmitVote = () => {
+    const updated = {
+      ...pool,
+      members: pool.members.map(m => m.name === myName ? {
+        ...m,
+        runoffDayVotes: dayVotes,
+        runoffStartVote: nw ? (startAccept ? nw.earliest : startVote) : null,
+        runoffEndVote:   nw ? (endAccept   ? nw.latest   : endVote)   : null,
+        runoffVoted: true
+      } : m)
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+  };
+
+  const handleFinalize = () => {
+    const finalized = finalizeRunoff(pool);
+    Store.savePool(finalized);
+    onUpdate(finalized);
+  };
+
+  if (me?.runoffVoted && !isCreator) {
+    return (
+      <Card style={{ background:C.mint }}>
+        <div style={{ color:C.darkMint, fontWeight:'600', fontSize:'15px' }}>
+          Round 2 vote submitted. Waiting for everyone else.
+        </div>
+        <div style={{ fontSize:'13px', color:C.darkMint, marginTop:'4px' }}>
+          {pool.members.filter(m=>m.runoffVoted).length} of {pool.members.length} have voted
+        </div>
+      </Card>
+    );
+  }
+
+  if (isCreator) {
+    const voted = pool.members.filter(m=>m.runoffVoted).length;
+    return (
       <Card>
-        <SectionLabel style={{ marginBottom: '12px' }}>Consent status</SectionLabel>
-        {pool.members.map(m => (
-          <div key={m.name} style={{
-            display: 'flex', alignItems: 'flex-start', gap: '10px',
-            marginBottom: '10px', flexWrap: 'wrap',
-          }}>
-            <strong style={{ minWidth: '60px', fontSize: '15px' }}>{m.name}</strong>
-            <StatusBadge status={m.consent} />
-            {m.objection && (
-              <span style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic' }}>
-                "{m.objection}"
-              </span>
+        <SLabel style={{ marginBottom:'8px' }}>Round 2 in progress</SLabel>
+        <div style={{ fontSize:'14px', color:C.gray, marginBottom:'12px' }}>
+          {voted} of {pool.members.length} have voted
+        </div>
+        {allRunoffVoted && (
+          <Btn onClick={handleFinalize} variant="dark">Finalize and generate schedule</Btn>
+        )}
+      </Card>
+    );
+  }
+
+  // Non-creator voting form
+  return (
+    <Card style={{ border:`2px solid ${C.peach}` }}>
+      <SLabel style={{ marginBottom:'8px' }}>Round 2 — your vote</SLabel>
+      <div style={{ fontSize:'14px', color:C.gray, marginBottom:'16px' }}>
+        Re-vote on the updated proposal.
+      </div>
+
+      {(rs.newDays||[]).length > 0 && (
+        <div style={{ marginBottom:'16px' }}>
+          <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+            New proposed days — do these work?
+          </div>
+          <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+            {(rs.newDays||[]).map(d => (
+              <Chip key={d} label={d} active={!!dayVotes[d]}
+                onClick={()=>setDayVotes(prev=>({...prev,[d]:!prev[d]}))} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {nw && (
+        <div style={{ marginBottom:'16px' }}>
+          <div style={{ fontSize:'14px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+            New proposed window: {nw.earliest} – {nw.latest}
+          </div>
+          <div style={{ marginBottom:'10px' }}>
+            <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>Start: {nw.earliest}</div>
+            <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+              <Chip label="Works for me" active={startAccept} onClick={()=>setStartAccept(true)} />
+              <Chip label="Too early" active={!startAccept} onClick={()=>setStartAccept(false)}
+                activeColor={C.darkRose} activeBg={C.rose} />
+            </div>
+            {!startAccept && (
+              <div style={{ marginTop:'8px' }}>
+                <SInput value={startVote} onChange={setStartVote}>
+                  {TIME_SLOTS.filter((_,i)=>i>slotIdx(nw.earliest)).map(t=><option key={t} value={t}>{t}</option>)}
+                </SInput>
+              </div>
             )}
           </div>
-        ))}
+          <div>
+            <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>End: {nw.latest}</div>
+            <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+              <Chip label="Works for me" active={endAccept} onClick={()=>setEndAccept(true)} />
+              <Chip label="Too late" active={!endAccept} onClick={()=>setEndAccept(false)}
+                activeColor={C.darkRose} activeBg={C.rose} />
+            </div>
+            {!endAccept && (
+              <div style={{ marginTop:'8px' }}>
+                <SInput value={endVote} onChange={setEndVote}>
+                  {TIME_SLOTS.filter((_,i)=>i>=slotIdx(nw.earliest)&&i<slotIdx(nw.latest)).reverse().map(t=><option key={t} value={t}>{t}</option>)}
+                </SInput>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <Btn onClick={handleSubmitVote} variant="success">Submit round 2 vote</Btn>
+    </Card>
+  );
+}
+
+function TableTab({ pool, myName, onUpdate }) {
+  const me = pool.members.find(m => m.name === myName);
+  const isCreator = me?.isCreator;
+  const [showCloseWarning, setShowCloseWarning] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleClose = () => {
+    const n = pool.members.length;
+    const x = pool.settings.cooksPer;
+    if (n % x !== 0) {
+      setShowCloseWarning(true);
+      return;
+    }
+    doClose();
+  };
+
+  const doClose = () => {
+    const report = computeConsensus(pool);
+    const updated = { ...pool, status:'closed', consensusReport:report, creatorDecisions:{} };
+    Store.savePool(updated);
+    onUpdate(updated);
+    setShowCloseWarning(false);
+  };
+
+  const handleFinalize = (decisions, runoffProposal) => {
+    const updated = applyCreatorDecisions(pool, decisions, runoffProposal);
+    Store.savePool(updated);
+    onUpdate(updated);
+  };
+
+  const { settings } = pool;
+  const n = pool.members.length;
+  const x = settings.cooksPer;
+  const nearestValid = Math.round(n/x)*x || x;
+
+  return (
+    <div>
+      {/* Table info card */}
+      <Card>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'4px' }}>
+          <SLabel style={{ marginBottom:0 }}>{pool.name}</SLabel>
+          <span style={{ fontFamily:'monospace', fontSize:'14px', color:C.gray, letterSpacing:'1px' }}>{pool.code}</span>
+        </div>
+        <Divider />
+        <div style={{ display:'flex', gap:'16px', flexWrap:'wrap', fontSize:'14px', color:C.gray }}>
+          <span>Days: <strong style={{ color:C.darkGray }}>{settings.days.join(', ')}</strong></span>
+          <span>Window: <strong style={{ color:C.darkGray }}>{settings.proposedWindow.earliest} – {settings.proposedWindow.latest}</strong></span>
+          <span>Cooks/night: <strong style={{ color:C.darkGray }}>{settings.cooksPer}</strong></span>
+          {settings.maxParticipants && <span>Max: <strong style={{ color:C.darkGray }}>{settings.maxParticipants}</strong></span>}
+        </div>
+        <div style={{ marginTop:'10px', fontSize:'14px', color:C.gray }}>
+          {pool.members.length} member{pool.members.length!==1?'s':''}
+          {settings.maxParticipants && ` · ${settings.maxParticipants - pool.members.length} spots left`}
+        </div>
       </Card>
 
-      {everybodyIn && pool.schedule && (
-        <div style={{
-          padding: '16px 20px', background: C.mint, borderRadius: '12px',
-          color: C.darkMint, fontWeight: '600', textAlign: 'center', fontSize: '16px',
-        }}>
+      {/* Open: vote tallies + close button */}
+      {pool.status === 'open' && (
+        <>
+          <Card>
+            <SLabel style={{ marginBottom:'14px' }}>Votes so far</SLabel>
+            <VoteTally pool={pool} />
+          </Card>
+
+          {isCreator && (
+            <div>
+              {showCloseWarning ? (
+                <Card style={{ border:`2px solid ${C.rose}` }}>
+                  <SLabel style={{ marginBottom:'8px', color:C.darkRose }}>Close anyway?</SLabel>
+                  <div style={{ fontSize:'14px', color:C.darkGray, marginBottom:'14px' }}>
+                    You have {n} member{n!==1?'s':''} but cooks-per-night is {x}.
+                    For an even schedule, you'd want {nearestValid} member{nearestValid!==1?'s':''}.
+                  </div>
+                  <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+                    <Btn onClick={doClose} variant="danger">Close anyway</Btn>
+                    <Btn onClick={()=>setShowCloseWarning(false)} variant="muted">Cancel — wait for more</Btn>
+                  </div>
+                </Card>
+              ) : (
+                <div style={{ display:'flex', gap:'8px', alignItems:'center', flexWrap:'wrap' }}>
+                  <Btn onClick={handleClose} variant="dark">Close table</Btn>
+                  <span style={{ fontSize:'13px', color:C.gray }}>No new members can join after this.</span>
+                </div>
+              )}
+            </div>
+          )}
+
+          {!isCreator && (
+            <div style={{ padding:'14px 16px', background:C.lightGray, borderRadius:'12px',
+              fontSize:'14px', color:C.gray, fontStyle:'italic' }}>
+              Waiting for the creator to close the table and finalize the schedule.
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Closed: consensus report */}
+      {pool.status === 'closed' && (
+        <ConsensusReport pool={pool} isCreator={isCreator} onFinalize={handleFinalize} />
+      )}
+
+      {/* Runoff */}
+      {pool.status === 'runoff' && (
+        <RunoffVoting pool={pool} myName={myName} onUpdate={onUpdate} />
+      )}
+
+      {/* Scheduled */}
+      {pool.status === 'scheduled' && (
+        <div style={{ padding:'16px 20px', background:C.mint, borderRadius:'12px',
+          color:C.darkMint, fontWeight:'600', textAlign:'center', fontSize:'16px' }}>
           Everyone's in. Check the Schedule tab to see who's cooking.
         </div>
       )}
@@ -1114,57 +1147,45 @@ function ProposalTab({ pool, myName, onUpdate }) {
 function MembersTab({ pool }) {
   return (
     <div>
-      <SectionLabel style={{ marginBottom: '16px' }}>
-        {pool.members.length} {pool.members.length === 1 ? 'person' : 'people'} at this table
-      </SectionLabel>
+      <SLabel style={{ marginBottom:'16px' }}>
+        {pool.members.length} {pool.members.length===1?'person':'people'} at this table
+      </SLabel>
       {pool.members.map(m => (
         <Card key={m.name}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', flexWrap: 'wrap' }}>
-            <span style={{
-              fontFamily: "'ZTNature', Helvetica, sans-serif",
-              fontSize: '20px', fontWeight: '500', color: C.darkerGray,
-            }}>
-              {m.name}
-            </span>
-            <StatusBadge status={m.consent} />
+          <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'10px', flexWrap:'wrap' }}>
+            <span style={{ fontFamily:"'ZTNature',Helvetica,sans-serif",
+              fontSize:'20px', fontWeight:'500', color:C.darkerGray }}>{m.name}</span>
+            {m.isCreator && <Tag label="creator" bg={C.peach} color={C.darkPeach} />}
+            {m.voted
+              ? <Tag label="voted" bg={C.mint} color={C.darkMint} />
+              : <Tag label="not voted" bg={C.lightGray} color={C.gray} />}
           </div>
 
           {(m.diet?.presets?.length > 0 || m.diet?.note) ? (
-            <div style={{ marginBottom: '8px' }}>
-              <div style={{ fontSize: '12px', color: C.gray, marginBottom: '4px', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                Dietary needs
-              </div>
-              <div>
-                {m.diet.presets.map(p => <Tag key={p} label={p} />)}
-                {m.diet.note && (
-                  <span style={{ fontSize: '13px', color: C.darkGray, fontStyle: 'italic' }}>
-                    {m.diet.note}
-                  </span>
-                )}
-              </div>
+            <div style={{ marginBottom:'8px' }}>
+              <div style={{ fontSize:'12px', color:C.gray, marginBottom:'4px', fontWeight:'500',
+                textTransform:'uppercase', letterSpacing:'0.5px' }}>Dietary needs</div>
+              {m.diet.presets.map(p => <Tag key={p} label={p} />)}
+              {m.diet.note && <span style={{ fontSize:'13px', color:C.darkGray, fontStyle:'italic' }}>{m.diet.note}</span>}
             </div>
           ) : (
-            <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic', marginBottom: '8px' }}>
+            <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic', marginBottom:'8px' }}>
               No dietary restrictions noted
             </div>
           )}
 
-          {m.objection && (
-            <div style={{
-              fontSize: '13px', color: C.darkRose, fontStyle: 'italic',
-              marginTop: '6px', paddingTop: '6px', borderTop: `1px solid ${C.rose}`,
-            }}>
-              Objection: "{m.objection}"
-            </div>
-          )}
-
-          {m.windowObjection && (
-            <div style={{
-              fontSize: '13px', color: C.darkRose, marginTop: '6px',
-              paddingTop: '6px', borderTop: `1px solid ${C.rose}`,
-            }}>
-              <span style={{ fontWeight: '600' }}>Time concern ({m.windowObjection.boundary}):</span>{' '}
-              "{m.windowObjection.reason}" — proposes <strong>{m.windowObjection.proposed}</strong>
+          {m.voted && (
+            <div style={{ fontSize:'13px', color:C.gray }}>
+              <span>Days: </span>
+              {pool.settings.days.map(d => (
+                <Tag key={d} label={d}
+                  bg={m.dayVotes?.[d] ? C.mint : C.lightGray}
+                  color={m.dayVotes?.[d] ? C.darkMint : C.gray} />
+              ))}
+              {' · '}
+              <span>Start: <strong>{m.startVote}</strong></span>
+              {' · '}
+              <span>End: <strong>{m.endVote}</strong></span>
             </div>
           )}
         </Card>
@@ -1180,51 +1201,30 @@ function MealPostForm({ entry, onPost, onCancel }) {
   const [startTime, setStartTime] = useState(entry.agreedWindow.earliest);
   const [note,      setNote]      = useState('');
   const [error,     setError]     = useState('');
-
   const startI = slotIdx(entry.agreedWindow.earliest);
   const endI   = slotIdx(entry.agreedWindow.latest);
-  const validTimes = TIME_SLOTS.filter((_, i) => i >= startI && i <= endI);
-
+  const validTimes = TIME_SLOTS.filter((_,i) => i >= startI && i <= endI);
   const handleSubmit = () => {
     if (!mealName.trim()) return setError('What are you cooking?');
     setError('');
-    onPost({ name: mealName.trim(), startTime, note: note.trim() });
+    onPost({ name:mealName.trim(), startTime, note:note.trim() });
   };
-
   return (
-    <div style={{
-      marginTop: '14px', padding: '16px',
-      background: C.white, borderRadius: '12px',
-      border: `2px solid ${C.lightGray}`,
-    }}>
-      <SectionLabel style={{ fontSize: '17px', marginBottom: '14px' }}>Post your meal</SectionLabel>
-
+    <div style={{ marginTop:'14px', padding:'16px', background:C.white, borderRadius:'12px', border:`2px solid ${C.lightGray}` }}>
+      <SLabel style={{ fontSize:'17px', marginBottom:'14px' }}>Post your meal</SLabel>
       <Field label="What are you making?">
-        <TextInput
-          value={mealName}
-          onChange={setMealName}
-          placeholder="Big pot of red lentil soup"
-          maxLength={80}
-        />
+        <TInput value={mealName} onChange={setMealName} placeholder="Big pot of red lentil soup" maxLength={80} />
       </Field>
-
       <Field label="Actual start time">
-        <SelectInput value={startTime} onChange={setStartTime}>
+        <SInput value={startTime} onChange={setStartTime}>
           {validTimes.map(t => <option key={t} value={t}>{t}</option>)}
-        </SelectInput>
+        </SInput>
       </Field>
-
       <Field label="Any notes for guests?">
-        <TextInput
-          value={note}
-          onChange={setNote}
-          placeholder="Bring a bowl if you have one"
-          maxLength={120}
-        />
+        <TInput value={note} onChange={setNote} placeholder="Bring a bowl if you have one" maxLength={120} />
       </Field>
-
-      <ErrorMsg msg={error} />
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+      <ErrMsg msg={error} />
+      <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
         <Btn onClick={handleSubmit} variant="success">Post meal info</Btn>
         <Btn onClick={onCancel} variant="muted">Cancel</Btn>
       </div>
@@ -1237,25 +1237,17 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
   if (!pool.schedule) {
     return (
-      <div style={{ textAlign: 'center', padding: '48px 20px', color: C.gray }}>
-        <div style={{
-          fontFamily: "'ZTNature', Helvetica, sans-serif",
-          fontSize: '24px', color: C.darkerGray, marginBottom: '10px',
-        }}>
-          Not yet
-        </div>
-        <div style={{ fontSize: '16px', lineHeight: 1.6 }}>
-          The schedule unlocks once everyone at the table has consented to the proposal.
+      <div style={{ textAlign:'center', padding:'48px 20px', color:C.gray }}>
+        <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'24px', color:C.darkerGray, marginBottom:'10px' }}>Not yet</div>
+        <div style={{ fontSize:'16px', lineHeight:1.6 }}>
+          The schedule unlocks once the table is closed and the consensus is finalized.
         </div>
       </div>
     );
   }
 
   const handlePostMeal = (idx, meal) => {
-    const updated = {
-      ...pool,
-      schedule: pool.schedule.map((e, i) => i === idx ? { ...e, meal } : e)
-    };
+    const updated = { ...pool, schedule:pool.schedule.map((e,i) => i===idx ? {...e, meal} : e) };
     Store.savePool(updated);
     onUpdate(updated);
     setPostingIdx(null);
@@ -1263,90 +1255,56 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
   return (
     <div>
-      <SectionLabel style={{ marginBottom: '16px' }}>Dinner schedule</SectionLabel>
+      <SLabel style={{ marginBottom:'4px' }}>Dinner schedule</SLabel>
+      {pool.agreedDays && (
+        <div style={{ fontSize:'13px', color:C.gray, marginBottom:'16px' }}>
+          Active days: {pool.agreedDays.join(', ')} · Window: {pool.agreedWindow?.earliest} – {pool.agreedWindow?.latest}
+        </div>
+      )}
       {pool.schedule.map((entry, i) => {
         const isCook = entry.cooks.includes(myName);
         const hasMeal = !!entry.meal;
         return (
-          <Card
-            key={i}
-            style={{ borderLeft: `4px solid ${isCook ? C.darkMint : C.darkRose}` }}
-          >
-            <div style={{
-              display: 'flex', justifyContent: 'space-between',
-              alignItems: 'flex-start', marginBottom: '10px', gap: '8px',
-            }}>
+          <Card key={i} style={{ borderLeft:`4px solid ${isCook ? C.darkMint : C.darkRose}` }}>
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'10px', gap:'8px' }}>
               <div>
-                <div style={{
-                  fontFamily: "'ZTNature', Helvetica, sans-serif",
-                  fontSize: '19px', color: C.darkerGray, marginBottom: '2px',
-                }}>
-                  {entry.date}
-                </div>
-                <div style={{ fontSize: '13px', color: C.gray }}>
-                  {hasMeal
-                    ? `Starting at ${entry.meal.startTime}`
-                    : `${entry.agreedWindow.earliest} – ${entry.agreedWindow.latest}`
-                  }
+                <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'19px', color:C.darkerGray, marginBottom:'2px' }}>{entry.date}</div>
+                <div style={{ fontSize:'13px', color:C.gray }}>
+                  {hasMeal ? `Starting at ${entry.meal.startTime}` : `${entry.agreedWindow.earliest} – ${entry.agreedWindow.latest}`}
                 </div>
               </div>
               {isCook && <Tag label="You're cooking" bg={C.mint} color={C.darkMint} />}
             </div>
 
-            <div style={{ marginBottom: '10px', fontSize: '15px' }}>
-              <strong>Cook{entry.cooks.length > 1 ? 's' : ''}:</strong>{' '}
-              {entry.cooks.join(', ')}
+            <div style={{ marginBottom:'10px', fontSize:'15px' }}>
+              <strong>Cook{entry.cooks.length>1?'s':''}:</strong> {entry.cooks.join(', ')}
             </div>
 
             {hasMeal && (
-              <div style={{
-                padding: '10px 14px', background: C.white, borderRadius: '10px',
-                marginBottom: '10px', border: `1px solid ${C.lightGray}`,
-              }}>
-                <div style={{ fontWeight: '600', fontSize: '15px', marginBottom: '3px' }}>
-                  {entry.meal.name}
-                </div>
-                {entry.meal.note && (
-                  <div style={{ fontSize: '13px', color: C.gray, fontStyle: 'italic' }}>
-                    {entry.meal.note}
-                  </div>
-                )}
+              <div style={{ padding:'10px 14px', background:C.white, borderRadius:'10px', marginBottom:'10px', border:`1px solid ${C.lightGray}` }}>
+                <div style={{ fontWeight:'600', fontSize:'15px', marginBottom:'3px' }}>{entry.meal.name}</div>
+                {entry.meal.note && <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic' }}>{entry.meal.note}</div>}
               </div>
             )}
 
             {entry.guestRestrictions.length > 0 && (
-              <div style={{ marginBottom: '10px' }}>
-                <div style={{
-                  fontSize: '12px', color: C.gray, fontWeight: '500',
-                  textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '5px',
-                }}>
-                  Guest dietary needs
-                </div>
+              <div style={{ marginBottom:'10px' }}>
+                <div style={{ fontSize:'12px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'5px' }}>Guest dietary needs</div>
                 {entry.guestRestrictions.map(g => (
-                  <div key={g.name} style={{ fontSize: '13px', marginBottom: '3px' }}>
-                    <strong>{g.name}:</strong>{' '}
-                    {[...g.presets, g.note].filter(Boolean).join(', ')}
+                  <div key={g.name} style={{ fontSize:'13px', marginBottom:'3px' }}>
+                    <strong>{g.name}:</strong> {[...g.presets, g.note].filter(Boolean).join(', ')}
                   </div>
                 ))}
               </div>
             )}
 
             {isCook && !hasMeal && postingIdx !== i && (
-              <Btn
-                onClick={() => setPostingIdx(i)}
-                variant="accent"
-                style={{ fontSize: '14px', padding: '8px 18px' }}
-              >
+              <Btn onClick={()=>setPostingIdx(i)} variant="accent" style={{ fontSize:'14px', padding:'8px 18px' }}>
                 Post meal info
               </Btn>
             )}
-
             {postingIdx === i && (
-              <MealPostForm
-                entry={entry}
-                onPost={meal => handlePostMeal(i, meal)}
-                onCancel={() => setPostingIdx(null)}
-              />
+              <MealPostForm entry={entry} onPost={meal=>handlePostMeal(i,meal)} onCancel={()=>setPostingIdx(null)} />
             )}
           </Card>
         );
@@ -1359,91 +1317,55 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
 function RoomScreen({ pool: initialPool, session, onLeave }) {
   const [pool, setPool] = useState(initialPool);
-  const [tab,  setTab]  = useState('proposal');
-
-  const handleUpdate = updated => setPool(updated);
+  const [tab,  setTab]  = useState('table');
 
   const tabs = [
-    { id: 'proposal', label: 'Proposal'  },
-    { id: 'members',  label: 'Members'   },
-    { id: 'schedule', label: 'Schedule', locked: !pool.schedule },
+    { id:'table',    label:'Table'    },
+    { id:'members',  label:'Members'  },
+    { id:'schedule', label:'Schedule', locked:!pool.schedule },
   ];
 
   return (
     <div>
-      {/* Header bar */}
-      <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        marginBottom: '6px',
-      }}>
-        <div style={{ fontSize: '14px', color: C.gray }}>
-          Signed in as{' '}
-          <strong style={{ color: C.darkGray }}>{session.name}</strong>
-          <span style={{ marginLeft: '8px', fontFamily: 'monospace', fontSize: '13px' }}>
-            {pool.code}
-          </span>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'6px' }}>
+        <div style={{ fontSize:'14px', color:C.gray }}>
+          Signed in as <strong style={{ color:C.darkGray }}>{session.name}</strong>
+          <span style={{ marginLeft:'8px', fontFamily:'monospace', fontSize:'13px' }}>{pool.code}</span>
         </div>
-        <button
-          onClick={onLeave}
-          style={{
-            background: 'none', border: 'none', color: C.gray,
-            cursor: 'pointer', fontSize: '13px', fontFamily: "'Roboto'",
-          }}
-        >
-          Leave
-        </button>
+        <button onClick={onLeave} style={{ background:'none', border:'none', color:C.gray,
+          cursor:'pointer', fontSize:'13px', fontFamily:"'Roboto'" }}>Leave</button>
       </div>
-
       <Divider />
 
-      {/* Tab bar */}
-      <div style={{
-        display: 'flex', gap: '0', marginBottom: '22px',
-        borderBottom: `2px solid ${C.lightGray}`,
-      }}>
+      <div style={{ display:'flex', gap:'0', marginBottom:'22px', borderBottom:`2px solid ${C.lightGray}` }}>
         {tabs.map(t => (
-          <button
-            key={t.id}
-            onClick={() => !t.locked && setTab(t.id)}
-            style={{
-              padding: '10px 18px',
-              background: 'none',
-              border: 'none',
-              borderBottom: tab === t.id ? `3px solid ${C.darkRose}` : '3px solid transparent',
-              marginBottom: '-2px',
-              cursor: t.locked ? 'not-allowed' : 'pointer',
-              fontFamily: "'ZTNature', Helvetica, sans-serif",
-              fontSize: '18px',
-              fontWeight: '500',
-              color: t.locked ? C.lightGray : tab === t.id ? C.darkRose : C.gray,
-              transition: 'color 0.15s, border-color 0.15s',
-            }}
-          >
-            {t.label}
-            {t.locked && <span style={{ fontSize: '12px', marginLeft: '4px' }}>(locked)</span>}
+          <button key={t.id} onClick={()=>!t.locked&&setTab(t.id)} style={{
+            padding:'10px 18px', background:'none', border:'none',
+            borderBottom: tab===t.id ? `3px solid ${C.darkRose}` : '3px solid transparent',
+            marginBottom:'-2px', cursor:t.locked?'not-allowed':'pointer',
+            fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'18px', fontWeight:'500',
+            color: t.locked ? C.lightGray : tab===t.id ? C.darkRose : C.gray,
+            transition:'color 0.15s, border-color 0.15s',
+          }}>
+            {t.label}{t.locked && <span style={{ fontSize:'12px', marginLeft:'4px' }}>(locked)</span>}
           </button>
         ))}
       </div>
 
-      {tab === 'proposal' && (
-        <ProposalTab pool={pool} myName={session.name} onUpdate={handleUpdate} />
-      )}
-      {tab === 'members' && (
-        <MembersTab pool={pool} />
-      )}
-      {tab === 'schedule' && (
-        <ScheduleTab pool={pool} myName={session.name} onUpdate={handleUpdate} />
-      )}
+      {tab==='table'    && <TableTab    pool={pool} myName={session.name} onUpdate={setPool} />}
+      {tab==='members'  && <MembersTab  pool={pool} />}
+      {tab==='schedule' && <ScheduleTab pool={pool} myName={session.name} onUpdate={setPool} />}
     </div>
   );
 }
 
-// ─── APP ROOT ─────────────────────────────────────────────────────────────────
+// ─── APP ──────────────────────────────────────────────────────────────────────
 
 function App() {
-  const [screen,  setScreen]  = useState('loading');
-  const [pool,    setPool]    = useState(null);
-  const [session, setSession] = useState(null);
+  const [screen,      setScreen]      = useState('loading');
+  const [pool,        setPool]        = useState(null);
+  const [session,     setSession]     = useState(null);
+  const [pendingPool, setPendingPool] = useState(null); // pool found in join-code, passed to join-new
 
   useEffect(() => {
     Store.pruneOld();
@@ -1451,10 +1373,7 @@ function App() {
     if (sess) {
       const p = Store.getPool(sess.code);
       if (p && p.members.find(m => m.name === sess.name)) {
-        setPool(p);
-        setSession(sess);
-        setScreen('room');
-        return;
+        setPool(p); setSession(sess); setScreen('room'); return;
       }
       Store.clearSession();
     }
@@ -1462,52 +1381,38 @@ function App() {
   }, []);
 
   const enterRoom = (p, sess) => {
-    setPool(p);
-    setSession(sess);
-    setScreen('room');
+    setPool(p); setSession(sess); setScreen('room');
+  };
+
+  const handleSelectMember = (p, name) => {
+    Store.saveSession({ code:p.code, name });
+    enterRoom(p, { code:p.code, name });
+  };
+
+  const handleJoinNew = (p) => {
+    setPendingPool(p);
+    setScreen('join-new');
   };
 
   const handleLeave = () => {
     Store.clearSession();
-    setPool(null);
-    setSession(null);
-    setScreen('home');
+    setPool(null); setSession(null); setScreen('home');
   };
 
   if (screen === 'loading') {
-    return (
-      <div style={{ padding: '48px', textAlign: 'center', color: C.gray, fontFamily: "'Roboto'" }}>
-        Loading...
-      </div>
-    );
+    return <div style={{ padding:'48px', textAlign:'center', color:C.gray, fontFamily:"'Roboto'" }}>Loading...</div>;
   }
 
   return (
     <div id="big-table-root">
-      {screen === 'home' && (
-        <HomeScreen
-          onCreate={() => setScreen('create')}
-          onJoin={() => setScreen('join')}
-        />
+      {screen==='home'     && <HomeScreen onCreate={()=>setScreen('create')} onJoin={()=>setScreen('join-code')} />}
+      {screen==='create'   && <CreateScreen onBack={()=>setScreen('home')} onEnterRoom={enterRoom} />}
+      {screen==='join-code'&& <JoinCodeScreen onBack={()=>setScreen('home')} onSelectMember={handleSelectMember} onJoinNew={handleJoinNew} />}
+      {screen==='join-new' && pendingPool && (
+        <JoinNewScreen pool={pendingPool} onBack={()=>setScreen('join-code')} onEnterRoom={enterRoom} />
       )}
-      {screen === 'create' && (
-        <CreateScreen
-          onBack={() => setScreen('home')}
-          onEnterRoom={enterRoom}
-        />
-      )}
-      {screen === 'join' && (
-        <JoinScreen
-          onBack={() => setScreen('home')}
-          onEnterRoom={enterRoom}
-        />
-      )}
-      {screen === 'room' && pool && session && (
-        <RoomScreen
-          pool={pool}
-          session={session}
-          onLeave={handleLeave}
-        />
+      {screen==='room' && pool && session && (
+        <RoomScreen pool={pool} session={session} onLeave={handleLeave} />
       )}
     </div>
   );
