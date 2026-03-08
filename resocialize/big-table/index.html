@@ -118,29 +118,57 @@ function computeConsensus(pool, useRunoff = false) {
 }
 
 function buildSchedule(members, agreedDays, agreedWindow, cooksPer) {
-  const names = members.map(m => m.name);
-  const nights = Math.ceil(names.length / cooksPer);
   const DAY_NUM = { Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0 };
-  const activeDayNums = agreedDays.map(d => DAY_NUM[d]);
+  const NUM_TO_DAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  // Which agreed days each member voted to cook on
+  const eligibleDays = {};
+  for (const m of members) {
+    eligibleDays[m.name] = new Set(agreedDays.filter(d => m.dayVotes && m.dayVotes[d]));
+  }
+
+  // Cook queue: members who still need to be assigned as cook once
+  // Members with no eligible days are excluded from the cook queue (attend only as guests)
+  const needToCook = new Set(members.map(m => m.name).filter(n => eligibleDays[n].size > 0));
+
+  const activeDayNums = new Set(agreedDays.map(d => DAY_NUM[d]));
   const cursor = new Date();
   cursor.setDate(cursor.getDate()+1); cursor.setHours(0,0,0,0);
-  const dates = [];
-  while (dates.length < nights) {
-    if (activeDayNums.includes(cursor.getDay())) dates.push(new Date(cursor));
+
+  const schedule = [];
+  let safety = 400;
+
+  while (needToCook.size > 0 && safety-- > 0) {
+    if (!activeDayNums.has(cursor.getDay())) {
+      cursor.setDate(cursor.getDate()+1);
+      continue;
+    }
+    const dayName = NUM_TO_DAY[cursor.getDay()];
+
+    // Eligible cooks tonight: in queue AND voted for this day; most-constrained first
+    const eligibleTonight = [...needToCook]
+      .filter(name => eligibleDays[name].has(dayName))
+      .sort((a, b) => {
+        const diff = eligibleDays[a].size - eligibleDays[b].size;
+        return diff !== 0 ? diff : a.localeCompare(b);
+      });
+
+    if (eligibleTonight.length > 0) {
+      const cooks = eligibleTonight.slice(0, cooksPer);
+      cooks.forEach(name => needToCook.delete(name));
+      schedule.push({
+        date: `${NUM_TO_DAY[cursor.getDay()]} ${MO[cursor.getMonth()]} ${cursor.getDate()}`,
+        cooks, agreedWindow,
+        optedOut: [],  // member names who can't make it that night
+        meal: null
+      });
+    }
+
     cursor.setDate(cursor.getDate()+1);
   }
-  const DN = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  let ci = 0;
-  return dates.map(date => {
-    const cooks = [];
-    for (let j = 0; j < cooksPer && ci < names.length; j++) cooks.push(names[ci++]);
-    const guestRestrictions = members
-      .filter(m => !cooks.includes(m.name) && (m.diet?.presets?.length || m.diet?.note))
-      .map(m => ({ name:m.name, presets:m.diet?.presets||[], note:m.diet?.note||'' }));
-    return { date:`${DN[date.getDay()]} ${MO[date.getMonth()]} ${date.getDate()}`,
-             cooks, agreedWindow, guestRestrictions, meal:null };
-  });
+
+  return schedule;
 }
 
 // Returns updated pool after creator finalizes decisions; may set status to 'scheduled' or 'runoff'
@@ -1196,6 +1224,56 @@ function MembersTab({ pool }) {
 
 // ─── SCHEDULE TAB ─────────────────────────────────────────────────────────────
 
+// Returns { guestCount, presetLabels, freeformNotes, hasRestrictions, hasAlcoholFree }
+// for active guests on a given night (non-cooks who haven't opted out).
+function computeActiveGuests(pool, entry) {
+  const optedOut = entry.optedOut || [];
+  const active = pool.members.filter(m =>
+    !entry.cooks.includes(m.name) && !optedOut.includes(m.name)
+  );
+  const presetCounts = {};
+  for (const m of active) {
+    for (const p of m.diet?.presets || []) {
+      presetCounts[p] = (presetCounts[p] || 0) + 1;
+    }
+  }
+  const presetLabels = Object.entries(presetCounts).map(([p, n]) => n > 1 ? `${p} (${n})` : p);
+  const freeformNotes = active.map(m => m.diet?.note).filter(Boolean);
+  return {
+    guestCount: active.length,
+    presetLabels,
+    freeformNotes,
+    hasRestrictions: presetLabels.length > 0 || freeformNotes.length > 0,
+    hasAlcoholFree: (presetCounts['Alcohol-free'] || 0) > 0,
+  };
+}
+
+function GuestSummaryBlock({ pool, entry, style = {} }) {
+  const { guestCount, presetLabels, freeformNotes, hasRestrictions } = computeActiveGuests(pool, entry);
+  return (
+    <div style={{ padding:'12px 14px', background:'#f7f3ee', border:`1.5px solid ${C.babyYellow}`,
+      borderRadius:'10px', fontSize:'14px', color:C.darkGray, lineHeight:1.6, ...style }}>
+      {hasRestrictions ? (
+        <>
+          <div style={{ marginBottom: freeformNotes.length > 0 ? '6px' : '0' }}>
+            <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.
+            {' '}Make sure people with these dietary restrictions have something to eat:{' '}
+            <strong>{presetLabels.join(', ')}</strong>
+          </div>
+          {freeformNotes.map((n,i) => (
+            <div key={i} style={{ fontSize:'13px', color:C.gray, fontStyle:'italic' }}>{n}</div>
+          ))}
+        </>
+      ) : (
+        <div>
+          <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.{' '}
+          No dietary restrictions to worry about!
+        </div>
+      )}
+    </div>
+  );
+}
+
 function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
   const startI = slotIdx(entry.agreedWindow.earliest);
   const endI   = slotIdx(entry.agreedWindow.latest);
@@ -1214,15 +1292,8 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
   // Prep start options: all slots before the chosen actual start time
   const prepStartOptions = TIME_SLOTS.filter((_,i) => i < slotIdx(startTime));
 
-  // Guest summary — computed from entry + pool
-  const guestCount = pool.members.filter(m => !entry.cooks.includes(m.name)).length;
-  const presetCounts = {};
-  for (const g of entry.guestRestrictions) {
-    for (const p of g.presets) { presetCounts[p] = (presetCounts[p] || 0) + 1; }
-  }
-  const presetLabels = Object.entries(presetCounts).map(([p, n]) => n > 1 ? `${p} (${n})` : p);
-  const freeformNotes = entry.guestRestrictions.map(g => g.note).filter(Boolean);
-  const hasRestrictions = presetLabels.length > 0 || freeformNotes.length > 0;
+  // Guest summary — active guests only (non-cooks who haven't opted out)
+  const { guestCount, presetLabels, freeformNotes, hasRestrictions } = computeActiveGuests(pool, entry);
 
   // Co-cook prompt
   const otherCooks = entry.cooks.filter(n => n !== myName);
@@ -1253,26 +1324,7 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
       </div>
 
       {/* Guest summary */}
-      <div style={{ padding:'12px 14px', background:'#f7f3ee', border:`1.5px solid ${C.babyYellow}`,
-        borderRadius:'10px', marginBottom:'20px', fontSize:'14px', color:C.darkGray, lineHeight:1.6 }}>
-        {hasRestrictions ? (
-          <>
-            <div style={{ marginBottom: freeformNotes.length > 0 ? '6px' : '0' }}>
-              <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.
-              {' '}Make sure people with these dietary restrictions have something to eat:{' '}
-              <strong>{presetLabels.join(', ')}</strong>
-            </div>
-            {freeformNotes.map((n,i) => (
-              <div key={i} style={{ fontSize:'13px', color:C.gray, fontStyle:'italic' }}>{n}</div>
-            ))}
-          </>
-        ) : (
-          <div>
-            <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.{' '}
-            No dietary restrictions to worry about!
-          </div>
-        )}
-      </div>
+      <GuestSummaryBlock pool={pool} entry={entry} style={{ marginBottom:'20px' }} />
 
       <SLabel style={{ fontSize:'17px', marginBottom:'16px' }}>Meal details</SLabel>
 
@@ -1361,6 +1413,21 @@ function ScheduleTab({ pool, myName, onUpdate }) {
     setPostingIdx(null);
   };
 
+  const handleOptOut = (idx, optingOut) => {
+    const updated = {
+      ...pool,
+      schedule: pool.schedule.map((e, i) => {
+        if (i !== idx) return e;
+        const optedOut = optingOut
+          ? [...(e.optedOut || []), myName]
+          : (e.optedOut || []).filter(n => n !== myName);
+        return { ...e, optedOut };
+      })
+    };
+    Store.savePool(updated);
+    onUpdate(updated);
+  };
+
   return (
     <div>
       <SLabel style={{ marginBottom:'4px' }}>Dinner schedule</SLabel>
@@ -1370,12 +1437,17 @@ function ScheduleTab({ pool, myName, onUpdate }) {
         </div>
       )}
       {pool.schedule.map((entry, i) => {
-        const isCook  = entry.cooks.includes(myName);
-        const hasMeal = !!entry.meal;
+        const isCook    = entry.cooks.includes(myName);
+        const hasMeal   = !!entry.meal;
+        const isOptedOut = (entry.optedOut || []).includes(myName);
         const monthDate = entry.date.split(' ').slice(1).join(' ');
-        const hasAlcoholFreeGuest = entry.guestRestrictions.some(g => g.presets.includes('Alcohol-free'));
+        const { hasAlcoholFree } = computeActiveGuests(pool, entry);
+
         return (
-          <Card key={i} style={{ borderLeft:`4px solid ${isCook ? C.darkMint : C.darkRose}` }}>
+          <Card key={i} style={{
+            borderLeft:`4px solid ${isCook ? C.darkMint : isOptedOut ? C.lightGray : C.darkRose}`,
+            opacity: isOptedOut ? 0.7 : 1,
+          }}>
 
             {/* Card header */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'10px', gap:'8px' }}>
@@ -1391,7 +1463,10 @@ function ScheduleTab({ pool, myName, onUpdate }) {
                   </>
                 )}
               </div>
-              {isCook && <Tag label="You're cooking" bg={C.mint} color={C.darkMint} />}
+              <div style={{ display:'flex', flexDirection:'column', gap:'4px', alignItems:'flex-end' }}>
+                {isCook    && <Tag label="You're cooking" bg={C.mint} color={C.darkMint} />}
+                {isOptedOut && <Tag label="Can't make it" bg={C.lightGray} color={C.gray} />}
+              </div>
             </div>
 
             {/* Cook names */}
@@ -1411,7 +1486,7 @@ function ScheduleTab({ pool, myName, onUpdate }) {
                   <div>
                     <strong>Drinks:</strong>{' '}
                     {entry.meal.drinks === 'provided' ? 'Drinks provided' : 'BYOB'}
-                    {entry.meal.drinks === 'provided' && hasAlcoholFreeGuest && (
+                    {entry.meal.drinks === 'provided' && hasAlcoholFree && (
                       <span style={{ color:C.gray, fontStyle:'italic' }}> — note: alcohol-free guests attending</span>
                     )}
                   </div>
@@ -1422,26 +1497,43 @@ function ScheduleTab({ pool, myName, onUpdate }) {
               </div>
             )}
 
-            {/* Guest dietary needs */}
-            {entry.guestRestrictions.length > 0 && (
-              <div style={{ marginBottom:'10px' }}>
-                <div style={{ fontSize:'12px', color:C.gray, fontWeight:'500', textTransform:'uppercase', letterSpacing:'0.5px', marginBottom:'5px' }}>Guest dietary needs</div>
-                {entry.guestRestrictions.map(g => (
-                  <div key={g.name} style={{ fontSize:'13px', marginBottom:'3px' }}>
-                    <strong>{g.name}:</strong> {[...g.presets, g.note].filter(Boolean).join(', ')}
-                  </div>
-                ))}
+            {/* Aggregated guest dietary summary */}
+            <GuestSummaryBlock pool={pool} entry={entry} style={{ marginBottom:'12px', fontSize:'13px' }} />
+
+            {/* Opted-out members list */}
+            {(entry.optedOut || []).length > 0 && (
+              <div style={{ fontSize:'12px', color:C.gray, marginBottom:'10px' }}>
+                Can't make it: {entry.optedOut.join(', ')}
+              </div>
+            )}
+
+            {/* Opt-out toggle (non-cooks only) */}
+            {!isCook && (
+              <div style={{ marginBottom: (isCook || hasMeal) ? '0' : '4px' }}>
+                {isOptedOut ? (
+                  <Btn onClick={()=>handleOptOut(i, false)} variant="muted"
+                    style={{ fontSize:'13px', padding:'6px 14px' }}>
+                    I can make it after all
+                  </Btn>
+                ) : (
+                  <Btn onClick={()=>handleOptOut(i, true)} variant="muted"
+                    style={{ fontSize:'13px', padding:'6px 14px', color:C.gray }}>
+                    Can't make it
+                  </Btn>
+                )}
               </div>
             )}
 
             {/* Post meal button / form */}
             {isCook && !hasMeal && postingIdx !== i && (
-              <Btn onClick={()=>setPostingIdx(i)} variant="accent" style={{ fontSize:'14px', padding:'8px 18px' }}>
+              <Btn onClick={()=>setPostingIdx(i)} variant="accent"
+                style={{ fontSize:'14px', padding:'8px 18px', marginTop:'8px' }}>
                 Post meal info
               </Btn>
             )}
             {postingIdx === i && (
-              <MealPostForm entry={entry} pool={pool} myName={myName} onPost={meal=>handlePostMeal(i,meal)} onCancel={()=>setPostingIdx(null)} />
+              <MealPostForm entry={entry} pool={pool} myName={myName}
+                onPost={meal=>handlePostMeal(i,meal)} onCancel={()=>setPostingIdx(null)} />
             )}
           </Card>
         );
