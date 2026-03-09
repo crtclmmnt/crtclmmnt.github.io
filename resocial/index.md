@@ -10,8 +10,8 @@ hide_header: true
   <img src="/images/resocial-apple-touch-icon.png" style="max-width: 120px;">
 </div>
 
-<h1 style="font-size: 4rem; margin-bottom: 0px; text-align: center;">Resocial Media</h1>
-<hr class="short" style="margin: 0.5em 0;">
+<h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial Media</h1>
+<hr class="short" style="margin: 0.5em auto;">
 <p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.</p>
 
 <br>
