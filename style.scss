@@ -753,6 +753,17 @@ img {
   }
 }
 
+.bigblock {
+  display: inline-block;
+  background-color: $babyYellow;
+  color: $darkerGray;
+  padding: 20px 20px;
+  border: 2px solid $darkerGray;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;        /* ADD THIS */
