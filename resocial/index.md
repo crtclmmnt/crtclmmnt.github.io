@@ -17,13 +17,13 @@ permalink: /resocial/
 <p style="font-size: 2rem;">Coordinate a recurring dinner pool with your people.</p>
 <a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Try the app</a>
 
-<details><summary><h3>How to use BigTable</h3></summary>
-<div style="max-width: 600px;">
+<details><summary><strong>How to use BigTable</strong></summary>
+<div style="max-width: 700px; align-items: center;">
 
 <hr>
 
 <div class="services-layout">
-  <div style="width: 150px; align-items: center;">
+  <div style="width: 150px; align-items: center center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
   </div>
   
