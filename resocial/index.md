@@ -20,7 +20,7 @@ permalink: /resocial/
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
 
-  <div class="services-layout">
+  <div class="services-layout" style="align-items: flex-start;">
     <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
     </div>
@@ -32,7 +32,7 @@ permalink: /resocial/
     </div>
   </div>
 
-  <div class="services-layout">
+  <div class="services-layout" style="align-items: flex-start;">
     <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
     </div>
@@ -44,7 +44,7 @@ permalink: /resocial/
     </div>
   </div>
 
-  <div class="services-layout">
+  <div class="services-layout" style="align-items: flex-start;">
   <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
@@ -56,7 +56,7 @@ permalink: /resocial/
     </div>
   </div>
 
-  <div class="services-layout">
+  <div class="services-layout" style="align-items: flex-start;">
     <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
     </div>
