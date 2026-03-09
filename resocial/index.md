@@ -20,7 +20,7 @@ hide_header: true
 
 <h1 style="font-size: 3rem; margin-bottom: 0px;">BigTable</h1>
 
-<p>Coordinate a recurring dinner pool with your people.</p>
+<p>Tired of cooking for yourself every night? Bored of eating alone? Coordinate a dinner pool with your people. Cook a little, and eat a lot.</p>
 <a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Try the app</a>
 
 <details><summary><strong>How to use BigTable</strong></summary>
@@ -51,7 +51,7 @@ hide_header: true
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-  <div cstyle="width: 150px; text-align: left;">
+    <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
@@ -75,3 +75,4 @@ hide_header: true
 </div>
 </details>
 <hr>
+<br>
