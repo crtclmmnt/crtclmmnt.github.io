@@ -56,7 +56,17 @@ const WORDS = ['SAGE','FERN','REED','CLAY','PINE','MOSS','WREN','DOVE','DUSK','D
 
 const TIME_SLOTS = (() => {
   const out = [];
-  for (let h = 17; h <= 21; h++) {
+  for (let h = 16; h <= 21; h++) {
+    for (const m of (h === 21 ? [0] : [0,15,30,45])) {
+      out.push(`${h-12}:${m===0?'00':m} PM`);
+    }
+  }
+  return out;
+})();
+
+const PREP_SLOTS = (() => {
+  const out = [];
+  for (let h = 15; h <= 21; h++) {
     for (const m of (h === 21 ? [0] : [0,15,30,45])) {
       out.push(`${h-12}:${m===0?'00':m} PM`);
     }
@@ -147,7 +157,7 @@ function computeConsensus(pool, useRunoff = false) {
   return { days, window: { agreedStart, agreedEnd, minuteSpan, tooNarrow: minuteSpan <= 30 } };
 }
 
-function buildSchedule(members, agreedDays, agreedWindow, cooksPer) {
+function buildSchedule(members, agreedDays, agreedWindow, cooksPer, delayWeeks = 0) {
   const DAY_NUM = { Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0 };
   const NUM_TO_DAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -164,7 +174,7 @@ function buildSchedule(members, agreedDays, agreedWindow, cooksPer) {
 
   const activeDayNums = new Set(agreedDays.map(d => DAY_NUM[d]));
   const cursor = new Date();
-  cursor.setDate(cursor.getDate()+1); cursor.setHours(0,0,0,0);
+  cursor.setDate(cursor.getDate() + 1 + (delayWeeks || 0) * 7); cursor.setHours(0,0,0,0);
 
   const schedule = [];
   let safety = 400;
@@ -231,7 +241,7 @@ function applyCreatorDecisions(pool, decisions, runoffProposal) {
 
   // No runoff — finalize immediately
   const aw = { earliest: report.window.agreedStart, latest: report.window.agreedEnd };
-  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer);
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
   return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled',
            creatorDecisions: decisions };
 }
@@ -249,7 +259,7 @@ function finalizeRunoff(pool) {
     aw = pool.agreedWindow || { earliest: pool.consensusReport.window.agreedStart, latest: pool.consensusReport.window.agreedEnd };
   }
 
-  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer);
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
   return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled', runoffReport: rc };
 }
 
@@ -391,15 +401,16 @@ function HomeScreen({ onCreate, onJoin }) {
           style={{ maxWidth:'120px', width:'100%', marginBottom:'16px', display:'block', margin:'0 auto 16px' }} />
         <h1 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'52px', fontWeight:'500',
           color:C.darkerGray, lineHeight:1.1, marginBottom:'12px' }}>Big Table</h1>
-        <p style={{ color:C.gray, fontSize:'18px', marginBottom:'32px', lineHeight:1.5 }}>
-          Coordinate a recurring dinner pool<br />with your people.
+        <p style={{ color:C.gray, fontSize:'18px', marginBottom:'32px', lineHeight:1.5,
+          textAlign:'center', maxWidth:'340px', margin:'0 auto 32px' }}>
+          Coordinate a recurring dinner pool with your people.
         </p>
         <div style={{ display:'flex', gap:'14px', justifyContent:'center', flexWrap:'wrap' }}>
-          <Btn onClick={onCreate} style={{ fontSize:'17px', padding:'14px 32px' }}>Start a new table</Btn>
-          <Btn onClick={onJoin} style={{ fontSize:'17px', padding:'14px 32px' }}>Join a table</Btn>
+          <Btn onClick={onCreate} style={{ fontSize:'17px', padding:'14px 32px', background:C.white, color:C.darkerGray }}>Start a new table</Btn>
+          <Btn onClick={onJoin} style={{ fontSize:'17px', padding:'14px 32px', background:C.white, color:C.darkerGray }}>Join a table</Btn>
         </div>
         <p style={{ color:C.gray, marginTop:'32px', fontSize:'13px', fontStyle:'italic' }}>
-          Named for the commons — where everyone cooks, everyone eats.
+          where everyone cooks, everyone eats.
         </p>
       </div>
     </div>
@@ -416,9 +427,10 @@ function CreateScreen({ onBack, onEnterRoom }) {
   const [days,      setDays]      = useState([]);
   const [startTime, setStartTime] = useState('6:00 PM');
   const [endTime,   setEndTime]   = useState('8:00 PM');
-  const [cooksPer,  setCooksPer]  = useState(1);
-  const [maxPax,    setMaxPax]    = useState('');
-  const [error,     setError]     = useState('');
+  const [cooksPer,       setCooksPer]       = useState(1);
+  const [maxPax,         setMaxPax]         = useState('');
+  const [scheduleDelay,  setScheduleDelay]  = useState(0);
+  const [error,          setError]          = useState('');
 
   const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
 
@@ -444,7 +456,8 @@ function CreateScreen({ onBack, onEnterRoom }) {
     const pool = {
       code, name: tableName.trim(), status: 'open',
       settings: { days, cooksPer, maxParticipants: maxPaxNum,
-                  proposedWindow: { earliest: startTime, latest: endTime } },
+                  proposedWindow: { earliest: startTime, latest: endTime },
+                  scheduleDelayWeeks: scheduleDelay },
       members: [{
         name, diet:{ presets, note:dietNote.trim() }, isCreator:true, joinedAt:Date.now(),
         dayVotes: defaultDayVotes, startVote: startTime, endVote: endTime,
@@ -488,6 +501,9 @@ function CreateScreen({ onBack, onEnterRoom }) {
         <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
           {DAYS.map(d => <Chip key={d} label={d} active={days.includes(d)} onClick={()=>toggleDay(d)} />)}
         </div>
+        {days.length === 0 && (
+          <div style={{ fontSize:'13px', color:C.gray, marginTop:'8px' }}>Select at least one day to continue.</div>
+        )}
       </Field>
 
       <Field label="Proposed dinner window">
@@ -529,8 +545,18 @@ function CreateScreen({ onBack, onEnterRoom }) {
         )}
       </Field>
 
+      <Field label="Start schedule in">
+        <SInput value={scheduleDelay} onChange={v=>setScheduleDelay(Number(v))}>
+          <option value={0}>This week</option>
+          <option value={1}>1 week</option>
+          <option value={2}>2 weeks</option>
+          <option value={3}>3 weeks</option>
+          <option value={4}>4 weeks</option>
+        </SInput>
+      </Field>
+
       <ErrMsg msg={error} />
-      <Btn onClick={handleSubmit} fullWidth style={{ fontSize:'17px', padding:'14px' }}>Create table</Btn>
+      <Btn onClick={handleSubmit} disabled={days.length === 0} fullWidth style={{ fontSize:'17px', padding:'14px' }}>Create table</Btn>
     </div>
   );
 }
@@ -637,10 +663,13 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
 
   const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
 
+  const noDaysSelected = Object.values(dayVotes).every(v => !v);
+
   const handleSubmit = async () => {
     if (!myName.trim()) return setError('What should we call you?');
     const name = sanitizeName(myName);
     if (pool.members.find(m => m.name === name)) return setError('That name is already taken at this table. Try a variation.');
+    if (noDaysSelected) return setError('Select at least one day to continue.');
     setError('');
 
     const member = {
@@ -694,6 +723,9 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
               onClick={()=>setDayVotes(prev=>({...prev,[d]:!prev[d]}))} />
           ))}
         </div>
+        {noDaysSelected && (
+          <div style={{ fontSize:'13px', color:C.gray, marginTop:'8px' }}>Select at least one day to continue.</div>
+        )}
       </Field>
 
       <Field label="Dinner window">
@@ -817,6 +849,8 @@ function ConsensusReport({ pool, isCreator, onFinalize }) {
   };
 
   const handleStartRunoff = () => {
+    const unresolved = zeroDays.filter(d => runoffDays[d] === undefined);
+    if (unresolved.length > 0) return setError('Select a replacement or drop each flagged day to continue.');
     const newDays = Object.entries(runoffDays).filter(([,v])=>v!=='drop').map(([,v])=>v).filter(Boolean);
     const newWindow = runoffWindowNeeded ? { earliest:runoffStart, latest:runoffEnd } : null;
     if (runoffWindowNeeded && slotIdx(runoffStart) >= slotIdx(runoffEnd))
@@ -1331,15 +1365,16 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
   const [mealName,  setMealName]  = useState('');
   const [startTime, setStartTime] = useState(entry.agreedWindow.earliest);
   const [prepHelp,  setPrepHelp]  = useState(false);
-  const [prepStart, setPrepStart] = useState(TIME_SLOTS[Math.max(0, startI - 1)]);
+  const prepI = PREP_SLOTS.indexOf(entry.agreedWindow.earliest);
+  const [prepStart, setPrepStart] = useState(PREP_SLOTS[Math.max(0, prepI - 1)]);
   const [drinks,    setDrinks]    = useState('BYOB');
   const [address,   setAddress]   = useState('');
   const [bring,     setBring]     = useState('');
   const [note,      setNote]      = useState('');
   const [error,     setError]     = useState('');
 
-  // Prep start options: all slots before the chosen actual start time
-  const prepStartOptions = TIME_SLOTS.filter((_,i) => i < slotIdx(startTime));
+  // Prep start options: all PREP_SLOTS before the chosen actual start time
+  const prepStartOptions = PREP_SLOTS.filter(t => PREP_SLOTS.indexOf(t) < PREP_SLOTS.indexOf(startTime));
 
   // Guest summary — active guests only (non-cooks who haven't opted out)
   const { guestCount, presetLabels, freeformNotes, hasRestrictions } = computeActiveGuests(pool, entry);
@@ -1384,8 +1419,8 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
       <Field label="Actual start time">
         <SInput value={startTime} onChange={v => {
           setStartTime(v);
-          if (prepHelp && slotIdx(prepStart) >= slotIdx(v))
-            setPrepStart(TIME_SLOTS[Math.max(0, slotIdx(v)-1)]);
+          if (prepHelp && PREP_SLOTS.indexOf(prepStart) >= PREP_SLOTS.indexOf(v))
+            setPrepStart(PREP_SLOTS[Math.max(0, PREP_SLOTS.indexOf(v)-1)]);
         }}>
           {validTimes.map(t => <option key={t} value={t}>{t}</option>)}
         </SInput>
