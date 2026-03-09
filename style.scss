@@ -770,7 +770,13 @@ img {
 .step-number {
   width: 150px;
   text-align: left;
+
+  @include mobile {
+    width: 100%;
+    text-align: left;
+  }
 }
+
 
 .wrapper-footer {
   margin-top: 50px;
