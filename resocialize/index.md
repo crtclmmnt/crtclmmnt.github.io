@@ -12,7 +12,17 @@ permalink: /resocialize/
 
 <div class="services-layout">
   <div>
-    <div class="book-card" style="padding: 10px 10px;"><h5 style="font-size: 4rem;">1</h5></div>
+    <div style=
+  "display: inline-block;
+  background-color: $babyYellow;
+  color: $darkerGray;
+  padding: 8px 16px;
+  border: 0px solid $darkerGray;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;">
+  <h5 style="font-size: 4rem;">1</h5>
+    </div>
   </div>
   
   <div class="services-content" style="max-width: 450px;">
