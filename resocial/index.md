@@ -12,10 +12,8 @@ permalink: /resocial/
 
 <h1 style="font-size: 3rem; margin-bottom: 0px;">BigTable</h1>
 
-<p style="font-size: 1.6rem;">Coordinate a recurring dinner pool with your people.</p>
+<p>Coordinate a recurring dinner pool with your people.</p>
 <a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Try the app</a>
-
-<br>
 
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
@@ -68,5 +66,4 @@ permalink: /resocial/
   </div>
 </div>
 </details>
-<br>
 <hr>
