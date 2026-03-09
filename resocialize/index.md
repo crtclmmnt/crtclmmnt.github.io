@@ -28,8 +28,8 @@ permalink: /resocialize/
 <hr>
 
 <div class="services-layout">
-  <div style="width: 200px;>
-    <h5 style="font-size: 4rem; margin-bottom: 0px;">2.</h5>
+  <div style="width: 200px;">
+    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
   </div>
   
   <div class="services-content" style="max-width: 450px;">
@@ -42,7 +42,7 @@ permalink: /resocialize/
 <hr>
 
 <div class="services-layout">
-  <div style="width: 200px;>
+  <div style="width: 200px;">
     <h5 style="font-size: 4rem; margin-bottom: 0px;">3.</h5>
   </div>
   
@@ -55,7 +55,7 @@ permalink: /resocialize/
 <hr>
 
 <div class="services-layout">
-  <div style="width: 200px;>
+  <div style="width: 200px;">
     <h5 style="font-size: 4rem; margin-bottom: 0px;">4.</h5>
   </div>
   
