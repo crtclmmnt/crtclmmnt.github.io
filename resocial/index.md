@@ -1,10 +1,11 @@
 ---
 layout: page
 permalink: /resocial/
+hide_header: true
 ---
-<img src="/images/pano1.JPG" alt="Resocial header" class="hero-image">
+<a href="https://thecriticalmoment.org/"><span style="color: $darkRose; font-weight: bold;"><Return to The Critical Moment</span></a>
 <br>
-
+<br>
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Resocial Media</h1>
 <p>Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.</p>
 

@@ -24,6 +24,7 @@
   </head>
 
   <body>
+    {% unless page.hide_header %}
     <div class="wrapper-masthead">
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
@@ -41,11 +42,13 @@
           </nav>
         </header>
     </div>
+    {% endunless %}
 
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
 
+{% unless page.hide_header %}
 <div class="wrapper-footer">
   <footer class="footer">
     <br>
@@ -68,6 +71,7 @@
     <br>
   </footer>
 </div>
+{% endunless %}
 
     {% include analytics.html %}
   </body>
