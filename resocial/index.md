@@ -6,7 +6,7 @@ permalink: /resocial/
 <br>
 
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Resocial Media</h1>
-<p>Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.
+<p>Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.</p>
 
 <hr>
 
