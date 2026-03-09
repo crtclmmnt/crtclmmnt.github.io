@@ -14,14 +14,14 @@ permalink: /resocial/
 
 <p style="font-size: 1.2rem;">Coordinate a recurring dinner pool with your people.</p>
 <a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Try the app</a>
-
+<br>
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
 
 <hr>
 
 <div class="services-layout">
-  <div style="width: 150px; align-items: center center;">
+  <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
   </div>
   
@@ -33,7 +33,7 @@ permalink: /resocial/
 </div>
 
 <div class="services-layout">
-  <div style="width: 150px; align-items: center;">
+  <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
   </div>
   
@@ -45,7 +45,7 @@ permalink: /resocial/
 </div>
 
 <div class="services-layout">
-  <div style="width: 150px; align-items: center;">
+  <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
   </div>
   
@@ -57,7 +57,7 @@ permalink: /resocial/
 </div>
 
 <div class="services-layout">
-  <div style="width: 150px; align-items: center;">
+  <div style="width: 150px; text-align: center;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
   </div>
   
