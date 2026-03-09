@@ -27,6 +27,22 @@ title: Big Table
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAleyU98YUQEVbYvcyoIg0ww6FENau-vAo",
+    authDomain: "bigtable-5aa9c.firebaseapp.com",
+    databaseURL: "https://bigtable-5aa9c-default-rtdb.firebaseio.com",
+    projectId: "bigtable-5aa9c",
+    storageBucket: "bigtable-5aa9c.firebasestorage.app",
+    messagingSenderId: "49891788762",
+    appId: "1:49891788762:web:5eda707bb944e1b17a22e3"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+</script>
+
 {% raw %}
 <script type="text/babel">
 const { useState, useEffect } = React;
@@ -58,24 +74,38 @@ const DAY_THRESHOLD = 0.75;
 
 // ─── STORAGE ──────────────────────────────────────────────────────────────────
 
+function fromFirebase(val) {
+  if (val === null || val === undefined) return val;
+  if (typeof val !== 'object') return val;
+  if (Array.isArray(val)) return val.map(fromFirebase);
+  const keys = Object.keys(val);
+  if (keys.length > 0 && keys.every(k => /^\d+$/.test(k))) {
+    const arr = [];
+    for (const k of keys) arr[Number(k)] = fromFirebase(val[k]);
+    return arr;
+  }
+  const out = {};
+  for (const k of keys) out[k] = fromFirebase(val[k]);
+  return out;
+}
+
 const Store = {
-  getPool(code) { try { return JSON.parse(localStorage.getItem(`bt_pool_${code}`)); } catch { return null; } },
-  savePool(pool) { try { pool.lastActive=Date.now(); localStorage.setItem(`bt_pool_${pool.code}`,JSON.stringify(pool)); } catch {} },
+  async savePool(pool) {
+    pool.lastActive = Date.now();
+    await db.ref(`pools/${pool.code}`).set(pool);
+  },
+  async getPool(code) {
+    const snap = await db.ref(`pools/${code}`).once('value');
+    return fromFirebase(snap.val());
+  },
+  subscribePool(code, callback) {
+    const ref = db.ref(`pools/${code}`);
+    ref.on('value', snap => callback(fromFirebase(snap.val())));
+    return () => ref.off('value');
+  },
   getSession() { try { return JSON.parse(localStorage.getItem('bt_session')); } catch { return null; } },
   saveSession(s) { try { localStorage.setItem('bt_session',JSON.stringify(s)); } catch {} },
   clearSession() { try { localStorage.removeItem('bt_session'); } catch {} },
-  pruneOld() {
-    try {
-      const cutoff = Date.now() - 30*24*60*60*1000;
-      for (let i = localStorage.length-1; i >= 0; i--) {
-        const k = localStorage.key(i);
-        if (k && k.startsWith('bt_pool_')) {
-          const p = JSON.parse(localStorage.getItem(k));
-          if (p && p.lastActive < cutoff) localStorage.removeItem(k);
-        }
-      }
-    } catch {}
-  }
 };
 
 // ─── UTILITIES / LOGIC ────────────────────────────────────────────────────────
@@ -388,7 +418,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
   const maxPaxNum = maxPax === '' ? null : parseInt(maxPax, 10);
   const maxPaxValid = maxPaxNum === null || (maxPaxNum > 0 && maxPaxNum % cooksPer === 0);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!tableName.trim()) return setError('Give your table a name.');
     if (!myName.trim())    return setError('What should we call you?');
     if (days.length === 0) return setError('Pick at least one active day.');
@@ -414,9 +444,9 @@ function CreateScreen({ onBack, onEnterRoom }) {
       agreedWindow:null, agreedDays:null, schedule:null,
       createdAt:Date.now(), lastActive:Date.now()
     };
-    Store.savePool(pool);
+    await Store.savePool(pool);
     Store.saveSession({ code, name });
-    onEnterRoom(pool, { code, name });
+    onEnterRoom({ code, name });
   };
 
   return (
@@ -489,14 +519,17 @@ function CreateScreen({ onBack, onEnterRoom }) {
 // ─── JOIN: CODE + MEMBER SELECTION ───────────────────────────────────────────
 
 function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
-  const [code,  setCode]  = useState('');
-  const [pool,  setPool]  = useState(null);
-  const [error, setError] = useState('');
+  const [code,    setCode]    = useState('');
+  const [pool,    setPool]    = useState(null);
+  const [error,   setError]   = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLookup = () => {
+  const handleLookup = async () => {
     const c = code.trim().toUpperCase();
     if (!c) return setError('Enter a room code.');
-    const p = Store.getPool(c);
+    setLoading(true);
+    const p = await Store.getPool(c);
+    setLoading(false);
     if (!p) return setError("Can't find a table with that code. Double-check with whoever shared it.");
     setPool(p); setError('');
   };
@@ -551,7 +584,9 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
         <TInput value={code} onChange={v=>setCode(v.toUpperCase())} placeholder="SAGE-4827" maxLength={12} mono />
       </Field>
       <ErrMsg msg={error} />
-      <Btn onClick={handleLookup} style={{ fontSize:'17px', padding:'14px 32px' }}>Look up table</Btn>
+      <Btn onClick={handleLookup} disabled={loading} style={{ fontSize:'17px', padding:'14px 32px' }}>
+        {loading ? 'Looking up…' : 'Look up table'}
+      </Btn>
     </div>
   );
 }
@@ -583,7 +618,7 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
 
   const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!myName.trim()) return setError('What should we call you?');
     const name = sanitizeName(myName);
     if (pool.members.find(m => m.name === name)) return setError('That name is already taken at this table. Try a variation.');
@@ -606,9 +641,9 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
       updated = { ...updated, status:'closed', consensusReport:report, creatorDecisions:{} };
     }
 
-    Store.savePool(updated);
+    await Store.savePool(updated);
     Store.saveSession({ code:pool.code, name });
-    onEnterRoom(updated, { code:pool.code, name });
+    onEnterRoom({ code:pool.code, name });
   };
 
   return (
@@ -922,7 +957,6 @@ function RunoffVoting({ pool, myName, onUpdate }) {
           runoffVoted: true
         } : m)
       };
-      Store.savePool(updated);
       onUpdate(updated);
     }
   }, []);
@@ -950,13 +984,11 @@ function RunoffVoting({ pool, myName, onUpdate }) {
         runoffVoted: true
       } : m)
     };
-    Store.savePool(updated);
     onUpdate(updated);
   };
 
   const handleFinalize = () => {
     const finalized = finalizeRunoff(pool);
-    Store.savePool(finalized);
     onUpdate(finalized);
   };
 
@@ -1072,14 +1104,12 @@ function TableTab({ pool, myName, onUpdate }) {
   const doClose = () => {
     const report = computeConsensus(pool);
     const updated = { ...pool, status:'closed', consensusReport:report, creatorDecisions:{} };
-    Store.savePool(updated);
     onUpdate(updated);
     setShowCloseWarning(false);
   };
 
   const handleFinalize = (decisions, runoffProposal) => {
     const updated = applyCreatorDecisions(pool, decisions, runoffProposal);
-    Store.savePool(updated);
     onUpdate(updated);
   };
 
@@ -1408,7 +1438,6 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
   const handlePostMeal = (idx, meal) => {
     const updated = { ...pool, schedule:pool.schedule.map((e,i) => i===idx ? {...e, meal} : e) };
-    Store.savePool(updated);
     onUpdate(updated);
     setPostingIdx(null);
   };
@@ -1424,7 +1453,6 @@ function ScheduleTab({ pool, myName, onUpdate }) {
         return { ...e, optedOut };
       })
     };
-    Store.savePool(updated);
     onUpdate(updated);
   };
 
@@ -1544,9 +1572,26 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
 // ─── ROOM SCREEN ──────────────────────────────────────────────────────────────
 
-function RoomScreen({ pool: initialPool, session, onLeave }) {
-  const [pool, setPool] = useState(initialPool);
-  const [tab,  setTab]  = useState('table');
+function RoomScreen({ session, onLeave }) {
+  const [pool,    setPool]    = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [tab,     setTab]     = useState('table');
+
+  useEffect(() => {
+    const unsub = Store.subscribePool(session.code, p => {
+      if (p) { setPool(p); setLoading(false); }
+    });
+    return unsub;
+  }, [session.code]);
+
+  const onUpdate = async (updatedPool) => {
+    setPool(updatedPool);
+    await Store.savePool(updatedPool);
+  };
+
+  if (loading) {
+    return <div style={{ padding:'48px', textAlign:'center', color:C.gray, fontFamily:"'Roboto'" }}>Loading…</div>;
+  }
 
   const tabs = [
     { id:'table',    label:'Table'    },
@@ -1581,9 +1626,9 @@ function RoomScreen({ pool: initialPool, session, onLeave }) {
         ))}
       </div>
 
-      {tab==='table'    && <TableTab    pool={pool} myName={session.name} onUpdate={setPool} />}
+      {tab==='table'    && <TableTab    pool={pool} myName={session.name} onUpdate={onUpdate} />}
       {tab==='members'  && <MembersTab  pool={pool} />}
-      {tab==='schedule' && <ScheduleTab pool={pool} myName={session.name} onUpdate={setPool} />}
+      {tab==='schedule' && <ScheduleTab pool={pool} myName={session.name} onUpdate={onUpdate} />}
     </div>
   );
 }
@@ -1592,30 +1637,30 @@ function RoomScreen({ pool: initialPool, session, onLeave }) {
 
 function App() {
   const [screen,      setScreen]      = useState('loading');
-  const [pool,        setPool]        = useState(null);
   const [session,     setSession]     = useState(null);
   const [pendingPool, setPendingPool] = useState(null); // pool found in join-code, passed to join-new
 
   useEffect(() => {
-    Store.pruneOld();
-    const sess = Store.getSession();
-    if (sess) {
-      const p = Store.getPool(sess.code);
-      if (p && p.members.find(m => m.name === sess.name)) {
-        setPool(p); setSession(sess); setScreen('room'); return;
+    (async () => {
+      const sess = Store.getSession();
+      if (sess) {
+        const p = await Store.getPool(sess.code);
+        if (p && p.members.find(m => m.name === sess.name)) {
+          setSession(sess); setScreen('room'); return;
+        }
+        Store.clearSession();
       }
-      Store.clearSession();
-    }
-    setScreen('home');
+      setScreen('home');
+    })();
   }, []);
 
-  const enterRoom = (p, sess) => {
-    setPool(p); setSession(sess); setScreen('room');
+  const enterRoom = (sess) => {
+    setSession(sess); setScreen('room');
   };
 
   const handleSelectMember = (p, name) => {
     Store.saveSession({ code:p.code, name });
-    enterRoom(p, { code:p.code, name });
+    enterRoom({ code:p.code, name });
   };
 
   const handleJoinNew = (p) => {
@@ -1625,11 +1670,11 @@ function App() {
 
   const handleLeave = () => {
     Store.clearSession();
-    setPool(null); setSession(null); setScreen('home');
+    setSession(null); setScreen('home');
   };
 
   if (screen === 'loading') {
-    return <div style={{ padding:'48px', textAlign:'center', color:C.gray, fontFamily:"'Roboto'" }}>Loading...</div>;
+    return <div style={{ padding:'48px', textAlign:'center', color:C.gray, fontFamily:"'Roboto'" }}>Loading…</div>;
   }
 
   return (
@@ -1640,8 +1685,8 @@ function App() {
       {screen==='join-new' && pendingPool && (
         <JoinNewScreen pool={pendingPool} onBack={()=>setScreen('join-code')} onEnterRoom={enterRoom} />
       )}
-      {screen==='room' && pool && session && (
-        <RoomScreen pool={pool} session={session} onLeave={handleLeave} />
+      {screen==='room' && session && (
+        <RoomScreen session={session} onLeave={handleLeave} />
       )}
     </div>
   );
