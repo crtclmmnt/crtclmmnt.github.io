@@ -19,7 +19,7 @@ permalink: /resocial/
 <div style="max-width: 700px; margin: 0 auto;">
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
-    <div style="width: 150px; text-align: center;">
+    <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
     </div>
   
@@ -31,7 +31,7 @@ permalink: /resocial/
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
-    <div style="width: 150px; text-align: center;">
+    <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
     </div>
   
@@ -43,7 +43,7 @@ permalink: /resocial/
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
-  <div style="width: 150px; text-align: center;">
+  <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
@@ -55,7 +55,7 @@ permalink: /resocial/
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
-    <div style="width: 150px; text-align: center;">
+    <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
     </div>
   
