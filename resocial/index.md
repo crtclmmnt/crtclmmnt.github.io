@@ -7,7 +7,7 @@ hide_header: true
 <br>
 <br>
 <div style="text-align: center; margin-bottom: 0px;">
-  <img src="/images/resocial-apple-touch-icon.png" style="max-width: 120px;">
+  <img src="/images/resocialtransparent.png" style="max-width: 120px;">
 </div>
 
 <h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial Media</h1>
