@@ -13,7 +13,7 @@ permalink: /resocialize/
 <div class="services-layout">
   <div>
     <div class="bigblock">
-  <h5 style="font-size: 4rem;">1</h5>
+  <h5 style="font-size: 4rem; margin: 0;">1</h5>
     </div>
   </div>
   
