@@ -18,7 +18,7 @@ permalink: /resocial/
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
 
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
     </div>
@@ -30,7 +30,7 @@ permalink: /resocial/
     </div>
   </div>
 
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
     </div>
@@ -42,19 +42,19 @@ permalink: /resocial/
     </div>
   </div>
 
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
   <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
     <div class="services-content" style="max-width: 550px;">
       <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Plan/Post Your Meal</h1>
-      <p>Once the schedule is generated, it will be visible in the "schedule" tab. You will be able to see who is cooking when, and your night should be highlighted for you. If each dinner has multiple cooks, the schedule will tell you who you are cooking with.</p>
-      <p>Once you (or the group you're cooking with) has decided on a meal, post your meal info to the schedule using the "post meal info" button displayed on your night. If there's a night where you can't make it, click the "can't make it" button to remove yourself from the guest list.</p>
+      <p>Once the schedule is generated, it will be visible in the <strong>"schedule"</strong> tab. You will be able to see who is cooking when, and your night should be highlighted for you. If each dinner has multiple cooks, the schedule will tell you who you are cooking with.</p>
+      <p>Once you (or the group you're cooking with) has decided on a meal, post your meal info to the schedule using the <strong>"post meal info"</strong> button displayed on your night. If there's a night where you can't make it, click the <strong>"can't make it"</strong> button to remove yourself from the guest list.</p>
     </div>
   </div>
 
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 20px;">
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div class="step-number">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
     </div>
