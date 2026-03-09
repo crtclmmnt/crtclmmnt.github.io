@@ -773,9 +773,10 @@ img {
 
   @include mobile {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 }
+
 
 .wrapper-footer {
   margin-top: 50px;

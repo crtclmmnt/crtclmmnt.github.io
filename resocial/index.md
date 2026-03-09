@@ -12,7 +12,7 @@ hide_header: true
 
 <h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial Media</h1>
 <hr class="short" style="margin: 0.5em auto;">
-<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.</p>
+<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial media, a collection of social media apps that force you to be social in the real world.</p>
 
 <br>
 
@@ -27,7 +27,7 @@ hide_header: true
 <div style="max-width: 700px; margin: 0 auto;">
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-    <div class="step-number">
+    <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
     </div>
   
@@ -39,7 +39,7 @@ hide_header: true
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-    <div class="step-number">
+    <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
     </div>
   
@@ -51,7 +51,7 @@ hide_header: true
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-  <div class="step-number">
+  <div cstyle="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
@@ -63,7 +63,7 @@ hide_header: true
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-    <div class="step-number">
+    <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
     </div>
   
