@@ -12,7 +12,7 @@ permalink: /resocialize/
 
 <div class="services-layout">
   <div>
-    <div class="book-card"><h5 style="font-size: 4rem; margin-bottom: 0px;">1</h5></div>
+    <div class="book-card" style="padding: 10px 10px;"><h5 style="font-size: 4rem; margin-bottom: 0px;">1</h5></div>
   </div>
   
   <div class="services-content" style="max-width: 450px;">
