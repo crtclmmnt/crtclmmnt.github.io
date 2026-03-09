@@ -383,19 +383,25 @@ function PctBar({ pct, passes, zero }) {
 
 function HomeScreen({ onCreate, onJoin }) {
   return (
-    <div style={{ textAlign:'center', paddingTop:'32px' }}>
-      <h1 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'52px', fontWeight:'500',
-        color:C.darkerGray, lineHeight:1.1, marginBottom:'12px' }}>Big Table</h1>
-      <p style={{ color:C.gray, fontSize:'18px', marginBottom:'36px', lineHeight:1.5 }}>
-        Coordinate a recurring dinner pool<br />with your people.
-      </p>
-      <div style={{ display:'flex', gap:'14px', justifyContent:'center', flexWrap:'wrap' }}>
-        <Btn onClick={onCreate} style={{ fontSize:'17px', padding:'14px 32px' }}>Start a new table</Btn>
-        <Btn onClick={onJoin} variant="muted" style={{ fontSize:'17px', padding:'14px 32px' }}>Join a table</Btn>
+    <div style={{ display:'flex', justifyContent:'center', paddingTop:'32px' }}>
+      <div style={{ textAlign:'center', maxWidth:'480px', width:'100%',
+        border:`3px solid ${C.darkRose}`, borderRadius:'15px',
+        padding:'40px 36px 32px', background:C.babyYellow }}>
+        <img src="/images/BigTable.png" alt="Big Table"
+          style={{ maxWidth:'120px', width:'100%', marginBottom:'16px', display:'block', margin:'0 auto 16px' }} />
+        <h1 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'52px', fontWeight:'500',
+          color:C.darkerGray, lineHeight:1.1, marginBottom:'12px' }}>Big Table</h1>
+        <p style={{ color:C.gray, fontSize:'18px', marginBottom:'32px', lineHeight:1.5 }}>
+          Coordinate a recurring dinner pool<br />with your people.
+        </p>
+        <div style={{ display:'flex', gap:'14px', justifyContent:'center', flexWrap:'wrap' }}>
+          <Btn onClick={onCreate} style={{ fontSize:'17px', padding:'14px 32px' }}>Start a new table</Btn>
+          <Btn onClick={onJoin} style={{ fontSize:'17px', padding:'14px 32px' }}>Join a table</Btn>
+        </div>
+        <p style={{ color:C.gray, marginTop:'32px', fontSize:'13px', fontStyle:'italic' }}>
+          Named for the commons — where everyone cooks, everyone eats.
+        </p>
       </div>
-      <p style={{ color:C.lightGray, marginTop:'56px', fontSize:'13px', fontStyle:'italic' }}>
-        Named for the commons — where everyone cooks, everyone eats.
-      </p>
     </div>
   );
 }
@@ -405,12 +411,16 @@ function HomeScreen({ onCreate, onJoin }) {
 function CreateScreen({ onBack, onEnterRoom }) {
   const [tableName, setTableName] = useState('');
   const [myName,    setMyName]    = useState('');
+  const [presets,   setPresets]   = useState([]);
+  const [dietNote,  setDietNote]  = useState('');
   const [days,      setDays]      = useState([]);
   const [startTime, setStartTime] = useState('6:00 PM');
   const [endTime,   setEndTime]   = useState('8:00 PM');
   const [cooksPer,  setCooksPer]  = useState(1);
   const [maxPax,    setMaxPax]    = useState('');
   const [error,     setError]     = useState('');
+
+  const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
 
   const toggleDay = d => setDays(prev => prev.includes(d) ? prev.filter(x=>x!==d) : [...prev,d]);
   const endOpts = TIME_SLOTS.filter((_,i) => i > slotIdx(startTime));
@@ -436,7 +446,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
       settings: { days, cooksPer, maxParticipants: maxPaxNum,
                   proposedWindow: { earliest: startTime, latest: endTime } },
       members: [{
-        name, diet:{ presets:[], note:'' }, isCreator:true, joinedAt:Date.now(),
+        name, diet:{ presets, note:dietNote.trim() }, isCreator:true, joinedAt:Date.now(),
         dayVotes: defaultDayVotes, startVote: startTime, endVote: endTime,
         voted:true, runoffDayVotes:null, runoffStartVote:null, runoffEndVote:null, runoffVoted:false
       }],
@@ -463,6 +473,15 @@ function CreateScreen({ onBack, onEnterRoom }) {
         <TInput value={myName} onChange={v=>setMyName(sanitizeName(v))} placeholder="Shevek" maxLength={6} />
         {myName && <div style={{ fontSize:'13px', color:C.gray, marginTop:'5px' }}>
           Will appear as: <strong>{sanitizeName(myName)}</strong></div>}
+      </Field>
+
+      <Field label="Your dietary restrictions" hint="Optional — helps whoever's cooking plan their menu.">
+        <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'10px' }}>
+          {DIET_PRESETS.map(p => (
+            <Chip key={p} label={p} active={presets.includes(p)} onClick={()=>togglePreset(p)} />
+          ))}
+        </div>
+        <TInput value={dietNote} onChange={setDietNote} placeholder="Anything else? (e.g. no shellfish)" maxLength={100} />
       </Field>
 
       <Field label="Active days">
@@ -1345,8 +1364,8 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
     <div style={{ marginTop:'14px', padding:'16px', background:C.white, borderRadius:'12px', border:`2px solid ${C.lightGray}` }}>
 
       {/* Co-cook prompt */}
-      <div style={{ padding:'12px 14px', background:C.babyYellow, borderRadius:'10px', marginBottom:'16px',
-        fontSize:'14px', color:C.darkGray, lineHeight:1.5 }}>
+      <div style={{ padding:'12px 14px', background:C.mint, borderRadius:'10px', marginBottom:'16px',
+        fontSize:'14px', color:C.darkerGray, lineHeight:1.5 }}>
         {otherCooks.length > 0
           ? <>You're cooking with <strong>{otherCooks.join(' and ')}</strong> on {monthDate}. Coordinate with them before the dinner!</>
           : <>You're cooking solo on <strong>{monthDate}</strong>. You've got this!</>
@@ -1422,8 +1441,97 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
   );
 }
 
+function buildICS(pool) {
+  const MO = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
+
+  function parseSlot(slot) {
+    // e.g. "6:00 PM" → { h, m }
+    const [time, ampm] = slot.split(' ');
+    let [h, m] = time.split(':').map(Number);
+    if (ampm === 'PM' && h !== 12) h += 12;
+    if (ampm === 'AM' && h === 12) h = 0;
+    return { h, m };
+  }
+
+  function toICSDate(dateStr, timeSlot) {
+    // dateStr like "Tue Mar 11"
+    const parts = dateStr.split(' ');
+    const month = MO[parts[1]];
+    const day = parseInt(parts[2], 10);
+    const year = new Date().getFullYear();
+    const { h, m } = parseSlot(timeSlot);
+    const d = new Date(year, month - 1, day, h, m, 0);
+    // If the date appears to be in the past (more than 30 days ago), bump year
+    if (d < new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)) d.setFullYear(year + 1);
+    const pad = n => String(n).padStart(2,'0');
+    return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+  }
+
+  function toICSDateEnd(dateStr, timeSlot) {
+    const parts = dateStr.split(' ');
+    const month = MO[parts[1]];
+    const day = parseInt(parts[2], 10);
+    const year = new Date().getFullYear();
+    const { h, m } = parseSlot(timeSlot);
+    const d = new Date(year, month - 1, day, h + 2, m, 0);
+    if (d < new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)) d.setFullYear(year + 1);
+    const pad = n => String(n).padStart(2,'0');
+    return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+  }
+
+  const now = new Date();
+  const stamp = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}T${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}00Z`;
+
+  const events = pool.schedule.map((entry, i) => {
+    const startSlot = entry.meal?.startTime || entry.agreedWindow.earliest;
+    const dtstart = toICSDate(entry.date, startSlot);
+    const dtend   = toICSDateEnd(entry.date, startSlot);
+    const uid = `bigtable-${pool.code}-${i}@thecriticalmoment.org`;
+    const summary = `Dinner with ${pool.name}`;
+    const location = entry.meal?.address ? entry.meal.address.replace(/,/g, '\\,') : '';
+    const descParts = [`Cooks: ${entry.cooks.join(', ')}`];
+    if (entry.meal?.name) descParts.push(`Meal: ${entry.meal.name}`);
+    if (entry.meal?.bring) descParts.push(`Bring: ${entry.meal.bring}`);
+    if (entry.meal?.note)  descParts.push(entry.meal.note);
+    const description = descParts.join('\\n').replace(/,/g, '\\,');
+
+    return [
+      'BEGIN:VEVENT',
+      `UID:${uid}`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART:${dtstart}`,
+      `DTEND:${dtend}`,
+      `SUMMARY:${summary}`,
+      location ? `LOCATION:${location}` : null,
+      `DESCRIPTION:${description}`,
+      'END:VEVENT',
+    ].filter(Boolean).join('\r\n');
+  });
+
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Big Table//thecriticalmoment.org//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    ...events,
+    'END:VCALENDAR',
+  ].join('\r\n');
+}
+
 function ScheduleTab({ pool, myName, onUpdate }) {
   const [postingIdx, setPostingIdx] = useState(null);
+
+  const handleDownloadICS = () => {
+    const ics = buildICS(pool);
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `big-table-${pool.code}.ics`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
 
   if (!pool.schedule) {
     return (
@@ -1458,7 +1566,14 @@ function ScheduleTab({ pool, myName, onUpdate }) {
 
   return (
     <div>
-      <SLabel style={{ marginBottom:'4px' }}>Dinner schedule</SLabel>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:'4px', flexWrap:'wrap', gap:'8px' }}>
+        <SLabel style={{ marginBottom:0 }}>Dinner schedule</SLabel>
+        <button onClick={handleDownloadICS} style={{
+          background:'none', border:`1.5px solid ${C.darkMint}`, color:C.darkMint,
+          borderRadius:'20px', padding:'5px 14px', fontSize:'13px', fontWeight:'500',
+          cursor:'pointer', fontFamily:"'Roboto',sans-serif",
+        }}>Download calendar (.ics)</button>
+      </div>
       {pool.agreedDays && (
         <div style={{ fontSize:'13px', color:C.gray, marginBottom:'16px' }}>
           Active days: {pool.agreedDays.join(', ')} · Window: {pool.agreedWindow?.earliest} – {pool.agreedWindow?.latest}
