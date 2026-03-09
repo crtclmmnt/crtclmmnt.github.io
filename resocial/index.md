@@ -3,9 +3,9 @@ layout: resocial
 permalink: /resocial/
 hide_header: true
 ---
-<a href="https://thecriticalmoment.org/"><span style="color: #a23c3f; font-weight: bold;">&lt;- Return to The Critical Moment</span></a>
+<a href="https://thecriticalmoment.org/"><span style="color: #a23c3f; font-weight: bold;">&lt; Return to The Critical Moment</span></a>
 <br>
-
+<br>
 <div style="text-align: center; margin-bottom: 0px;">
   <img src="/images/resocial-apple-touch-icon.png" style="max-width: 120px;">
 </div>
@@ -13,6 +13,8 @@ hide_header: true
 <h1 style="font-size: 4rem; margin-bottom: 0px; text-align: center;">Resocial Media</h1>
 <hr class="short" style="margin: 0.5em 0;">
 <p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial media, a collection of social media apps that force you to be social in the real world, thereby resocializing you.</p>
+
+<br>
 
 <hr>
 
