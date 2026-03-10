@@ -18,9 +18,9 @@ hide_header: true
 
 <div class="mobile-only">
   <div style="text-align: center; margin-bottom: 0px;">
-    <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 50px;">
+    <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 60px;">
   </div>
-  <p style="text-align: center; max-width: 400px; margin: 0 auto;">Click the <strong>Share</strong> button on this webpage, and click the <strong>Add to Home Screen</strong> button to have the app on your smartphone.</p>
+  <p style="text-align: center; max-width: 400px; margin: 0 auto;">Click the <strong>Share</strong> button on this webpage, then click the <strong>Add to Home Screen</strong> button to have the app on your smartphone.</p>
 </div>
 
 <br>
