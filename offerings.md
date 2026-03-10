@@ -109,3 +109,22 @@ permalink: /offerings/
 <br>
 <h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
+<br>
+
+<div class="services-layout" style="align-items: flex-end;">
+  <div style="flex: 0.8; text-align: left;">
+    <div style="text-align: center; margin-bottom: 0px;">
+      <img src="/images/resocialtransparent.png" style="max-width: 120px;">
+    </div>
+    <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Resocial Media</h1>
+    <hr class="short" style="margin: 0.5em 0;">
+    <br>
+    <h3 style="margin-top: 0.25rem;">Apps that help you get resocialized.</h3>
+    <br>
+    <div><a href="https://thecriticalmoment.org/resocial/" class="btn">Try the Apps</a></div>
+    <br>
+  </div>
+  <div class="services-content" style="flex: 1.2;">
+    <p>A collection of social media apps that help you be social in the real world.</p>
+  </div>
+</div>
