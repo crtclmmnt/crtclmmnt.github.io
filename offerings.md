@@ -39,25 +39,31 @@ permalink: /offerings/
   <div class="book-card">
     <h5>Gentleness, Precision, and Letting Go</h5>
     <h6>4 weeks / 6 weeks</h6>
+    <details><summary><strong>See more</strong></summary>
     <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
+    </details>
   </div>
 
   <div class="book-card">
     <h5>World as Lover, World as Self</h5>
     <h6>4 weeks / 6 weeks</h6>
+    <details><summary><strong>See more</strong></summary>
     <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, transforms burnout and despair into grounded, sustainable action.</p>
     <br>
     <p class="book-description">The core idea explored is what Macy identifies as the four views through which we see the world: the limiting views — World as Battlefield, World as Trap, and the liberating views — World as Lover, World as Self.</p>
+    </details>
   </div>
 
   <div class="book-card">
     <h5>We Are the Earth Defending Itself</h5>
     <h6>6 weeks / 8 weeks</h6>
+    <details><summary><strong>See more</strong></summary>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
     <br>
     <p class="book-description">Drawing from Joanna Macy's book (mentioned above) and Robin Wall Kimmerer’s book <em>Braiding Sweetgrass</em>, I will do my best to make you fall in love with the Earth. </p>
     <br>
     <p class="book-description">Capitalism tries to convince us that we are individuals — separate and alone — entities that exist above and outside of the natural world. I believe that a meditation practice can dissolve the barriers that make us forget our interdependence with each other. When we remember our connection to all living beings, we may find that we have much more to fight for.</p>
+    </details>
   </div>
 </div>
 
