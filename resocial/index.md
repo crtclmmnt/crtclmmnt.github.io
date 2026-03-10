@@ -34,25 +34,13 @@ hide_header: true
     <div class="services-content" style="max-width: 550px;">
       <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Create/Join a Table</h1>
       <p>To create a table, click the <strong>"start a new table"</strong> button, input some basic information about the dinner and your (the host's) dietary preferences, choose some boundaries for the schedule, then click <strong>"create table"</strong>. This will create a new table, with a code you can share for others to join your table.</p>
-      <p>When you join a table, you will be prompted to add some basic information about your dietary preferences and your name.</p>
+      <p>When you join a table, you will be prompted to add  information about your name, dietary preferences, and your availability. Scheduling will be closed manually by the host, or it can be closed automatically if the host sets a maximum number of participants.</p>
     </div>
   </div>
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
-    </div>
-  
-    <div class="services-content" style="max-width: 550px;">
-      <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Vote on a Schedule</h1>
-      <p>As new people join a table, they will have the opportunity to accept/reject proposed days and times in the schedule. The voting can be closed manually by the host, or it can be closed automatically if the host sets a maximum number of participants.</p>
-      <p>If the time slot selected by the voting process is 30 mins or less, a second round of voting will be initiated by the host, with new suggestions for day/time.</p>
-    </div>
-  </div>
-
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-    <div style="width: 150px; text-align: left;">
-    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
     <div class="services-content" style="max-width: 550px;">
@@ -64,7 +52,7 @@ hide_header: true
 
   <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div style="width: 150px; text-align: left;">
-    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">4.</h5>
+    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
     </div>
   
     <div class="services-content" style="max-width: 550px;">
