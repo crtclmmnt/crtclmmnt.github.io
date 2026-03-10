@@ -267,6 +267,25 @@ function finalizeRunoff(pool) {
   return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled', runoffReport: rc };
 }
 
+function computeAgreedWindow(pool) {
+  const pw = pool.settings.proposedWindow;
+  let agreedStart = pw.earliest;
+  let agreedEnd = pw.latest;
+  for (const m of pool.members) {
+    if (m.startVote && slotIdx(m.startVote) > slotIdx(agreedStart)) agreedStart = m.startVote;
+    if (m.endVote && slotIdx(m.endVote) < slotIdx(agreedEnd)) agreedEnd = m.endVote;
+  }
+  const minuteSpan = (slotIdx(agreedEnd) - slotIdx(agreedStart)) * 15;
+  return { earliest: agreedStart, latest: agreedEnd, minuteSpan, tooNarrow: minuteSpan <= 30 };
+}
+
+function lockInDays(pool, selectedDays) {
+  const aw = computeAgreedWindow(pool);
+  const agreedWindow = { earliest: aw.earliest, latest: aw.latest };
+  const schedule = buildSchedule(pool.members, selectedDays, agreedWindow, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
+  return { ...pool, agreedDays: selectedDays, agreedWindow, schedule, status: 'scheduled' };
+}
+
 // ─── SHARED UI ────────────────────────────────────────────────────────────────
 
 function Btn({ children, onClick, variant='primary', disabled=false, fullWidth=false, style={} }) {
@@ -361,6 +380,15 @@ function Chip({ label, active, onClick, activeColor=C.darkMint, activeBg=C.mint 
 
 function Divider() {
   return <div style={{ height:'2px', background:C.darkRose, margin:'16px 0', borderRadius:'1px' }} />;
+}
+
+function GuidanceBanner({ children }) {
+  return (
+    <div style={{ background:'#f0f9f4', border:`1px solid ${C.darkMint}`, borderRadius:'10px',
+      padding:'10px 14px', marginBottom:'20px', fontSize:'13px', color:C.darkMint, lineHeight:1.5 }}>
+      {children}
+    </div>
+  );
 }
 
 function BackBtn({ onClick }) {
@@ -459,7 +487,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
 
     const pool = {
       code, name: tableName.trim(), status: 'open',
-      settings: { days, cooksPer, maxParticipants: maxPaxNum,
+      settings: { days: DAYS, cooksPer, maxParticipants: maxPaxNum,
                   proposedWindow: { earliest: startTime, latest: endTime },
                   scheduleDelayWeeks: scheduleDelay },
       members: [{
@@ -479,6 +507,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
   return (
     <div style={{ maxWidth:'520px', margin:'0 auto' }}>
       <BackBtn onClick={onBack} />
+      <GuidanceBanner>Step 1: Add your dietary preferences and scheduling info to create a table, then share the room code with your friends so they can join!</GuidanceBanner>
       <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
         color:C.darkerGray, marginBottom:'28px' }}>Create a new table</h2>
 
@@ -501,7 +530,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
         <TInput value={dietNote} onChange={setDietNote} placeholder="Anything else? (e.g. no shellfish)" maxLength={100} />
       </Field>
 
-      <Field label="Active days">
+      <Field label="Which days work for you?">
         <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
           {DAYS.map(d => <Chip key={d} label={d} active={days.includes(d)} onClick={()=>toggleDay(d)} />)}
         </div>
@@ -584,7 +613,13 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
   };
 
   if (pool) {
-    const canJoinNew = pool.status === 'open';
+    const isFull = pool.settings.maxParticipants && pool.members.length >= pool.settings.maxParticipants;
+    const canJoinNew = pool.status === 'open' && !isFull;
+    const memberBtnStyle = {
+      padding:'14px 20px', borderRadius:'12px', border:`2px solid ${C.darkRose}`,
+      background:C.babyYellow, cursor:'pointer', textAlign:'left',
+      fontFamily:"'Roboto'", fontSize:'16px', color:C.darkGray, fontWeight:'500',
+    };
     return (
       <div style={{ maxWidth:'520px', margin:'0 auto' }}>
         <BackBtn onClick={()=>setPool(null)} />
@@ -595,16 +630,10 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
         {pool.members.length > 0 && (
           <>
             <SLabel style={{ marginBottom:'12px' }}>Who are you?</SLabel>
-            <div style={{ display:'flex', flexDirection:'column', gap:'8px', marginBottom:'20px' }}>
+            <div style={{ display:'flex', flexDirection:'column', gap:'8px', marginBottom:'12px' }}>
               {pool.members.map(m => (
-                <button key={m.name} onClick={()=>onSelectMember(pool, m.name)} style={{
-                  padding:'14px 20px', borderRadius:'12px', border:`2px solid ${C.lightGray}`,
-                  background:C.white, cursor:'pointer', textAlign:'left',
-                  fontFamily:"'Roboto'", fontSize:'16px', color:C.darkGray,
-                  display:'flex', justifyContent:'space-between', alignItems:'center',
-                }}>
-                  <span>I'm <strong>{m.name}</strong></span>
-                  <span style={{ fontSize:'13px', color:C.gray }}>→</span>
+                <button key={m.name} onClick={()=>onSelectMember(pool, m.name)} style={memberBtnStyle}>
+                  I'm <strong>{m.name}</strong>
                 </button>
               ))}
             </div>
@@ -612,11 +641,11 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
         )}
 
         {canJoinNew ? (
-          <Btn onClick={()=>onJoinNew(pool)} variant="muted" style={{ fontSize:'15px' }}>
+          <button onClick={()=>onJoinNew(pool)} style={memberBtnStyle}>
             Join as new member
-          </Btn>
+          </button>
         ) : (
-          <div style={{ fontSize:'14px', color:C.gray, fontStyle:'italic' }}>
+          <div style={{ fontSize:'14px', color:C.gray, fontStyle:'italic', marginTop:'8px' }}>
             This table is no longer accepting new members.
           </div>
         )}
@@ -648,12 +677,8 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   const [dietNote, setDietNote] = useState('');
   const [error,    setError]    = useState('');
 
-  // Day votes: default all proposed days to true
-  const [dayVotes, setDayVotes] = useState(() => {
-    const v = {};
-    pool.settings.days.forEach(d => { v[d] = true; });
-    return v;
-  });
+  // Day votes: start with nothing selected
+  const [dayVotes, setDayVotes] = useState({});
 
   // Time votes: default to proposed window
   const [startAccept, setStartAccept] = useState(true);
@@ -662,8 +687,8 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   const [endVote,     setEndVote]     = useState(TIME_SLOTS[slotIdx(pool.settings.proposedWindow.latest)-1] || pool.settings.proposedWindow.latest);
 
   const pw = pool.settings.proposedWindow;
-  const laterStarts  = TIME_SLOTS.filter((_,i) => i > slotIdx(pw.earliest));
-  const earlierEnds  = TIME_SLOTS.filter((_,i) => i >= slotIdx(pw.earliest) && i < slotIdx(pw.latest));
+  const laterStarts = TIME_SLOTS.filter((_,i) => i > slotIdx(pw.earliest));
+  const altEnds     = TIME_SLOTS.filter(t => t !== pw.latest);
 
   const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
 
@@ -684,14 +709,7 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
       voted:true, runoffDayVotes:null, runoffStartVote:null, runoffEndVote:null, runoffVoted:false
     };
 
-    let updated = { ...pool, members:[...pool.members, member] };
-
-    // Auto-close on max participants
-    const max = updated.settings.maxParticipants;
-    if (max && updated.members.length >= max) {
-      const report = computeConsensus(updated);
-      updated = { ...updated, status:'closed', consensusReport:report, creatorDecisions:{} };
-    }
+    const updated = { ...pool, members:[...pool.members, member] };
 
     await Store.savePool(updated);
     Store.saveSession({ code:pool.code, name });
@@ -701,6 +719,7 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   return (
     <div style={{ maxWidth:'520px', margin:'0 auto' }}>
       <BackBtn onClick={onBack} />
+      <GuidanceBanner>Step 1: Add your dietary preferences and availability to join {pool.name}, then wait for the host to lock in the schedule!</GuidanceBanner>
       <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
         color:C.darkerGray, marginBottom:'8px' }}>Join {pool.name}</h2>
       <div style={{ fontSize:'14px', color:C.gray, marginBottom:'24px', fontFamily:'monospace', letterSpacing:'1px' }}>{pool.code}</div>
@@ -720,9 +739,9 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
         <TInput value={dietNote} onChange={setDietNote} placeholder="Anything else? (e.g. no shellfish)" maxLength={100} />
       </Field>
 
-      <Field label="Which of these days work for you?">
+      <Field label="Which days work for you?">
         <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
-          {pool.settings.days.map(d => (
+          {DAYS.map(d => (
             <Chip key={d} label={d} active={!!dayVotes[d]}
               onClick={()=>setDayVotes(prev=>({...prev,[d]:!prev[d]}))} />
           ))}
@@ -759,15 +778,15 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
           </div>
           <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
             <Chip label={`${pw.latest} works for me`} active={endAccept} onClick={()=>setEndAccept(true)} />
-            <Chip label="Too late for me" active={!endAccept}
+            <Chip label="Different end time" active={!endAccept}
               onClick={()=>setEndAccept(false)}
               activeColor={C.darkRose} activeBg={C.rose} />
           </div>
-          {!endAccept && earlierEnds.length > 0 && (
+          {!endAccept && altEnds.length > 0 && (
             <div style={{ marginTop:'10px' }}>
-              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>I need an earlier end:</div>
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'6px' }}>Preferred end time:</div>
               <SInput value={endVote} onChange={setEndVote}>
-                {[...earlierEnds].reverse().map(t => <option key={t} value={t}>{t}</option>)}
+                {altEnds.map(t => <option key={t} value={t}>{t}</option>)}
               </SInput>
             </div>
           )}
@@ -1145,24 +1164,16 @@ function RunoffVoting({ pool, myName, onUpdate }) {
 function TableTab({ pool, myName, onUpdate }) {
   const me = pool.members.find(m => m.name === myName);
   const isCreator = me?.isCreator;
-  const [showCloseWarning, setShowCloseWarning] = useState(false);
+  const [selectedDays, setSelectedDays] = useState([]);
   const [error, setError] = useState('');
 
-  const handleClose = () => {
-    const n = pool.members.length;
-    const x = pool.settings.cooksPer;
-    if (n % x !== 0) {
-      setShowCloseWarning(true);
-      return;
-    }
-    doClose();
-  };
+  const toggleLockDay = d => setSelectedDays(prev => prev.includes(d) ? prev.filter(x=>x!==d) : [...prev, d]);
 
-  const doClose = () => {
-    const report = computeConsensus(pool);
-    const updated = { ...pool, status:'closed', consensusReport:report, creatorDecisions:{} };
+  const handleLockIn = () => {
+    if (selectedDays.length === 0) return setError('Select at least one day to lock in.');
+    setError('');
+    const updated = lockInDays(pool, selectedDays);
     onUpdate(updated);
-    setShowCloseWarning(false);
   };
 
   const handleFinalize = (decisions, runoffProposal) => {
@@ -1171,9 +1182,12 @@ function TableTab({ pool, myName, onUpdate }) {
   };
 
   const { settings } = pool;
-  const n = pool.members.length;
-  const x = settings.cooksPer;
-  const nearestValid = Math.round(n/x)*x || x;
+  const dayAvailability = DAYS.map(day => ({
+    day,
+    count: pool.members.filter(m => m.dayVotes && m.dayVotes[day]).length,
+    total: pool.members.length,
+  }));
+  const agreedWin = pool.status === 'open' ? computeAgreedWindow(pool) : null;
 
   return (
     <div>
@@ -1185,7 +1199,9 @@ function TableTab({ pool, myName, onUpdate }) {
         </div>
         <Divider />
         <div style={{ display:'flex', gap:'16px', flexWrap:'wrap', fontSize:'14px', color:C.gray }}>
-          <span>Days: <strong style={{ color:C.darkGray }}>{settings.days.join(', ')}</strong></span>
+          {pool.status !== 'open' && (
+            <span>Days: <strong style={{ color:C.darkGray }}>{(pool.agreedDays || settings.days).join(', ')}</strong></span>
+          )}
           <span>Window: <strong style={{ color:C.darkGray }}>{settings.proposedWindow.earliest} – {settings.proposedWindow.latest}</strong></span>
           <span>Cooks/night: <strong style={{ color:C.darkGray }}>{settings.cooksPer}</strong></span>
           {settings.maxParticipants && <span>Max: <strong style={{ color:C.darkGray }}>{settings.maxParticipants}</strong></span>}
@@ -1196,41 +1212,46 @@ function TableTab({ pool, myName, onUpdate }) {
         </div>
       </Card>
 
-      {/* Open: vote tallies + close button */}
+      {/* Open: availability summary + lock-in */}
       {pool.status === 'open' && (
         <>
-          <Card>
-            <SLabel style={{ marginBottom:'14px' }}>Votes so far</SLabel>
-            <VoteTally pool={pool} />
-          </Card>
-
-          {isCreator && (
-            <div>
-              {showCloseWarning ? (
-                <Card style={{ border:`2px solid ${C.rose}` }}>
-                  <SLabel style={{ marginBottom:'8px', color:C.darkRose }}>Close anyway?</SLabel>
-                  <div style={{ fontSize:'14px', color:C.darkGray, marginBottom:'14px' }}>
-                    You have {n} member{n!==1?'s':''} but cooks-per-night is {x}.
-                    For an even schedule, you'd want {nearestValid} member{nearestValid!==1?'s':''}.
+          {isCreator ? (
+            <Card>
+              <SLabel style={{ marginBottom:'6px' }}>Member availability</SLabel>
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'14px' }}>
+                {pool.members.length} member{pool.members.length!==1?'s':''} so far. Select the days to include in the schedule, then lock them in.
+              </div>
+              {dayAvailability.map(({ day, count, total }) => (
+                <div key={day} style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'10px' }}>
+                  <span style={{ minWidth:'36px', fontSize:'14px', fontWeight:'600', color:C.darkGray }}>{day}</span>
+                  <div style={{ flex:1 }}>
+                    <PctBar pct={total>0?count/total:0} passes={total>0&&count/total>=DAY_THRESHOLD} zero={count===0} />
                   </div>
-                  <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
-                    <Btn onClick={doClose} variant="danger">Close anyway</Btn>
-                    <Btn onClick={()=>setShowCloseWarning(false)} variant="muted">Cancel — wait for more</Btn>
-                  </div>
-                </Card>
-              ) : (
-                <div style={{ display:'flex', gap:'8px', alignItems:'center', flexWrap:'wrap' }}>
-                  <Btn onClick={handleClose} variant="dark">Close table</Btn>
-                  <span style={{ fontSize:'13px', color:C.gray }}>No new members can join after this.</span>
+                  <span style={{ fontSize:'12px', color:C.gray, minWidth:'32px' }}>{count}/{total}</span>
+                  <Chip label="Include" active={selectedDays.includes(day)} onClick={()=>toggleLockDay(day)} />
+                </div>
+              ))}
+              {agreedWin && (
+                <div style={{ fontSize:'13px', color:C.darkGray, marginTop:'8px', padding:'10px 12px',
+                  background:'#f7f3ee', borderRadius:'8px' }}>
+                  Tightest agreed window: <strong>{agreedWin.earliest} – {agreedWin.latest}</strong>
+                  {' '}
+                  <span style={{ color: agreedWin.tooNarrow ? C.darkRose : C.darkMint }}>
+                    ({agreedWin.minuteSpan} min{agreedWin.tooNarrow ? ' — may be too narrow' : ''})
+                  </span>
                 </div>
               )}
-            </div>
-          )}
-
-          {!isCreator && (
+              <div style={{ marginTop:'16px' }}>
+                <ErrMsg msg={error} />
+                <Btn onClick={handleLockIn} disabled={selectedDays.length===0} variant="dark">
+                  Lock in days →
+                </Btn>
+              </div>
+            </Card>
+          ) : (
             <div style={{ padding:'14px 16px', background:C.lightGray, borderRadius:'12px',
               fontSize:'14px', color:C.gray, fontStyle:'italic' }}>
-              Waiting for the creator to close the table and finalize the schedule.
+              Waiting for the host to lock in the schedule days.
             </div>
           )}
         </>
@@ -1724,6 +1745,34 @@ function ScheduleTab({ pool, myName, onUpdate }) {
   );
 }
 
+// ─── PROGRESS BAR ─────────────────────────────────────────────────────────────
+
+function ProgressBar({ pool }) {
+  const allMealsPosted = pool.schedule && pool.schedule.length > 0 && pool.schedule.every(e => e.meal);
+  const step = allMealsPosted ? 3 : pool.status === 'scheduled' ? 2 : 1;
+  const steps = [
+    { label:'Forming', desc:'Gathering members' },
+    { label:'Scheduled', desc:'Who cooks when' },
+    { label:'Ready', desc:'All meals posted' },
+  ];
+  return (
+    <div style={{ marginBottom:'14px' }}>
+      <div style={{ display:'flex', gap:'6px' }}>
+        {steps.map((s, i) => (
+          <div key={i} style={{ flex:1, display:'flex', flexDirection:'column', alignItems:'center', gap:'4px' }}>
+            <div style={{ width:'100%', height:'6px', borderRadius:'3px',
+              background: i+1 <= step ? C.darkMint : C.lightGray }} />
+            <span style={{ fontSize:'11px', fontWeight: i+1===step?'700':'400',
+              color: i+1 <= step ? C.darkMint : C.gray, textAlign:'center' }}>
+              {s.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── ROOM SCREEN ──────────────────────────────────────────────────────────────
 
 function RoomScreen({ session, onLeave }) {
@@ -1753,6 +1802,18 @@ function RoomScreen({ session, onLeave }) {
     { id:'schedule', label:'Schedule', locked:!pool.schedule },
   ];
 
+  const isCreator = pool.members.find(m => m.name === session.name)?.isCreator;
+  const allMealsPosted = pool.schedule && pool.schedule.length > 0 && pool.schedule.every(e => e.meal);
+  const guidanceMsg = pool.status === 'open' && isCreator
+    ? 'When everyone has joined, select which days work and lock in the schedule.'
+    : pool.status === 'open' && !isCreator
+    ? "You're all set! Waiting for the host to lock in the dinner days."
+    : pool.status === 'scheduled' && !allMealsPosted
+    ? 'Check the Schedule tab — cooks can post their meal details for each dinner night.'
+    : pool.status === 'scheduled' && allMealsPosted
+    ? 'All meals are posted. Everyone knows when and what to eat!'
+    : null;
+
   return (
     <div>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'6px' }}>
@@ -1764,6 +1825,9 @@ function RoomScreen({ session, onLeave }) {
           cursor:'pointer', fontSize:'13px', fontFamily:"'Roboto'" }}>Leave</button>
       </div>
       <Divider />
+
+      <ProgressBar pool={pool} />
+      {guidanceMsg && <GuidanceBanner>{guidanceMsg}</GuidanceBanner>}
 
       <div style={{ display:'flex', gap:'0', marginBottom:'22px', borderBottom:`2px solid ${C.lightGray}` }}>
         {tabs.map(t => (
