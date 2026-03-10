@@ -58,7 +58,7 @@ permalink: /offerings/
 
   <div class="book-card" style="padding: 1rem;">
     <h3>We Are the Earth Defending Itself</h3>
-    <h6 style="margin-top: 0px; font-family: 'Roboto'; font-weight: 400; color: #8B3A3A;">Empowering political action by learning to see yourself as an extension of the Earth.</h6>
+    <h6 style="margin-top: 0px; font-family: 'Roboto'; font-weight: 400; color: #8B3A3A;">Falling in love with the Earth is a political act.</h6>
     <h6>6 weeks / 8 weeks</h6>
     <details><summary><strong>See more</strong></summary>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
