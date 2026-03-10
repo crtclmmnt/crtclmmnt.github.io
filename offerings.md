@@ -121,7 +121,7 @@ permalink: /offerings/
 <br>
 
 <div style="text-align: center; margin-bottom: 0px;">
-  <img src="/images/resocialtransparent.png" style="max-width: 120px;">
+  <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 100px;">
   <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Resocial Media</h1>
 <hr class="short" style="margin: 0.5em auto;">
   <h3 style="margin-top: 0.25rem; font-family: 'Roboto';">Apps that help you get resocialized.</h3>
