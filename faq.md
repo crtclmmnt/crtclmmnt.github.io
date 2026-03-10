@@ -54,7 +54,7 @@ permalink: /faq/
 </details>
 
 <details><summary><h6>What makes you qualified to teach meditation?</h6></summary>
-<p>I received my certification to teach Mindfulness Meditation from Dharma Moon and Tibet House US.</p>
+<p>I received my certification to teach Mindfulness Meditation from Dharma Moon and Tibet House US, after completing their 100-hour Mindfulness Meditation Teacher Training.</p>
 <div class="services-layout">
   <div style="flex-shrink: 0;">
     <img src="/images/25.png" style="width: 160px; height: 160px; max-height: 160px; object-fit: contain;">
