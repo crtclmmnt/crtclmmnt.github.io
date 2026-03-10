@@ -55,7 +55,7 @@ permalink: /faq/
 
 <details><summary><h6>What makes you qualified to teach meditation?</h6></summary>
 <div class="services-layout">
-  <div>
+  <div style="flex-shrink: 0;">
     <img src="/images/25.png" style="width: 150px; height: 150px; max-height: 150px; object-fit: contain;">
   </div>
   <div class="services-content">
