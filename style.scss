@@ -676,6 +676,14 @@ nav {
   }
 }
 
+.mobile-only {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
 .mobile-break {
   display: none; /* Hide breaks on desktop */
   
