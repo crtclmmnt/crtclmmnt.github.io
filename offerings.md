@@ -38,7 +38,7 @@ permalink: /offerings/
 <div class="book-grid curriculum-grid">
   <div class="book-card" style="padding: 1rem;">
     <h5>Gentleness, Precision, and Letting Go</h5>
-    <h6 style="margin-top: 0px; text-color: $lightGray; font-style: normal;">Exploring the foundations of a sustainable meditation practice.</h6>
+    <h6 style="margin-top: 0px; font-family: 'Roboto'; font-style: normal;">Exploring the foundations of a sustainable meditation practice.</h6>
     <h6>4 weeks / 6 weeks</h6>
     <details><summary><strong>See more</strong></summary>
     <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
@@ -47,7 +47,7 @@ permalink: /offerings/
 
   <div class="book-card" style="padding: 1rem;">
     <h5>World as Lover, World as Self</h5>
-    <h6 style="margin-top: 0px; text-color: $lightGray; font-style: normal;">Unlearning philosophical, ecological, and spiritual dualism.</h6>
+    <h6 style="margin-top: 0px; font-family: 'Roboto'; font-style: normal;">Unlearning philosophical, ecological, and spiritual dualism.</h6>
     <h6>4 weeks / 6 weeks</h6>
     <details><summary><strong>See more</strong></summary>
     <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, transforms burnout and despair into grounded, sustainable action.</p>
@@ -58,7 +58,7 @@ permalink: /offerings/
 
   <div class="book-card" style="padding: 1rem;">
     <h5>We Are the Earth Defending Itself</h5>
-    <h6 style="margin-top: 0px; text-color: $lightGray; font-style: normal;">Empowering political action by learning to see yourself as an extension of the Earth.</h6>
+    <h6 style="margin-top: 0px; font-family: 'Roboto'; font-style: normal;">Empowering political action by learning to see yourself as an extension of the Earth.</h6>
     <h6>6 weeks / 8 weeks</h6>
     <details><summary><strong>See more</strong></summary>
     <p class="book-description"><strong>This is my favorite workshop to teach.</strong></p>
