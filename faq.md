@@ -54,13 +54,12 @@ permalink: /faq/
 </details>
 
 <details><summary><h6>What makes you qualified to teach meditation?</h6></summary>
-<p>I received my certification to teach Mindfulness Meditation from Dharma Moon and Tibet House US, after completing their 100-hour Mindfulness Meditation Teacher Training.</p>
 <div class="services-layout">
   <div style="flex-shrink: 0;">
     <img src="/images/25.png" style="width: 160px; height: 160px; max-height: 160px; object-fit: contain;">
   </div>
   <div class="services-content">
-    <p>I was taught by David Nichtern and a number of other wonderful teachers at Dharma Moon as part of their 100-hour Mindfulness Meditation Teacher Training course. So, I'm qualified to teach the basic techniques and help people deepen their practice, but I am by no means a zen priest or a master meditator or anything of the sort.</p>
+    <p>I received my certification to teach Mindfulness Meditation from Dharma Moon and Tibet House US, after completing their 100-hour Mindfulness Meditation Teacher Training. So, I'm qualified to teach the basic techniques and help people deepen their practice, but I am by no means a zen priest or a master meditator or anything of the sort.</p>
   </div>
 </div>
 <p>My most important qualification is that I am someone who was so scared of the future that I didn't want to fight for it, until I found a practice that in some ways brought me back to life. And now I've learned how to teach that practice to others.</p>
