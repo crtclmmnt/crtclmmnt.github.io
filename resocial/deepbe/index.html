@@ -272,6 +272,30 @@ title: DeepBe
 
     /* ── Primary button ────────────────────────────────────────── */
 
+    .btn-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-secondary {
+      background: none;
+      border: 1.5px solid #9a7a6a;
+      color: #6b5349;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.8rem 1.5rem;
+      cursor: pointer;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-secondary:hover  { border-color: #3d2e28; color: #3d2e28; }
+    .btn-secondary:active { background: #e3d0c5; }
+
     .btn-primary {
       background: #9DF4B0;
       border: none;
@@ -306,10 +330,6 @@ title: DeepBe
       transition: opacity 0.4s ease;
     }
 
-    .audio-prompt.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
 
     /* ── Progress ring ─────────────────────────────────────────── */
 
@@ -400,8 +420,11 @@ title: DeepBe
       <div class="quote-attr">&mdash; Joanna Macy</div>
     </div>
     <div class="divider"></div>
-    <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
-    <p class="audio-prompt" id="audio-prompt">Tap anywhere to enable audio</p>
+    <div class="btn-row">
+      <button class="btn-secondary" id="test-bell-btn">Test bell</button>
+      <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
+    </div>
+    <p class="audio-prompt">Disable silent mode to hear the bells</p>
     <div class="duration-options">
       <button class="duration-btn" data-minutes="10">10 min</button>
       <button class="duration-btn" data-minutes="15">15 min</button>
@@ -515,10 +538,6 @@ title: DeepBe
         silentSrc.start(0);
       } catch (e) { /* non-fatal */ }
 
-      // Hide the "Tap to enable audio" prompt
-      const prompt = document.getElementById('audio-prompt');
-      if (prompt) prompt.classList.add('hidden');
-
       return audioCtx;
     }
 
@@ -610,29 +629,6 @@ title: DeepBe
       });
     }
 
-    // ── Test beep ─────────────────────────────────────────────────
-    // Absolute minimal synthesis chain: oscillator → gain → destination.
-    // No AudioParam automation — gain set via direct .value assignment,
-    // which is the most reliable approach on iOS Safari.
-    // Call this on the Begin button tap to confirm synthesis works at all
-    // before any complex bell or woodblock chain is needed.
-    function playTestBeep() {
-      const ctx = audioCtx;
-      if (!ctx || ctx.state === 'closed') return;
-      const osc  = ctx.createOscillator();
-      const gain = ctx.createGain();
-      // Connect before any configuration
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      // Configure — no scheduling, just direct assignment
-      osc.type = 'sine';
-      osc.frequency.value = 440;
-      gain.gain.value = 0.25;      // direct value, bypasses all automation timing
-      // Start immediately; stop after 350 ms
-      osc.start();
-      osc.stop(ctx.currentTime + 0.35);
-    }
-
     // ── State ─────────────────────────────────────────────────────
     let selectedMinutes    = null;
     let includeInstruction = true;
@@ -697,6 +693,21 @@ title: DeepBe
       });
     });
 
+    // ── Test bell button ──────────────────────────────────────────
+    // touchstart unlocks the AudioContext; click schedules the bell.
+    // This fires once per tap on mobile (touchstart creates ctx, click plays bell)
+    // and once on desktop (click does both).
+    const testBellBtn = document.getElementById('test-bell-btn');
+
+    testBellBtn.addEventListener('touchstart', function() {
+      ensureAudioCtx();
+    }, { passive: true });
+
+    testBellBtn.addEventListener('click', function() {
+      ensureAudioCtx();
+      scheduleBell();
+    });
+
     // ── Landing → Intro ───────────────────────────────────────────
     // touchstart fires before click (no 300 ms delay on iOS).
     // Create the AudioContext here — inside the direct gesture — so
@@ -705,18 +716,12 @@ title: DeepBe
 
     beginIntroBtn.addEventListener('touchstart', function() {
       if (this.disabled) return;
-      ensureAudioCtx(); // create + silent-buffer unlock inside the gesture
-      // Play a minimal test beep synchronously in this gesture to verify
-      // that the synthesis chain reaches the speakers on iOS before the
-      // more complex bell synthesis is needed later.
-      playTestBeep();
+      ensureAudioCtx();
     }, { passive: true });
 
     beginIntroBtn.addEventListener('click', function() {
       if (this.disabled) return;
-      ensureAudioCtx(); // desktop fallback — click is also a valid gesture
-      // On desktop (no touchstart), play the test beep from click instead
-      playTestBeep();
+      ensureAudioCtx();
       showScreen('screen-intro');
       if (includeInstruction) {
         const intro = document.getElementById('intro-audio');
