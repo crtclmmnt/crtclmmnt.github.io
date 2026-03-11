@@ -3,8 +3,7 @@ layout: resocial
 permalink: /resocial/
 hide_header: true
 ---
-<a href="https://thecriticalmoment.org/"><span style="color: #a23c3f; font-weight: bold;">Back to The Critical Moment</span></a>
-<br>
+<a href="https://thecriticalmoment.org/offerings/"><span style="color: #a23c3f; font-weight: bold; text-align: center;">Back to The Critical Moment</span></a>
 <br>
 <div style="text-align: center; margin-bottom: 0px;">
   <img src="/images/resocialtransparent.png" style="max-width: 120px;">
@@ -13,8 +12,6 @@ hide_header: true
 <h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial</h1>
 <hr class="short" style="margin: 0.5em auto;">
 <p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial, where you can find apps that resocialize you. Come back to the world, she misses you.</p>
-
-<br>
 
 <div class="mobile-only">
  <div class="book-card" style="border: 3px solid #a23c3f; background-color: #fff; padding: 1.5rem;">
@@ -26,6 +23,8 @@ hide_header: true
 </div>
 
 <br>
+
+<div style="max-width: 700px;">
 
 <hr>
 
@@ -124,5 +123,7 @@ hide_header: true
 </details>
 
 <hr>
+
+</div>
 
 <br>
