@@ -12,7 +12,7 @@ hide_header: true
 
 <h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial</h1>
 <hr class="short" style="margin: 0.5em auto;">
-<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial, where you can find apps that resocialize you. Remember the world?</p>
+<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial, where you can find apps that resocialize you. Come back to the world, she misses you.</p>
 
 <br>
 
