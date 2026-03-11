@@ -79,6 +79,33 @@ hide_header: true
 <p>A simple meditation timer.</p>
 <a href="https://thecriticalmoment.org/resocial/deepsee/" class="btn">Try the app</a>
 
+<details><summary><strong>How to use DeepSee</strong></summary>
+<div style="max-width: 700px; margin: 0 auto;">
+
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
+    <div style="width: 150px; text-align: left;">
+    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
+    </div>
+  
+    <div class="services-content" style="max-width: 550px;">
+      <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Choose your Time</h1>
+      <p>Choose the amount of time you would like to meditate for.</p>
+      <p>If you choose 40 or 50 minutes, you can also add a walking meditation which will take place 20 minutes after the start.</p>
+    </div>
+  </div>
+
+<div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
+    <div style="width: 150px; text-align: left;">
+    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
+    </div>
+  
+    <div class="services-content" style="max-width: 550px;">
+      <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
+      <p>Listen to the instructions, and try to follow them.</p>
+    </div>
+  </div>
+
+
 <hr>
 
 <br>
