@@ -30,7 +30,7 @@ hide_header: true
 <h1 style="font-size: 3rem; margin-bottom: 0px;">BigTable</h1>
 
 <p>Tired of cooking for yourself every night? Bored of eating alone? Coordinate a dinner pool with your people. Cook a little, and eat a lot.</p>
-<a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Try the app</a>
+<a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Open</a>
 
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
@@ -77,7 +77,7 @@ hide_header: true
 <h1 style="font-size: 3rem; margin-bottom: 0px;">DeepSee</h1>
 
 <p>A simple meditation timer.</p>
-<a href="https://thecriticalmoment.org/resocial/deepsee/" class="btn">Try the app</a>
+<a href="https://thecriticalmoment.org/resocial/deepsee/" class="btn">Open</a>
 
 <details><summary><strong>How to use DeepSee</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
