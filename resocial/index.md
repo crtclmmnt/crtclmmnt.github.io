@@ -71,5 +71,14 @@ hide_header: true
   </div>
 </div>
 </details>
+
 <hr>
+
+<h1 style="font-size: 3rem; margin-bottom: 0px;">DeepSee</h1>
+
+<p>A simple meditation timer.</p>
+<a href="https://thecriticalmoment.org/resocial/deepsee/" class="btn">Try the app</a>
+
+<hr>
+
 <br>
