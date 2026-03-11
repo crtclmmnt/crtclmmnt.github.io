@@ -3,7 +3,7 @@ layout: resocial
 permalink: /resocial/
 hide_header: true
 ---
-<a href="https://thecriticalmoment.org/offerings/"><span style="color: #a23c3f; font-weight: bold; text-align: center;">Back to The Critical Moment</span></a>
+<a href="https://thecriticalmoment.org/offerings/" style="text-align: center;"><span style="color: #a23c3f; font-weight: bold;">Back to The Critical Moment</span></a>
 <br>
 <div style="text-align: center; margin-bottom: 0px;">
   <img src="/images/resocialtransparent.png" style="max-width: 120px;">
