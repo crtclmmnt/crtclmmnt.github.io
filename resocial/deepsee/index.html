@@ -308,6 +308,22 @@ title: DeepSee
       cursor: default;
     }
 
+    /* ── Audio prompt ──────────────────────────────────────────── */
+
+    .audio-prompt {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: #9a7a6a;
+      margin-top: -0.75rem;
+      transition: opacity 0.4s ease;
+    }
+
+    .audio-prompt.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* ── Progress ring ─────────────────────────────────────────── */
 
     .ring-wrap {
@@ -414,6 +430,7 @@ title: DeepSee
       </div>
     </div>
     <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
+    <p class="audio-prompt" id="audio-prompt">Tap anywhere to enable audio</p>
   </div>
 
   <!-- ── Screen 2: Intro ───────────────────────────────────────── -->
@@ -462,34 +479,43 @@ title: DeepSee
     const BELL_SRC      = ''; // e.g. '/audio/bell.mp3'
     const WOODBLOCK_SRC = ''; // e.g. '/audio/woodblock.mp3'
 
-    // ── AudioContext (created eagerly; starts suspended on mobile) ─
-    // Mobile browsers block audio until a user gesture. Creating the
-    // context now lets us resume() it cleanly on the first tap.
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    const audioCtx = AudioContextClass ? new AudioContextClass() : null;
-
-    // ── One-time unlock on first user tap anywhere on the page ────
-    // Resumes the AudioContext for synthesized sounds. Both events
-    // are registered so it fires on touchstart (iOS/Android) or
-    // click (desktop); the flag ensures the body runs only once.
+    // ── AudioContext — created lazily inside a user gesture ───────
+    // iOS requires AudioContext to be created AND resumed within a
+    // direct user gesture (touchstart). Do NOT create it on page load.
+    let audioCtx = null;
     let audioUnlocked = false;
+
+    // Creates the AudioContext fresh inside a user gesture and hides
+    // the "Tap to enable audio" prompt. Safe to call multiple times.
     function unlockAudio() {
       if (audioUnlocked) return;
       audioUnlocked = true;
-      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
-    }
-    document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
-    document.addEventListener('click',      unlockAudio, { once: true });
 
-    // ── Prime <audio> elements for iOS Safari ─────────────────────
-    // iOS Safari requires .play() to be called synchronously inside
-    // a user-gesture handler before audio elements will work later.
-    // We call this on the "Begin" tap — the clearest gesture point.
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) {
+        audioCtx = new AC();
+        audioCtx.resume().catch(() => {});
+      }
+
+      const prompt = document.getElementById('audio-prompt');
+      if (prompt) prompt.classList.add('hidden');
+    }
+
+    // Unlock on the very first touchstart anywhere on the page.
+    // This covers taps outside the Begin button (e.g. duration buttons).
+    document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
+
+    // ── Prime <audio> elements (call synchronously in a gesture) ──
+    // Calling load → play → pause within a user gesture "unlocks"
+    // the element so later programmatic .play() calls work on iOS.
     function primeAudioElements() {
-      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(id => {
-        const el = document.getElementById(id);
+      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(function(id) {
+        var el = document.getElementById(id);
         el.load();
-        el.play().then(() => { el.pause(); el.currentTime = 0; }).catch(() => {});
+        el.play().then(function() {
+          el.pause();
+          el.currentTime = 0;
+        }).catch(function() {});
       });
     }
 
@@ -520,19 +546,28 @@ title: DeepSee
 
     function hasSrc(el) { return !!el.getAttribute('src'); }
 
-    // ── Audio context ─────────────────────────────────────────────
+    // ── Get (or lazily create) AudioContext ───────────────────────
+    // On desktop there's no touchstart, so we allow creation here.
+    // On iOS this should already be created by unlockAudio().
     function getAudioCtx() {
-      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) {
+          audioCtx = new AC();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume().catch(() => {});
+      }
       return audioCtx;
     }
 
     // ── Bell ──────────────────────────────────────────────────────
-    // To swap for an MP3: set BELL_SRC = '/path/to/bell.mp3' above
     function playBell() {
       if (BELL_SRC) { new Audio(BELL_SRC).play().catch(() => {}); return; }
       try {
         const ctx = getAudioCtx();
+        if (!ctx) return;
         const now = ctx.currentTime;
         const dur = 9;
         // Singing-bowl harmonics: fundamental + inharmonic partials
@@ -556,11 +591,11 @@ title: DeepSee
     }
 
     // ── Woodblock ─────────────────────────────────────────────────
-    // To swap for an MP3: set WOODBLOCK_SRC = '/path/to/woodblock.mp3' above
     function playWoodblock() {
       if (WOODBLOCK_SRC) { new Audio(WOODBLOCK_SRC).play().catch(() => {}); return; }
       try {
         const ctx = getAudioCtx();
+        if (!ctx) return;
         // Two strikes, tok-tok
         [0, 0.28].forEach(delay => {
           const now  = ctx.currentTime + delay;
@@ -604,7 +639,19 @@ title: DeepSee
     });
 
     // ── Landing → Intro ───────────────────────────────────────────
-    document.getElementById('begin-intro-btn').addEventListener('click', () => {
+    // touchstart: unlock AudioContext + prime all <audio> elements
+    // synchronously inside the gesture, before any async gap.
+    const beginIntroBtn = document.getElementById('begin-intro-btn');
+
+    beginIntroBtn.addEventListener('touchstart', function() {
+      if (this.disabled) return;
+      unlockAudio();        // create AudioContext fresh in this gesture
+      primeAudioElements(); // load/play/pause each <audio> in this gesture
+    }, { passive: true });
+
+    // click: advance UI and begin playback (audio is already primed)
+    beginIntroBtn.addEventListener('click', function() {
+      if (this.disabled) return;
       showScreen('screen-intro');
       const intro = document.getElementById('intro-audio');
       if (hasSrc(intro)) intro.play().catch(() => {});
