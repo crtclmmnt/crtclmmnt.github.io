@@ -17,7 +17,7 @@ hide_header: true
 <br>
 
 <div class="mobile-only">
- <div class="book-card" style="border: 3px solid #a23c3f; background-color: #fff;">
+ <div class="book-card" style="border: 3px solid #a23c3f; background-color: #fff; padding: 1.5rem;">
   <div style="text-align: center; margin-bottom: 0px;">
     <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 60px;">
   </div>
