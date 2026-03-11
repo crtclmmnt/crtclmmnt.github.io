@@ -1646,13 +1646,16 @@ function MembersTab({ pool, myName, onUpdate }) {
       </SLabel>
       {pool.members.map(m => {
         const isMe = m.name === myName;
+        const voted = pool.status === 'runoff'     ? !!m.runoffVoted
+                    : pool.status === 'day-revote' ? !!m.dayRevoteVoted
+                    : !!m.voted;
         return (
           <Card key={m.name}>
             <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'10px', flexWrap:'wrap' }}>
               <span style={{ fontFamily:"'ZTNature',Helvetica,sans-serif",
                 fontSize:'20px', fontWeight:'500', color:C.darkerGray }}>{m.name}</span>
               {m.isCreator && <Tag label="creator" bg={C.peach} color={C.darkPeach} />}
-              {m.voted
+              {voted
                 ? <Tag label="voted" bg={C.mint} color={C.darkMint} />
                 : <Tag label="not voted" bg={C.lightGray} color={C.gray} />}
             </div>
