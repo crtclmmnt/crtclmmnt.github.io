@@ -16,7 +16,7 @@ hide_header: true
 
 <br>
 
-<div class="mobile-only" style="border: 3px #a23c3f; border-radius: 15px; padding: 1rem;">
+<div class="mobile-only" style="display: inline-block; border: 3px #a23c3f; border-radius: 15px; padding: 1rem;">
   <div style="text-align: center; margin-bottom: 0px;">
     <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 60px;">
   </div>
