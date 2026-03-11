@@ -383,6 +383,21 @@ title: DeepSee
       text-transform: uppercase;
       color: #9a7a6a;
     }
+
+    /* ── AudioContext debug indicator ──────────────────────────── */
+
+    #ctx-debug {
+      position: fixed;
+      bottom: 0.5rem;
+      right: 0.75rem;
+      font-family: monospace;
+      font-size: 10px;
+      color: #9a7a6a;
+      opacity: 0.55;
+      pointer-events: none;
+      letter-spacing: 0.03em;
+      z-index: 100;
+    }
   </style>
 </head>
 <body>
@@ -390,6 +405,9 @@ title: DeepSee
   <nav class="back-nav">
     <a href="/resocial/">&#8592; Back to Resocial</a>
   </nav>
+
+  <!-- AudioContext debug indicator — updates in real time via JS -->
+  <div id="ctx-debug">ctx: —</div>
 
   <!-- Audio placeholders — add src attributes when files are ready -->
   <audio id="intro-audio"   preload="auto"></audio>
@@ -479,54 +497,138 @@ title: DeepSee
     const BELL_SRC      = ''; // e.g. '/audio/bell.mp3'
     const WOODBLOCK_SRC = ''; // e.g. '/audio/woodblock.mp3'
 
-    // ── AudioContext — created lazily inside a user gesture ───────
-    // iOS requires AudioContext to be created AND resumed within a
-    // direct user gesture (touchstart). Do NOT create it on page load.
+    // ── AudioContext — one per session, created inside a gesture ──
+    //
+    // iOS Safari rules:
+    //   1. AudioContext must be created synchronously inside a user gesture.
+    //   2. A silent 1-sample buffer must be played immediately after creation
+    //      to "fully unlock" the context — just calling resume() is not enough.
+    //   3. All audio nodes scheduled via audioCtx.currentTime + offset will
+    //      fire correctly even when JS timers are throttled (screen lock, etc.)
+    //      because the Web Audio clock runs independently of JS.
+    //   4. The context is CLOSED at session end so that stale scheduled nodes
+    //      are cancelled and a fresh context is ready for the next session.
+
     let audioCtx = null;
-    let audioUnlocked = false;
 
-    // Creates the AudioContext fresh inside a user gesture and hides
-    // the "Tap to enable audio" prompt. Safe to call multiple times.
-    function unlockAudio() {
-      if (audioUnlocked) return;
-      audioUnlocked = true;
-
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (AC) {
-        audioCtx = new AC();
-        audioCtx.resume().catch(() => {});
-      }
-
-      const prompt = document.getElementById('audio-prompt');
-      if (prompt) prompt.classList.add('hidden');
+    // ── Debug indicator ───────────────────────────────────────────
+    function updateCtxDebug() {
+      const el = document.getElementById('ctx-debug');
+      if (el) el.textContent = 'ctx: ' + (audioCtx ? audioCtx.state : '—');
     }
 
-    // Unlock on the very first touchstart anywhere on the page.
-    // This covers taps outside the Begin button (e.g. duration buttons).
-    document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
+    // ── Create or resume the AudioContext ─────────────────────────
+    // MUST be called synchronously inside a user gesture (touchstart or click).
+    // Safe to call multiple times — returns existing context if still alive.
+    function ensureAudioCtx() {
+      if (audioCtx && audioCtx.state !== 'closed') {
+        // Already exists — resume if suspended (e.g. user returned from another app)
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        updateCtxDebug();
+        return audioCtx;
+      }
 
-    // ── Prime <audio> elements (call synchronously in a gesture) ──
-    // Calling load → play → pause within a user gesture "unlocks"
-    // the element so later programmatic .play() calls work on iOS.
-    function primeAudioElements() {
-      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(function(id) {
-        var el = document.getElementById(id);
-        el.load();
-        el.play().then(function() {
-          el.pause();
-          el.currentTime = 0;
-        }).catch(function() {});
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+
+      audioCtx = new AC();
+
+      // ── Silent 1-sample buffer: canonical iOS Safari unlock ──────
+      // iOS requires actual audio to pass through the graph inside
+      // the same synchronous gesture that created the context. Calling
+      // resume() alone does NOT satisfy this requirement.
+      try {
+        const silentBuf = audioCtx.createBuffer(1, 1, 22050);
+        const silentSrc = audioCtx.createBufferSource();
+        silentSrc.buffer = silentBuf;
+        silentSrc.connect(audioCtx.destination);
+        silentSrc.start(0);
+      } catch (e) { /* non-fatal */ }
+
+      // Track state changes for the debug indicator
+      audioCtx.addEventListener('statechange', updateCtxDebug);
+      updateCtxDebug();
+
+      // Hide the "Tap to enable audio" prompt
+      const prompt = document.getElementById('audio-prompt');
+      if (prompt) prompt.classList.add('hidden');
+
+      return audioCtx;
+    }
+
+    // Unlock on every touchstart while context is absent or closed.
+    // Not limited to { once } so it still fires after a session resets the context.
+    document.addEventListener('touchstart', function() {
+      if (!audioCtx || audioCtx.state === 'closed') ensureAudioCtx();
+      else if (audioCtx.state === 'suspended')      { audioCtx.resume(); updateCtxDebug(); }
+    }, { passive: true });
+
+    // ── Bell synthesis ────────────────────────────────────────────
+    // atTime: absolute Web Audio clock time to start the bell.
+    // If omitted, plays immediately at audioCtx.currentTime.
+    // Scheduling via the Web Audio clock works even when JS timers
+    // are throttled, so the closing bell always fires on time.
+    function scheduleBell(atTime) {
+      if (BELL_SRC) { new Audio(BELL_SRC).play().catch(() => {}); return; }
+      const ctx = audioCtx;
+      if (!ctx || ctx.state === 'closed') return;
+      const t   = (atTime !== undefined) ? atTime : ctx.currentTime;
+      const dur = 9;
+      // Singing-bowl harmonics: fundamental + inharmonic partials
+      [
+        { f: 220,  a: 1.00 },
+        { f: 440,  a: 0.45 },
+        { f: 590,  a: 0.20 },
+        { f: 880,  a: 0.12 },
+        { f: 1320, a: 0.06 },
+      ].forEach(function({ f, a }) {
+        const osc  = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.type = 'sine'; osc.frequency.value = f;
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(a * 0.32, t + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+        osc.start(t); osc.stop(t + dur);
+      });
+    }
+
+    // ── Woodblock synthesis ───────────────────────────────────────
+    // atTime: absolute Web Audio clock time for the first strike.
+    function scheduleWoodblock(atTime) {
+      if (WOODBLOCK_SRC) { new Audio(WOODBLOCK_SRC).play().catch(() => {}); return; }
+      const ctx = audioCtx;
+      if (!ctx || ctx.state === 'closed') return;
+      const base = (atTime !== undefined) ? atTime : ctx.currentTime;
+      // Two strikes: tok-tok
+      [0, 0.28].forEach(function(offset) {
+        const t    = base + offset;
+        const osc  = ctx.createOscillator();
+        const filt = ctx.createBiquadFilter();
+        const gain = ctx.createGain();
+        osc.connect(filt); filt.connect(gain); gain.connect(ctx.destination);
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(900, t);
+        osc.frequency.exponentialRampToValueAtTime(500, t + 0.08);
+        filt.type = 'bandpass'; filt.frequency.value = 800; filt.Q.value = 3;
+        gain.gain.setValueAtTime(0, t);
+        gain.gain.linearRampToValueAtTime(0.55, t + 0.003);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
+        osc.start(t); osc.stop(t + 0.22);
       });
     }
 
     // ── State ─────────────────────────────────────────────────────
     let selectedMinutes    = null;
-    let includeWalking     = true;   // default Y
+    let includeWalking     = true;
     let totalSeconds       = 0;
     let remainingSeconds   = 0;
     let timerInterval      = null;
     let walkingPhaseActive = false;
     let closingActive      = false;
+    // Incremented on each new session so stale setInterval/setTimeout
+    // callbacks from a previous session become no-ops.
+    let sessionToken       = 0;
 
     // Walking phase fires at these elapsed-second marks
     const WALK_START_S  = 20 * 60;
@@ -546,92 +648,22 @@ title: DeepSee
 
     function hasSrc(el) { return !!el.getAttribute('src'); }
 
-    // ── Get (or lazily create) AudioContext ───────────────────────
-    // On desktop there's no touchstart, so we allow creation here.
-    // On iOS this should already be created by unlockAudio().
-    function getAudioCtx() {
-      if (!audioCtx) {
-        const AC = window.AudioContext || window.webkitAudioContext;
-        if (AC) {
-          audioCtx = new AC();
-        }
-      }
-      if (audioCtx && audioCtx.state === 'suspended') {
-        audioCtx.resume().catch(() => {});
-      }
-      return audioCtx;
-    }
-
-    // ── Bell ──────────────────────────────────────────────────────
-    function playBell() {
-      if (BELL_SRC) { new Audio(BELL_SRC).play().catch(() => {}); return; }
-      try {
-        const ctx = getAudioCtx();
-        if (!ctx) return;
-        const now = ctx.currentTime;
-        const dur = 9;
-        // Singing-bowl harmonics: fundamental + inharmonic partials
-        [
-          { f: 220,  a: 1.00 },
-          { f: 440,  a: 0.45 },
-          { f: 590,  a: 0.20 },
-          { f: 880,  a: 0.12 },
-          { f: 1320, a: 0.06 },
-        ].forEach(({ f, a }) => {
-          const osc  = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.connect(gain); gain.connect(ctx.destination);
-          osc.type = 'sine'; osc.frequency.value = f;
-          gain.gain.setValueAtTime(0, now);
-          gain.gain.linearRampToValueAtTime(a * 0.32, now + 0.012);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-          osc.start(now); osc.stop(now + dur);
-        });
-      } catch (e) { console.warn('Bell error:', e); }
-    }
-
-    // ── Woodblock ─────────────────────────────────────────────────
-    function playWoodblock() {
-      if (WOODBLOCK_SRC) { new Audio(WOODBLOCK_SRC).play().catch(() => {}); return; }
-      try {
-        const ctx = getAudioCtx();
-        if (!ctx) return;
-        // Two strikes, tok-tok
-        [0, 0.28].forEach(delay => {
-          const now  = ctx.currentTime + delay;
-          const osc  = ctx.createOscillator();
-          const filt = ctx.createBiquadFilter();
-          const gain = ctx.createGain();
-          osc.connect(filt); filt.connect(gain); gain.connect(ctx.destination);
-          osc.type = 'square';
-          osc.frequency.setValueAtTime(900, now);
-          osc.frequency.exponentialRampToValueAtTime(500, now + 0.08);
-          filt.type = 'bandpass'; filt.frequency.value = 800; filt.Q.value = 3;
-          gain.gain.setValueAtTime(0, now);
-          gain.gain.linearRampToValueAtTime(0.55, now + 0.003);
-          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
-          osc.start(now); osc.stop(now + 0.22);
-        });
-      } catch (e) { console.warn('Woodblock error:', e); }
-    }
-
     // ── Duration selection ────────────────────────────────────────
     const walkToggle = document.getElementById('walk-toggle');
 
     document.querySelectorAll('.duration-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', function() {
         document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         selectedMinutes = parseInt(btn.dataset.minutes, 10);
         document.getElementById('begin-intro-btn').disabled = false;
-        // Show walk toggle only for 40/50 min
         walkToggle.classList.toggle('visible', WALK_SESSIONS.has(selectedMinutes));
       });
     });
 
     // Walking Y / N
     document.querySelectorAll('.toggle-opt').forEach(opt => {
-      opt.addEventListener('click', () => {
+      opt.addEventListener('click', function() {
         document.querySelectorAll('.toggle-opt').forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
         includeWalking = opt.dataset.walk === 'yes';
@@ -639,39 +671,69 @@ title: DeepSee
     });
 
     // ── Landing → Intro ───────────────────────────────────────────
-    // touchstart: unlock AudioContext + prime all <audio> elements
-    // synchronously inside the gesture, before any async gap.
+    // touchstart fires before click (no 300 ms delay on iOS).
+    // Create the AudioContext here — inside the direct gesture — so
+    // that subsequent audio calls on this same context are permitted.
     const beginIntroBtn = document.getElementById('begin-intro-btn');
 
     beginIntroBtn.addEventListener('touchstart', function() {
       if (this.disabled) return;
-      unlockAudio();        // create AudioContext fresh in this gesture
-      primeAudioElements(); // load/play/pause each <audio> in this gesture
+      ensureAudioCtx(); // create + silent-buffer unlock inside the gesture
     }, { passive: true });
 
-    // click: advance UI and begin playback (audio is already primed)
     beginIntroBtn.addEventListener('click', function() {
       if (this.disabled) return;
+      ensureAudioCtx(); // desktop fallback — click is also a valid gesture
       showScreen('screen-intro');
       const intro = document.getElementById('intro-audio');
       if (hasSrc(intro)) intro.play().catch(() => {});
     });
 
     // ── Intro → Sitting ───────────────────────────────────────────
-    document.getElementById('begin-sitting-btn').addEventListener('click', () => {
+    // This click IS a user gesture. All session audio is scheduled
+    // synchronously here via the Web Audio clock so it fires on time
+    // regardless of JS timer throttling.
+    document.getElementById('begin-sitting-btn').addEventListener('click', function() {
       const intro = document.getElementById('intro-audio');
       intro.pause(); intro.currentTime = 0;
+
+      // Re-ensure the context is running (re-resumes if iOS suspended it)
+      ensureAudioCtx();
+
       showScreen('screen-sitting');
-      playBell();
-      startTimer();
+      startSessionAndScheduleAudio();
     });
 
-    // ── Timer ─────────────────────────────────────────────────────
-    function startTimer() {
+    // ── Session start: schedule all audio via Web Audio clock ─────
+    //
+    // This runs synchronously inside begin-sitting-btn's click gesture.
+    // Scheduling oscillators here — rather than calling playBell() from
+    // setInterval callbacks — means the Web Audio engine fires the sounds
+    // at exactly the right time even if JS timers are heavily throttled.
+    function startSessionAndScheduleAudio() {
+      const token = ++sessionToken;
+
       totalSeconds       = selectedMinutes * 60;
       remainingSeconds   = totalSeconds;
       walkingPhaseActive = false;
 
+      if (audioCtx && audioCtx.state !== 'closed') {
+        const now = audioCtx.currentTime;
+
+        // Opening bell — play immediately
+        scheduleBell(now);
+
+        // Walking-phase woodblocks (40 and 50 min sessions only)
+        if (includeWalking && WALK_SESSIONS.has(selectedMinutes)) {
+          scheduleWoodblock(now + WALK_START_S);
+          scheduleWoodblock(now + WALK_END_S);
+        }
+
+        // Closing bell — scheduled at the exact end of the session
+        scheduleBell(now + totalSeconds);
+      }
+
+      // ── Visual timer (UI only — no audio calls inside tick) ──────
       const fg = document.getElementById('ring-fg');
       fg.style.stroke           = '#9DF4B0';
       fg.style.transition       = 'none';
@@ -680,27 +742,29 @@ title: DeepSee
 
       updateDisplay();
 
-      requestAnimationFrame(() => {
+      requestAnimationFrame(function() {
         fg.style.transition = 'stroke-dashoffset 1s linear, stroke 0.6s ease';
-        timerInterval = setInterval(tick, 1000);
+        if (timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(function() { tick(token); }, 1000);
       });
     }
 
-    function tick() {
+    function tick(token) {
+      if (sessionToken !== token) return; // stale session — discard
       remainingSeconds--;
       const elapsed = totalSeconds - remainingSeconds;
       updateDisplay();
 
-      // Walking phase cues (40 and 50 min only, when enabled)
+      // Walking phase UI updates — audio was already pre-scheduled above
       if (includeWalking && WALK_SESSIONS.has(selectedMinutes)) {
-        if (elapsed === WALK_START_S) startWalkingPhase();
-        else if (elapsed === WALK_END_S) endWalkingPhase();
+        if (elapsed === WALK_START_S) startWalkingPhaseUI();
+        else if (elapsed === WALK_END_S) endWalkingPhaseUI();
       }
 
       if (remainingSeconds <= 0) {
         clearInterval(timerInterval);
         timerInterval = null;
-        onTimerEnd();
+        onTimerEndUI(token);
       }
     }
 
@@ -713,19 +777,17 @@ title: DeepSee
       document.getElementById('ring-fg').style.strokeDashoffset = offset;
     }
 
-    // ── Walking phase ─────────────────────────────────────────────
-    function startWalkingPhase() {
+    // ── Walking phase UI (audio pre-scheduled — UI only here) ─────
+    function startWalkingPhaseUI() {
       walkingPhaseActive = true;
-      playWoodblock();
       document.getElementById('sitting-note').textContent = 'Walking meditation\u2026';
       document.getElementById('ring-fg').style.stroke = '#FBB965';
       const walk = document.getElementById('walking-audio');
       if (hasSrc(walk)) walk.play().catch(() => {});
     }
 
-    function endWalkingPhase() {
+    function endWalkingPhaseUI() {
       walkingPhaseActive = false;
-      playWoodblock();
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
       const walk = document.getElementById('walking-audio');
@@ -733,16 +795,16 @@ title: DeepSee
     }
 
     // ── Timer end → Closing ───────────────────────────────────────
-    function onTimerEnd() {
-      // Clean up any active walking audio
+    // Closing bell was pre-scheduled via Web Audio — no playBell() here.
+    function onTimerEndUI(token) {
       if (walkingPhaseActive) {
         const walk = document.getElementById('walking-audio');
         walk.pause(); walk.currentTime = 0;
         walkingPhaseActive = false;
       }
-      playBell();
       document.getElementById('sitting-note').textContent = 'Time complete.';
-      setTimeout(() => {
+      setTimeout(function() {
+        if (sessionToken !== token) return; // session was reset
         showScreen('screen-closing');
         beginClosingPhase();
       }, 2200);
@@ -753,21 +815,30 @@ title: DeepSee
       const closing = document.getElementById('closing-audio');
       if (hasSrc(closing)) {
         closing.play().catch(() => {});
-        closing.addEventListener('ended', () => {
+        closing.addEventListener('ended', function() {
           if (closingActive) setTimeout(returnToLanding, 1500);
         }, { once: true });
         // Safety cap: auto-return after 3 min if audio stalls
-        setTimeout(() => { if (closingActive) returnToLanding(); }, 3 * 60 * 1000);
+        setTimeout(function() { if (closingActive) returnToLanding(); }, 3 * 60 * 1000);
       } else {
-        setTimeout(() => { if (closingActive) returnToLanding(); }, 10000);
+        setTimeout(function() { if (closingActive) returnToLanding(); }, 10000);
       }
     }
 
     // ── Return to landing ─────────────────────────────────────────
     function returnToLanding() {
       closingActive = false;
+      sessionToken++; // invalidate all pending session callbacks
 
-      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(id => {
+      // Close the AudioContext — this cancels any still-pending scheduled
+      // nodes and gives us a clean slate for the next session.
+      if (audioCtx) {
+        audioCtx.close().catch(() => {});
+        audioCtx = null;
+        updateCtxDebug();
+      }
+
+      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(function(id) {
         const el = document.getElementById(id);
         el.pause(); el.currentTime = 0;
       });
