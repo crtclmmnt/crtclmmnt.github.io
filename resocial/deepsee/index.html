@@ -222,30 +222,17 @@ title: DeepSee
       color: #3d2e28;
     }
 
-    /* ── Walking toggle ────────────────────────────────────────── */
-
-    /* Fixed-height slot: always reserves space, layout never shifts */
-    .toggle-slot {
-      height: 2.2rem;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    /* ── Walking / instruction toggles ─────────────────────────── */
 
     .walk-toggle {
-      display: flex;
+      display: none;
       align-items: center;
       gap: 0.75rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
       white-space: nowrap;
     }
 
     .walk-toggle.visible {
-      opacity: 1;
-      pointer-events: auto;
+      display: flex;
     }
 
     .toggle-label {
@@ -384,20 +371,7 @@ title: DeepSee
       color: #9a7a6a;
     }
 
-    /* ── AudioContext debug indicator ──────────────────────────── */
 
-    #ctx-debug {
-      position: fixed;
-      bottom: 0.5rem;
-      right: 0.75rem;
-      font-family: monospace;
-      font-size: 10px;
-      color: #9a7a6a;
-      opacity: 0.55;
-      pointer-events: none;
-      letter-spacing: 0.03em;
-      z-index: 100;
-    }
   </style>
 </head>
 <body>
@@ -405,9 +379,6 @@ title: DeepSee
   <nav class="back-nav">
     <a href="/resocial/">&#8592; Back to Resocial</a>
   </nav>
-
-  <!-- AudioContext debug indicator — updates in real time via JS -->
-  <div id="ctx-debug">ctx: —</div>
 
   <!-- Audio placeholders — add src attributes when files are ready -->
   <audio id="intro-audio"   preload="auto"></audio>
@@ -429,6 +400,8 @@ title: DeepSee
       <div class="quote-attr">&mdash; Joanna Macy</div>
     </div>
     <div class="divider"></div>
+    <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
+    <p class="audio-prompt" id="audio-prompt">Tap anywhere to enable audio</p>
     <div class="duration-options">
       <button class="duration-btn" data-minutes="10">10 min</button>
       <button class="duration-btn" data-minutes="15">15 min</button>
@@ -438,27 +411,21 @@ title: DeepSee
       <button class="duration-btn" data-minutes="50">50 min</button>
     </div>
     <!-- Instruction toggle: visible once any duration is selected -->
-    <div class="toggle-slot">
-      <div class="walk-toggle" id="instruction-toggle">
-        <span class="toggle-label">Include meditation instruction?</span>
-        <div class="toggle-btns">
-          <button class="toggle-opt selected" data-instruction="yes">Y</button>
-          <button class="toggle-opt" data-instruction="no">N</button>
-        </div>
+    <div class="walk-toggle" id="instruction-toggle">
+      <span class="toggle-label">Include meditation instruction?</span>
+      <div class="toggle-btns">
+        <button class="toggle-opt selected" data-instruction="yes">Y</button>
+        <button class="toggle-opt" data-instruction="no">N</button>
       </div>
     </div>
     <!-- Walking toggle: visible only for 40/50 min sessions -->
-    <div class="toggle-slot">
-      <div class="walk-toggle" id="walk-toggle">
-        <span class="toggle-label">Include walking meditation?</span>
-        <div class="toggle-btns">
-          <button class="toggle-opt selected" data-walk="yes">Y</button>
-          <button class="toggle-opt" data-walk="no">N</button>
-        </div>
+    <div class="walk-toggle" id="walk-toggle">
+      <span class="toggle-label">Include walking meditation?</span>
+      <div class="toggle-btns">
+        <button class="toggle-opt selected" data-walk="yes">Y</button>
+        <button class="toggle-opt" data-walk="no">N</button>
       </div>
     </div>
-    <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
-    <p class="audio-prompt" id="audio-prompt">Tap anywhere to enable audio</p>
   </div>
 
   <!-- ── Screen 2: Intro ───────────────────────────────────────── -->
@@ -521,19 +488,6 @@ title: DeepSee
 
     let audioCtx = null;
 
-    // ── Debug indicator ───────────────────────────────────────────
-    // updateCtxDebug(label) — pass an optional string to record the last
-    // audio event (e.g. 'beep', 'bell', 'wood'). When called by the
-    // statechange EventListener the argument is an Event object; we ignore
-    // non-string values so the last label is preserved.
-    let lastAudioEvent = '—';
-    function updateCtxDebug(label) {
-      if (typeof label === 'string') lastAudioEvent = label;
-      const el = document.getElementById('ctx-debug');
-      if (el) el.textContent =
-        'ctx: ' + (audioCtx ? audioCtx.state : '—') + ' · ' + lastAudioEvent;
-    }
-
     // ── Create or resume the AudioContext ─────────────────────────
     // MUST be called synchronously inside a user gesture (touchstart or click).
     // Safe to call multiple times — returns existing context if still alive.
@@ -541,7 +495,6 @@ title: DeepSee
       if (audioCtx && audioCtx.state !== 'closed') {
         // Already exists — resume if suspended (e.g. user returned from another app)
         if (audioCtx.state === 'suspended') audioCtx.resume();
-        updateCtxDebug();
         return audioCtx;
       }
 
@@ -562,10 +515,6 @@ title: DeepSee
         silentSrc.start(0);
       } catch (e) { /* non-fatal */ }
 
-      // Track state changes for the debug indicator
-      audioCtx.addEventListener('statechange', updateCtxDebug);
-      updateCtxDebug();
-
       // Hide the "Tap to enable audio" prompt
       const prompt = document.getElementById('audio-prompt');
       if (prompt) prompt.classList.add('hidden');
@@ -577,7 +526,7 @@ title: DeepSee
     // Not limited to { once } so it still fires after a session resets the context.
     document.addEventListener('touchstart', function() {
       if (!audioCtx || audioCtx.state === 'closed') ensureAudioCtx();
-      else if (audioCtx.state === 'suspended')      { audioCtx.resume(); updateCtxDebug(); }
+      else if (audioCtx.state === 'suspended')      audioCtx.resume();
     }, { passive: true });
 
     // ── Bell synthesis ────────────────────────────────────────────
@@ -621,7 +570,6 @@ title: DeepSee
         osc.start(t);
         osc.stop(t + dur);
       });
-      updateCtxDebug('bell @' + t.toFixed(2));
     }
 
     // ── Woodblock synthesis ───────────────────────────────────────
@@ -660,7 +608,6 @@ title: DeepSee
         osc.start(t);
         osc.stop(t + 0.22);
       });
-      updateCtxDebug('wood @' + base.toFixed(2));
     }
 
     // ── Test beep ─────────────────────────────────────────────────
@@ -684,7 +631,6 @@ title: DeepSee
       // Start immediately; stop after 350 ms
       osc.start();
       osc.stop(ctx.currentTime + 0.35);
-      updateCtxDebug('beep ✓');
     }
 
     // ── State ─────────────────────────────────────────────────────
@@ -930,7 +876,6 @@ title: DeepSee
       if (audioCtx) {
         audioCtx.close().catch(() => {});
         audioCtx = null;
-        updateCtxDebug();
       }
 
       ['intro-audio', 'walking-audio', 'closing-audio'].forEach(function(id) {
