@@ -100,8 +100,8 @@ hide_header: true
     </div>
 
     <div class="services-content" style="max-width: 550px;">
-      <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
-      <p>Listen to the instructions, and try to follow them.</p>
+    <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
+    <p>Listen to the instructions, and try to follow them.</p>
     </div>
   </div>
 </div>
