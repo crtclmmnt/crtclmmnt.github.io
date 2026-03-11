@@ -1,0 +1,515 @@
+---
+layout: none
+title: DeepSee
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSee — The Critical Moment</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f5ede6;
+      color: #3d2e28;
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Screens ───────────────────────────────────────────────── */
+
+    .screen {
+      display: none;
+      width: 100%;
+      max-width: 420px;
+      padding: 2.5rem 2rem 3rem;
+      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    .screen.active {
+      display: flex;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Logo ──────────────────────────────────────────────────── */
+
+    .logo-wrap {
+      background: #1a1008;
+      border-radius: 6px;
+      padding: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-wrap img {
+      width: 120px;
+      height: auto;
+      display: block;
+    }
+
+    /* ── Typography ────────────────────────────────────────────── */
+
+    .app-name {
+      font-size: 1.9rem;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      color: #3d2e28;
+    }
+
+    .site-name {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9a7a6a;
+    }
+
+    .divider {
+      width: 36px;
+      height: 1px;
+      background: #9a7a6a;
+      opacity: 0.35;
+    }
+
+    .quote-block {
+      border-left: 2px solid #c4785a;
+      padding: 0 0 0 1rem;
+      text-align: left;
+    }
+
+    .quote-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: #3d2e28;
+      font-style: italic;
+    }
+
+    .quote-attr {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: #9a7a6a;
+      font-style: normal;
+      letter-spacing: 0.03em;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: #3d2e28;
+    }
+
+    p.body-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #9a7a6a;
+    }
+
+    .glyph {
+      font-size: 1.5rem;
+      color: #9a7a6a;
+      opacity: 0.65;
+    }
+
+    /* ── Duration buttons ──────────────────────────────────────── */
+
+    .duration-options {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .duration-btn {
+      background: none;
+      border: 1.5px solid #9a7a6a;
+      color: #3d2e28;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      padding: 0.6rem 1.35rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: border-color 0.18s, color 0.18s, background 0.18s;
+    }
+
+    .duration-btn:hover {
+      border-color: #c4785a;
+      color: #c4785a;
+    }
+
+    .duration-btn.selected {
+      background: #c4785a;
+      border-color: #c4785a;
+      color: #f5ede6;
+    }
+
+    /* ── Primary button ────────────────────────────────────────── */
+
+    .btn-primary {
+      background: #7a9e87;
+      border: none;
+      color: #f5ede6;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      padding: 0.8rem 2.4rem;
+      cursor: pointer;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover  { background: #3d2e28; }
+    .btn-primary:active { background: #2a1f1a; }
+
+    .btn-primary:disabled {
+      background: #c9b9ae;
+      cursor: default;
+    }
+
+    /* ── Progress ring ─────────────────────────────────────────── */
+
+    .ring-wrap {
+      position: relative;
+      width: 210px;
+      height: 210px;
+      flex-shrink: 0;
+    }
+
+    .ring-wrap svg {
+      display: block;
+      transform: rotate(-90deg);
+    }
+
+    .ring-bg { stroke: #e3d0c5; fill: none; }
+    .ring-fg { stroke: #7a9e87; fill: none; stroke-linecap: round; }
+
+    .ring-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .timer-display {
+      font-size: 3.5rem;
+      font-weight: normal;
+      color: #3d2e28;
+      letter-spacing: 0.03em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    .timer-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9a7a6a;
+    }
+
+    /* ── Closing screen ────────────────────────────────────────── */
+
+    .closing-note {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9a7a6a;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio placeholders — add src attributes when files are ready -->
+  <audio id="intro-audio"   preload="auto"></audio>
+  <audio id="closing-audio" preload="auto"></audio>
+
+  <!-- ── Screen 1: Landing ─────────────────────────────────────── -->
+  <div class="screen active" id="screen-landing">
+    <div class="logo-wrap">
+      <img src="/images/redmeditat.png" alt="DeepSee">
+    </div>
+    <div>
+      <div class="app-name">DeepSee</div>
+      <div class="site-name">The Critical Moment</div>
+    </div>
+    <div class="divider"></div>
+    <div class="quote-block">
+      <div class="quote-text" id="quote-text"></div>
+      <div class="quote-attr" id="quote-attr"></div>
+    </div>
+    <div class="divider"></div>
+    <div class="duration-options">
+      <button class="duration-btn" data-minutes="15">15 min</button>
+      <button class="duration-btn" data-minutes="20">20 min</button>
+      <button class="duration-btn" data-minutes="30">30 min</button>
+    </div>
+    <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
+  </div>
+
+  <!-- ── Screen 2: Intro ───────────────────────────────────────── -->
+  <div class="screen" id="screen-intro">
+    <div class="logo-wrap">
+      <img src="/images/redmeditat.png" alt="DeepSee">
+    </div>
+    <div class="glyph">◌</div>
+    <h2>Find your seat</h2>
+    <div class="divider"></div>
+    <p class="body-text">Take a moment to settle in.<br>Adjust your posture.<br>Let your breath slow.</p>
+    <button class="btn-primary" id="begin-sitting-btn">Begin Sitting</button>
+  </div>
+
+  <!-- ── Screen 3: Sitting ─────────────────────────────────────── -->
+  <div class="screen" id="screen-sitting">
+    <div class="site-name">DeepSee</div>
+    <div class="ring-wrap">
+      <svg width="210" height="210" viewBox="0 0 210 210">
+        <circle class="ring-bg" cx="105" cy="105" r="92" stroke-width="3"/>
+        <circle class="ring-fg" id="ring-fg" cx="105" cy="105" r="92" stroke-width="3"/>
+      </svg>
+      <div class="ring-center">
+        <div class="timer-display" id="timer-display">--:--</div>
+        <div class="timer-label">remaining</div>
+      </div>
+    </div>
+    <p class="body-text" id="sitting-note">Sitting quietly&hellip;</p>
+  </div>
+
+  <!-- ── Screen 4: Closing ─────────────────────────────────────── -->
+  <div class="screen" id="screen-closing">
+    <div class="logo-wrap">
+      <img src="/images/redmeditat.png" alt="DeepSee">
+    </div>
+    <div class="glyph">◎</div>
+    <h2>Gently return</h2>
+    <div class="divider"></div>
+    <p class="body-text">Let your awareness slowly expand.<br>Notice the room around you.<br>Bring this stillness with you.</p>
+    <div class="closing-note" id="closing-note">returning&hellip;</div>
+  </div>
+
+  <script>
+    // ── Bell configuration ────────────────────────────────────────
+    // To use an MP3 instead of synthesis, set BELL_SRC to your file path:
+    //   const BELL_SRC = '/audio/bell.mp3';
+    // Leave empty to use the synthesized bell.
+    const BELL_SRC = '';
+
+    // ── Quotes ────────────────────────────────────────────────────
+    const QUOTES = [
+      {
+        text: "If the world is to be healed through human efforts, I am convinced it will be by ordinary people, people whose love for this life is even greater than their fear.",
+        attr: "— Joanna Macy"
+      },
+      // Add more quotes here in the same format:
+      // { text: "Quote text.", attr: "— Author Name" },
+    ];
+
+    // ── State ─────────────────────────────────────────────────────
+    let selectedMinutes  = null;
+    let totalSeconds     = 0;
+    let remainingSeconds = 0;
+    let timerInterval    = null;
+    let audioCtx         = null;
+
+    const RADIUS       = 92;
+    const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+    // ── Screen management ─────────────────────────────────────────
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      const next = document.getElementById(id);
+      void next.offsetWidth; // force reflow so animation replays
+      next.classList.add('active');
+    }
+
+    function hasSrc(audioEl) {
+      return !!audioEl.getAttribute('src');
+    }
+
+    // ── Quotes ────────────────────────────────────────────────────
+    function showRandomQuote() {
+      const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+      document.getElementById('quote-text').textContent = '\u201c' + q.text + '\u201d';
+      document.getElementById('quote-attr').textContent = q.attr;
+    }
+
+    // ── Bell ──────────────────────────────────────────────────────
+    function getAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      return audioCtx;
+    }
+
+    function playBell() {
+      // ── MP3 path: swap BELL_SRC above to use an external file ──
+      if (BELL_SRC) {
+        const a = new Audio(BELL_SRC);
+        a.play().catch(e => console.warn('Bell playback error:', e));
+        return;
+      }
+
+      // ── Synthesis: singing-bowl harmonics ──────────────────────
+      try {
+        const ctx = getAudioCtx();
+        const now = ctx.currentTime;
+        const dur = 9;
+
+        const partials = [
+          { f: 220,  a: 1.00 },
+          { f: 440,  a: 0.45 },
+          { f: 590,  a: 0.20 }, // inharmonic partial
+          { f: 880,  a: 0.12 },
+          { f: 1320, a: 0.06 },
+        ];
+
+        partials.forEach(({ f, a }) => {
+          const osc  = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.type            = 'sine';
+          osc.frequency.value = f;
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(a * 0.32, now + 0.012);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+          osc.start(now);
+          osc.stop(now + dur);
+        });
+      } catch (e) {
+        console.warn('Bell synthesis error:', e);
+      }
+    }
+
+    // ── Landing → Intro ───────────────────────────────────────────
+    document.querySelectorAll('.duration-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedMinutes = parseInt(btn.dataset.minutes, 10);
+        document.getElementById('begin-intro-btn').disabled = false;
+      });
+    });
+
+    document.getElementById('begin-intro-btn').addEventListener('click', () => {
+      showScreen('screen-intro');
+      const intro = document.getElementById('intro-audio');
+      if (hasSrc(intro)) intro.play().catch(() => {});
+    });
+
+    // ── Intro → Sitting ───────────────────────────────────────────
+    document.getElementById('begin-sitting-btn').addEventListener('click', () => {
+      const intro = document.getElementById('intro-audio');
+      intro.pause();
+      intro.currentTime = 0;
+
+      showScreen('screen-sitting');
+      playBell();
+      startTimer();
+    });
+
+    // ── Timer ─────────────────────────────────────────────────────
+    function startTimer() {
+      totalSeconds     = selectedMinutes * 60;
+      remainingSeconds = totalSeconds;
+
+      const fg = document.getElementById('ring-fg');
+      fg.style.strokeDasharray  = CIRCUMFERENCE;
+      fg.style.strokeDashoffset = '0';
+      fg.style.transition       = 'none';
+
+      updateDisplay();
+
+      requestAnimationFrame(() => {
+        fg.style.transition = 'stroke-dashoffset 1s linear';
+        timerInterval = setInterval(tick, 1000);
+      });
+    }
+
+    function tick() {
+      remainingSeconds--;
+      updateDisplay();
+      if (remainingSeconds <= 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        onTimerEnd();
+      }
+    }
+
+    function updateDisplay() {
+      const m = Math.floor(remainingSeconds / 60);
+      const s = remainingSeconds % 60;
+      document.getElementById('timer-display').textContent =
+        String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+
+      const elapsed = totalSeconds - remainingSeconds;
+      const offset  = CIRCUMFERENCE * (elapsed / totalSeconds);
+      document.getElementById('ring-fg').style.strokeDashoffset = offset;
+    }
+
+    // ── Timer end → Closing ───────────────────────────────────────
+    function onTimerEnd() {
+      playBell();
+      document.getElementById('sitting-note').textContent = 'Time complete.';
+
+      setTimeout(() => {
+        showScreen('screen-closing');
+        beginClosingPhase();
+      }, 2200);
+    }
+
+    function beginClosingPhase() {
+      const closing = document.getElementById('closing-audio');
+
+      if (hasSrc(closing)) {
+        closing.play().catch(() => {});
+        // Return to landing when audio ends (with a brief grace pause)
+        closing.addEventListener('ended', () => {
+          setTimeout(returnToLanding, 1500);
+        }, { once: true });
+        // Safety fallback: if audio stalls, return after 3 minutes max
+        setTimeout(returnToLanding, 3 * 60 * 1000);
+      } else {
+        // No audio: linger for ~10 s then auto-return
+        setTimeout(returnToLanding, 10000);
+      }
+    }
+
+    // ── Return to landing ─────────────────────────────────────────
+    function returnToLanding() {
+      const closing = document.getElementById('closing-audio');
+      closing.pause();
+      closing.currentTime = 0;
+
+      if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+      selectedMinutes = null;
+
+      document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
+      document.getElementById('begin-intro-btn').disabled = true;
+      document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
+
+      showRandomQuote();
+      showScreen('screen-landing');
+    }
+
+    // ── Init ──────────────────────────────────────────────────────
+    showRandomQuote();
+  </script>
+</body>
+</html>
