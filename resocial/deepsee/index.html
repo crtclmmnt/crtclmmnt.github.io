@@ -9,48 +9,103 @@ title: DeepSee
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeepSee — The Critical Moment</title>
   <style>
+    @font-face {
+      font-family: 'ZTNature';
+      src: url('/fonts/ZTNature-Black.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'ZTNature';
+      src: url('/fonts/ZTNature-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Roboto';
+      src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Roboto';
+      src: url('/fonts/Roboto-Italic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Roboto';
+      src: url('/fonts/Roboto-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: #f5ede6;
       color: #3d2e28;
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding-top: 2.5rem;
     }
+
+    /* ── Back nav ──────────────────────────────────────────────── */
+
+    .back-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      z-index: 10;
+    }
+
+    .back-nav a {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.75rem;
+      color: #9a7a6a;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .back-nav a:hover { color: #3d2e28; }
 
     /* ── Screens ───────────────────────────────────────────────── */
 
     .screen {
       display: none;
       width: 100%;
-      max-width: 420px;
-      padding: 2.5rem 2rem 3rem;
+      max-width: 440px;
+      padding: 2rem 2rem 2.5rem;
       text-align: center;
       flex-direction: column;
       align-items: center;
-      gap: 1.6rem;
+      gap: 1.5rem;
     }
 
     .screen.active {
       display: flex;
-      animation: fadeUp 0.5s ease both;
+      animation: fadeUp 0.45s ease both;
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ── Logo ──────────────────────────────────────────────────── */
 
     .logo-wrap {
-      background: #1a1008;
-      border-radius: 6px;
-      padding: 1.1rem;
+      background: #000;
+      border-radius: 4px;
+      padding: 1rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -65,70 +120,79 @@ title: DeepSee
     /* ── Typography ────────────────────────────────────────────── */
 
     .app-name {
-      font-size: 1.9rem;
-      font-weight: normal;
-      letter-spacing: 0.04em;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: 0.06em;
       color: #3d2e28;
+      line-height: 1;
     }
 
     .site-name {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #9a7a6a;
+      margin-top: 0.3rem;
     }
 
     .divider {
-      width: 36px;
+      width: 32px;
       height: 1px;
-      background: #9a7a6a;
-      opacity: 0.35;
-    }
-
-    .quote-block {
-      border-left: 2px solid #c4785a;
-      padding: 0 0 0 1rem;
-      text-align: left;
-    }
-
-    .quote-text {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: #3d2e28;
-      font-style: italic;
-    }
-
-    .quote-attr {
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-      color: #9a7a6a;
-      font-style: normal;
-      letter-spacing: 0.03em;
+      background: #F5898D;
+      opacity: 0.6;
     }
 
     h2 {
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 900;
       font-size: 1.3rem;
-      font-weight: normal;
       color: #3d2e28;
     }
 
     p.body-text {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #9a7a6a;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: #6b5349;
     }
 
     .glyph {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #9a7a6a;
-      opacity: 0.65;
+      opacity: 0.6;
+    }
+
+    /* ── Quote ─────────────────────────────────────────────────── */
+
+    .quote-block {
+      border-left: 2px solid #F5898D;
+      padding: 0.1rem 0 0.1rem 1rem;
+      text-align: left;
+    }
+
+    .quote-text {
+      font-family: 'Roboto', sans-serif;
+      font-style: italic;
+      font-size: 0.87rem;
+      line-height: 1.8;
+      color: #3d2e28;
+    }
+
+    .quote-attr {
+      margin-top: 0.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.73rem;
+      color: #9a7a6a;
+      letter-spacing: 0.02em;
     }
 
     /* ── Duration buttons ──────────────────────────────────────── */
 
     .duration-options {
       display: flex;
-      gap: 0.8rem;
+      gap: 0.55rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -137,45 +201,110 @@ title: DeepSee
       background: none;
       border: 1.5px solid #9a7a6a;
       color: #3d2e28;
-      font-family: Georgia, serif;
-      font-size: 0.95rem;
-      padding: 0.6rem 1.35rem;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
       cursor: pointer;
       border-radius: 2px;
-      transition: border-color 0.18s, color 0.18s, background 0.18s;
+      letter-spacing: 0.04em;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
     }
 
     .duration-btn:hover {
-      border-color: #c4785a;
-      color: #c4785a;
+      border-color: #ac7022;
+      color: #ac7022;
     }
 
     .duration-btn.selected {
-      background: #c4785a;
-      border-color: #c4785a;
-      color: #f5ede6;
+      background: #FBB965;
+      border-color: #FBB965;
+      color: #3d2e28;
+    }
+
+    /* ── Walking toggle ────────────────────────────────────────── */
+
+    /* Fixed-height slot: always reserves space, layout never shifts */
+    .toggle-slot {
+      height: 2.2rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .walk-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .walk-toggle.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toggle-label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.8rem;
+      color: #6b5349;
+    }
+
+    .toggle-btns {
+      display: flex;
+      border: 1.5px solid #9a7a6a;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .toggle-opt {
+      background: none;
+      border: none;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.65rem;
+      cursor: pointer;
+      color: #9a7a6a;
+      letter-spacing: 0.06em;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toggle-opt + .toggle-opt {
+      border-left: 1.5px solid #9a7a6a;
+    }
+
+    .toggle-opt.selected {
+      background: #9DF4B0;
+      color: #377048;
     }
 
     /* ── Primary button ────────────────────────────────────────── */
 
     .btn-primary {
-      background: #7a9e87;
+      background: #9DF4B0;
       border: none;
-      color: #f5ede6;
-      font-family: Georgia, serif;
+      color: #377048;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 900;
       font-size: 0.95rem;
-      padding: 0.8rem 2.4rem;
+      padding: 0.8rem 2.5rem;
       cursor: pointer;
       border-radius: 2px;
-      letter-spacing: 0.06em;
-      transition: background 0.2s;
+      letter-spacing: 0.08em;
+      transition: background 0.2s, color 0.2s;
     }
 
-    .btn-primary:hover  { background: #3d2e28; }
-    .btn-primary:active { background: #2a1f1a; }
+    .btn-primary:hover  { background: #377048; color: #9DF4B0; }
+    .btn-primary:active { background: #2a5236; color: #9DF4B0; }
 
     .btn-primary:disabled {
-      background: #c9b9ae;
+      background: #d4c9c1;
+      color: #9a8a82;
       cursor: default;
     }
 
@@ -194,7 +323,12 @@ title: DeepSee
     }
 
     .ring-bg { stroke: #e3d0c5; fill: none; }
-    .ring-fg { stroke: #7a9e87; fill: none; stroke-linecap: round; }
+
+    .ring-fg {
+      stroke: #9DF4B0;
+      fill: none;
+      stroke-linecap: round;
+    }
 
     .ring-center {
       position: absolute;
@@ -207,8 +341,9 @@ title: DeepSee
     }
 
     .timer-display {
-      font-size: 3.5rem;
-      font-weight: normal;
+      font-family: 'ZTNature', sans-serif;
+      font-weight: 900;
+      font-size: 3.4rem;
       color: #3d2e28;
       letter-spacing: 0.03em;
       font-variant-numeric: tabular-nums;
@@ -216,27 +351,33 @@ title: DeepSee
     }
 
     .timer-label {
-      font-size: 0.68rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #9a7a6a;
     }
 
-    /* ── Closing screen ────────────────────────────────────────── */
+    /* ── Closing note ──────────────────────────────────────────── */
 
     .closing-note {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #9a7a6a;
-      opacity: 0.7;
     }
   </style>
 </head>
 <body>
 
+  <nav class="back-nav">
+    <a href="/resocial/">&#8592; Back to Resocial</a>
+  </nav>
+
   <!-- Audio placeholders — add src attributes when files are ready -->
   <audio id="intro-audio"   preload="auto"></audio>
+  <audio id="walking-audio" preload="auto" loop></audio>
   <audio id="closing-audio" preload="auto"></audio>
 
   <!-- ── Screen 1: Landing ─────────────────────────────────────── -->
@@ -250,14 +391,27 @@ title: DeepSee
     </div>
     <div class="divider"></div>
     <div class="quote-block">
-      <div class="quote-text" id="quote-text"></div>
-      <div class="quote-attr" id="quote-attr"></div>
+      <div class="quote-text">&ldquo;If the world is to be healed through human efforts, I am convinced it will be by ordinary people, people whose love for this life is even greater than their fear.&rdquo;</div>
+      <div class="quote-attr">&mdash; Joanna Macy</div>
     </div>
     <div class="divider"></div>
     <div class="duration-options">
+      <button class="duration-btn" data-minutes="10">10 min</button>
       <button class="duration-btn" data-minutes="15">15 min</button>
       <button class="duration-btn" data-minutes="20">20 min</button>
       <button class="duration-btn" data-minutes="30">30 min</button>
+      <button class="duration-btn" data-minutes="40">40 min</button>
+      <button class="duration-btn" data-minutes="50">50 min</button>
+    </div>
+    <!-- Fixed-height slot: always reserves space so layout never shifts -->
+    <div class="toggle-slot">
+      <div class="walk-toggle" id="walk-toggle">
+        <span class="toggle-label">Include walking meditation?</span>
+        <div class="toggle-btns">
+          <button class="toggle-opt selected" data-walk="yes">Y</button>
+          <button class="toggle-opt" data-walk="no">N</button>
+        </div>
+      </div>
     </div>
     <button class="btn-primary" id="begin-intro-btn" disabled>Begin</button>
   </div>
@@ -267,7 +421,7 @@ title: DeepSee
     <div class="logo-wrap">
       <img src="/images/redmeditat.png" alt="DeepSee">
     </div>
-    <div class="glyph">◌</div>
+    <div class="glyph">&#9676;</div>
     <h2>Find your seat</h2>
     <div class="divider"></div>
     <p class="body-text">Take a moment to settle in.<br>Adjust your posture.<br>Let your breath slow.</p>
@@ -295,38 +449,35 @@ title: DeepSee
     <div class="logo-wrap">
       <img src="/images/redmeditat.png" alt="DeepSee">
     </div>
-    <div class="glyph">◎</div>
+    <div class="glyph">&#9678;</div>
     <h2>Gently return</h2>
     <div class="divider"></div>
     <p class="body-text">Let your awareness slowly expand.<br>Notice the room around you.<br>Bring this stillness with you.</p>
-    <div class="closing-note" id="closing-note">returning&hellip;</div>
+    <div class="closing-note">returning&hellip;</div>
   </div>
 
   <script>
-    // ── Bell configuration ────────────────────────────────────────
-    // To use an MP3 instead of synthesis, set BELL_SRC to your file path:
-    //   const BELL_SRC = '/audio/bell.mp3';
-    // Leave empty to use the synthesized bell.
-    const BELL_SRC = '';
-
-    // ── Quotes ────────────────────────────────────────────────────
-    const QUOTES = [
-      {
-        text: "If the world is to be healed through human efforts, I am convinced it will be by ordinary people, people whose love for this life is even greater than their fear.",
-        attr: "— Joanna Macy"
-      },
-      // Add more quotes here in the same format:
-      // { text: "Quote text.", attr: "— Author Name" },
-    ];
+    // ── Audio source config ───────────────────────────────────────
+    // To use MP3s instead of synthesis, set these paths:
+    const BELL_SRC      = ''; // e.g. '/audio/bell.mp3'
+    const WOODBLOCK_SRC = ''; // e.g. '/audio/woodblock.mp3'
 
     // ── State ─────────────────────────────────────────────────────
-    let selectedMinutes  = null;
-    let totalSeconds     = 0;
-    let remainingSeconds = 0;
-    let timerInterval    = null;
-    let audioCtx         = null;
+    let selectedMinutes    = null;
+    let includeWalking     = true;   // default Y
+    let totalSeconds       = 0;
+    let remainingSeconds   = 0;
+    let timerInterval      = null;
+    let audioCtx           = null;
+    let walkingPhaseActive = false;
+    let closingActive      = false;
 
-    const RADIUS       = 92;
+    // Walking phase fires at these elapsed-second marks
+    const WALK_START_S  = 20 * 60;
+    const WALK_END_S    = 30 * 60;
+    const WALK_SESSIONS = new Set([40, 50]);
+
+    const RADIUS        = 92;
     const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
     // ── Screen management ─────────────────────────────────────────
@@ -337,76 +488,92 @@ title: DeepSee
       next.classList.add('active');
     }
 
-    function hasSrc(audioEl) {
-      return !!audioEl.getAttribute('src');
-    }
+    function hasSrc(el) { return !!el.getAttribute('src'); }
 
-    // ── Quotes ────────────────────────────────────────────────────
-    function showRandomQuote() {
-      const q = QUOTES[Math.floor(Math.random() * QUOTES.length)];
-      document.getElementById('quote-text').textContent = '\u201c' + q.text + '\u201d';
-      document.getElementById('quote-attr').textContent = q.attr;
-    }
-
-    // ── Bell ──────────────────────────────────────────────────────
+    // ── Audio context ─────────────────────────────────────────────
     function getAudioCtx() {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       if (audioCtx.state === 'suspended') audioCtx.resume();
       return audioCtx;
     }
 
+    // ── Bell ──────────────────────────────────────────────────────
+    // To swap for an MP3: set BELL_SRC = '/path/to/bell.mp3' above
     function playBell() {
-      // ── MP3 path: swap BELL_SRC above to use an external file ──
-      if (BELL_SRC) {
-        const a = new Audio(BELL_SRC);
-        a.play().catch(e => console.warn('Bell playback error:', e));
-        return;
-      }
-
-      // ── Synthesis: singing-bowl harmonics ──────────────────────
+      if (BELL_SRC) { new Audio(BELL_SRC).play().catch(() => {}); return; }
       try {
         const ctx = getAudioCtx();
         const now = ctx.currentTime;
         const dur = 9;
-
-        const partials = [
+        // Singing-bowl harmonics: fundamental + inharmonic partials
+        [
           { f: 220,  a: 1.00 },
           { f: 440,  a: 0.45 },
-          { f: 590,  a: 0.20 }, // inharmonic partial
+          { f: 590,  a: 0.20 },
           { f: 880,  a: 0.12 },
           { f: 1320, a: 0.06 },
-        ];
-
-        partials.forEach(({ f, a }) => {
+        ].forEach(({ f, a }) => {
           const osc  = ctx.createOscillator();
           const gain = ctx.createGain();
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-          osc.type            = 'sine';
-          osc.frequency.value = f;
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.type = 'sine'; osc.frequency.value = f;
           gain.gain.setValueAtTime(0, now);
           gain.gain.linearRampToValueAtTime(a * 0.32, now + 0.012);
           gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-          osc.start(now);
-          osc.stop(now + dur);
+          osc.start(now); osc.stop(now + dur);
         });
-      } catch (e) {
-        console.warn('Bell synthesis error:', e);
-      }
+      } catch (e) { console.warn('Bell error:', e); }
     }
 
-    // ── Landing → Intro ───────────────────────────────────────────
+    // ── Woodblock ─────────────────────────────────────────────────
+    // To swap for an MP3: set WOODBLOCK_SRC = '/path/to/woodblock.mp3' above
+    function playWoodblock() {
+      if (WOODBLOCK_SRC) { new Audio(WOODBLOCK_SRC).play().catch(() => {}); return; }
+      try {
+        const ctx = getAudioCtx();
+        // Two strikes, tok-tok
+        [0, 0.28].forEach(delay => {
+          const now  = ctx.currentTime + delay;
+          const osc  = ctx.createOscillator();
+          const filt = ctx.createBiquadFilter();
+          const gain = ctx.createGain();
+          osc.connect(filt); filt.connect(gain); gain.connect(ctx.destination);
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(900, now);
+          osc.frequency.exponentialRampToValueAtTime(500, now + 0.08);
+          filt.type = 'bandpass'; filt.frequency.value = 800; filt.Q.value = 3;
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(0.55, now + 0.003);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+          osc.start(now); osc.stop(now + 0.22);
+        });
+      } catch (e) { console.warn('Woodblock error:', e); }
+    }
+
+    // ── Duration selection ────────────────────────────────────────
+    const walkToggle = document.getElementById('walk-toggle');
+
     document.querySelectorAll('.duration-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         selectedMinutes = parseInt(btn.dataset.minutes, 10);
         document.getElementById('begin-intro-btn').disabled = false;
+        // Show walk toggle only for 40/50 min
+        walkToggle.classList.toggle('visible', WALK_SESSIONS.has(selectedMinutes));
       });
     });
 
+    // Walking Y / N
+    document.querySelectorAll('.toggle-opt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.toggle-opt').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        includeWalking = opt.dataset.walk === 'yes';
+      });
+    });
+
+    // ── Landing → Intro ───────────────────────────────────────────
     document.getElementById('begin-intro-btn').addEventListener('click', () => {
       showScreen('screen-intro');
       const intro = document.getElementById('intro-audio');
@@ -416,9 +583,7 @@ title: DeepSee
     // ── Intro → Sitting ───────────────────────────────────────────
     document.getElementById('begin-sitting-btn').addEventListener('click', () => {
       const intro = document.getElementById('intro-audio');
-      intro.pause();
-      intro.currentTime = 0;
-
+      intro.pause(); intro.currentTime = 0;
       showScreen('screen-sitting');
       playBell();
       startTimer();
@@ -426,25 +591,35 @@ title: DeepSee
 
     // ── Timer ─────────────────────────────────────────────────────
     function startTimer() {
-      totalSeconds     = selectedMinutes * 60;
-      remainingSeconds = totalSeconds;
+      totalSeconds       = selectedMinutes * 60;
+      remainingSeconds   = totalSeconds;
+      walkingPhaseActive = false;
 
       const fg = document.getElementById('ring-fg');
+      fg.style.stroke           = '#9DF4B0';
+      fg.style.transition       = 'none';
       fg.style.strokeDasharray  = CIRCUMFERENCE;
       fg.style.strokeDashoffset = '0';
-      fg.style.transition       = 'none';
 
       updateDisplay();
 
       requestAnimationFrame(() => {
-        fg.style.transition = 'stroke-dashoffset 1s linear';
+        fg.style.transition = 'stroke-dashoffset 1s linear, stroke 0.6s ease';
         timerInterval = setInterval(tick, 1000);
       });
     }
 
     function tick() {
       remainingSeconds--;
+      const elapsed = totalSeconds - remainingSeconds;
       updateDisplay();
+
+      // Walking phase cues (40 and 50 min only, when enabled)
+      if (includeWalking && WALK_SESSIONS.has(selectedMinutes)) {
+        if (elapsed === WALK_START_S) startWalkingPhase();
+        else if (elapsed === WALK_END_S) endWalkingPhase();
+      }
+
       if (remainingSeconds <= 0) {
         clearInterval(timerInterval);
         timerInterval = null;
@@ -457,17 +632,39 @@ title: DeepSee
       const s = remainingSeconds % 60;
       document.getElementById('timer-display').textContent =
         String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-
-      const elapsed = totalSeconds - remainingSeconds;
-      const offset  = CIRCUMFERENCE * (elapsed / totalSeconds);
+      const offset = CIRCUMFERENCE * ((totalSeconds - remainingSeconds) / totalSeconds);
       document.getElementById('ring-fg').style.strokeDashoffset = offset;
+    }
+
+    // ── Walking phase ─────────────────────────────────────────────
+    function startWalkingPhase() {
+      walkingPhaseActive = true;
+      playWoodblock();
+      document.getElementById('sitting-note').textContent = 'Walking meditation\u2026';
+      document.getElementById('ring-fg').style.stroke = '#FBB965';
+      const walk = document.getElementById('walking-audio');
+      if (hasSrc(walk)) walk.play().catch(() => {});
+    }
+
+    function endWalkingPhase() {
+      walkingPhaseActive = false;
+      playWoodblock();
+      document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
+      document.getElementById('ring-fg').style.stroke = '#9DF4B0';
+      const walk = document.getElementById('walking-audio');
+      walk.pause(); walk.currentTime = 0;
     }
 
     // ── Timer end → Closing ───────────────────────────────────────
     function onTimerEnd() {
+      // Clean up any active walking audio
+      if (walkingPhaseActive) {
+        const walk = document.getElementById('walking-audio');
+        walk.pause(); walk.currentTime = 0;
+        walkingPhaseActive = false;
+      }
       playBell();
       document.getElementById('sitting-note').textContent = 'Time complete.';
-
       setTimeout(() => {
         showScreen('screen-closing');
         beginClosingPhase();
@@ -475,41 +672,46 @@ title: DeepSee
     }
 
     function beginClosingPhase() {
+      closingActive = true;
       const closing = document.getElementById('closing-audio');
-
       if (hasSrc(closing)) {
         closing.play().catch(() => {});
-        // Return to landing when audio ends (with a brief grace pause)
         closing.addEventListener('ended', () => {
-          setTimeout(returnToLanding, 1500);
+          if (closingActive) setTimeout(returnToLanding, 1500);
         }, { once: true });
-        // Safety fallback: if audio stalls, return after 3 minutes max
-        setTimeout(returnToLanding, 3 * 60 * 1000);
+        // Safety cap: auto-return after 3 min if audio stalls
+        setTimeout(() => { if (closingActive) returnToLanding(); }, 3 * 60 * 1000);
       } else {
-        // No audio: linger for ~10 s then auto-return
-        setTimeout(returnToLanding, 10000);
+        setTimeout(() => { if (closingActive) returnToLanding(); }, 10000);
       }
     }
 
     // ── Return to landing ─────────────────────────────────────────
     function returnToLanding() {
-      const closing = document.getElementById('closing-audio');
-      closing.pause();
-      closing.currentTime = 0;
+      closingActive = false;
+
+      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(id => {
+        const el = document.getElementById(id);
+        el.pause(); el.currentTime = 0;
+      });
 
       if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
-      selectedMinutes = null;
+
+      selectedMinutes    = null;
+      includeWalking     = true;
+      walkingPhaseActive = false;
 
       document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
+      document.querySelectorAll('.toggle-opt').forEach(o => {
+        o.classList.toggle('selected', o.dataset.walk === 'yes');
+      });
       document.getElementById('begin-intro-btn').disabled = true;
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
+      document.getElementById('ring-fg').style.stroke = '#9DF4B0';
+      walkToggle.classList.remove('visible');
 
-      showRandomQuote();
       showScreen('screen-landing');
     }
-
-    // ── Init ──────────────────────────────────────────────────────
-    showRandomQuote();
   </script>
 </body>
 </html>

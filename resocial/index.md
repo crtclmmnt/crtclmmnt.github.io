@@ -10,9 +10,9 @@ hide_header: true
   <img src="/images/resocialtransparent.png" style="max-width: 120px;">
 </div>
 
-<h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial Media</h1>
+<h1 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px; text-align: center;">Resocial</h1>
 <hr class="short" style="margin: 0.5em auto;">
-<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial media, a collection of social media apps that help you be social in the real world.</p>
+<p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial, where you can find apps that resocialize you. Remember the world?</p>
 
 <br>
 
