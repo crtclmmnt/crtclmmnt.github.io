@@ -284,7 +284,29 @@ function lockInDays(pool, selectedDays) {
   const aw = computeAgreedWindow(pool);
   const agreedWindow = { earliest: aw.earliest, latest: aw.latest };
   const schedule = buildSchedule(pool.members, selectedDays, agreedWindow, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
+
+  // Force-assign members who ended up with no cook-eligible days
+  if (schedule.length > 0) {
+    const alreadyScheduled = new Set(schedule.flatMap(e => e.cooks));
+    const unscheduled = pool.members.filter(m => !alreadyScheduled.has(m.name));
+    for (const m of unscheduled) {
+      const target = schedule.reduce((min, e) => e.cooks.length < min.cooks.length ? e : min, schedule[0]);
+      target.cooks = [...target.cooks, m.name];
+      target.forceAssigned = [...(target.forceAssigned || []), m.name];
+    }
+  }
+
   return { ...pool, agreedDays: selectedDays, agreedWindow, schedule, status: 'scheduled' };
+}
+
+// Returns members who have zero cook-eligible days given a set of locked-in days
+function findIneligibleMembers(members, selectedDays) {
+  return members
+    .filter(m => !selectedDays.some(d => m.dayVotes && m.dayVotes[d]))
+    .map(m => ({
+      name: m.name,
+      availDays: ALL_WEEK.filter(d => m.dayVotes && m.dayVotes[d]),
+    }));
 }
 
 // ─── SHARED UI ────────────────────────────────────────────────────────────────
@@ -800,6 +822,77 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   );
 }
 
+// ─── DAY REVOTE ───────────────────────────────────────────────────────────────
+
+function DayRevoteVoting({ pool, myName, onUpdate }) {
+  const me = pool.members.find(m => m.name === myName);
+  const isCreator = me?.isCreator;
+  const revoteDays = pool.dayRevoteSettings?.days || [];
+  const allVoted = pool.members.every(m => m.dayRevoteVoted);
+  const votedCount = pool.members.filter(m => m.dayRevoteVoted).length;
+
+  const [myVotes, setMyVotes] = useState(() => {
+    if (me?.dayRevoteVotes) return me.dayRevoteVotes;
+    const v = {};
+    revoteDays.forEach(d => { v[d] = true; });
+    return v;
+  });
+
+  const handleSubmitVote = () => {
+    const updated = {
+      ...pool,
+      members: pool.members.map(m => m.name !== myName ? m : {
+        ...m, dayRevoteVotes: myVotes, dayRevoteVoted: true,
+      }),
+    };
+    onUpdate(updated);
+  };
+
+  const handleFinalizeRevote = () => {
+    const updatedMembers = pool.members.map(m => {
+      const merged = { ...(m.dayVotes || {}) };
+      for (const d of revoteDays) merged[d] = !!(m.dayRevoteVotes?.[d]);
+      return { ...m, dayVotes: merged, dayRevoteVotes: null, dayRevoteVoted: false };
+    });
+    onUpdate({ ...pool, members: updatedMembers, dayRevoteSettings: null, status: 'open' });
+  };
+
+  if (!me?.dayRevoteVoted) {
+    return (
+      <Card style={{ border:`2px solid ${C.peach}` }}>
+        <SLabel style={{ marginBottom:'8px' }}>Round 2 — update your availability</SLabel>
+        <div style={{ fontSize:'14px', color:C.gray, marginBottom:'16px' }}>
+          The host opened a second round for more days. Check off which ones work for you.
+        </div>
+        <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'16px' }}>
+          {revoteDays.map(d => (
+            <Chip key={d} label={d} active={!!myVotes[d]}
+              onClick={() => setMyVotes(prev => ({ ...prev, [d]: !prev[d] }))} />
+          ))}
+        </div>
+        <Btn onClick={handleSubmitVote} variant="success">Submit availability</Btn>
+      </Card>
+    );
+  }
+
+  return (
+    <Card>
+      <SLabel style={{ marginBottom:'8px' }}>Round 2 in progress</SLabel>
+      <div style={{ fontSize:'14px', color:C.gray, marginBottom: isCreator && allVoted ? '16px' : '0' }}>
+        {votedCount} of {pool.members.length} member{pool.members.length !== 1 ? 's' : ''} have responded
+      </div>
+      {isCreator && !allVoted && (
+        <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic', marginTop:'8px' }}>
+          Waiting for everyone to respond before you can finalize.
+        </div>
+      )}
+      {isCreator && allVoted && (
+        <Btn onClick={handleFinalizeRevote} variant="dark">Finalize round 2 →</Btn>
+      )}
+    </Card>
+  );
+}
+
 // ─── TABLE TAB ────────────────────────────────────────────────────────────────
 
 function VoteTally({ pool }) {
@@ -1169,14 +1262,47 @@ function TableTab({ pool, myName, onUpdate }) {
   const [error, setError] = useState('');
   const [editingCooksPer, setEditingCooksPer] = useState(false);
   const [pendingCooksPer, setPendingCooksPer] = useState(pool.settings.cooksPer);
+  const [showRevoteSetup, setShowRevoteSetup] = useState(false);
+  const [ineligibleInfo, setIneligibleInfo] = useState(null);
+  const [revoteDays, setRevoteDays] = useState([]);
+  const [showUndoConfirm, setShowUndoConfirm] = useState(false);
 
   const toggleLockDay = d => setSelectedDays(prev => prev.includes(d) ? prev.filter(x=>x!==d) : [...prev, d]);
 
   const handleLockIn = () => {
     if (selectedDays.length === 0) return setError('Select at least one day to lock in.');
     setError('');
+    const ineligible = findIneligibleMembers(pool.members, selectedDays);
+    if (ineligible.length > 0) {
+      setIneligibleInfo(ineligible);
+      setRevoteDays([]);
+      setShowRevoteSetup(true);
+      return;
+    }
     const updated = lockInDays(pool, selectedDays);
     onUpdate(updated);
+  };
+
+  const handleStartDayRevote = () => {
+    if (revoteDays.length === 0) return setError('Select at least one day for round 2.');
+    setError('');
+    const resetMembers = pool.members.map(m => ({
+      ...m, dayRevoteVotes: null, dayRevoteVoted: false,
+    }));
+    onUpdate({ ...pool, members: resetMembers, dayRevoteSettings: { days: revoteDays }, status: 'day-revote' });
+    setShowRevoteSetup(false);
+  };
+
+  const handleUndoSchedule = () => {
+    const resetMembers = pool.members.map(m => ({
+      ...m, dayRevoteVotes: null, dayRevoteVoted: false,
+    }));
+    onUpdate({
+      ...pool, members: resetMembers, status: 'open',
+      agreedDays: null, agreedWindow: null, schedule: null,
+      consensusReport: null, creatorDecisions: {}, dayRevoteSettings: null,
+    });
+    setShowUndoConfirm(false);
   };
 
   const handleFinalize = (decisions, runoffProposal) => {
@@ -1299,10 +1425,48 @@ function TableTab({ pool, myName, onUpdate }) {
               )}
               <div style={{ marginTop:'16px' }}>
                 <ErrMsg msg={error} />
-                <Btn onClick={handleLockIn} disabled={selectedDays.length===0} variant="dark">
-                  Lock in days →
-                </Btn>
+                {!showRevoteSetup && (
+                  <Btn onClick={handleLockIn} disabled={selectedDays.length===0} variant="dark">
+                    Lock in days →
+                  </Btn>
+                )}
               </div>
+
+              {/* Revote setup — shown when ineligible members are detected */}
+              {showRevoteSetup && ineligibleInfo && (
+                <div style={{ marginTop:'16px', padding:'14px', background:'#fff9f0',
+                  border:`2px solid ${C.peach}`, borderRadius:'12px' }}>
+                  <div style={{ fontWeight:'600', fontSize:'15px', color:C.darkGray, marginBottom:'10px' }}>
+                    Some members can't cook on your selected days:
+                  </div>
+                  {ineligibleInfo.map(({ name, availDays }) => (
+                    <div key={name} style={{ fontSize:'13px', color:C.darkGray, marginBottom:'6px' }}>
+                      <strong>{name}</strong> is available on:{' '}
+                      {availDays.length > 0
+                        ? availDays.join(', ')
+                        : <span style={{ color:C.gray, fontStyle:'italic' }}>no days marked</span>}
+                    </div>
+                  ))}
+                  <div style={{ fontSize:'13px', color:C.gray, margin:'12px 0 8px' }}>
+                    Pick days to include in a second round of availability voting:
+                  </div>
+                  <div style={{ display:'flex', gap:'8px', flexWrap:'wrap', marginBottom:'12px' }}>
+                    {ALL_WEEK.map(d => (
+                      <Chip key={d} label={d} active={revoteDays.includes(d)}
+                        onClick={() => setRevoteDays(prev =>
+                          prev.includes(d) ? prev.filter(x => x !== d) : [...prev, d]
+                        )} />
+                    ))}
+                  </div>
+                  <ErrMsg msg={error} />
+                  <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+                    <Btn onClick={handleStartDayRevote} disabled={revoteDays.length===0} variant="dark">
+                      Start round 2 →
+                    </Btn>
+                    <Btn onClick={() => { setShowRevoteSetup(false); setError(''); }} variant="muted">Cancel</Btn>
+                  </div>
+                </div>
+              )}
             </Card>
           ) : (
             <div style={{ padding:'14px 16px', background:C.lightGray, borderRadius:'12px',
@@ -1323,12 +1487,40 @@ function TableTab({ pool, myName, onUpdate }) {
         <RunoffVoting pool={pool} myName={myName} onUpdate={onUpdate} />
       )}
 
+      {/* Day revote */}
+      {pool.status === 'day-revote' && (
+        <DayRevoteVoting pool={pool} myName={myName} onUpdate={onUpdate} />
+      )}
+
       {/* Scheduled */}
       {pool.status === 'scheduled' && (
-        <div style={{ padding:'16px 20px', background:C.mint, borderRadius:'12px',
-          color:C.darkMint, fontWeight:'600', textAlign:'center', fontSize:'16px' }}>
-          Everyone's in. Check the Schedule tab to see who's cooking.
-        </div>
+        <>
+          <div style={{ padding:'16px 20px', background:C.mint, borderRadius:'12px',
+            color:C.darkMint, fontWeight:'600', textAlign:'center', fontSize:'16px',
+            marginBottom: isCreator ? '12px' : '0' }}>
+            Everyone's in. Check the Schedule tab to see who's cooking.
+          </div>
+          {isCreator && !showUndoConfirm && (
+            <div style={{ textAlign:'center' }}>
+              <button onClick={() => setShowUndoConfirm(true)} style={{
+                background:'none', border:'none', color:C.gray, fontSize:'13px',
+                cursor:'pointer', fontFamily:"'Roboto',sans-serif", textDecoration:'underline',
+              }}>Undo schedule</button>
+            </div>
+          )}
+          {isCreator && showUndoConfirm && (
+            <Card style={{ border:`2px solid ${C.rose}` }}>
+              <div style={{ fontSize:'14px', color:C.darkGray, marginBottom:'14px', lineHeight:1.5 }}>
+                This will reset the table back to the voting stage. The schedule will be cleared
+                and members will need to re-vote. Are you sure?
+              </div>
+              <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+                <Btn onClick={handleUndoSchedule} variant="danger">Yes, undo</Btn>
+                <Btn onClick={() => setShowUndoConfirm(false)} variant="muted">Cancel</Btn>
+              </div>
+            </Card>
+          )}
+        </>
       )}
     </div>
   );
@@ -1588,7 +1780,7 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
   );
 }
 
-function buildICS(pool) {
+function buildICS(pool, myName) {
   const MO = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
 
   function parseSlot(slot) {
@@ -1629,7 +1821,9 @@ function buildICS(pool) {
   const now = new Date();
   const stamp = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}T${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}00Z`;
 
-  const events = pool.schedule.map((entry, i) => {
+  const events = pool.schedule
+    .filter(entry => !(entry.optedOut || []).includes(myName))
+    .map((entry, i) => {
     const startSlot = entry.meal?.startTime || entry.agreedWindow.earliest;
     const dtstart = toICSDate(entry.date, startSlot);
     const dtend   = toICSDateEnd(entry.date, startSlot);
@@ -1670,7 +1864,7 @@ function ScheduleTab({ pool, myName, onUpdate }) {
   const [postingIdx, setPostingIdx] = useState(null);
 
   const handleDownloadICS = () => {
-    const ics = buildICS(pool);
+    const ics = buildICS(pool, myName);
     const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -1760,9 +1954,16 @@ function ScheduleTab({ pool, myName, onUpdate }) {
             </div>
 
             {/* Cook names */}
-            <div style={{ marginBottom:'10px', fontSize:'15px' }}>
+            <div style={{ marginBottom: (entry.forceAssigned||[]).length > 0 ? '6px' : '10px', fontSize:'15px' }}>
               <strong>Cook{entry.cooks.length>1?'s':''}:</strong> {entry.cooks.join(', ')}
             </div>
+            {(entry.forceAssigned || []).length > 0 && (
+              <div style={{ fontSize:'12px', color:C.darkPeach, background:'#fff8ee',
+                border:`1px solid ${C.peach}`, borderRadius:'8px', padding:'6px 10px',
+                marginBottom:'10px', lineHeight:1.5 }}>
+                Assigned outside availability: {entry.forceAssigned.join(', ')} — please confirm with your group.
+              </div>
+            )}
 
             {/* Posted meal details */}
             {hasMeal && (
@@ -1895,6 +2096,8 @@ function RoomScreen({ session, onLeave }) {
     ? 'When everyone has joined, select which days work and lock in the schedule.'
     : pool.status === 'open' && !isCreator
     ? "You're all set! Waiting for the host to lock in the dinner days."
+    : pool.status === 'day-revote'
+    ? 'A second round of availability voting is in progress. Check the Table tab.'
     : pool.status === 'scheduled' && !allMealsPosted
     ? 'Check the Schedule tab — cooks can post their meal details for each dinner night.'
     : pool.status === 'scheduled' && allMealsPosted
