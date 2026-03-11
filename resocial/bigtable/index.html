@@ -54,6 +54,7 @@ const { useState, useEffect } = React;
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const ALL_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const DIET_PRESETS = ['Vegetarian','Vegan','Gluten-free','Nut-free','Dairy-free','Halal','Kosher','Alcohol-free'];
 const WORDS = ['SAGE','FERN','REED','CLAY','PINE','MOSS','WREN','DOVE','DUSK','DAWN',
                'TIDE','RAIN','MIST','IRIS','LARK','BRINE','ROUX','BROTH','CRESS','THYME'];
@@ -1166,6 +1167,8 @@ function TableTab({ pool, myName, onUpdate }) {
   const isCreator = me?.isCreator;
   const [selectedDays, setSelectedDays] = useState([]);
   const [error, setError] = useState('');
+  const [editingCooksPer, setEditingCooksPer] = useState(false);
+  const [pendingCooksPer, setPendingCooksPer] = useState(pool.settings.cooksPer);
 
   const toggleLockDay = d => setSelectedDays(prev => prev.includes(d) ? prev.filter(x=>x!==d) : [...prev, d]);
 
@@ -1181,13 +1184,27 @@ function TableTab({ pool, myName, onUpdate }) {
     onUpdate(updated);
   };
 
+  const handleSaveCooksPer = () => {
+    const max = pool.settings.maxParticipants;
+    if (max && max % pendingCooksPer !== 0) return;
+    const updated = { ...pool, settings: { ...pool.settings, cooksPer: pendingCooksPer } };
+    onUpdate(updated);
+    setEditingCooksPer(false);
+  };
+
   const { settings } = pool;
-  const dayAvailability = DAYS.map(day => ({
+  const dayAvailability = ALL_WEEK.map(day => ({
     day,
     count: pool.members.filter(m => m.dayVotes && m.dayVotes[day]).length,
     total: pool.members.length,
   }));
   const agreedWin = pool.status === 'open' ? computeAgreedWindow(pool) : null;
+  const displayWindow = pool.agreedWindow || computeAgreedWindow(pool);
+  const cooksPerValid = !settings.maxParticipants || settings.maxParticipants % pendingCooksPer === 0;
+  const stepperBtnStyle = {
+    width:'36px', height:'36px', borderRadius:'50%', border:`2px solid ${C.lightGray}`,
+    background:C.white, fontSize:'22px', cursor:'pointer', color:C.darkGray,
+  };
 
   return (
     <div>
@@ -1198,17 +1215,56 @@ function TableTab({ pool, myName, onUpdate }) {
           <span style={{ fontFamily:'monospace', fontSize:'14px', color:C.gray, letterSpacing:'1px' }}>{pool.code}</span>
         </div>
         <Divider />
-        <div style={{ display:'flex', gap:'16px', flexWrap:'wrap', fontSize:'14px', color:C.gray }}>
-          {pool.status !== 'open' && (
-            <span>Days: <strong style={{ color:C.darkGray }}>{(pool.agreedDays || settings.days).join(', ')}</strong></span>
+
+        {/* Cooks/night */}
+        <div style={{ marginBottom:'8px', display:'flex', alignItems:'center', gap:'12px', flexWrap:'wrap' }}>
+          <span style={{ fontSize:'16px', color:C.darkGray }}>
+            Cooks/night: <strong style={{ fontSize:'22px', fontFamily:"'ZTNature',Helvetica,sans-serif", color:C.darkerGray }}>{settings.cooksPer}</strong>
+          </span>
+          {isCreator && pool.status === 'open' && !editingCooksPer && (
+            <button onClick={() => { setPendingCooksPer(settings.cooksPer); setEditingCooksPer(true); }} style={{
+              background:'none', border:`1.5px solid ${C.gray}`, borderRadius:'12px',
+              padding:'2px 10px', fontSize:'12px', color:C.gray, cursor:'pointer',
+              fontFamily:"'Roboto',sans-serif",
+            }}>Edit</button>
           )}
-          <span>Window: <strong style={{ color:C.darkGray }}>{settings.proposedWindow.earliest} – {settings.proposedWindow.latest}</strong></span>
-          <span>Cooks/night: <strong style={{ color:C.darkGray }}>{settings.cooksPer}</strong></span>
-          {settings.maxParticipants && <span>Max: <strong style={{ color:C.darkGray }}>{settings.maxParticipants}</strong></span>}
         </div>
-        <div style={{ marginTop:'10px', fontSize:'14px', color:C.gray }}>
-          {pool.members.length} member{pool.members.length!==1?'s':''}
-          {settings.maxParticipants && ` · ${settings.maxParticipants - pool.members.length} spots left`}
+
+        {editingCooksPer && (
+          <div style={{ marginBottom:'12px', padding:'12px', background:'#f7f3ee', borderRadius:'10px' }}>
+            {settings.maxParticipants && (
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'8px' }}>
+                Must divide evenly into cap of {settings.maxParticipants}.
+                Valid: {[1,2,3,4].filter(n => settings.maxParticipants % n === 0).join(', ')}
+              </div>
+            )}
+            <div style={{ display:'flex', alignItems:'center', gap:'16px', marginBottom:'10px' }}>
+              <button onClick={() => setPendingCooksPer(p => Math.max(1, p-1))} style={stepperBtnStyle}>−</button>
+              <span style={{ fontSize:'26px', fontFamily:"'ZTNature',Helvetica,sans-serif",
+                minWidth:'28px', textAlign:'center', color:C.darkerGray }}>{pendingCooksPer}</span>
+              <button onClick={() => setPendingCooksPer(p => Math.min(4, p+1))} style={stepperBtnStyle}>+</button>
+            </div>
+            {!cooksPerValid && (
+              <div style={{ fontSize:'13px', color:C.darkRose, marginBottom:'8px' }}>
+                {pendingCooksPer} doesn't divide evenly into {settings.maxParticipants}.
+              </div>
+            )}
+            <div style={{ display:'flex', gap:'8px' }}>
+              <Btn onClick={handleSaveCooksPer} disabled={!cooksPerValid} style={{ fontSize:'14px', padding:'8px 18px' }}>Save</Btn>
+              <Btn onClick={() => setEditingCooksPer(false)} variant="muted" style={{ fontSize:'14px', padding:'8px 18px' }}>Cancel</Btn>
+            </div>
+          </div>
+        )}
+
+        {/* Time window */}
+        <div style={{ fontSize:'14px', color:C.gray, marginBottom:'8px' }}>
+          Ideal time window: <strong style={{ color:C.darkGray }}>{displayWindow.earliest} – {displayWindow.latest}</strong>
+        </div>
+
+        {/* Members */}
+        <div style={{ fontSize:'14px', color:C.gray }}>
+          <strong style={{ color:C.darkGray }}>{pool.members.length}</strong> member{pool.members.length!==1?'s':''}
+          {settings.maxParticipants && ` · ${settings.maxParticipants - pool.members.length} spot${settings.maxParticipants - pool.members.length !== 1 ? 's' : ''} left`}
         </div>
       </Card>
 
@@ -1280,52 +1336,83 @@ function TableTab({ pool, myName, onUpdate }) {
 
 // ─── MEMBERS TAB ──────────────────────────────────────────────────────────────
 
-function MembersTab({ pool }) {
+function MembersTab({ pool, myName, onUpdate }) {
+  const handleToggleDay = (memberName, day) => {
+    const updated = {
+      ...pool,
+      members: pool.members.map(m => {
+        if (m.name !== memberName) return m;
+        const newDayVotes = { ...(m.dayVotes || {}), [day]: !(m.dayVotes?.[day]) };
+        return { ...m, dayVotes: newDayVotes };
+      })
+    };
+    onUpdate(updated);
+  };
+
   return (
     <div>
       <SLabel style={{ marginBottom:'16px' }}>
         {pool.members.length} {pool.members.length===1?'person':'people'} at this table
       </SLabel>
-      {pool.members.map(m => (
-        <Card key={m.name}>
-          <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'10px', flexWrap:'wrap' }}>
-            <span style={{ fontFamily:"'ZTNature',Helvetica,sans-serif",
-              fontSize:'20px', fontWeight:'500', color:C.darkerGray }}>{m.name}</span>
-            {m.isCreator && <Tag label="creator" bg={C.peach} color={C.darkPeach} />}
-            {m.voted
-              ? <Tag label="voted" bg={C.mint} color={C.darkMint} />
-              : <Tag label="not voted" bg={C.lightGray} color={C.gray} />}
-          </div>
+      {pool.members.map(m => {
+        const isMe = m.name === myName;
+        return (
+          <Card key={m.name}>
+            <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'10px', flexWrap:'wrap' }}>
+              <span style={{ fontFamily:"'ZTNature',Helvetica,sans-serif",
+                fontSize:'20px', fontWeight:'500', color:C.darkerGray }}>{m.name}</span>
+              {m.isCreator && <Tag label="creator" bg={C.peach} color={C.darkPeach} />}
+              {m.voted
+                ? <Tag label="voted" bg={C.mint} color={C.darkMint} />
+                : <Tag label="not voted" bg={C.lightGray} color={C.gray} />}
+            </div>
 
-          {(m.diet?.presets?.length > 0 || m.diet?.note) ? (
-            <div style={{ marginBottom:'8px' }}>
-              <div style={{ fontSize:'12px', color:C.gray, marginBottom:'4px', fontWeight:'500',
-                textTransform:'uppercase', letterSpacing:'0.5px' }}>Dietary needs</div>
-              {(m.diet?.presets || []).map(p => <Tag key={p} label={p} />)}
-              {m.diet.note && <span style={{ fontSize:'13px', color:C.darkGray, fontStyle:'italic' }}>{m.diet.note}</span>}
-            </div>
-          ) : (
-            <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic', marginBottom:'8px' }}>
-              No dietary restrictions noted
-            </div>
-          )}
+            {(m.diet?.presets?.length > 0 || m.diet?.note) ? (
+              <div style={{ marginBottom:'8px' }}>
+                <div style={{ fontSize:'12px', color:C.gray, marginBottom:'4px', fontWeight:'500',
+                  textTransform:'uppercase', letterSpacing:'0.5px' }}>Dietary needs</div>
+                {(m.diet?.presets || []).map(p => <Tag key={p} label={p} />)}
+                {m.diet?.note && <span style={{ fontSize:'13px', color:C.darkGray, fontStyle:'italic' }}>{m.diet.note}</span>}
+              </div>
+            ) : (
+              <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic', marginBottom:'8px' }}>
+                No dietary restrictions noted
+              </div>
+            )}
 
-          {m.voted && (
-            <div style={{ fontSize:'13px', color:C.gray }}>
-              <span>Days: </span>
-              {pool.settings.days.map(d => (
-                <Tag key={d} label={d}
-                  bg={m.dayVotes?.[d] ? C.mint : C.lightGray}
-                  color={m.dayVotes?.[d] ? C.darkMint : C.gray} />
-              ))}
-              {' · '}
-              <span>Start: <strong>{m.startVote}</strong></span>
-              {' · '}
-              <span>End: <strong>{m.endVote}</strong></span>
+            <div style={{ marginBottom: m.voted ? '6px' : '0' }}>
+              <div style={{ fontSize:'12px', color:C.gray, marginBottom:'6px', fontWeight:'500',
+                textTransform:'uppercase', letterSpacing:'0.5px' }}>
+                {isMe ? 'Your availability' : 'Availability'}
+              </div>
+              {isMe ? (
+                <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
+                  {ALL_WEEK.map(d => (
+                    <Chip key={d} label={d} active={!!(m.dayVotes?.[d])}
+                      onClick={() => handleToggleDay(m.name, d)} />
+                  ))}
+                </div>
+              ) : (
+                <div style={{ display:'flex', gap:'4px', flexWrap:'wrap' }}>
+                  {ALL_WEEK.map(d => (
+                    <Tag key={d} label={d}
+                      bg={m.dayVotes?.[d] ? C.mint : C.lightGray}
+                      color={m.dayVotes?.[d] ? C.darkMint : C.gray} />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-        </Card>
-      ))}
+
+            {m.voted && (
+              <div style={{ fontSize:'13px', color:C.gray }}>
+                <span>Start: <strong>{m.startVote}</strong></span>
+                {' · '}
+                <span>End: <strong>{m.endVote}</strong></span>
+              </div>
+            )}
+          </Card>
+        );
+      })}
     </div>
   );
 }
@@ -1845,7 +1932,7 @@ function RoomScreen({ session, onLeave }) {
       </div>
 
       {tab==='table'    && <TableTab    pool={pool} myName={session.name} onUpdate={onUpdate} />}
-      {tab==='members'  && <MembersTab  pool={pool} />}
+      {tab==='members'  && <MembersTab  pool={pool} myName={session.name} onUpdate={onUpdate} />}
       {tab==='schedule' && <ScheduleTab pool={pool} myName={session.name} onUpdate={onUpdate} />}
     </div>
   );
