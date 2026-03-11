@@ -1301,7 +1301,7 @@ function MembersTab({ pool }) {
             <div style={{ marginBottom:'8px' }}>
               <div style={{ fontSize:'12px', color:C.gray, marginBottom:'4px', fontWeight:'500',
                 textTransform:'uppercase', letterSpacing:'0.5px' }}>Dietary needs</div>
-              {m.diet.presets.map(p => <Tag key={p} label={p} />)}
+              {(m.diet?.presets || []).map(p => <Tag key={p} label={p} />)}
               {m.diet.note && <span style={{ fontSize:'13px', color:C.darkGray, fontStyle:'italic' }}>{m.diet.note}</span>}
             </div>
           ) : (
