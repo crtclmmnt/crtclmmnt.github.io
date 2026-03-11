@@ -462,13 +462,43 @@ title: DeepSee
     const BELL_SRC      = ''; // e.g. '/audio/bell.mp3'
     const WOODBLOCK_SRC = ''; // e.g. '/audio/woodblock.mp3'
 
+    // ── AudioContext (created eagerly; starts suspended on mobile) ─
+    // Mobile browsers block audio until a user gesture. Creating the
+    // context now lets us resume() it cleanly on the first tap.
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    const audioCtx = AudioContextClass ? new AudioContextClass() : null;
+
+    // ── One-time unlock on first user tap anywhere on the page ────
+    // Resumes the AudioContext for synthesized sounds. Both events
+    // are registered so it fires on touchstart (iOS/Android) or
+    // click (desktop); the flag ensures the body runs only once.
+    let audioUnlocked = false;
+    function unlockAudio() {
+      if (audioUnlocked) return;
+      audioUnlocked = true;
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    }
+    document.addEventListener('touchstart', unlockAudio, { once: true, passive: true });
+    document.addEventListener('click',      unlockAudio, { once: true });
+
+    // ── Prime <audio> elements for iOS Safari ─────────────────────
+    // iOS Safari requires .play() to be called synchronously inside
+    // a user-gesture handler before audio elements will work later.
+    // We call this on the "Begin" tap — the clearest gesture point.
+    function primeAudioElements() {
+      ['intro-audio', 'walking-audio', 'closing-audio'].forEach(id => {
+        const el = document.getElementById(id);
+        el.load();
+        el.play().then(() => { el.pause(); el.currentTime = 0; }).catch(() => {});
+      });
+    }
+
     // ── State ─────────────────────────────────────────────────────
     let selectedMinutes    = null;
     let includeWalking     = true;   // default Y
     let totalSeconds       = 0;
     let remainingSeconds   = 0;
     let timerInterval      = null;
-    let audioCtx           = null;
     let walkingPhaseActive = false;
     let closingActive      = false;
 
