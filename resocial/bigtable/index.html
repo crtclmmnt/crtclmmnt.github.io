@@ -241,7 +241,8 @@ function applyCreatorDecisions(pool, decisions, runoffProposal) {
       runoffEndVote: null, runoffVoted: false
     }));
     return { ...pool, members: resetMembers, agreedDays,
-             runoffSettings: runoffProposal, status: 'runoff', creatorDecisions: decisions };
+             runoffSettings: runoffProposal, status: 'runoff',
+             acceptingNewMembers: false, creatorDecisions: decisions };
   }
 
   // No runoff — finalize immediately
@@ -637,7 +638,8 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
 
   if (pool) {
     const isFull = pool.settings.maxParticipants && pool.members.length >= pool.settings.maxParticipants;
-    const canJoinNew = pool.status === 'open' && !isFull;
+    const isVotingPhase = ['open', 'runoff', 'day-revote'].includes(pool.status);
+    const canJoinNew = isVotingPhase && pool.acceptingNewMembers !== false && !isFull;
     const memberBtnStyle = {
       padding:'14px 20px', borderRadius:'12px', border:`2px solid ${C.darkRose}`,
       background:C.babyYellow, cursor:'pointer', textAlign:'left',
@@ -669,7 +671,13 @@ function JoinCodeScreen({ onBack, onSelectMember, onJoinNew }) {
           </button>
         ) : (
           <div style={{ fontSize:'14px', color:C.gray, fontStyle:'italic', marginTop:'8px' }}>
-            This table is no longer accepting new members.
+            {pool.status === 'scheduled'
+              ? 'This table has finalized its schedule and is no longer accepting new members.'
+              : isFull
+              ? `This table is full (${pool.members.length}/${pool.settings.maxParticipants} participants).`
+              : ['runoff', 'day-revote'].includes(pool.status)
+              ? 'This table is in an active voting round. The host can re-open it to new members.'
+              : 'This table is no longer accepting new members.'}
           </div>
         )}
       </div>
@@ -703,13 +711,24 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   // Day votes: start with nothing selected
   const [dayVotes, setDayVotes] = useState({});
 
+  // Determine which round we're joining and what the day ballot looks like
+  const isRunoff    = pool.status === 'runoff';
+  const isDayRevote = pool.status === 'day-revote';
+  const ballotDays = isRunoff    ? (pool.runoffSettings?.newDays || [])
+                   : isDayRevote ? (pool.dayRevoteSettings?.days  || [])
+                   : DAYS;
+
+  // Use the runoff window if one was proposed, otherwise the primary window
+  const pw = (isRunoff && pool.runoffSettings?.newWindow)
+    ? pool.runoffSettings.newWindow
+    : pool.settings.proposedWindow;
+
   // Time votes: default to proposed window
   const [startAccept, setStartAccept] = useState(true);
   const [endAccept,   setEndAccept]   = useState(true);
-  const [startVote,   setStartVote]   = useState(TIME_SLOTS[slotIdx(pool.settings.proposedWindow.earliest)+1] || pool.settings.proposedWindow.earliest);
-  const [endVote,     setEndVote]     = useState(TIME_SLOTS[slotIdx(pool.settings.proposedWindow.latest)-1] || pool.settings.proposedWindow.latest);
+  const [startVote,   setStartVote]   = useState(TIME_SLOTS[slotIdx(pw.earliest)+1] || pw.earliest);
+  const [endVote,     setEndVote]     = useState(TIME_SLOTS[slotIdx(pw.latest)-1]   || pw.latest);
 
-  const pw = pool.settings.proposedWindow;
   const laterStarts = TIME_SLOTS.filter((_,i) => i > slotIdx(pw.earliest));
   const altEnds     = TIME_SLOTS.filter(t => t !== pw.latest);
 
@@ -724,13 +743,44 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
     if (noDaysSelected) return setError('Select at least one day to continue.');
     setError('');
 
-    const member = {
-      name, diet:{ presets, note:dietNote.trim() }, isCreator:false, joinedAt:Date.now(),
-      dayVotes,
-      startVote: startAccept ? pw.earliest : startVote,
-      endVote:   endAccept   ? pw.latest   : endVote,
-      voted:true, runoffDayVotes:null, runoffStartVote:null, runoffEndVote:null, runoffVoted:false
-    };
+    const finalStartVote = startAccept ? pw.earliest : startVote;
+    const finalEndVote   = endAccept   ? pw.latest   : endVote;
+
+    let member;
+    if (isRunoff) {
+      // Joining during round-2 runoff: accept all primary agreed days, vote only on runoff ballot
+      const baseDayVotes = {};
+      (pool.agreedDays || []).forEach(d => { baseDayVotes[d] = true; });
+      member = {
+        name, diet:{ presets, note:dietNote.trim() }, isCreator:false, joinedAt:Date.now(),
+        dayVotes: baseDayVotes,
+        startVote: finalStartVote, endVote: finalEndVote, voted: true,
+        runoffDayVotes: dayVotes,
+        runoffStartVote: pool.runoffSettings?.newWindow ? finalStartVote : null,
+        runoffEndVote:   pool.runoffSettings?.newWindow ? finalEndVote   : null,
+        runoffVoted: true,
+        dayRevoteVotes: null, dayRevoteVoted: false,
+      };
+    } else if (isDayRevote) {
+      // Joining during day-revote: accept all proposed days, vote only on revote ballot
+      const baseDayVotes = {};
+      pool.settings.days.forEach(d => { baseDayVotes[d] = true; });
+      member = {
+        name, diet:{ presets, note:dietNote.trim() }, isCreator:false, joinedAt:Date.now(),
+        dayVotes: baseDayVotes,
+        startVote: finalStartVote, endVote: finalEndVote, voted: true,
+        runoffDayVotes: null, runoffStartVote: null, runoffEndVote: null, runoffVoted: false,
+        dayRevoteVotes: dayVotes, dayRevoteVoted: true,
+      };
+    } else {
+      member = {
+        name, diet:{ presets, note:dietNote.trim() }, isCreator:false, joinedAt:Date.now(),
+        dayVotes,
+        startVote: finalStartVote, endVote: finalEndVote,
+        voted: true, runoffDayVotes: null, runoffStartVote: null, runoffEndVote: null, runoffVoted: false,
+        dayRevoteVotes: null, dayRevoteVoted: false,
+      };
+    }
 
     const updated = { ...pool, members:[...pool.members, member] };
 
@@ -742,7 +792,13 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
   return (
     <div style={{ maxWidth:'520px', margin:'0 auto' }}>
       <BackBtn onClick={onBack} />
-      <GuidanceBanner>Step 1: Add your dietary preferences and availability to join {pool.name}, then wait for the host to lock in the schedule!</GuidanceBanner>
+      <GuidanceBanner>
+        {isRunoff
+          ? `A second voting round is active for ${pool.name}. Vote on the proposed days below and submit your time preferences.`
+          : isDayRevote
+          ? `A day re-vote is active for ${pool.name}. Indicate which of these proposed days work for you.`
+          : `Step 1: Add your dietary preferences and availability to join ${pool.name}, then wait for the host to lock in the schedule!`}
+      </GuidanceBanner>
       <h2 style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'34px', fontWeight:'500',
         color:C.darkerGray, marginBottom:'8px' }}>Join {pool.name}</h2>
       <div style={{ fontSize:'14px', color:C.gray, marginBottom:'24px', fontFamily:'monospace', letterSpacing:'1px' }}>{pool.code}</div>
@@ -762,9 +818,12 @@ function JoinNewScreen({ pool, onBack, onEnterRoom }) {
         <TInput value={dietNote} onChange={setDietNote} placeholder="Anything else? (e.g. no shellfish)" maxLength={100} />
       </Field>
 
-      <Field label="Which days work for you?">
+      <Field
+        label={isRunoff || isDayRevote ? 'Which of these days work for you?' : 'Which days work for you?'}
+        hint={isRunoff || isDayRevote ? 'These are the days proposed for this voting round — vote on these only.' : undefined}
+      >
         <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
-          {DAYS.map(d => (
+          {ballotDays.map(d => (
             <Chip key={d} label={d} active={!!dayVotes[d]}
               onClick={()=>setDayVotes(prev=>({...prev,[d]:!prev[d]}))} />
           ))}
@@ -1289,7 +1348,7 @@ function TableTab({ pool, myName, onUpdate }) {
     const resetMembers = pool.members.map(m => ({
       ...m, dayRevoteVotes: null, dayRevoteVoted: false,
     }));
-    onUpdate({ ...pool, members: resetMembers, dayRevoteSettings: { days: revoteDays }, status: 'day-revote' });
+    onUpdate({ ...pool, members: resetMembers, dayRevoteSettings: { days: revoteDays }, status: 'day-revote', acceptingNewMembers: false });
     setShowRevoteSetup(false);
   };
 
@@ -1309,6 +1368,12 @@ function TableTab({ pool, myName, onUpdate }) {
     const updated = applyCreatorDecisions(pool, decisions, runoffProposal);
     onUpdate(updated);
   };
+
+  const handleReOpen = () => {
+    onUpdate({ ...pool, acceptingNewMembers: true });
+  };
+
+  const isFull = !!(pool.settings.maxParticipants && pool.members.length >= pool.settings.maxParticipants);
 
   const handleSaveCooksPer = () => {
     const max = pool.settings.maxParticipants;
@@ -1399,6 +1464,33 @@ function TableTab({ pool, myName, onUpdate }) {
           <img src="/images/silverware.png" alt="" style={{ maxWidth:'100px', display:'block', flexShrink:0 }} />
         </div>
       </Card>
+
+      {/* Host: re-open table to new members during active voting */}
+      {isCreator && ['open', 'runoff', 'day-revote'].includes(pool.status) && (
+        <div style={{ marginBottom:'16px' }}>
+          {pool.acceptingNewMembers === false ? (
+            <div style={{ display:'flex', alignItems:'center', gap:'12px', flexWrap:'wrap' }}>
+              <Btn
+                onClick={handleReOpen}
+                disabled={isFull}
+                variant="accent"
+                style={{ fontSize:'14px', padding:'8px 18px' }}
+              >
+                Re-open table to new members
+              </Btn>
+              {isFull && (
+                <span style={{ fontSize:'13px', color:C.gray, fontStyle:'italic' }}>
+                  Table is at capacity ({pool.members.length}/{pool.settings.maxParticipants}) — can't accept new members.
+                </span>
+              )}
+            </div>
+          ) : (
+            <div style={{ fontSize:'13px', color:C.darkMint }}>
+              ✓ Table is open to new members
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Open: availability summary + lock-in */}
       {pool.status === 'open' && (
