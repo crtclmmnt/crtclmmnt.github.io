@@ -94,17 +94,19 @@ hide_header: true
     </div>
   </div>
 
-<div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
+  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
     <div style="width: 150px; text-align: left;">
     <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
     </div>
-  
+
     <div class="services-content" style="max-width: 550px;">
       <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
       <p>Listen to the instructions, and try to follow them.</p>
     </div>
   </div>
+</div>
 
+</details>
 
 <hr>
 
