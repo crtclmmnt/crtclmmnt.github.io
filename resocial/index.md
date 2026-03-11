@@ -78,7 +78,7 @@ hide_header: true
 
 <h1 style="font-size: 3rem; margin-bottom: 0px;">DeepBe</h1>
 
-<p>A simple meditation timer.</p>
+<p>A simple meditation timer, with optional meditation instruction included.</p>
 <a href="https://thecriticalmoment.org/resocial/deepbe/" class="btn">Open</a>
 
 <details><summary><strong>How to use DeepBe</strong></summary>
@@ -114,7 +114,9 @@ hide_header: true
 
     <div class="services-content" style="max-width: 550px;">
     <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
-    <p>Listen to the instructions, and try to follow them.</p>
+    <p>Sit with your hips elevated above your knees (either on a chair, a kneeling bench, or on a firm cushion on the floor). Back and head posture should be tall and strong (not straining), and you should have a soft gaze 4' - 6' in front of you.</p>
+    <p>Place your attention on a felt sensation of breath.</p>
+    <p>When thoughts arise and you notice them, gently label them "thinking" and come back to focusing on your breath.</p>
     </div>
   </div>
 </div>
