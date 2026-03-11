@@ -437,7 +437,17 @@ title: DeepSee
       <button class="duration-btn" data-minutes="40">40 min</button>
       <button class="duration-btn" data-minutes="50">50 min</button>
     </div>
-    <!-- Fixed-height slot: always reserves space so layout never shifts -->
+    <!-- Instruction toggle: visible once any duration is selected -->
+    <div class="toggle-slot">
+      <div class="walk-toggle" id="instruction-toggle">
+        <span class="toggle-label">Include meditation instruction?</span>
+        <div class="toggle-btns">
+          <button class="toggle-opt selected" data-instruction="yes">Y</button>
+          <button class="toggle-opt" data-instruction="no">N</button>
+        </div>
+      </div>
+    </div>
+    <!-- Walking toggle: visible only for 40/50 min sessions -->
     <div class="toggle-slot">
       <div class="walk-toggle" id="walk-toggle">
         <span class="toggle-label">Include walking meditation?</span>
@@ -679,6 +689,7 @@ title: DeepSee
 
     // ── State ─────────────────────────────────────────────────────
     let selectedMinutes    = null;
+    let includeInstruction = true;
     let includeWalking     = true;
     let totalSeconds       = 0;
     let remainingSeconds   = 0;
@@ -708,7 +719,8 @@ title: DeepSee
     function hasSrc(el) { return !!el.getAttribute('src'); }
 
     // ── Duration selection ────────────────────────────────────────
-    const walkToggle = document.getElementById('walk-toggle');
+    const instructionToggle = document.getElementById('instruction-toggle');
+    const walkToggle        = document.getElementById('walk-toggle');
 
     document.querySelectorAll('.duration-btn').forEach(btn => {
       btn.addEventListener('click', function() {
@@ -716,14 +728,24 @@ title: DeepSee
         btn.classList.add('selected');
         selectedMinutes = parseInt(btn.dataset.minutes, 10);
         document.getElementById('begin-intro-btn').disabled = false;
+        instructionToggle.classList.add('visible');
         walkToggle.classList.toggle('visible', WALK_SESSIONS.has(selectedMinutes));
       });
     });
 
-    // Walking Y / N
-    document.querySelectorAll('.toggle-opt').forEach(opt => {
+    // Instruction Y / N
+    document.querySelectorAll('[data-instruction]').forEach(opt => {
       opt.addEventListener('click', function() {
-        document.querySelectorAll('.toggle-opt').forEach(o => o.classList.remove('selected'));
+        document.querySelectorAll('[data-instruction]').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        includeInstruction = opt.dataset.instruction === 'yes';
+      });
+    });
+
+    // Walking Y / N
+    document.querySelectorAll('[data-walk]').forEach(opt => {
+      opt.addEventListener('click', function() {
+        document.querySelectorAll('[data-walk]').forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
         includeWalking = opt.dataset.walk === 'yes';
       });
@@ -750,8 +772,10 @@ title: DeepSee
       // On desktop (no touchstart), play the test beep from click instead
       playTestBeep();
       showScreen('screen-intro');
-      const intro = document.getElementById('intro-audio');
-      if (hasSrc(intro)) intro.play().catch(() => {});
+      if (includeInstruction) {
+        const intro = document.getElementById('intro-audio');
+        if (hasSrc(intro)) intro.play().catch(() => {});
+      }
     });
 
     // ── Intro → Sitting ───────────────────────────────────────────
@@ -847,8 +871,10 @@ title: DeepSee
       walkingPhaseActive = true;
       document.getElementById('sitting-note').textContent = 'Walking meditation\u2026';
       document.getElementById('ring-fg').style.stroke = '#FBB965';
-      const walk = document.getElementById('walking-audio');
-      if (hasSrc(walk)) walk.play().catch(() => {});
+      if (includeInstruction) {
+        const walk = document.getElementById('walking-audio');
+        if (hasSrc(walk)) walk.play().catch(() => {});
+      }
     }
 
     function endWalkingPhaseUI() {
@@ -870,8 +896,12 @@ title: DeepSee
       document.getElementById('sitting-note').textContent = 'Time complete.';
       setTimeout(function() {
         if (sessionToken !== token) return; // session was reset
-        showScreen('screen-closing');
-        beginClosingPhase();
+        if (includeInstruction) {
+          showScreen('screen-closing');
+          beginClosingPhase();
+        } else {
+          returnToLanding();
+        }
       }, 2200);
     }
 
@@ -911,16 +941,21 @@ title: DeepSee
       if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
 
       selectedMinutes    = null;
+      includeInstruction = true;
       includeWalking     = true;
       walkingPhaseActive = false;
 
       document.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('selected'));
-      document.querySelectorAll('.toggle-opt').forEach(o => {
+      document.querySelectorAll('[data-instruction]').forEach(o => {
+        o.classList.toggle('selected', o.dataset.instruction === 'yes');
+      });
+      document.querySelectorAll('[data-walk]').forEach(o => {
         o.classList.toggle('selected', o.dataset.walk === 'yes');
       });
       document.getElementById('begin-intro-btn').disabled = true;
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
+      instructionToggle.classList.remove('visible');
       walkToggle.classList.remove('visible');
 
       showScreen('screen-landing');
