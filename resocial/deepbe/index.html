@@ -531,9 +531,36 @@ title: DeepBe
 
   <script>
     // ── Audio source config ───────────────────────────────────────
-    // To use MP3s instead of synthesis, set these paths:
-    const BELL_SRC      = ''; // e.g. '/audio/bell.mp3'
-    const WOODBLOCK_SRC = ''; // e.g. '/audio/woodblock.mp3'
+    // To use an MP3 bell instead of synthesis, set this path:
+    const BELL_SRC = ''; // e.g. '/audio/bell.mp3'
+
+    // ── Woodblock MP3 preload ─────────────────────────────────────
+    // Fetch the raw bytes once at page load. They are stored as an
+    // ArrayBuffer so we can re-decode them into each new AudioContext
+    // (AudioBuffers are tied to the context that decoded them; since the
+    // context is closed and recreated each session, we slice a fresh copy
+    // of the bytes for every decode call).
+    let woodblockArrayBuf = null; // raw bytes — set once at page load
+    let woodblockBuffer   = null; // decoded AudioBuffer for current session
+
+    fetch('/audio/woodblock.mp3').then(function(r) {
+      return r.arrayBuffer();
+    }).then(function(ab) {
+      woodblockArrayBuf = ab;
+      // Decode immediately if a context already exists (e.g. user tapped Test bell
+      // before the fetch completed).
+      if (audioCtx && audioCtx.state !== 'closed') decodeWoodblockBuffer();
+    }).catch(function() { /* non-fatal — synthesis fallback remains */ });
+
+    // Decode the stored bytes into the current AudioContext.
+    // Safe to call multiple times; re-decodes whenever a new context is created.
+    function decodeWoodblockBuffer() {
+      if (!woodblockArrayBuf || !audioCtx || audioCtx.state === 'closed') return;
+      // slice() copies the bytes — decodeAudioData neuters its input
+      audioCtx.decodeAudioData(woodblockArrayBuf.slice(0), function(buf) {
+        woodblockBuffer = buf;
+      }, function() { /* decode error — synthesis fallback remains */ });
+    }
 
     // ── AudioContext — one per session, created inside a gesture ──
     //
@@ -575,6 +602,12 @@ title: DeepBe
         silentSrc.connect(audioCtx.destination);
         silentSrc.start(0);
       } catch (e) { /* non-fatal */ }
+
+      // Decode the woodblock MP3 into this fresh context.
+      // The woodblocks don't fire for 20+ minutes so this async call
+      // completes long before it's needed.
+      woodblockBuffer = null;
+      decodeWoodblockBuffer();
 
       return audioCtx;
     }
@@ -629,41 +662,43 @@ title: DeepBe
       });
     }
 
-    // ── Woodblock synthesis ───────────────────────────────────────
-    // atTime: absolute Web Audio clock time for the first strike.
-    //
-    // Previous bug: 3 ms linear ramp from 0 → 0.55. At 48 kHz with a
-    // 128-sample block that is ~2.7 ms — less than one processing block.
-    // iOS silences the entire strike. Fix: set gain to peak at t directly.
+    // ── Woodblock playback ────────────────────────────────────────
+    // atTime: absolute Web Audio clock time to start the sound.
+    // Uses the decoded MP3 buffer (scheduled precisely on the Web Audio
+    // clock so it fires on time even when the screen is locked).
+    // Falls back to synthesis if the buffer hasn't loaded yet.
     function scheduleWoodblock(atTime) {
-      if (WOODBLOCK_SRC) { new Audio(WOODBLOCK_SRC).play().catch(() => {}); return; }
       const ctx = audioCtx;
       if (!ctx || ctx.state === 'closed') return;
-      const base = (atTime !== undefined) ? atTime : ctx.currentTime;
-      // Two strikes: tok-tok
+      const t = (atTime !== undefined) ? atTime : ctx.currentTime;
+
+      if (woodblockBuffer) {
+        const src = ctx.createBufferSource();
+        src.buffer = woodblockBuffer;
+        src.connect(ctx.destination);
+        src.start(t);
+        return;
+      }
+
+      // ── Synthesis fallback (used only if MP3 hasn't decoded yet) ─
       [0, 0.28].forEach(function(offset) {
-        const t    = base + offset;
+        const st   = t + offset;
         const osc  = ctx.createOscillator();
         const filt = ctx.createBiquadFilter();
         const gain = ctx.createGain();
-        // 1. Connect full chain first
         osc.connect(filt);
         filt.connect(gain);
         gain.connect(ctx.destination);
-        // 2. Configure oscillator (pitch drop gives the 'tok' character)
         osc.type = 'square';
-        osc.frequency.setValueAtTime(900, t);
-        osc.frequency.exponentialRampToValueAtTime(500, t + 0.08);
-        // 3. Configure filter
+        osc.frequency.setValueAtTime(900, st);
+        osc.frequency.exponentialRampToValueAtTime(500, st + 0.08);
         filt.type = 'bandpass';
         filt.frequency.value = 800;
         filt.Q.value = 3;
-        // 4. Gain: peak at t, exponential decay — no zero-start ramp
-        gain.gain.setValueAtTime(0.55, t);
-        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
-        // 5. Start after all connections and scheduling
-        osc.start(t);
-        osc.stop(t + 0.22);
+        gain.gain.setValueAtTime(0.55, st);
+        gain.gain.exponentialRampToValueAtTime(0.0001, st + 0.18);
+        osc.start(st);
+        osc.stop(st + 0.22);
       });
     }
 
@@ -966,6 +1001,9 @@ title: DeepBe
 
       // Close the AudioContext — this cancels any still-pending scheduled
       // nodes and gives us a clean slate for the next session.
+      // woodblockBuffer is tied to this context and must be re-decoded
+      // into the next one, so null it here.
+      woodblockBuffer = null;
       if (audioCtx) {
         audioCtx.close().catch(() => {});
         audioCtx = null;
