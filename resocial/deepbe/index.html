@@ -70,17 +70,18 @@ title: DeepBe
     .back-nav a {
       font-family: 'Roboto', sans-serif;
       font-size: 0.75rem;
-      color: #9a7a6a;
+      color: #a23c3f;
       text-decoration: none;
       letter-spacing: 0.04em;
     }
 
-    .back-nav a:hover { color: #3d2e28; }
+    .back-nav a:hover { color: #7a2a2d; }
 
     /* ── Screens ───────────────────────────────────────────────── */
 
     .screen {
       display: none;
+      position: relative;
       width: 100%;
       max-width: 440px;
       padding: 2rem 2rem 2.5rem;
@@ -390,12 +391,31 @@ title: DeepBe
       display: block;
       margin: 0 auto;
       opacity: 0;
-      transition: opacity 0.8s ease;
+      transition: opacity 0.6s ease;
     }
 
     .phase-image.visible {
       opacity: 1;
     }
+
+    /* ── Cancel session button ──────────────────────────────────── */
+
+    .cancel-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      background: none;
+      border: none;
+      color: #9a7a6a;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 0.25rem 0.35rem;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+
+    .cancel-btn:hover { color: #a23c3f; }
 
     /* ── Closing note ──────────────────────────────────────────── */
 
@@ -412,8 +432,8 @@ title: DeepBe
 </head>
 <body>
 
-<nav>
-<a href="https://thecriticalmoment.org/resocial"><span style="color: #a23c3f; font-weight: bold; text-align: center;">Back to Resocial</span></a>
+<nav class="back-nav">
+  <a href="https://thecriticalmoment.org/resocial">Back to Resocial</a>
 </nav>
 
   <!-- Audio placeholders — add src attributes when files are ready -->
@@ -481,6 +501,7 @@ title: DeepBe
 
   <!-- ── Screen 3: Sitting ─────────────────────────────────────── -->
   <div class="screen" id="screen-sitting">
+    <button class="cancel-btn" id="cancel-session-btn" title="Cancel session">&times;</button>
     <div class="site-name">DeepBe</div>
     <div class="ring-wrap">
       <svg width="210" height="210" viewBox="0 0 210 210">
@@ -647,6 +668,7 @@ title: DeepBe
     }
 
     // ── State ─────────────────────────────────────────────────────
+    let pendingImageHandler = null;
     let selectedMinutes    = null;
     let includeInstruction = true;
     let includeWalking     = true;
@@ -836,20 +858,32 @@ title: DeepBe
     }
 
     // ── Phase image ───────────────────────────────────────────────
+    // Sequence: fully fade out current image, then fade in next.
+    // Uses transitionend so fade-in never starts before fade-out completes.
     function setPhaseImage(src) {
       const img = document.getElementById('phase-image');
+
+      // Cancel any in-flight fade-in from a prior call
+      if (pendingImageHandler) {
+        img.removeEventListener('transitionend', pendingImageHandler);
+        pendingImageHandler = null;
+      }
+
       if (!src) {
         img.classList.remove('visible');
         return;
       }
-      const hasImage = img.classList.contains('visible');
-      if (hasImage) {
+
+      if (img.classList.contains('visible')) {
         img.classList.remove('visible');
-        setTimeout(function() {
+        pendingImageHandler = function handler() {
+          img.removeEventListener('transitionend', handler);
+          pendingImageHandler = null;
           img.src = src;
           void img.offsetWidth;
           img.classList.add('visible');
-        }, 300);
+        };
+        img.addEventListener('transitionend', pendingImageHandler);
       } else {
         img.src = src;
         void img.offsetWidth;
@@ -914,10 +948,21 @@ title: DeepBe
       }
     }
 
+    // ── Cancel session button ─────────────────────────────────────
+    document.getElementById('cancel-session-btn').addEventListener('click', function() {
+      returnToLanding();
+    });
+
     // ── Return to landing ─────────────────────────────────────────
     function returnToLanding() {
       closingActive = false;
       sessionToken++; // invalidate all pending session callbacks
+
+      // Cancel any pending image fade-in
+      if (pendingImageHandler) {
+        document.getElementById('phase-image').removeEventListener('transitionend', pendingImageHandler);
+        pendingImageHandler = null;
+      }
 
       // Close the AudioContext — this cancels any still-pending scheduled
       // nodes and gives us a clean slate for the next session.
