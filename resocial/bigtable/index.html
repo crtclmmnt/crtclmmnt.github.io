@@ -2005,12 +2005,29 @@ function formatDate(isoStr) {
   return `${days[dt.getDay()]} ${MO[m-1]} ${d}, ${y}`;
 }
 
+// Parse a schedule date string like "Tue Mar 11" into an ISO date string
+function schedDateToISO(dateStr) {
+  const MO = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
+  const parts = dateStr.split(' ');
+  const month = MO[parts[1]];
+  const day = parseInt(parts[2], 10);
+  const year = new Date().getFullYear();
+  const d = new Date(year, month - 1, day);
+  if (d < new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)) d.setFullYear(year + 1);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
 function ScheduleTab({ pool, myName, onUpdate }) {
   const [postingIdx, setPostingIdx] = useState(null);
   const me = pool.members.find(m => m.name === myName);
   const isCreator = me?.isCreator;
+
+  // For tables created before firstDinnerDate was added, derive it from the first schedule entry
+  const derivedFirstDate = pool.settings?.firstDinnerDate ||
+    (pool.schedule?.[0]?.date ? schedDateToISO(pool.schedule[0].date) : '');
+
   const [editingFirstDate, setEditingFirstDate] = useState(false);
-  const [pendingFirstDate, setPendingFirstDate] = useState(pool.settings?.firstDinnerDate || '');
+  const [pendingFirstDate, setPendingFirstDate] = useState(derivedFirstDate);
   const [showMealWarn, setShowMealWarn] = useState(false);
   const [calendarNotice, setCalendarNotice] = useState(false);
 
@@ -2086,14 +2103,14 @@ function ScheduleTab({ pool, myName, onUpdate }) {
       </div>
 
       {/* Host: first dinner date editor */}
-      {isCreator && pool.settings?.firstDinnerDate && (
+      {isCreator && pool.schedule?.length > 0 && (
         <div style={{ marginBottom:'14px' }}>
           {!editingFirstDate ? (
             <div style={{ display:'flex', alignItems:'center', gap:'10px', flexWrap:'wrap' }}>
               <span style={{ fontSize:'13px', color:C.gray }}>
-                First dinner: <strong style={{ color:C.darkGray }}>{formatDate(pool.settings.firstDinnerDate)}</strong>
+                First dinner: <strong style={{ color:C.darkGray }}>{formatDate(derivedFirstDate)}</strong>
               </span>
-              <button onClick={() => { setPendingFirstDate(pool.settings.firstDinnerDate); setEditingFirstDate(true); setShowMealWarn(false); }} style={{
+              <button onClick={() => { setPendingFirstDate(derivedFirstDate); setEditingFirstDate(true); setShowMealWarn(false); }} style={{
                 background:'none', border:`1.5px solid ${C.gray}`, borderRadius:'10px',
                 padding:'2px 10px', fontSize:'12px', color:C.gray, cursor:'pointer',
                 fontFamily:"'Roboto',sans-serif",
