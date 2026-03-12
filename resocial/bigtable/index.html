@@ -162,7 +162,7 @@ function computeConsensus(pool, useRunoff = false) {
   return { days, window: { agreedStart, agreedEnd, minuteSpan, tooNarrow: minuteSpan <= 30 } };
 }
 
-function buildSchedule(members, agreedDays, agreedWindow, cooksPer, delayWeeks = 0) {
+function buildSchedule(members, agreedDays, agreedWindow, cooksPer, firstDinnerDate = null) {
   const DAY_NUM = { Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0 };
   const NUM_TO_DAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -179,7 +179,13 @@ function buildSchedule(members, agreedDays, agreedWindow, cooksPer, delayWeeks =
 
   const activeDayNums = new Set(agreedDays.map(d => DAY_NUM[d]));
   const cursor = new Date();
-  cursor.setDate(cursor.getDate() + 1 + (delayWeeks || 0) * 7); cursor.setHours(0,0,0,0);
+  if (firstDinnerDate) {
+    const [fy, fm, fd] = firstDinnerDate.split('-').map(Number);
+    cursor.setFullYear(fy, fm - 1, fd);
+  } else {
+    cursor.setDate(cursor.getDate() + 7);
+  }
+  cursor.setHours(0, 0, 0, 0);
 
   const schedule = [];
   let safety = 400;
@@ -216,6 +222,28 @@ function buildSchedule(members, agreedDays, agreedWindow, cooksPer, delayWeeks =
   return schedule;
 }
 
+function reshiftSchedule(schedule, agreedDays, agreedWindow, newFirstDinnerDate) {
+  const DAY_NUM = { Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6,Sun:0 };
+  const NUM_TO_DAY = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const activeDayNums = new Set(agreedDays.map(d => DAY_NUM[d]));
+  const [y, m, d] = newFirstDinnerDate.split('-').map(Number);
+  const cursor = new Date(y, m - 1, d, 0, 0, 0, 0);
+  const newDates = [];
+  let safety = 400;
+  while (newDates.length < schedule.length && safety-- > 0) {
+    if (activeDayNums.has(cursor.getDay())) {
+      newDates.push(`${NUM_TO_DAY[cursor.getDay()]} ${MO[cursor.getMonth()]} ${cursor.getDate()}`);
+    }
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return schedule.map((entry, i) => ({
+    ...entry,
+    date: i < newDates.length ? newDates[i] : entry.date,
+    agreedWindow,
+  }));
+}
+
 // Returns updated pool after creator finalizes decisions; may set status to 'scheduled' or 'runoff'
 function applyCreatorDecisions(pool, decisions, runoffProposal) {
   // decisions: { [day]: 'include'|'drop' } for marginal days
@@ -247,7 +275,7 @@ function applyCreatorDecisions(pool, decisions, runoffProposal) {
 
   // No runoff — finalize immediately
   const aw = { earliest: report.window.agreedStart, latest: report.window.agreedEnd };
-  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.firstDinnerDate);
   return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled',
            creatorDecisions: decisions };
 }
@@ -265,7 +293,7 @@ function finalizeRunoff(pool) {
     aw = pool.agreedWindow || { earliest: pool.consensusReport.window.agreedStart, latest: pool.consensusReport.window.agreedEnd };
   }
 
-  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
+  const schedule = buildSchedule(pool.members, agreedDays, aw, pool.settings.cooksPer, pool.settings.firstDinnerDate);
   return { ...pool, agreedDays, agreedWindow: aw, schedule, status: 'scheduled', runoffReport: rc };
 }
 
@@ -284,7 +312,7 @@ function computeAgreedWindow(pool) {
 function lockInDays(pool, selectedDays) {
   const aw = computeAgreedWindow(pool);
   const agreedWindow = { earliest: aw.earliest, latest: aw.latest };
-  const schedule = buildSchedule(pool.members, selectedDays, agreedWindow, pool.settings.cooksPer, pool.settings.scheduleDelayWeeks);
+  const schedule = buildSchedule(pool.members, selectedDays, agreedWindow, pool.settings.cooksPer, pool.settings.firstDinnerDate);
 
   // Force-assign members who ended up with no cook-eligible days
   if (schedule.length > 0) {
@@ -485,7 +513,10 @@ function CreateScreen({ onBack, onEnterRoom }) {
   const [endTime,   setEndTime]   = useState('8:00 PM');
   const [cooksPer,       setCooksPer]       = useState(1);
   const [maxPax,         setMaxPax]         = useState('');
-  const [scheduleDelay,  setScheduleDelay]  = useState(0);
+  const [firstDinnerDate, setFirstDinnerDate] = useState(() => {
+    const d = new Date(); d.setDate(d.getDate() + 7);
+    return d.toISOString().split('T')[0];
+  });
   const [error,          setError]          = useState('');
 
   const togglePreset = p => setPresets(prev => prev.includes(p) ? prev.filter(x=>x!==p) : [...prev,p]);
@@ -513,7 +544,7 @@ function CreateScreen({ onBack, onEnterRoom }) {
       code, name: tableName.trim(), status: 'open',
       settings: { days: DAYS, cooksPer, maxParticipants: maxPaxNum,
                   proposedWindow: { earliest: startTime, latest: endTime },
-                  scheduleDelayWeeks: scheduleDelay },
+                  firstDinnerDate },
       members: [{
         name, diet:{ presets, note:dietNote.trim() }, isCreator:true, joinedAt:Date.now(),
         dayVotes: defaultDayVotes, startVote: startTime, endVote: endTime,
@@ -602,14 +633,18 @@ function CreateScreen({ onBack, onEnterRoom }) {
         )}
       </Field>
 
-      <Field label="Start schedule in">
-        <SInput value={scheduleDelay} onChange={v=>setScheduleDelay(Number(v))}>
-          <option value={0}>This week</option>
-          <option value={1}>1 week</option>
-          <option value={2}>2 weeks</option>
-          <option value={3}>3 weeks</option>
-          <option value={4}>4 weeks</option>
-        </SInput>
+      <Field label="First dinner date" hint="The first dinner will fall on or after this date, on the earliest agreed day.">
+        <input
+          type="date"
+          value={firstDinnerDate}
+          min={(() => { const d = new Date(); d.setDate(d.getDate() + 1); return d.toISOString().split('T')[0]; })()}
+          onChange={e => setFirstDinnerDate(e.target.value)}
+          style={{
+            padding:'12px 16px', borderRadius:'12px', border:`2px solid ${C.lightGray}`,
+            fontFamily:"'Roboto',sans-serif", fontSize:'16px', color:C.darkGray,
+            outline:'none', background:C.white,
+          }}
+        />
       </Field>
 
       <ErrMsg msg={error} />
@@ -1961,8 +1996,38 @@ function buildICS(pool, myName) {
   ].join('\r\n');
 }
 
+function formatDate(isoStr) {
+  if (!isoStr) return '';
+  const [y, m, d] = isoStr.split('-').map(Number);
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const dt = new Date(y, m - 1, d);
+  return `${days[dt.getDay()]} ${MO[m-1]} ${d}, ${y}`;
+}
+
 function ScheduleTab({ pool, myName, onUpdate }) {
   const [postingIdx, setPostingIdx] = useState(null);
+  const me = pool.members.find(m => m.name === myName);
+  const isCreator = me?.isCreator;
+  const [editingFirstDate, setEditingFirstDate] = useState(false);
+  const [pendingFirstDate, setPendingFirstDate] = useState(pool.settings?.firstDinnerDate || '');
+  const [showMealWarn, setShowMealWarn] = useState(false);
+  const [calendarNotice, setCalendarNotice] = useState(false);
+
+  const hasMealsPosted = (pool.schedule || []).some(e => e.meal);
+
+  const applyDateChange = () => {
+    const newSchedule = reshiftSchedule(pool.schedule, pool.agreedDays, pool.agreedWindow, pendingFirstDate);
+    const updated = {
+      ...pool,
+      settings: { ...pool.settings, firstDinnerDate: pendingFirstDate },
+      schedule: newSchedule,
+    };
+    onUpdate(updated);
+    setEditingFirstDate(false);
+    setShowMealWarn(false);
+    setCalendarNotice(true);
+  };
 
   const handleDownloadICS = () => {
     const ics = buildICS(pool, myName);
@@ -2016,6 +2081,73 @@ function ScheduleTab({ pool, myName, onUpdate }) {
           cursor:'pointer', fontFamily:"'Roboto',sans-serif",
         }}>Download calendar (.ics)</button>
       </div>
+      <div style={{ fontSize:'12px', color:C.gray, marginBottom:'10px', fontStyle:'italic' }}>
+        Re-download the calendar file after any dinner date changes.
+      </div>
+
+      {/* Host: first dinner date editor */}
+      {isCreator && pool.settings?.firstDinnerDate && (
+        <div style={{ marginBottom:'14px' }}>
+          {!editingFirstDate ? (
+            <div style={{ display:'flex', alignItems:'center', gap:'10px', flexWrap:'wrap' }}>
+              <span style={{ fontSize:'13px', color:C.gray }}>
+                First dinner: <strong style={{ color:C.darkGray }}>{formatDate(pool.settings.firstDinnerDate)}</strong>
+              </span>
+              <button onClick={() => { setPendingFirstDate(pool.settings.firstDinnerDate); setEditingFirstDate(true); setShowMealWarn(false); }} style={{
+                background:'none', border:`1.5px solid ${C.gray}`, borderRadius:'10px',
+                padding:'2px 10px', fontSize:'12px', color:C.gray, cursor:'pointer',
+                fontFamily:"'Roboto',sans-serif",
+              }}>Change</button>
+            </div>
+          ) : (
+            <Card style={{ border:`2px solid ${C.peach}`, marginBottom:'0' }}>
+              <SLabel style={{ fontSize:'17px', marginBottom:'8px' }}>Change first dinner date</SLabel>
+              <div style={{ fontSize:'13px', color:C.gray, marginBottom:'12px', lineHeight:1.5 }}>
+                All dinner dates will shift to the new anchor. Cook assignments stay with their slots — but cooks should review any posted meal info (address, timing) after the change.
+              </div>
+              <input
+                type="date"
+                value={pendingFirstDate}
+                onChange={e => { setPendingFirstDate(e.target.value); setShowMealWarn(false); }}
+                style={{
+                  padding:'10px 14px', borderRadius:'12px', border:`2px solid ${C.lightGray}`,
+                  fontFamily:"'Roboto',sans-serif", fontSize:'15px', color:C.darkGray,
+                  background:C.white, display:'block', marginBottom:'12px',
+                }}
+              />
+              {showMealWarn && (
+                <div style={{ padding:'10px 14px', background:'#fff8ee', border:`1.5px solid ${C.peach}`,
+                  borderRadius:'10px', fontSize:'13px', color:C.darkPeach, marginBottom:'12px', lineHeight:1.5 }}>
+                  <strong>Heads up:</strong> some dinners already have meals posted. The address, start time, and other details in those posts won't update automatically — cooks should review and edit their meal info after this change. You can still proceed.
+                </div>
+              )}
+              <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+                <Btn onClick={() => {
+                  if (!pendingFirstDate) return;
+                  if (hasMealsPosted && !showMealWarn) { setShowMealWarn(true); return; }
+                  applyDateChange();
+                }} variant="accent" style={{ fontSize:'14px', padding:'8px 18px' }}>
+                  {hasMealsPosted && !showMealWarn ? 'Continue →' : 'Apply new date'}
+                </Btn>
+                <Btn onClick={() => { setEditingFirstDate(false); setShowMealWarn(false); }} variant="muted"
+                  style={{ fontSize:'14px', padding:'8px 18px' }}>Cancel</Btn>
+              </div>
+            </Card>
+          )}
+        </div>
+      )}
+
+      {calendarNotice && (
+        <div style={{ padding:'10px 14px', background:'#f0f9f4', border:`1.5px solid ${C.darkMint}`,
+          borderRadius:'10px', fontSize:'13px', color:C.darkMint, marginBottom:'16px',
+          display:'flex', justifyContent:'space-between', alignItems:'center', gap:'8px' }}>
+          <span>Dinner dates have changed — re-download the calendar file to get the updated dates.</span>
+          <button onClick={() => setCalendarNotice(false)} style={{ background:'none', border:'none',
+            color:C.darkMint, cursor:'pointer', fontSize:'18px', padding:'0 2px', lineHeight:1,
+            fontFamily:"'Roboto',sans-serif" }}>×</button>
+        </div>
+      )}
+
       {pool.agreedDays && (
         <div style={{ fontSize:'13px', color:C.gray, marginBottom:'16px' }}>
           Active days: {pool.agreedDays.join(', ')} · Window: {pool.agreedWindow?.earliest} – {pool.agreedWindow?.latest}
