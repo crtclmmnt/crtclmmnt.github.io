@@ -39,7 +39,9 @@ hide_header: true
 
 <p>Tired of cooking for yourself every night? Bored of eating alone? Coordinate a dinner pool with your people. Cook a little, and eat a lot.</p>
 <a href="https://thecriticalmoment.org/resocial/bigtable/" class="btn">Open</a>
+
 <br>
+
 <details><summary><strong>How to use BigTable</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
 
@@ -86,7 +88,9 @@ hide_header: true
 
 <p>A simple meditation timer, with optional meditation instruction included.</p>
 <a href="https://thecriticalmoment.org/resocial/deepbe/" class="btn">Open</a>
+
 <br>
+
 <details><summary><strong>How to use DeepBe</strong></summary>
 <div style="max-width: 700px; margin: 0 auto;">
 
