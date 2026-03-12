@@ -1699,8 +1699,10 @@ function MembersTab({ pool, myName, onUpdate }) {
               <div style={{ marginBottom:'8px' }}>
                 <div style={{ fontSize:'12px', color:C.gray, marginBottom:'4px', fontWeight:'500',
                   textTransform:'uppercase', letterSpacing:'0.5px' }}>Dietary needs</div>
-                {(m.diet?.presets || []).map(p => <Tag key={p} label={p} />)}
-                {m.diet?.note && <span style={{ fontSize:'13px', color:C.darkGray, fontStyle:'italic' }}>{m.diet.note}</span>}
+                <div style={{ display:'flex', gap:'4px', flexWrap:'wrap', alignItems:'center' }}>
+                  {(m.diet?.presets || []).map(p => <Tag key={p} label={p} />)}
+                  {m.diet?.note && <Tag label={m.diet.note} />}
+                </div>
               </div>
             ) : (
               <div style={{ fontSize:'13px', color:C.gray, fontStyle:'italic', marginBottom:'8px' }}>
@@ -1777,16 +1779,11 @@ function GuestSummaryBlock({ pool, entry, style = {} }) {
     <div style={{ padding:'12px 14px', background:'#f7f3ee', border:`1.5px solid ${C.babyYellow}`,
       borderRadius:'10px', fontSize:'14px', color:C.darkGray, lineHeight:1.6, ...style }}>
       {hasRestrictions ? (
-        <>
-          <div style={{ marginBottom: freeformNotes.length > 0 ? '6px' : '0' }}>
-            <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.
-            {' '}Make sure people with these dietary restrictions have something to eat:{' '}
-            <strong>{presetLabels.join(', ')}</strong>
-          </div>
-          {freeformNotes.map((n,i) => (
-            <div key={i} style={{ fontSize:'13px', color:C.gray, fontStyle:'italic' }}>{n}</div>
-          ))}
-        </>
+        <div>
+          <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.
+          {' '}Make sure people with these dietary restrictions have something to eat:{' '}
+          <strong>{[...presetLabels, ...freeformNotes].join(', ')}</strong>
+        </div>
       ) : (
         <div>
           <strong>{guestCount} guest{guestCount!==1?'s':''}</strong> will be at your dinner.{' '}
