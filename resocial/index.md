@@ -25,7 +25,7 @@ hide_header: true
 
 <br>
 
-<div style="max-width: 700px;">
+<div style="max-width: 700px; align-items: center;">
 
 <hr>
 
