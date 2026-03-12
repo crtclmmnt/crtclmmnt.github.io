@@ -14,6 +14,7 @@ hide_header: true
 <p style="text-align: center; max-width: 600px; margin: 0 auto;">Welcome to resocial, where you can find apps that resocialize you. Come back to the world, she misses you.</p>
 
 <div class="mobile-only">
+<br>
  <div class="book-card" style="border: 3px solid #a23c3f; background-color: #fff; padding: 1.5rem;">
   <div style="text-align: center; margin-bottom: 0px;">
     <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 60px;">

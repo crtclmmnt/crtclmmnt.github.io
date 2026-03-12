@@ -381,6 +381,22 @@ title: DeepBe
       color: #9a7a6a;
     }
 
+    /* ── Phase image ────────────────────────────────────────────── */
+
+    .phase-image {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .phase-image.visible {
+      opacity: 1;
+    }
+
     /* ── Closing note ──────────────────────────────────────────── */
 
     .closing-note {
@@ -476,6 +492,7 @@ title: DeepBe
         <div class="timer-label">remaining</div>
       </div>
     </div>
+    <img class="phase-image" id="phase-image" src="" alt="">
     <p class="body-text" id="sitting-note">Sitting quietly&hellip;</p>
   </div>
 
@@ -780,6 +797,7 @@ title: DeepBe
       fg.style.strokeDasharray  = CIRCUMFERENCE;
       fg.style.strokeDashoffset = '0';
 
+      setPhaseImage('/images/deepbe/posturewtxt.png');
       updateDisplay();
 
       requestAnimationFrame(function() {
@@ -817,11 +835,34 @@ title: DeepBe
       document.getElementById('ring-fg').style.strokeDashoffset = offset;
     }
 
+    // ── Phase image ───────────────────────────────────────────────
+    function setPhaseImage(src) {
+      const img = document.getElementById('phase-image');
+      if (!src) {
+        img.classList.remove('visible');
+        return;
+      }
+      const hasImage = img.classList.contains('visible');
+      if (hasImage) {
+        img.classList.remove('visible');
+        setTimeout(function() {
+          img.src = src;
+          void img.offsetWidth;
+          img.classList.add('visible');
+        }, 300);
+      } else {
+        img.src = src;
+        void img.offsetWidth;
+        img.classList.add('visible');
+      }
+    }
+
     // ── Walking phase UI (audio pre-scheduled — UI only here) ─────
     function startWalkingPhaseUI() {
       walkingPhaseActive = true;
       document.getElementById('sitting-note').textContent = 'Walking meditation\u2026';
       document.getElementById('ring-fg').style.stroke = '#FBB965';
+      setPhaseImage('/images/deepbe/walkmudra.gif');
       if (includeInstruction) {
         const walk = document.getElementById('walking-audio');
         if (hasSrc(walk)) walk.play().catch(() => {});
@@ -832,6 +873,7 @@ title: DeepBe
       walkingPhaseActive = false;
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
+      setPhaseImage('/images/deepbe/posturewtxt.png');
       const walk = document.getElementById('walking-audio');
       walk.pause(); walk.currentTime = 0;
     }
@@ -845,6 +887,7 @@ title: DeepBe
         walkingPhaseActive = false;
       }
       document.getElementById('sitting-note').textContent = 'Time complete.';
+      setPhaseImage('/images/deepbe/namaste.png');
       setTimeout(function() {
         if (sessionToken !== token) return; // session was reset
         if (includeInstruction) {
@@ -907,6 +950,7 @@ title: DeepBe
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
       instructionToggle.classList.remove('visible');
       walkToggle.classList.remove('visible');
+      setPhaseImage(null);
 
       showScreen('screen-landing');
     }
