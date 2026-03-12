@@ -1797,20 +1797,20 @@ function GuestSummaryBlock({ pool, entry, style = {} }) {
   );
 }
 
-function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
+function MealPostForm({ entry, pool, myName, onPost, onCancel, initialMeal }) {
   const startI = slotIdx(entry.agreedWindow.earliest);
   const endI   = slotIdx(entry.agreedWindow.latest);
   const validTimes = TIME_SLOTS.filter((_,i) => i >= startI && i <= endI);
 
-  const [mealName,  setMealName]  = useState('');
-  const [startTime, setStartTime] = useState(entry.agreedWindow.earliest);
-  const [prepHelp,  setPrepHelp]  = useState(false);
-  const prepI = PREP_SLOTS.indexOf(entry.agreedWindow.earliest);
-  const [prepStart, setPrepStart] = useState(PREP_SLOTS[Math.max(0, prepI - 1)]);
-  const [drinks,    setDrinks]    = useState('BYOB');
-  const [address,   setAddress]   = useState('');
-  const [bring,     setBring]     = useState('');
-  const [note,      setNote]      = useState('');
+  const [mealName,  setMealName]  = useState(initialMeal?.name      || '');
+  const [startTime, setStartTime] = useState(initialMeal?.startTime  || entry.agreedWindow.earliest);
+  const [prepHelp,  setPrepHelp]  = useState(initialMeal?.prepHelp   || false);
+  const prepI = PREP_SLOTS.indexOf(initialMeal?.startTime || entry.agreedWindow.earliest);
+  const [prepStart, setPrepStart] = useState(initialMeal?.prepStartTime || PREP_SLOTS[Math.max(0, prepI - 1)]);
+  const [drinks,    setDrinks]    = useState(initialMeal?.drinks     || 'BYOB');
+  const [address,   setAddress]   = useState(initialMeal?.address    || '');
+  const [bring,     setBring]     = useState(initialMeal?.bring      || '');
+  const [note,      setNote]      = useState(initialMeal?.note       || '');
   const [error,     setError]     = useState('');
 
   // Prep start options: all PREP_SLOTS before the chosen actual start time
@@ -1909,7 +1909,7 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel }) {
 
       <ErrMsg msg={error} />
       <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
-        <Btn onClick={handleSubmit} variant="success">Post meal info</Btn>
+        <Btn onClick={handleSubmit} variant="success">{initialMeal ? 'Update meal info' : 'Post meal info'}</Btn>
         <Btn onClick={onCancel} variant="muted">Cancel</Btn>
       </div>
     </div>
@@ -2216,9 +2216,18 @@ function ScheduleTab({ pool, myName, onUpdate }) {
             )}
 
             {/* Posted meal details */}
-            {hasMeal && (
+            {hasMeal && postingIdx !== i && (
               <div style={{ padding:'12px 14px', background:C.white, borderRadius:'10px', marginBottom:'12px', border:`1px solid ${C.lightGray}` }}>
-                <div style={{ fontWeight:'700', fontSize:'16px', marginBottom:'8px' }}>{entry.meal.name}</div>
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'8px' }}>
+                  <div style={{ fontWeight:'700', fontSize:'16px' }}>{entry.meal.name}</div>
+                  {isCook && (
+                    <button onClick={()=>setPostingIdx(i)} style={{
+                      background:'none', border:`1px solid ${C.lightGray}`, borderRadius:'6px',
+                      color:C.gray, cursor:'pointer', fontSize:'12px', padding:'2px 10px',
+                      fontFamily:"'Roboto',sans-serif", lineHeight:1.6, flexShrink:0
+                    }}>edit</button>
+                  )}
+                </div>
                 <div style={{ display:'flex', flexDirection:'column', gap:'4px', fontSize:'14px', color:C.darkGray }}>
                   <div><strong>Start:</strong> {entry.meal.startTime}</div>
                   {entry.meal.prepHelp && entry.meal.prepStartTime && (
@@ -2274,7 +2283,8 @@ function ScheduleTab({ pool, myName, onUpdate }) {
             )}
             {postingIdx === i && (
               <MealPostForm entry={entry} pool={pool} myName={myName}
-                onPost={meal=>handlePostMeal(i,meal)} onCancel={()=>setPostingIdx(null)} />
+                onPost={meal=>handlePostMeal(i,meal)} onCancel={()=>setPostingIdx(null)}
+                initialMeal={hasMeal ? entry.meal : null} />
             )}
           </Card>
         );
