@@ -3,8 +3,6 @@ layout: default
 permalink: /friendsandfamily/
 ---
 
-<img src="/images/pano8.JPG" alt="About header" class="hero-image">
-
 <h1 style="font-size: 4rem; margin-bottom: 0px;">Meditation for <br class="desktop-break">Friends and Family</h1>
 
 <hr class="short" style="margin: 0.5em 0;">

@@ -60,7 +60,7 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
-  <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;  font-family: 'Roboto'; font-weight: 500; color: #666;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
+  <a href="https://thecriticalmoment.org/offerings#free-workshops" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;  font-family: 'Roboto'; font-weight: 500;">Free Meditation Workshops for Community Organizers and Organizations</span></a>
   <a href="https://thecriticalmoment.org/offerings#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
   <a href="https://thecriticalmoment.org/offerings#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
 </div>

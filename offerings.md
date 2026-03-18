@@ -11,7 +11,7 @@ permalink: /offerings/
 
 <br>
 
-<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Maybe you're a community organizer, a concerned citizen, or  just someone curious about meditation. Regardless of who you are, I have an offering for you.</p>
+<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
 
 <hr>
 
@@ -27,7 +27,7 @@ permalink: /offerings/
   </div>
   <div class="services-content" style="flex: 1.2;">
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
-    <p>If you represent an organization, I can bring this workshop to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
+    <p>If you represent an organization, I can bring the workshop of your choosing to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
   </div>
 </div>
 
@@ -41,7 +41,7 @@ permalink: /offerings/
     <h6 style="margin-top: 5px; font-family: 'Roboto'; font-weight: 400; color: #666;">Exploring the foundations of a sustainable meditation practice.</h6>
     <h6>4 weeks / 6 weeks</h6>
     <details><summary><strong>See more</strong></summary>
-    <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
+    <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice, which also applies to cultivating a healthy relationship with the self. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
     </details>
   </div>
 
@@ -50,7 +50,7 @@ permalink: /offerings/
     <h6 style="margin-top: 5px; font-family: 'Roboto'; font-weight: 400; color: #666;">Unlearning philosophical, ecological, and spiritual dualism.</h6>
     <h6>4 weeks / 6 weeks</h6>
     <details><summary><strong>See more</strong></summary>
-    <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum explores how moving past individuality, and learning to identify as part of the living Earth, transforms burnout and despair into grounded, sustainable action.</p>
+    <p class="book-description">Based on Joanna Macy's book <em>World as Lover, World as Self</em>, this curriculum encourages participants to challenge black-and-white thinking, to reflect critically on our individuality, and to explore what it means to be an integral part of the living Earth. Changing your perspective from one of individuality, alienation, and separateness to one of community, interdependence, and belonging can transform burnout and despair into grounded, sustainable action.</p>
     <br>
     <p class="book-description">The core idea explored is what Macy identifies as the four views through which we see the world: the limiting views — World as Battlefield, World as Trap, and the liberating views — World as Lover, World as Self.</p>
     </details>
