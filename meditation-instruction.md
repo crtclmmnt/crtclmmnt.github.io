@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /offerings/meditation-instruction/
+permalink: /meditation-instruction/
 ---
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
