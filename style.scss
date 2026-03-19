@@ -609,37 +609,32 @@ nav {
     background: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 1000;
-
     li a {
       display: block;
       padding: 0.5rem 1rem;
       white-space: nowrap;
       margin-left: 0;
-      font-size: 0.85em;
+      font-size: 0.8em;
     }
-
-    @include desktop {
+    @media screen and (min-width: 641px) {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
     }
-
     @include mobile {
       display: none;
       position: fixed;
       left: 0;
       right: 0;
-      top: auto; // JS will set this dynamically
+      top: auto;
     }
   }
-
-  @include desktop {
+  @media screen and (min-width: 641px) {
     &:hover .dropdown-menu {
       display: block;
     }
   }
-
   &.is-open .dropdown-menu {
     display: block;
   }
