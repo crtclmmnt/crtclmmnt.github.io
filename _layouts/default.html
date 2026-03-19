@@ -24,18 +24,17 @@
   </head>
 
   <script>
-    var toggle = document.querySelector('.dropdown-toggle');
+    var offeringsLink = document.querySelector('.nav-dropdown > a');
     var dropdown = document.querySelector('.nav-dropdown');
 
-    if (toggle) {
-      // Position dropdown just below the nav bar
-      toggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (!dropdown.classList.contains('is-open')) {
+    if (offeringsLink) {
+      offeringsLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 640) {
+          e.preventDefault();
           var navBottom = document.querySelector('.wrapper-masthead').getBoundingClientRect().bottom;
           dropdown.querySelector('.dropdown-menu').style.top = navBottom + 'px';
+          dropdown.classList.toggle('is-open');
         }
-        dropdown.classList.toggle('is-open');
       });
     }
 
@@ -60,7 +59,6 @@
           <nav>
             <div class="nav-dropdown">
               <a href="{{ site.baseurl }}/offerings">Offerings</a>
-              <button class="dropdown-toggle" aria-label="Toggle offerings menu">&#9662;</button>
               <ul class="dropdown-menu">
                 <li class="mobile-only"><a href="{{ site.baseurl }}/offerings">Offerings Overview</a></li>
                 <li><a href="{{ site.baseurl }}/meditation-for-liberation/">Meditation for Liberation</a></li>

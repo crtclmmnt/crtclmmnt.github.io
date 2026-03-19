@@ -587,21 +587,6 @@ nav {
     margin-left: 0; // override nav a margin since .nav-dropdown handles its own
   }
 
-  .dropdown-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 0.25rem;
-    font-size: 0.7em;
-    color: $darkGray;
-    display: none;
-
-    @include mobile {
-      display: inline;
-      color: $darkRose;
-    }
-  }
-
   .dropdown-menu {
     list-style: none;
     padding: 0.5rem 0;
@@ -643,7 +628,9 @@ nav {
     }
   }
   &.is-open .dropdown-menu {
-    display: block;
+    @include mobile {
+      display: block;
+    }
   }
 }
 
