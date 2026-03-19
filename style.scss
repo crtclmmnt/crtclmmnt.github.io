@@ -614,7 +614,9 @@ nav {
       padding: 0.5rem 1rem;
       white-space: nowrap;
       margin-left: 0;
-      font-size: 0.8em;
+      font-family: 'Roboto';
+      font-size: 0.6em;
+      text-align: left;
     }
     @media screen and (min-width: 641px) {
       display: none;
