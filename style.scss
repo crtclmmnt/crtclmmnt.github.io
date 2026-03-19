@@ -630,6 +630,15 @@ nav {
       top: auto;
     }
   }
+  &::after {
+    content: '';
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+  }
   @media screen and (min-width: 641px) {
     &:hover .dropdown-menu {
       display: block;
