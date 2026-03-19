@@ -23,28 +23,6 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
   </head>
 
-  <script>
-    var offeringsLink = document.querySelector('.nav-dropdown > a');
-    var dropdown = document.querySelector('.nav-dropdown');
-
-    if (offeringsLink) {
-      offeringsLink.addEventListener('click', function(e) {
-        if (window.innerWidth <= 640) {
-          e.preventDefault();
-          var navBottom = document.querySelector('.wrapper-masthead').getBoundingClientRect().bottom;
-          dropdown.querySelector('.dropdown-menu').style.top = navBottom + 'px';
-          dropdown.classList.toggle('is-open');
-        }
-      });
-    }
-
-    document.addEventListener('click', function(e) {
-      if (dropdown && !e.target.closest('.nav-dropdown')) {
-        dropdown.classList.remove('is-open');
-      }
-    });
-  </script>
-
   <body>
     {% unless page.hide_header %}
     <div class="wrapper-masthead">
@@ -103,5 +81,30 @@
 {% endunless %}
 
     {% include analytics.html %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var offeringsLink = document.querySelector('.nav-dropdown > a');
+      var dropdown = document.querySelector('.nav-dropdown');
+
+      if (offeringsLink) {
+        offeringsLink.addEventListener('click', function(e) {
+          if (window.innerWidth <= 640) {
+            e.preventDefault();
+            var navBottom = document.querySelector('.wrapper-masthead').getBoundingClientRect().bottom;
+            dropdown.querySelector('.dropdown-menu').style.top = navBottom + 'px';
+            dropdown.classList.toggle('is-open');
+          }
+        });
+      }
+
+      document.addEventListener('click', function(e) {
+        if (dropdown && !e.target.closest('.nav-dropdown')) {
+          dropdown.classList.remove('is-open');
+        }
+      });
+    });
+    </script>
+
   </body>
 </html>
