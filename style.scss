@@ -573,6 +573,78 @@ nav {
   }
 }
 
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 20px;
+
+  @include mobile {
+    margin: 0 10px;
+    display: inline;
+  }
+
+  a {
+    margin-left: 0; // override nav a margin since .nav-dropdown handles its own
+  }
+
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.25rem;
+    font-size: 0.7em;
+    color: $darkGray;
+    display: none;
+
+    @include mobile {
+      display: inline;
+      color: $darkRose;
+    }
+  }
+
+  .dropdown-menu {
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 260px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+
+    li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      margin-left: 0;
+      font-size: 0.85em;
+    }
+
+    @include desktop {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    @include mobile {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: auto; // JS will set this dynamically
+    }
+  }
+
+  @include desktop {
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+
+  &.is-open .dropdown-menu {
+    display: block;
+  }
+}
+
 .services-layout {
   display: flex;
   align-items: center;
