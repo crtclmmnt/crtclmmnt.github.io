@@ -119,14 +119,3 @@ permalink: /offerings/
 <h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
 <br>
-
-<div style="text-align: center; margin-bottom: 0px;">
-  <img src="/images/resocial-android-chrome-512x512.png" style="max-width: 100px;">
-  <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Resocial</h1>
-<hr class="short" style="margin: 0.5em auto;">
-  <h3 style="margin-top: 0.25rem; font-family: 'Roboto';">Apps that help you get resocialized.</h3>
-<br>
-  <div><a href="https://thecriticalmoment.org/resocial/" class="btn">Try the Apps</a></div>
-<br>
-</div>
-
