@@ -2,12 +2,9 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-<div class="hero-wrapper">
-  <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
-  <div class="hero-text">
-    <h1 id="mi" style="font-size: 4rem; margin-bottom: 0px;">Meditation Instruction</h1>
-  </div>
-</div>
+<img src="/images/pano10.JPG" alt="Rolling hills at sunrise on the Brazilian coast." class="hero-image">
+
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
 
 <br>
 
