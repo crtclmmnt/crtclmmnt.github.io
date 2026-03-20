@@ -2,9 +2,7 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-<img src="/images/pano10.JPG" alt="Rolling hills at sunrise on the Brazilian coast." class="hero-image">
-
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
+<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
 
 <br>
 
