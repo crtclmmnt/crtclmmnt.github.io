@@ -2,10 +2,7 @@
 layout: default
 permalink: /meditation-for-liberation/
 ---
-
-<hr>
-<br>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/">Back to Offerings Overview</a></h5>
+<h5"><a href="https://thecriticalmoment.org/offerings/">back to Offerings Overview</a></h5>
 <br>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -64,9 +61,8 @@ permalink: /meditation-for-liberation/
 </div>
 
 <hr>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
-<br>
 
+<br>
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <hr class="short">
@@ -77,3 +73,5 @@ permalink: /meditation-for-liberation/
     </div>
 </div>
 <br>
+
+<h5><a href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>

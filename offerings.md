@@ -48,9 +48,8 @@ permalink: /offerings/
 <br>
 
 <hr>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings">back to the top</a></h5>
-<br>
 
+<br>
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <hr class="short">
@@ -61,4 +60,6 @@ permalink: /offerings/
     </div>
 </div>
 <br>
+
+<h5><a href="https://thecriticalmoment.org/offerings/">back to the top</a></h5>
 

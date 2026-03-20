@@ -2,9 +2,9 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-
-<h5><a href="https://thecriticalmoment.org/offerings/">Back to Offerings Overview</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/">ack to Offerings Overview</a></h5>
 <br>
+
 <h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px; text-align: center;">Meditation Instruction</h1>
 <p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
 <hr>
@@ -53,9 +53,8 @@ permalink: /meditation-instruction/
 </div>
 
 <hr>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/meditation-instruction/">back to the top</a></h5>
-<br>
 
+<br>
 <div style="max-width: 725px; margin: 0 auto;">
   <h1 style="text-align: center;">I Want to Hear From You</h1>
   <hr class="short">
@@ -66,3 +65,5 @@ permalink: /meditation-instruction/
     </div>
 </div>
 <br>
+
+<h5><a href="https://thecriticalmoment.org/meditation-instruction/">back to the top</a></h5>
