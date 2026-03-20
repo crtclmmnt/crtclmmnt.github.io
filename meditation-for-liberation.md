@@ -3,7 +3,7 @@ layout: default
 permalink: /meditation-for-liberation/
 ---
 <div class="mini-hero-wrapper">
-  <img src="/images/pano7.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
+  <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
   <div class="hero-text">
     <h5><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
   </div>
