@@ -10,16 +10,16 @@ permalink: /offerings/
   </div>
 </div>
 
-<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
+<p>I started this org because I want to help more people meditate. I'm especially interested in teaching people who are working towards liberation in some way. Lord knows the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
 
 <br>
 
 <hr>
 
-<div style="max-width: 675px; margin: 0.5em auto;">
+<div style="max-width: 700px; margin: 0.5em auto;">
   <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
   <hr class="short" style="margin: 0.5em 0;">
-  <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+  <h3 style="margin-top: 0.25rem;">Free Workshops for Community <br class="desktop-break">Organizations and Organizers</h3>
   <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
   <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
 </div>
@@ -27,7 +27,7 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 675px; margin: 0.5em auto;">
+<div style="max-width: 700px; margin: 0.5em auto;">
   <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
   <hr class="short" style="margin: 0.5em 0;">
   <h3 style="margin-top: 0.25rem;">Sliding Scale, up to 4 people</h3>
@@ -38,11 +38,11 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 675px; margin: 0.5em auto;">
+<div style="max-width: 700px; margin: 0.5em auto;">
   <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
   <hr class="short" style="margin: 0.5em 0;">
-  <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
-  <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together, regardless of what brings you together.</p>
+  <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, and more</h3>
+  <p>Group Meditation Workshops are for any group of people who want to build a meditation practice in community. Doing so can be incredibly rewarding, regardless of what brings you together.</p>
   <div><a href="https://thecriticalmoment.org/meditation-instruction#large-groups" class="btn">Learn More</a></div>
 </div>
 <br>
