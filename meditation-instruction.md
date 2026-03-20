@@ -52,6 +52,16 @@ permalink: /meditation-instruction/
 </div>
 
 <hr>
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/meditation-instruction/">back to the top</a></h5>
 <br>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/meditation-for-liberation/">Back to the top</a></h5>
+
+<div style="max-width: 725px; margin: 0 auto;">
+  <h1 style="text-align: center;">I Want to Hear From You</h1>
+  <hr class="short">
+  <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
+  <p style="text-align: center;">Ready to get started?</p>
+    <div style="display: flex; justify-content: center;">
+      <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+    </div>
+</div>
 <br>
