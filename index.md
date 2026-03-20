@@ -28,7 +28,6 @@ A future where we win starts now, in the critical moment.
 <h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
 
 <br>
-<hr class="short" style="margin: 0.5em auto;">
 <br>
 
 <div style="max-width: 650px; margin: 0.5em auto;">
@@ -37,7 +36,6 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
-<hr class="short" style="margin: 0.5em auto;">
 <br>
 
 <div class="services-layout">
@@ -58,8 +56,6 @@ A future where we win starts now, in the critical moment.
 
 <br>
 <hr>
-<br>
-
 
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 <div style="max-width: 700px; margin: 0 auto;">
