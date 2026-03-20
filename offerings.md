@@ -60,5 +60,5 @@ permalink: /offerings/
 </div>
 <br>
 
-<h5><a href="https://thecriticalmoment.org/offerings/">back to the top</a></h5>
+<h5 style="text-align: center; margin: 0.5em auto;"><a href="https://thecriticalmoment.org/offerings/">back to the top</a></h5>
 
