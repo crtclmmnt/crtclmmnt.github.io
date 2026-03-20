@@ -15,10 +15,9 @@ permalink: /offerings/
 
 <hr>
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
-    <br>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
@@ -34,10 +33,9 @@ permalink: /offerings/
 
 <hr>
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
-    <br>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <div><a href="https://thecriticalmoment.org/meditation-instruction#individual-instruction" class="btn">Learn More</a></div>
@@ -53,10 +51,9 @@ permalink: /offerings/
 
 <hr>
 
-<div class="services-layout" style="align-items: flex-end;">
+<div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 0.8; text-align: left;">
     <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
-    <br>
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <div><a href="https://thecriticalmoment.org/meditation-instruction#large-groups" class="btn">Learn More</a></div>
