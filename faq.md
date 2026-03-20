@@ -118,8 +118,10 @@ permalink: /faq/
 <p>Mindfulness meditation is not a grim duty. Be kind to yourself. This practice asks for discipline, but not self-torture. If you're in real pain, shift your posture and take a fresh start. You can meditate on a chair, on a cushion, or in a supported kneeling posture, and all of them are perfectly valid postures for meditation. The right posture is the one that lets you feel both relaxed and alert.</p>
 </details>
 <details><summary><h6>Can I meditate lying down or while walking?</h6></summary>
-<p>Sitting upright is recommended because the posture itself supports the quality of being both relaxed and awake. That said, you can bring mindfulness to any activity — walking, eating, even doing the dishes. Think of formal sitting practice and informal mindfulness as two parts of the same effort. They work best together.</p>
-<p>"Before enlightenment, I chopped wood and carried water. After enlightenment, I chopped wood and carried water." -Something Buddhists always say</p>
+<p>Sitting upright is recommended because the posture itself supports the quality of being both relaxed and awake. There is also a walking meditation technique where the sensation of each footstep replaces the breath as the object of the meditation. </p>
+
+<p>That said, you can bring mindfulness to any activity. Mindfulness while sitting in meditation and mindfulness while living your life are two parts of the same practice. Engaging with both reinforces mindfulness in all contexts.</p>
+<p><em>"Before enlightenment, I chopped wood and carried water. After enlightenment, I chopped wood and carried water."</em> <br> <strong>- an oft repeated Zen saying</strong></p>
 </details>
 
 </div>

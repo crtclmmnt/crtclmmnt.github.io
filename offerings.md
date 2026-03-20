@@ -2,7 +2,6 @@
 layout: default
 permalink: /offerings/
 ---
-
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
@@ -19,7 +18,7 @@ permalink: /offerings/
 <div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
   <hr class="short" style="margin: 0.5em 0;">
-  <h3 style="margin-top: 0.25rem;">Free Workshops for Community <br class="desktop-break">Organizations and Organizers</h3>
+  <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Community Organizers</h3>
   <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
   <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
 </div>

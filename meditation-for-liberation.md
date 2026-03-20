@@ -3,25 +3,22 @@ layout: default
 permalink: /meditation-for-liberation/
 ---
 <h5><a href="https://thecriticalmoment.org/offerings/">back to offerings overview</a></h5>
-<hr>
-<br>
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
 
 <div class="services-layout" style="align-items: flex-end;">
-  <div style="flex: 0.8; text-align: left;">
-    <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
-    <hr class="short" style="margin: 0.5em 0;">
-    <br>
-    <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+  <div style="flex: 1; text-align: left;">
+    
+    <h3 style="margin-top: 0.25rem;">Free workshops for community organizations and community organizers</h3>
     <br>
     <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
   </div>
-  <div class="services-content" style="flex: 1.2;">
+  <div class="services-content" style="flex: 1;">
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
-    <p>If you represent an organization, I can bring the workshop of your choosing to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
   </div>
 </div>
 
+<p>If you represent an organization, I can bring the workshop of your choosing to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
 <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
 <p>Workshops run between <strong>4 and 8 weeks</strong> depending on the curriculum, and the duration of each session is <strong>60 - 90 minutes.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
 
