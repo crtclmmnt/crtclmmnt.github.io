@@ -460,6 +460,10 @@ details {
   }
 }
 
+.hero-wrapper {
+  position: relative;
+}
+
 .mini-hero-wrapper {
   width: 100vw;
   position: relative;
@@ -475,10 +479,6 @@ details {
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.hero-wrapper {
-  position: relative;
 }
 
 .hero-text {
