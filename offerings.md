@@ -9,7 +9,7 @@ permalink: /offerings/
   </div>
 </div>
 
-<p>I started this org because I want to help more people meditate. I'm especially interested in teaching people who are working in service of liberation and justice. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
+<p>I started this org because I want to help more people meditate, especially organizers, activists, and anyone working towards building a peaceful and more just world. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
 
 <br>
 

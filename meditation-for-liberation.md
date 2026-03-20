@@ -6,9 +6,6 @@ permalink: /meditation-for-liberation/
   <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
 </div>
 
-<h5><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
-<br>
-
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0.5rem;">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">
 
@@ -69,15 +66,10 @@ permalink: /meditation-for-liberation/
 <hr>
 
 <br>
-<div style="max-width: 725px; margin: 0 auto;">
-  <h1 style="text-align: center;">I Want to Hear From You</h1>
-  <hr class="short">
-  <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
-  <p style="text-align: center;">Ready to get started?</p>
-    <div style="display: flex; justify-content: center;">
-      <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
-    </div>
+<div style="max-width: 600px; margin: 0 auto;">
+  <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
+  <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
 </div>
 <br>
 
-<h5><a href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
+<h5 style="text-align: center; margin: 0.5em auto;"><a href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>

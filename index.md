@@ -29,12 +29,6 @@ A future where we win starts now, in the critical moment.
 
 <br>
 
-<br>
-
-<hr>
-
-<br>
-
 <div class="services-layout">
   <div>
     <img src="/images/block5.JPG" alt="A waterfall pours into a small lake surrounded by pine forests" width="350px" style="margin-top: 0px;">
@@ -52,6 +46,9 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <br>
+<hr>
+<br>
+
 
 <h1 style="text-align: center;">Build A Meditation Practice</h1>
 <div style="max-width: 700px; margin: 0 auto;">
