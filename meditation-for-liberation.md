@@ -2,7 +2,8 @@
 layout: default
 permalink: /meditation-for-liberation/
 ---
-<h5"><a href="https://thecriticalmoment.org/offerings/">back to Offerings Overview</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/">back to offerings overview</a></h5>
+<hr>
 <br>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -59,6 +60,8 @@ permalink: /meditation-for-liberation/
     </details>
   </div>
 </div>
+
+<br>
 
 <hr>
 

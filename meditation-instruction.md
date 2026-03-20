@@ -2,10 +2,9 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-<h5><a href="https://thecriticalmoment.org/offerings/">ack to Offerings Overview</a></h5>
-<br>
+<h5><a href="https://thecriticalmoment.org/offerings/">back to offerings overview</a></h5>
 
-<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px; text-align: center;">Meditation Instruction</h1>
+<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
 <p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
 <hr>
 
@@ -15,9 +14,7 @@ permalink: /meditation-instruction/
     <hr class="short" style="margin: 0.5em 0;">
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
-    <h3 style="margin-top: 0.25rem;">$40–$120 per session</h3>
     <h3 style="margin-top: 0.25rem;">Up to 4 people</h3>
-    <br>
     <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
   </div>
@@ -40,7 +37,6 @@ permalink: /meditation-instruction/
     <br>
     <h3 style="margin-top: 0.25rem;">Sliding Scale</h3>
     <h3 style="margin-top: 0.25rem;">For workplaces, nonprofits, clubs, <br class="desktop-break">and more</h3>
-    <br>
     <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
   </div>
