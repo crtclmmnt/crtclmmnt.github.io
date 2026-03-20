@@ -15,19 +15,13 @@ permalink: /offerings/
 
 <hr>
 
-<div class="services-layout" style="align-items: flex-start;">
-  <div style="flex: 0.8; text-align: left;">
-    <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
-    <hr class="short" style="margin: 0.5em 0;">
-    <br>
-    <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
-    <br>
-  </div>
-  <div class="services-content" style="flex: 1.2;">
-    <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
-    <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
-  </div>
-</div>
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
+<hr class="short" style="margin: 0.5em 0;">
+<br>
+<h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
+<p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
+<br>
+<div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
 
 <br> 
 
