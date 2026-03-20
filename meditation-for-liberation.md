@@ -14,7 +14,7 @@ permalink: /meditation-for-liberation/
     <br>
   </div>
   <div class="services-content" style="flex: 1;">
-    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (described below) all of which start with teaching basic mindfulness meditation techniques that will help organizers stay grounded, clear-headed, and resilient under pressure.</p>
+    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from all of which start with teaching basic mindfulness meditation techniques, before moving on to deeper exploration and discussion.</p>
   </div>
 </div>
 
