@@ -6,10 +6,11 @@ permalink: /meditation-for-liberation/
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
 
 <div class="services-layout" style="align-items: flex-start;">
+<hr class="short" style="margin: 0.5em 0;">
+
   <div style="flex: 1; text-align: left;">
-    <hr class="short" style="margin: 0.5em 0;">
-    <br>
     <h3 style="margin-top: 0.25rem;">Free workshops for community organizations and community organizers</h3>
+    <br>
     <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
   </div>

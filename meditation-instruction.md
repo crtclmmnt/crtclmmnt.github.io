@@ -2,7 +2,12 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-<h5><a href="https://thecriticalmoment.org/offerings/">back to offerings overview</a></h5>
+<div class="hero-wrapper">
+  <img src="/images/pano7.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
+  <div class="hero-text">
+    <h5><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
+  </div>
+</div>
 
 <h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
 <p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
