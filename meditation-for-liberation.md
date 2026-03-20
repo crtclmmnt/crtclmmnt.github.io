@@ -9,7 +9,7 @@ permalink: /meditation-for-liberation/
   </div>
 </div>
 
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0.5em">Meditation for Liberation</h1>
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0.5rem">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">
 
 <div class="services-layout" style="align-items: flex-start;">
