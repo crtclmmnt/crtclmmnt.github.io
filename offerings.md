@@ -2,6 +2,7 @@
 layout: default
 permalink: /offerings/
 ---
+
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
@@ -15,7 +16,7 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 750; margin: 0.5em auto;">
+<div style="max-width: 750px; margin: 0.5em auto;">
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">
 <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
@@ -63,3 +64,4 @@ permalink: /offerings/
 <h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
 <br>
+
