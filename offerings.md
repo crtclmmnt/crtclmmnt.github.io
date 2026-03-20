@@ -6,7 +6,7 @@ permalink: /offerings/
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
-    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
+    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings Overview</h1>
   </div>
 </div>
 
@@ -60,8 +60,11 @@ permalink: /offerings/
   </div>
 </div>
 
-<br>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
+
+<br>
+
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
+
 <br>
 

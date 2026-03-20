@@ -2,13 +2,11 @@
 layout: default
 permalink: /meditation-for-liberation/
 ---
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
-
-<br>
-
-<p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
 
 <hr>
+<br>
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/">Back to Offerings Overview</a></h5>
+<br>
 
 <div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 0.8; text-align: left;">
@@ -65,7 +63,7 @@ permalink: /meditation-for-liberation/
   </div>
 </div>
 
-<br>
-<h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
+<br>
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/meditation-for-liberation/">Back to the top</a></h5>
 <br>
