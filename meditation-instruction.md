@@ -5,7 +5,7 @@ permalink: /meditation-instruction/
 <div class="mini-hero-wrapper">
   <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
   <div class="hero-text">
-    <h5><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
+  <h1 style="font-size: 0.5rem; margin-bottom: 0px;"><a href="https://thecriticalmoment.org/offerings/">back</a></h1>
   </div>
 </div>
 
