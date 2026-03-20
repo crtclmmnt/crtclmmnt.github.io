@@ -2,11 +2,11 @@
 layout: default
 permalink: /meditation-instruction/
 ---
-<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px; text-align: center;">Meditation Instruction</h1>
 
+<h5><a href="https://thecriticalmoment.org/offerings/">Back to Offerings Overview</a></h5>
 <br>
-<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings/">Back to Offerings Overview</a></h5>
-<br>
+<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px; text-align: center;">Meditation Instruction</h1>
+<p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
 <hr>
 
 <div class="services-layout" style="align-items: flex-end;">
@@ -48,6 +48,7 @@ permalink: /meditation-instruction/
     <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
     <p>Pricing is <strong>sliding scale based on your organization's capacity.</strong> Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
     <p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, and workshops run between <strong>4 and 8 weeks.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
+  <br>
   </div>
 </div>
 
