@@ -29,8 +29,8 @@ A future where we win starts now, in the critical moment.
 
 <br>
 <div style="max-width: 650px; margin: 0.5em auto;">
-<p style="font-style: italics; font-family: 'Roboto'; font-size: 30px; font-weight: 400;">"If the world is to be healed through human efforts, I am convinced that it will be by ordinary people, people whose love for this life is even greater than their fear."</p>
-<p style="font-family: 'ZTNature'; font-size: 30px; font-weight: 500; color: #ac7022;">— Joanna Macy</p>
+<p style="font-family: 'Roboto'; font-size: 30px; font-weight: 300;"><em><strong>"</strong>If the world is to be healed through human efforts, I am convinced that it will be by ordinary people, people whose love for this life is even greater than their fear.<strong>"</strong></em></p>
+<p style="font-family: 'ZTNature'; font-size: 30px; font-weight: 200; color: #ac7022;">— Joanna Macy</p>
 </div>
 <br>
 
