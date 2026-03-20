@@ -5,9 +5,11 @@ permalink: /meditation-for-liberation/
 <div class="mini-hero-wrapper">
   <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
   <div class="hero-text">
-    <h5><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
+    <h5 style="color: #fff;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
   </div>
 </div>
+
+<br>
 
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0.5rem">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">
