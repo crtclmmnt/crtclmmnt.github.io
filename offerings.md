@@ -5,11 +5,11 @@ permalink: /offerings/
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
   <div class="hero-text">
-    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings Overview</h1>
+    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
   </div>
 </div>
 
-<p>I started this org because I want to help more people meditate. I'm especially interested in teaching people who are working towards liberation in some way. Lord knows the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
+<p>I started this org because I want to help more people meditate. I'm especially interested in teaching people who are working in service of liberation and justice. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
 
 <br>
 
