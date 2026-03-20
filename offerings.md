@@ -16,7 +16,7 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 700px; margin: 0.5em auto;">
+<div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
   <hr class="short" style="margin: 0.5em 0;">
   <h3 style="margin-top: 0.25rem;">Free Workshops for Community <br class="desktop-break">Organizations and Organizers</h3>
@@ -27,7 +27,7 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 700px; margin: 0.5em auto;">
+<div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
   <hr class="short" style="margin: 0.5em 0;">
   <h3 style="margin-top: 0.25rem;">Sliding Scale, up to 4 people</h3>
@@ -38,7 +38,7 @@ permalink: /offerings/
 
 <hr>
 
-<div style="max-width: 700px; margin: 0.5em auto;">
+<div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
   <hr class="short" style="margin: 0.5em 0;">
   <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, and more</h3>
