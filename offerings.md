@@ -9,19 +9,19 @@ permalink: /offerings/
   </div>
 </div>
 
-<br>
-
 <p>The main thing I want is to help more people meditate, because the world needs more level-headed people. Whether you're a community organizer, a concerned citizen, or  just someone curious about meditation, I have an offering for you.</p>
+
+<br>
 
 <hr>
 
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation <br>for Liberation</h1>
+<div style="max-width: 750; margin: 0.5em auto;">
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">
-<br>
 <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Organizers</h3>
 <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
-<br>
 <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
+</div>
 
 <br> 
 
@@ -60,6 +60,6 @@ permalink: /offerings/
 </div>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
+<h5 style="text-align: center;"><a href="https://thecriticalmoment.org/offerings">Back to the top</a></h5>
 <hr>
 <br>
