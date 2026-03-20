@@ -39,7 +39,7 @@ permalink: /offerings/
 
 <div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
-  <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, households, clubs, and more</h3>
+  <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, households, co-ops, and more</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Group Meditation Workshops are for any group of people who want to build a meditation practice in community. Doing so can be incredibly rewarding, regardless of what brings you together.</p>
   <div><a href="https://thecriticalmoment.org/meditation-instruction#large-groups" class="btn">Learn More</a></div>
