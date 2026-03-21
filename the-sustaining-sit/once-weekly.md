@@ -1,10 +1,10 @@
 ---
 layout: default
-permalink: /once-weekly/
+permalink: /the-sustaining-sit/once-weekly/
 ---
 
-<h1 style="font-size: 4rem; margin-bottom: 0px;">The Sustaining Sit - Once Weekly</h1>
-
+<h1 style="font-size: 4rem; margin-bottom: 0px;">The Sustaining Sit</h1>
+<h3 style="font-size: 4rem; margin-bottom: 0px;">Once Weekly</h3>
 <hr class="short" style="margin: 0.5em 0;">
 
 <p>Congratulations on finding the secret page! If you'd like to be part of the weekly sit I hold for friends and family, book it below to get a calendar invite.</p>
