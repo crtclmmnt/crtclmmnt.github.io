@@ -63,9 +63,9 @@ permalink: /meditation-for-liberation/
 
 <br>
 
-<div class="hero-wrapper">
+<div class="hero-wrapper" style="margin-bottom: -10px;">
   <img src="/images/block6.JPG" alt="Rocky hills being glanced by sunset light." class="hero-image">
-  <div class="hero-text" style="width: 600px;">
+  <div class="hero-text" style="width: 600px;  top: 50%;  transform: translate(-50%, -50%);">
     <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
     <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
