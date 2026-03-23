@@ -10,7 +10,12 @@ permalink: /friendsandfamily/
 <p>Congratulations on finding the secret page! If you'd like to be part of the weekly sit I hold for friends and family, book it below to get a calendar invite.</p>
 
 <p>My main reason for having this page look so prim and proper is that I need to test out the digital infrastructure of Cal.com before I start using it for public-facing workshops and instruction. Thank you for helping me learn!</p>
+
+<br>
+
 <hr>
+
+<br>
 
 <!-- Cal inline embed code begins -->
 <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-friends-and-family-sit"></div>
