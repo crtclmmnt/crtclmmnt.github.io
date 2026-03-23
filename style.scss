@@ -453,6 +453,7 @@ details {
   max-width: none;
 
   @include mobile {
+    height: 100%;
     min-height: 200px;
     max-height: none;
     object-fit: cover;
