@@ -65,10 +65,10 @@ permalink: /meditation-for-liberation/
 
 <div class="hero-wrapper">
   <img src="/images/block6.JPG" alt="Rocky hills being glanced by sunset light." class="hero-image">
-  <div class="hero-text">
+  <div class="hero-text" style="width: 600px;">
     <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
     <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
     <br>
-    <h5 style="text-align: center; margin: 0.5em auto;"><a href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
+    <h5 style="text-align: center; margin: 0.5em auto;"><a style="color: white;" href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
   </div>
 </div>
