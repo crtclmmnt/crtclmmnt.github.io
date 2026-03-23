@@ -65,6 +65,8 @@ permalink: /meditation-for-liberation/
 
 <hr>
 
+<img src="/images/block6.JPG" alt="Rocky hills " width="350px" style="margin-top: 0px;">
+
 <br>
 <div style="max-width: 600px; margin: 0 auto;">
   <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
