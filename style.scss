@@ -463,6 +463,15 @@ details {
 
 .hero-wrapper {
   position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 0px;
+  padding: 80px 0;
+
+  @include mobile {
+    padding: 50px 0;
+  }
 }
 
 .mini-hero-wrapper {
