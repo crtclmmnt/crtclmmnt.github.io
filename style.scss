@@ -465,6 +465,16 @@ details {
   position: relative;
 }
 
+.hero-wrapper-fullbleed {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .mini-hero-wrapper {
   width: 100vw;
   position: relative;
