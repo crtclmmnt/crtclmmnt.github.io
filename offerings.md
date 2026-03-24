@@ -50,7 +50,7 @@ permalink: /offerings/
 <br>
 
 <div class="services-layout" style="align-items: flex-start; max-width: 725px; margin: 0.5em auto;">
-  <div style="flex-shrink: 0; text-align: center;">
+  <div style="flex-shrink: 0; text-align: center; align-self: center;">
     <img src="/images/redmeditat.png" style="width: 175px; max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
   <div class="services-content">
