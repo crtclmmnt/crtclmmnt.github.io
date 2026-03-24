@@ -4,7 +4,7 @@ permalink: /offerings/
 ---
 <div class="hero-wrapper">
   <img src="/images/pano10.JPG" alt="Hare Krishna temples in Pindamonhangaba." class="hero-image">
-  <div class="hero-text">
+  <div class="hero-title">
     <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">Offerings</h1>
   </div>
 </div>

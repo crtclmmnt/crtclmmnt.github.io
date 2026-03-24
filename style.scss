@@ -490,6 +490,33 @@ details {
   object-position: center;
 }
 
+.hero-title {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 850px;
+  max-width: 100%;
+  padding: 0;
+  color: $white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+
+  h1 {
+    color: $white;
+    margin: 0 0 5px 0;
+  }
+
+  h3 {
+    color: $white;
+    margin: 0 0 5px 0;
+  }
+
+  @include mobile {
+    bottom: 15px;
+    padding: 0px;
+  }
+}
+
 .hero-text {
   position: relative; // change from absolute to relative
   width: 850px;
