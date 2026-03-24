@@ -955,30 +955,26 @@ nav {
   line-height: 1;
 }
 
-// Mobile: stack full-width, tap .locked to show descriptions
+// Mobile: static full-width layout, descriptions always visible
 @media (max-width: 768px) {
   .reading-grid-wrapper .book-row {
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 12px;
+    display: block;
   }
 
   .reading-grid-wrapper .book-card {
-    flex: 1 1 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    transition: none;
-    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+  }
 
-    &:hover .book-description {
-      max-height: 0;
-      opacity: 0;
-    }
+  .reading-grid-wrapper .book-card .book-description {
+    display: block;
+    max-height: none;
+    opacity: 1;
+  }
 
-    &.locked .book-description {
-      max-height: 300px;
-      opacity: 1;
-    }
+  .reading-grid-wrapper .book-toggle-indicator {
+    display: none;
   }
 }
 

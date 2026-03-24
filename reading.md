@@ -176,19 +176,21 @@ permalink: /reading/
 <h5 style="text-align: center;"><a href="/reading/">back to the top</a></h5>
 
 <script>
-document.querySelectorAll('.book-row .book-card').forEach(function(card) {
-  var indicator = document.createElement('span');
-  indicator.className = 'book-toggle-indicator';
-  indicator.textContent = '+';
-  var authorEl = card.querySelector('.book-author');
-  if (authorEl) {
-    authorEl.insertAdjacentElement('afterend', indicator);
-  } else {
-    card.appendChild(indicator);
-  }
-  card.addEventListener('click', function() {
-    card.classList.toggle('locked');
-    indicator.textContent = card.classList.contains('locked') ? '×' : '+';
+if (window.innerWidth > 768) {
+  document.querySelectorAll('.reading-grid-wrapper .book-card').forEach(function(card) {
+    var indicator = document.createElement('span');
+    indicator.className = 'book-toggle-indicator';
+    indicator.textContent = '+';
+    var authorEl = card.querySelector('.book-author');
+    if (authorEl) {
+      authorEl.insertAdjacentElement('afterend', indicator);
+    } else {
+      card.appendChild(indicator);
+    }
+    card.addEventListener('click', function() {
+      card.classList.toggle('locked');
+      indicator.textContent = card.classList.contains('locked') ? '×' : '+';
+    });
   });
-});
+}
 </script>
