@@ -30,7 +30,7 @@ A future where we win starts now, in the critical moment.
 <br>
 <br>
 
-<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano14.JPG'); background-size: cover; background-position: center;">
+<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano15.JPG'); background-size: cover; background-position: center;">
   <div class="hero-text" style="width: 600px; max-width: 100%; padding: 60px 20px;">
     <p style="font-family: 'Roboto'; font-size: 30px; font-weight: 300; line-height: 1.1em; color: #fff;"><em><strong>"</strong>If the world is to be healed through human efforts, I am convinced that it will be by ordinary people, people whose love for this life is even greater than their fear.<strong>"</strong></em></p>
 <p style="font-family: 'ZTNature'; font-size: 30px; font-weight: 500; color: #FBB965; text-align: center; margin: 0.5em auto;">— Joanna Macy</p>
@@ -75,14 +75,10 @@ A future where we win starts now, in the critical moment.
 
 <br>
 
-<div style="max-width: 725px; margin: 0 auto;">
-  <h1 style="text-align: center;">I Want to Hear From You</h1>
-  <hr class="short">
-  <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
-  <p style="text-align: center;">Ready to get started?</p>
-<div style="display: flex; justify-content: center;">
-  <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
+<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
+  <div class="hero-text" style="width: 600px; max-width: 100%; padding: 60px 20px;">
+    <h1 style="text-align: center; margin-bottom: 20px;">For any other questions, comments, or concerns...</h1>
+    <div style="text-align: center; margin-bottom: 70px;"><a href="https://tally.so/r/ODAAQp" class="btn" style="color: #fff;">Fill out the intake form</a></div>
+    <h5 style="text-align: center; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/">back to the top</a></h5>
+  </div>
 </div>
-</div>
-
-<br>
