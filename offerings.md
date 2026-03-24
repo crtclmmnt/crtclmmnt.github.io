@@ -47,13 +47,14 @@ permalink: /offerings/
 </div>
 <br>
 <hr>
+<br>
 
 <div class="services-layout" style="align-items: flex-start; max-width: 725px; margin: 0.5em auto;">
   <div style="flex-shrink: 0;">
     <img src="/images/redmeditat.png" style="width: 120px;">
   </div>
   <div class="services-content">
-    <h1 style="font-size: 3rem; margin-bottom: 0px;">DeepBe</h1>
+    <h1 style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
     <p>A simple meditation timer, with optional meditation instruction included.</p>
     <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
     <br>
