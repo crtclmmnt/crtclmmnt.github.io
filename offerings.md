@@ -57,7 +57,9 @@ permalink: /offerings/
     <h1 style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
     <p>A simple meditation timer, with optional meditation instruction included.</p>
     <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
+
     <br>
+
     <details><summary><strong>How to use DeepBe</strong></summary>
     <div style="max-width: 700px; margin: 0 auto;">
     <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
@@ -94,6 +96,8 @@ permalink: /offerings/
     </details>
   </div>
 </div>
+
+<br>
 <hr>
 <br>
 
