@@ -64,10 +64,11 @@ permalink: /meditation-for-liberation/
 <br>
 
 <div class="hero-wrapper" style="margin-bottom: -10px; min-height: 400px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
-  <div class="hero-text" style="width: 600px; top: 50%; transform: translate(-50%, -50%);">
+  <div class="hero-text" style="width: 600px; max-width: 100%; padding: 0 20px; top: 50%; transform: translate(-50%, -50%);">
     <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
     <br>
     <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <br>
     <br>
     <h5 style="text-align: center; margin: 0.5em auto;"><a style="color: white;" href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
   </div>
