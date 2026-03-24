@@ -6,6 +6,8 @@ permalink: /private-instruction/
   <img src="/images/pano11.JPG" alt="An orange and pink sunset sky sets behind lavender hills over a wheat field." class="mini-hero">
 </div>
 
+<br>
+
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
 <h1 id="private-instruction" style="font-size: 3rem; margin-bottom: 0px;">Private Instruction</h1>
