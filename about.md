@@ -34,11 +34,14 @@ The only certainty I have left is that this practice is valuable, especially for
 The world doesn’t need people to worry over her, she needs people who have the stability and confidence to fight for her. She doesn’t need witnesses, she needs collaborators. 
 
 <br>
+<hr>
+<br>
 
-<div class="reading-cta">
-  <p>These are the books that have most shaped my thinking on radical politics, contemplative wisdom, and ecological identity.</p>
-  <a href="/reading/" class="btn">Recommended Reading</a>
-</div>
+<h1 style="margin-bottom: 0px;">Recommended Reading</h1>
+<hr class="short" style="margin: 0.5em 0;">
+<p>These are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
+<a href="/reading/" class="btn">see the books</a>
+
 
 <br>
 <h5  style="text-align: center;"><a href="https://thecriticalmoment.org/about">back to the top</a></h5>

@@ -2,6 +2,9 @@
 layout: default
 permalink: /reading/
 ---
+<br>
+<h5  style="text-align: center;"><a href="https://thecriticalmoment.org/about">back</a></h5>
+<br>
 
 <h1 style="margin-bottom: 0px;">Recommended Reading</h1>
 <hr class="short" style="margin: 0.5em 0;">
