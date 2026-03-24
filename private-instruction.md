@@ -45,7 +45,7 @@ permalink: /private-instruction/
     <br>
   </div>
   <div class="services-content" style="flex: 1.2;">
-    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/offerings#curriculum">(see above)</a>, adapted for a general audience rather than being geared towards organizers.</p>
+    <p>Group Meditation Workshops are for any group of people who want to explore meditation practice together. These workshops follow the same curriculum options as Meditation for Liberation <a href="https://thecriticalmoment.org/meditation-for-liberation#curriculum">(see here)</a>, adapted for a general audience rather than being geared towards organizers.</p>
     <p>Pricing is <strong>sliding scale based on your organization's capacity.</strong> Something like $0–50 per session for volunteer organizations and clubs, $100–250 per session for funded nonprofits and workplaces, or <em>much</em> much more if your company is traded on the NYSE.</p>
     <p>Sessions are available in <strong>40, 60, or 90 minute</strong> formats, and workshops run between <strong>4 and 8 weeks.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
   <br>
