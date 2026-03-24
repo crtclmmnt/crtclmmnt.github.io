@@ -128,7 +128,7 @@ permalink: /faq/
 
 <br>
 
-<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano16.JPG'); background-size: cover; background-position: center;">
+<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano5.jpg'); background-size: cover; background-position: center;">
   <div class="hero-text" style="width: 600px; max-width: 100%; padding: 60px 20px;">
     <h1 style="text-align: center; margin-bottom: 20px;">For any other questions, comments, or concerns...</h1>
     <div style="text-align: center; margin-bottom: 70px;"><a href="https://tally.so/r/ODAAQp" class="btn" style="color: #fff;">Fill out the intake form</a></div>
