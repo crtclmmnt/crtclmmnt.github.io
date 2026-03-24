@@ -31,7 +31,7 @@ permalink: /offerings/
   <h3 style="margin-top: 0.25rem;">Sliding Scale, up to 4 people</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
-  <div><a href="https://thecriticalmoment.org/meditation-instruction#individual-instruction/" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/private-instruction#individual-instruction/" class="btn">Learn More</a></div>
 </div>
 <br>
 
@@ -42,7 +42,7 @@ permalink: /offerings/
   <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, households, co-ops, and more</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Group Meditation Workshops are for any group of people who want to build a meditation practice in community. Doing so can be incredibly rewarding, regardless of what brings you together.</p>
-  <div><a href="https://thecriticalmoment.org/meditation-instruction#large-groups" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/private-instruction#large-groups" class="btn">Learn More</a></div>
 </div>
 <br>
 <hr>

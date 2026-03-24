@@ -1,12 +1,12 @@
 ---
 layout: default
-permalink: /meditation-instruction/
+permalink: /private-instruction/
 ---
 <div class="mini-hero-wrapper">
   <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
 </div>
 
-<h1 id="meditation-instruction" style="font-size: 3rem; margin-bottom: 0px;">Meditation Instruction</h1>
+<h1 id="private-instruction" style="font-size: 3rem; margin-bottom: 0px;">Private Instruction</h1>
 <p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
 <hr>
 
