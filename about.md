@@ -198,5 +198,4 @@ The world doesn’t need people to worry over her, she needs people who have the
 </div>
 
 <br>
-<h5><a style="text-align: center;" href="https://thecriticalmoment.org/about">back to the top</a></h5>
-<br>
+<h5  style="text-align: center;"><a href="https://thecriticalmoment.org/about">back to the top</a></h5>
