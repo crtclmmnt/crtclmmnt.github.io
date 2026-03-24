@@ -3,8 +3,10 @@ layout: default
 permalink: /meditation-for-liberation/
 ---
 <div class="mini-hero-wrapper">
-  <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
+  <img src="/images/pano11.JPG" alt="An orange and pink sunset sky sets behind lavender hills over a wheat field." class="mini-hero">
 </div>
+
+<h5 style="text-align: left; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
 <hr class="short" style="margin: 0.5em 0;">

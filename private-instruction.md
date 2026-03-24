@@ -3,8 +3,10 @@ layout: default
 permalink: /private-instruction/
 ---
 <div class="mini-hero-wrapper">
-  <img src="/images/pano11.JPG" alt="A mossy branch of a California bay laurel." class="mini-hero">
+  <img src="/images/pano11.JPG" alt="An orange and pink sunset sky sets behind lavender hills over a wheat field." class="mini-hero">
 </div>
+
+<h5 style="text-align: left; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
 <h1 id="private-instruction" style="font-size: 3rem; margin-bottom: 0px;">Private Instruction</h1>
 <p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
