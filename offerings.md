@@ -61,7 +61,7 @@ permalink: /offerings/
     <br>
     <br>
 
-    <details style="padding: 0;"><summary><strong>How to use DeepBe</strong></summary>
+    <details style="padding-inline-start: 0;"><summary><strong>How to use DeepBe</strong></summary>
     <div style="max-width: 700px; margin: 0 auto;">
     <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
       <div style="width: 150px; text-align: left;">
