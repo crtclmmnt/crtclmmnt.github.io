@@ -120,21 +120,18 @@ permalink: /faq/
 <details><summary><h6>Can I meditate lying down or while walking?</h6></summary>
 <p>Sitting upright is recommended because the posture itself supports the quality of being both relaxed and awake. There is also a walking meditation technique where the sensation of each footstep replaces the breath as the object of the meditation. </p>
 
-<p>That said, you can bring mindfulness to any activity. Mindfulness while sitting in meditation and mindfulness while living your life are two parts of the same practice. Engaging with both reinforces mindfulness in all contexts.</p>
-<p><em>"Before enlightenment, I chopped wood and carried water. After enlightenment, I chopped wood and carried water."</em> <br> <strong>- an oft repeated Zen saying</strong></p>
-</details>
-
-</div>
-
-</div>
-
-<br>
-<hr>
-<br>
-
-<div style="max-width: 600px; margin: 0 auto;">
-  <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
-  <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+  <p>That said, you can bring mindfulness to any activity. Mindfulness while sitting in meditation and mindfulness while living your life are two parts of the same practice. Engaging with both reinforces mindfulness in all contexts.</p>
+  <p><em>"Before enlightenment, I chopped wood and carried water. After enlightenment, I chopped wood and carried water."</em> <br> <strong>- an oft repeated Zen saying</strong></p>
+  </details>
+  </div>
 </div>
 
 <br>
+
+<div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano16.JPG'); background-size: cover; background-position: center;">
+  <div class="hero-text" style="width: 600px; max-width: 100%; padding: 60px 20px;">
+    <h1 style="text-align: center; margin-bottom: 20px;">For any other questions, comments, or concerns...</h1>
+    <div style="text-align: center; margin-bottom: 70px;"><a href="https://tally.so/r/ODAAQp" class="btn" style="color: #fff;">Fill out the intake form</a></div>
+    <h5 style="text-align: center; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/">back to the top</a></h5>
+  </div>
+</div>
