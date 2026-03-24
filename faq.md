@@ -81,15 +81,15 @@ permalink: /faq/
 <p>Absolutely not!</p>
 <p>I will teach you everything you need to know about the technique of mindfulness meditation, and if you want to explore dharma more deeply, I'm happy to embark on that journey alongside you.</p>
 </details>
-<details><summary><h6>What if I can't afford the sliding scale?</h6></summary>
-<p>If the sliding scale doesn't work for your circumstances, reach out anyway. I can help connect you with other meditation resources, or notify you when a free Meditation for Liberation workshop is being offered to the general public.</p>
+<details><summary><h6>How long and how often should I practice?</h6></summary>
+<p>For beginners, 20 minutes a day is a great place to start. If 10 minutes is all you can manage, that's still worth doing. Regularity matters more than duration, and being kind to yourself matters more than letting the taskmaster in your mind turn you into the world's best meditator. A short daily practice is more fruitful than a long occasional one. If you miss a day, don't beat yourself up. Just start again.</p>
 </details>
 <details><summary><h6>Can my whole organization participate?</h6></summary>
 <p>I want to teach this practice to as many people as possible, so barring logistical constraints, yes.</p>
 <p>The main challenges for getting whole organizations to participate would be the limitations of available physical space, or the digital limitations of a Zoom call. But I am more than happy to work with you to get as many people meditating as possible.</p>
 </details>
-<details><summary><h6>How long and how often should I practice?</h6></summary>
-<p>For beginners, 20 minutes a day is a great place to start. If 10 minutes is all you can manage, that's still worth doing. Regularity matters more than duration, and being kind to yourself matters more than letting the taskmaster in your mind turn you into the world's best meditator. A short daily practice is more fruitful than a long occasional one. If you miss a day, don't beat yourself up. Just start again.</p>
+<details><summary><h6>What if I can't afford the sliding scale?</h6></summary>
+<p>If the sliding scale doesn't work for your circumstances, reach out anyway. I can help connect you with other meditation resources, or notify you when a free Meditation for Liberation workshop is being offered to the general public.</p>
 </details>
 
 </div>
