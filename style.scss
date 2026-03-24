@@ -511,7 +511,6 @@ details {
 
   @include mobile {
     bottom: 15px;
-    padding: 0px;
   }
 }
 
@@ -779,7 +778,7 @@ nav {
 
 .btn {
   display: inline-block;
-  background-color: $babyYellow;
+  background-color: $peach;
   color: $darkerGray;
   padding: 8px 16px;
   border: 0px solid $darkerGray;
