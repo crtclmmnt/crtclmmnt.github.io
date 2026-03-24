@@ -837,21 +837,20 @@ nav {
 
 // Book recommendation grid and cards
 .book-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
+.book-grid.curriculum-grid {
+  grid-template-columns: 1fr;
+}
+
 .book-card {
-  flex: 1 1 calc(50% - 8px);
-  max-width: calc(50% - 8px);
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: flex-basis 0.3s ease, max-width 0.3s ease;
   border: 3px solid black;
   border-radius: 15px;
-  padding: 1rem;
+  padding: 1rem 1rem 2.5rem;
   background-color: $babyYellow;
   text-align: left;
 
@@ -870,10 +869,6 @@ nav {
   }
 
   .book-description {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
     margin: 0;
     font-size: 1rem;
     font-weight: normal;
@@ -882,30 +877,37 @@ nav {
   }
 }
 
-// Curriculum grid: single column, always-visible descriptions
-.book-grid.curriculum-grid {
-  flex-direction: column;
+// ── Reading page: flex layout with hover expand ───────────────────
 
-  .book-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    transition: none;
+.reading-grid-wrapper .book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
-    .book-description {
-      max-height: none;
-      opacity: 1;
-      overflow: visible;
-    }
+.reading-grid-wrapper .book-card {
+  flex: 1 1 calc(50% - 8px);
+  max-width: calc(50% - 8px);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: flex-basis 0.3s ease, max-width 0.3s ease;
+  padding-bottom: 1rem;
+
+  .book-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    margin: 0;
   }
 }
 
-// Hover: shrink all cards, expand the hovered one
-.book-grid:has(.book-card:hover) .book-card {
+.reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card {
   flex: 1 1 calc(35% - 8px);
   max-width: calc(35% - 8px);
 }
 
-.book-grid .book-card:hover {
+.reading-grid-wrapper .book-grid .book-card:hover {
   flex: 1 1 calc(65% - 8px);
   max-width: calc(65% - 8px);
 
@@ -922,7 +924,7 @@ nav {
 
 // Mobile: stack full-width, tap-to-toggle descriptions
 @media (max-width: 768px) {
-  .book-card {
+  .reading-grid-wrapper .book-card {
     flex: 1 1 100%;
     max-width: 100%;
     transition: none;
@@ -953,7 +955,7 @@ nav {
     }
   }
 
-  .book-grid:has(.book-card:hover) .book-card {
+  .reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card {
     flex: 1 1 100%;
     max-width: 100%;
   }

@@ -11,6 +11,7 @@ permalink: /reading/
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 <h5><span class="text-dark-rose">*</span>start with these</h5>
 
+<div class="reading-grid-wrapper">
 <div style="max-width: 750px; margin: 0 auto;">
   <h3>Contemplative Practice & Spirituality</h3>
   <div class="book-grid">
@@ -155,6 +156,7 @@ permalink: /reading/
       <p class="book-description">By imagining a society of anarchists that are given a moon upon which to build their utopia, Le Guin explores the reality of building alternative political, economic, and cultural systems. She explores the real cost of freedom, and why it must be chosen over and over again.</p>
     </div>
   </div>
+</div>
 </div>
 
 <br>
