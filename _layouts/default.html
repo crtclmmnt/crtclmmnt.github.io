@@ -44,7 +44,13 @@
               </ul>
             </div>
             <a href="{{ site.baseurl }}/blog">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+            <div class="nav-dropdown">
+              <a href="{{ site.baseurl }}/about">About</a>
+              <ul class="dropdown-menu">
+                <li class="mobile-only"><a href="{{ site.baseurl }}/about/">About Me</a></li>
+                <li><a href="{{ site.baseurl }}/reading/">Recommended Reading</a></li>
+              </ul>
+            </div>
             <a href="{{ site.baseurl }}/faq">FAQ</a>
           </nav>
         </header>
@@ -85,23 +91,28 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var offeringsLink = document.querySelector('.nav-dropdown > a');
-      var dropdown = document.querySelector('.nav-dropdown');
-
-      if (offeringsLink) {
-        offeringsLink.addEventListener('click', function(e) {
-          if (window.innerWidth <= 640) {
-            e.preventDefault();
-            var navBottom = document.querySelector('.wrapper-masthead').getBoundingClientRect().bottom;
-            dropdown.querySelector('.dropdown-menu').style.top = navBottom + 'px';
-            dropdown.classList.toggle('is-open');
-          }
-        });
-      }
+      document.querySelectorAll('.nav-dropdown').forEach(function(dropdown) {
+        var link = dropdown.querySelector(':scope > a');
+        if (link) {
+          link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 640) {
+              e.preventDefault();
+              var navBottom = document.querySelector('.wrapper-masthead').getBoundingClientRect().bottom;
+              dropdown.querySelector('.dropdown-menu').style.top = navBottom + 'px';
+              document.querySelectorAll('.nav-dropdown').forEach(function(other) {
+                if (other !== dropdown) other.classList.remove('is-open');
+              });
+              dropdown.classList.toggle('is-open');
+            }
+          });
+        }
+      });
 
       document.addEventListener('click', function(e) {
-        if (dropdown && !e.target.closest('.nav-dropdown')) {
-          dropdown.classList.remove('is-open');
+        if (!e.target.closest('.nav-dropdown')) {
+          document.querySelectorAll('.nav-dropdown').forEach(function(d) {
+            d.classList.remove('is-open');
+          });
         }
       });
     });
