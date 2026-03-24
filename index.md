@@ -67,8 +67,8 @@ A future where we win starts now, in the critical moment.
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
   <a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span></a>
-  <a href="https://thecriticalmoment.org/meditation-instruction#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
-  <a href="https://thecriticalmoment.org/meditation-instruction#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
+  <a href="https://thecriticalmoment.org/private-instruction#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
+  <a href="https://thecriticalmoment.org/private-instruction#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
 </div>
 <br>
 <br>
