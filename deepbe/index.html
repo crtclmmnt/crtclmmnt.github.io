@@ -337,18 +337,25 @@ title: DeepBe
     /* ── Install hint ───────────────────────────────────────────── */
 
     .install-hint {
-      margin-top: 2rem;
-      text-align: center;
-      color: #b09080;
-      font-size: 0.72rem;
-      line-height: 1.6;
-      max-width: 260px;
+      display: none;
     }
 
-    .install-hint-heading {
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-      color: #9a7a6a;
+    @media (max-width: 768px) {
+      .install-hint {
+        display: block;
+        margin-top: 2rem;
+        text-align: center;
+        color: #b09080;
+        font-size: 0.72rem;
+        line-height: 1.6;
+        max-width: 260px;
+      }
+
+      .install-hint-heading {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        color: #9a7a6a;
+      }
     }
 
 
