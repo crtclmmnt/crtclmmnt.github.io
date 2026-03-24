@@ -50,11 +50,11 @@ permalink: /offerings/
 <br>
 
 <div class="services-layout" style="align-items: flex-start; max-width: 725px; margin: 0.5em auto;">
-  <div style="flex-shrink: 0; text-align: center; align-self: center;">
+  <div class="app-icon">
     <img src="/images/redmeditat.png" style="width: 175px; max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
   <div class="services-content">
-    <h1 style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
+    <h1 class="center-mobile" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
     <p>A simple meditation timer. Choose a sit length, and include meditation instruction and/or walking meditation if you choose.</p>
     <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
 

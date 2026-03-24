@@ -1011,6 +1011,23 @@ nav {
   }
 }
 
+.app-icon {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+@include mobile {
+  .center-mobile {
+    text-align: center;
+  }
+}
+
+@include mobile {
+  .app-icon {
+    align-self: center;
+  }
+}
+
 
 .wrapper-footer {
   margin-top: 0px;
