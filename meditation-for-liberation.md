@@ -65,11 +65,8 @@ permalink: /meditation-for-liberation/
 
 <div class="hero-wrapper" style="margin-bottom: -10px; min-height: 400px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
   <div class="hero-text" style="width: 600px; max-width: 100%; padding: 40px 20px;">
-    <h1 style="text-align: center;">For any other questions, comments, or concerns...</h1>
-    <br>
-    <div style="text-align: center;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
-    <br>
-    <br>
-    <h5 style="text-align: center; margin: 0.5em auto;"><a style="color: white;" href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
+    <h1 style="text-align: center; margin-bottom: 20px;">For any other questions, comments, or concerns...</h1>
+    <div style="text-align: center; margin-bottom: 40px;"><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <h5 style="text-align: center; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
   </div>
 </div>
