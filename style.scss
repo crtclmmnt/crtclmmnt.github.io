@@ -963,16 +963,10 @@ nav {
     margin-bottom: 12px;
   }
 
-  .reading-grid-wrapper .book-card,
-  .reading-grid-wrapper .book-card.locked,
-  .reading-grid-wrapper .book-row:has(.book-card.locked) .book-card,
-  .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card,
-  .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card:hover {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .reading-grid-wrapper .book-row .book-card {
+  .reading-grid-wrapper .book-card {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
     transition: none;
     cursor: pointer;
 

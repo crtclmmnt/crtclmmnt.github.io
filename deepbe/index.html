@@ -8,6 +8,9 @@ title: DeepBe
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeepBe — The Critical Moment</title>
+  <link rel="manifest" href="/deepbe/site.webmanifest">
+  <link rel="apple-touch-icon" href="/deepbe/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/deepbe/favicon.ico">
   <style>
     @font-face {
       font-family: 'ZTNature';
@@ -331,6 +334,23 @@ title: DeepBe
       transition: opacity 0.4s ease;
     }
 
+    /* ── Install hint ───────────────────────────────────────────── */
+
+    .install-hint {
+      margin-top: 2rem;
+      text-align: center;
+      color: #b09080;
+      font-size: 0.72rem;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .install-hint-heading {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      color: #9a7a6a;
+    }
+
 
     /* ── Progress ring ─────────────────────────────────────────── */
 
@@ -492,6 +512,12 @@ title: DeepBe
         <button class="toggle-opt selected" data-walk="yes">Y</button>
         <button class="toggle-opt" data-walk="no">N</button>
       </div>
+    </div>
+    <!-- Add to home screen prompt -->
+    <div class="install-hint">
+      <p class="install-hint-heading">Use DeepBe as an app on your phone</p>
+      <p>iOS: tap the Share button in Safari, then &ldquo;Add to Home Screen&rdquo;</p>
+      <p>Android: tap the menu (&#8942;) in Chrome, then &ldquo;Add to Home Screen&rdquo;</p>
     </div>
   </div>
 
