@@ -903,7 +903,7 @@ nav {
   margin-top: 0px;
   border-top: 1px solid #ddd;        /* ADD THIS */
   border-bottom: 1px solid #ddd;     /* ADD THIS */
-  background: $darkGreen; // linear-gradient(to right, $peach, $darkRose);
+  background: $darkBlue; // linear-gradient(to right, $peach, $darkRose);
 
   @include mobile {
     margin-left: -20px;
