@@ -879,8 +879,8 @@ title: DeepBe
       if (audioCtx && audioCtx.state !== 'closed') {
         const now = audioCtx.currentTime;
 
-        // Opening bell — delayed 5 seconds to give the user time to settle
-        scheduleBell(now + 5);
+        // Opening bell — delayed 3 seconds to give the user time to settle
+        scheduleBell(now + 3);
 
         // Walking-phase woodblocks (40 and 50 min sessions only)
         if (includeWalking && WALK_SESSIONS.has(selectedMinutes)) {
