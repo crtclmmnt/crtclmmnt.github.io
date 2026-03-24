@@ -837,115 +837,125 @@ nav {
 
 // Book recommendation grid and cards
 .book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); // CUSTOMIZE: increase minmax first value to make cards wider, decrease for more columns
-  gap: 1rem; // CUSTOMIZE: increase for more space between cards
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   margin-bottom: 2rem;
 }
 
-.book-grid.curriculum-grid {
-  grid-template-columns: 1fr;
-}
-
 .book-card {
-  border: 3px solid black; // CUSTOMIZE: change thickness by adjusting the px value
-  border-radius: 15px; // CUSTOMIZE: increase for rounder corners, decrease for sharper
-  padding: 1rem 1rem 2.5rem; // CUSTOMIZE: increase for more breathing room inside cards, last value controls bottom padding
-  background-color: $babyYellow; // CUSTOMIZE: change to a light tint of your brand color if desired
+  flex: 1 1 calc(50% - 8px);
+  max-width: calc(50% - 8px);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: flex-basis 0.3s ease, max-width 0.3s ease;
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  background-color: $babyYellow;
   text-align: left;
 
   h5 {
     margin: 0 0 0.25rem 0;
     font-style: italic;
     color: $black;
-    font-size: 1.4rem; // CUSTOMIZE: adjust title size
+    font-size: 1.4rem;
   }
 
   .book-author {
     margin: 0 0 0.5rem 0;
-    font-size: 1.1rem; // CUSTOMIZE: adjust author name size
+    font-size: 1.1rem;
     font-weight: bold;
-    color: $darkGray; // CUSTOMIZE: adjust author name color
+    color: $darkGray;
   }
 
   .book-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
     margin: 0;
-    font-size: 1rem; // CUSTOMIZE: adjust description size
+    font-size: 1rem;
     font-weight: normal;
-    color: $darkGray; // CUSTOMIZE: adjust description color
-    // font-style: italic; // CUSTOMIZE: remove if you prefer non-italic descriptions
-    line-height: 1.4; // CUSTOMIZE: adjust for more or less space between description lines
+    color: $darkGray;
+    line-height: 1.4;
   }
 }
 
-// Flex-based interactive book grid (reading page)
+// Curriculum grid: single column, always-visible descriptions
+.book-grid.curriculum-grid {
+  flex-direction: column;
+
+  .book-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: none;
+
+    .book-description {
+      max-height: none;
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+}
+
+// Hover: shrink all cards, expand the hovered one
+.book-grid:has(.book-card:hover) .book-card {
+  flex: 1 1 calc(35% - 8px);
+  max-width: calc(35% - 8px);
+}
+
+.book-grid .book-card:hover {
+  flex: 1 1 calc(65% - 8px);
+  max-width: calc(65% - 8px);
+
+  .book-description {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+// Toggle indicator (injected by JS, visible on mobile only)
 .book-toggle-indicator {
   display: none;
 }
 
-.book-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 2rem;
-
+// Mobile: stack full-width, tap-to-toggle descriptions
+@media (max-width: 768px) {
   .book-card {
-    flex: 1 1 30%;
-    overflow: hidden;
-    transition: flex 0.3s ease;
-    padding-bottom: 1rem;
+    flex: 1 1 100%;
+    max-width: 100%;
+    transition: none;
+    cursor: pointer;
 
-    .book-description {
+    .book-toggle-indicator {
+      display: inline-block;
+      margin-left: 6px;
+      font-style: normal;
+      font-size: 1rem;
+      vertical-align: middle;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover .book-description {
       max-height: 0;
       opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      margin: 0;
     }
 
-    &:hover {
-      flex: 2 1 45%;
-
-      .book-description {
-        max-height: 200px;
-        opacity: 1;
-      }
+    &.expanded .book-description {
+      max-height: 300px;
+      opacity: 1;
     }
 
-    @media (max-width: 768px) {
-      flex: 1 1 100%;
-      cursor: pointer;
-
-      .book-toggle-indicator {
-        display: inline-block;
-        margin-left: 6px;
-        font-style: normal;
-        font-size: 1rem;
-        vertical-align: middle;
-        line-height: 1;
-        transition: transform 0.2s ease;
-      }
-
-      &:hover {
-        flex: 1 1 100%;
-
-        .book-description {
-          max-height: 0;
-          opacity: 0;
-        }
-      }
-
-      &.expanded {
-        .book-description {
-          max-height: 300px;
-          opacity: 1;
-        }
-
-        .book-toggle-indicator {
-          transform: rotate(45deg);
-        }
-      }
+    &.expanded .book-toggle-indicator {
+      transform: rotate(45deg);
     }
+  }
+
+  .book-grid:has(.book-card:hover) .book-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 

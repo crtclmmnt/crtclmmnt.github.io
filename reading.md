@@ -3,7 +3,7 @@ layout: default
 permalink: /reading/
 ---
 <br>
-<h5  style="text-align: center;"><a href="https://thecriticalmoment.org/about">back</a></h5>
+<h5><a href="https://thecriticalmoment.org/about">back</a></h5>
 <br>
 
 <h1 style="margin-bottom: 0px;">Book Recommendations</h1>
@@ -13,7 +13,7 @@ permalink: /reading/
 
 <div style="max-width: 750px; margin: 0 auto;">
   <h3>Contemplative Practice & Spirituality</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>World as Lover, World as Self</h5>
       <p class="book-author">Joanna Macy (1991)</p>
@@ -37,7 +37,7 @@ permalink: /reading/
   </div>
 
   <h3>Ecology & Earth Systems</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Braiding Sweetgrass</h5>
       <p class="book-author">Robin Wall Kimmerer (2013)</p>
@@ -61,7 +61,7 @@ permalink: /reading/
   </div>
 
   <h3>Politics & Social Change</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici (2004)</p>
@@ -105,7 +105,7 @@ permalink: /reading/
   </div>
 
   <h3>Psychology & Human Nature</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist (2009)</p>
@@ -129,7 +129,7 @@ permalink: /reading/
   </div>
 
   <h3>Systems Thinking & Philosophy</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Patterning Instinct</h5>
       <p class="book-author">Jeremy Lent (2017)</p>
@@ -143,7 +143,7 @@ permalink: /reading/
   </div>
 
   <h3>Inspiring Fiction</h3>
-  <div class="book-flex">
+  <div class="book-grid">
     <div class="book-card">
       <h5>The Ministry for the Future</h5>
       <p class="book-author">Kim Stanley Robinson (2020)</p>
@@ -161,7 +161,7 @@ permalink: /reading/
 <h5 style="text-align: center;"><a href="/reading/">back to the top</a></h5>
 
 <script>
-document.querySelectorAll('.book-flex .book-card').forEach(function(card) {
+document.querySelectorAll('.book-grid .book-card').forEach(function(card) {
   var indicator = document.createElement('span');
   indicator.className = 'book-toggle-indicator';
   indicator.textContent = '+';
