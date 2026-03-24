@@ -893,6 +893,7 @@ nav {
   overflow: hidden;
   transition: flex-basis 0.3s ease, max-width 0.3s ease;
   padding-bottom: 1rem;
+  cursor: pointer;
 
   .book-description {
     max-height: 0;
@@ -903,6 +904,7 @@ nav {
   }
 }
 
+// Hover expand (unlocked cards)
 .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card {
   flex: 1 1 calc(35% - 8px);
   max-width: calc(35% - 8px);
@@ -918,15 +920,47 @@ nav {
   }
 }
 
-// Toggle indicator (injected by JS, visible on mobile only)
-.book-toggle-indicator {
-  display: none;
+// Locked state: one card locked → 65/35 split
+.reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card.locked {
+  flex: 1 1 calc(65% - 8px);
+  max-width: calc(65% - 8px);
 }
 
-// Mobile: stack full-width, tap-to-toggle descriptions
+.reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card:not(.locked) {
+  flex: 1 1 calc(35% - 8px);
+  max-width: calc(35% - 8px);
+}
+
+// Locked state: both cards locked → 50/50 split
+.reading-grid-wrapper .book-row:has(.book-card.locked + .book-card.locked) .book-card {
+  flex: 1 1 calc(50% - 8px);
+  max-width: calc(50% - 8px);
+}
+
+// Locked card always shows description
+.reading-grid-wrapper .book-row .book-card.locked .book-description {
+  max-height: 300px;
+  opacity: 1;
+}
+
+// Toggle indicator: small muted label below author, visible on all viewports
+.book-toggle-indicator {
+  display: block;
+  font-family: 'Roboto';
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: normal;
+  color: $gray;
+  margin-top: 0.2rem;
+  line-height: 1;
+}
+
+// Mobile: stack full-width, tap .locked to show descriptions
 @media (max-width: 768px) {
   .reading-grid-wrapper .book-row {
     flex-direction: column;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .reading-grid-wrapper .book-row .book-card {
@@ -935,28 +969,14 @@ nav {
     transition: none;
     cursor: pointer;
 
-    .book-toggle-indicator {
-      display: inline-block;
-      margin-left: 6px;
-      font-style: normal;
-      font-size: 1rem;
-      vertical-align: middle;
-      line-height: 1;
-      transition: transform 0.2s ease;
-    }
-
     &:hover .book-description {
       max-height: 0;
       opacity: 0;
     }
 
-    &.expanded .book-description {
+    &.locked .book-description {
       max-height: 300px;
       opacity: 1;
-    }
-
-    &.expanded .book-toggle-indicator {
-      transform: rotate(45deg);
     }
   }
 

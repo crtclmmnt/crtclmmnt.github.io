@@ -2,9 +2,8 @@
 layout: default
 permalink: /reading/
 ---
-<br>
+<hr>
 <h5><a href="https://thecriticalmoment.org/about">back</a></h5>
-<br>
 
 <h1 style="margin-bottom: 0px;">Book Recommendations</h1>
 <hr class="short" style="margin: 0.5em 0;">
@@ -181,9 +180,15 @@ document.querySelectorAll('.book-row .book-card').forEach(function(card) {
   var indicator = document.createElement('span');
   indicator.className = 'book-toggle-indicator';
   indicator.textContent = '+';
-  card.querySelector('h5').appendChild(indicator);
+  var authorEl = card.querySelector('.book-author');
+  if (authorEl) {
+    authorEl.insertAdjacentElement('afterend', indicator);
+  } else {
+    card.appendChild(indicator);
+  }
   card.addEventListener('click', function() {
-    card.classList.toggle('expanded');
+    card.classList.toggle('locked');
+    indicator.textContent = card.classList.contains('locked') ? '×' : '+';
   });
 });
 </script>
