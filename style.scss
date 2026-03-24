@@ -471,10 +471,6 @@ details {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @include mobile {
-    padding: 50px 0;
-  }
 }
 
 .mini-hero-wrapper {
