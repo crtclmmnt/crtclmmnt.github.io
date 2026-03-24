@@ -13,8 +13,9 @@ permalink: /reading/
 
 <div class="reading-grid-wrapper">
 <div style="max-width: 750px; margin: 0 auto;">
+
   <h3>Contemplative Practice & Spirituality</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>World as Lover, World as Self</h5>
       <p class="book-author">Joanna Macy (1991)</p>
@@ -25,6 +26,8 @@ permalink: /reading/
       <p class="book-author">Pema Chödrön (1991)</p>
       <p class="book-description">A book about how to work with your neuroses rather than fighting them, with important lessons for meditation and for daily life.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5>Cutting Through Spiritual Materialism</h5>
       <p class="book-author">Chögyam Trungpa Rinpoche (1973)</p>
@@ -38,7 +41,7 @@ permalink: /reading/
   </div>
 
   <h3>Ecology & Earth Systems</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Braiding Sweetgrass</h5>
       <p class="book-author">Robin Wall Kimmerer (2013)</p>
@@ -49,6 +52,8 @@ permalink: /reading/
       <p class="book-author">Wendell Berry (1977)</p>
       <p class="book-description">Berry offers a devastating critique of industrial agriculture, and argues that many of society's ills are the result of using machines for work we used to accomplish through relationships with other living things.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5>Becoming Earth</h5>
       <p class="book-author">Ferris Jabr (2025)</p>
@@ -62,7 +67,7 @@ permalink: /reading/
   </div>
 
   <h3>Politics & Social Change</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Caliban and the Witch: <br class="mobile-break"><span style=" font-size: 1.2rem;">Women, the Body and Primitive Accumulation</span></h5>
       <p class="book-author">Silvia Federici (2004)</p>
@@ -73,6 +78,8 @@ permalink: /reading/
       <p class="book-author">Frantz Fanon (1961)</p>
       <p class="book-description">Fanon describes the psychology of colonialism, showing how it affects both the colonized and the colonizer. The most memorable insight from this book is the idea that when a colonizer dehumanizes a colonized people, they themselves become dehumanized.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5>Pedagogy of the Oppressed</h5>
       <p class="book-author">Paulo Freire (1968)</p>
@@ -83,6 +90,8 @@ permalink: /reading/
       <p class="book-author">David Graeber (2011)</p>
       <p class="book-description">Graeber dismantles the myth that markets and money are natural or inevitable, tracing the history of how debt has been used to manipulate the masses.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5>Capitalist Realism</h5>
       <p class="book-author">Mark Fisher (2009)</p>
@@ -93,6 +102,8 @@ permalink: /reading/
       <p class="book-author">Walter Rodney</p>
       <p class="book-description">Rodney makes an airtight case that African poverty isn't a failure of development, it's the direct result of the extraction of humans and resources from the African continent.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Blackshirts and Reds: <br class="mobile-break"><span style=" font-size: 1.2rem;">Rational Fascism and the Overthrow of Communism</span></h5>
       <p class="book-author">Michael Parenti (1997)</p>
@@ -106,7 +117,7 @@ permalink: /reading/
   </div>
 
   <h3>Psychology & Human Nature</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5>The Master and His Emissary</h5>
       <p class="book-author">Iain McGilchrist (2009)</p>
@@ -117,6 +128,8 @@ permalink: /reading/
       <p class="book-author">Richard Schwartz (2021)</p>
       <p class="book-description">Family Therapist Richard Schwartz describes a framework for understanding the human psyche as an Internal Family System: a conglomeration of sub-personalities that have to learn to get along with each other. With meditation as a foundational practice for meeting your parts, I find this framework of therapy indispensable for getting to know yourself.</p>
     </div>
+  </div>
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>Humankind: <br class="mobile-break"><span style=" font-size: 1.2rem;">A Hopeful History</span></h5>
       <p class="book-author">Rutger Bregman (2019)</p>
@@ -130,7 +143,7 @@ permalink: /reading/
   </div>
 
   <h3>Systems Thinking & Philosophy</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5><span class="text-dark-rose">*</span>The Patterning Instinct</h5>
       <p class="book-author">Jeremy Lent (2017)</p>
@@ -144,7 +157,7 @@ permalink: /reading/
   </div>
 
   <h3>Inspiring Fiction</h3>
-  <div class="book-grid">
+  <div class="book-row">
     <div class="book-card">
       <h5>The Ministry for the Future</h5>
       <p class="book-author">Kim Stanley Robinson (2020)</p>
@@ -156,6 +169,7 @@ permalink: /reading/
       <p class="book-description">By imagining a society of anarchists that are given a moon upon which to build their utopia, Le Guin explores the reality of building alternative political, economic, and cultural systems. She explores the real cost of freedom, and why it must be chosen over and over again.</p>
     </div>
   </div>
+
 </div>
 </div>
 
@@ -163,7 +177,7 @@ permalink: /reading/
 <h5 style="text-align: center;"><a href="/reading/">back to the top</a></h5>
 
 <script>
-document.querySelectorAll('.book-grid .book-card').forEach(function(card) {
+document.querySelectorAll('.book-row .book-card').forEach(function(card) {
   var indicator = document.createElement('span');
   indicator.className = 'book-toggle-indicator';
   indicator.textContent = '+';

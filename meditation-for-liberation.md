@@ -2,8 +2,7 @@
 layout: default
 permalink: /meditation-for-liberation/
 ---
-<br>
-
+<hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>

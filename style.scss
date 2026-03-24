@@ -879,13 +879,14 @@ nav {
 
 // ── Reading page: flex layout with hover expand ───────────────────
 
-.reading-grid-wrapper .book-grid {
+.reading-grid-wrapper .book-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 16px;
+  margin-bottom: 16px;
 }
 
-.reading-grid-wrapper .book-card {
+.reading-grid-wrapper .book-row .book-card {
   flex: 1 1 calc(50% - 8px);
   max-width: calc(50% - 8px);
   box-sizing: border-box;
@@ -902,12 +903,12 @@ nav {
   }
 }
 
-.reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card {
+.reading-grid-wrapper .book-row:has(.book-card:hover) .book-card {
   flex: 1 1 calc(35% - 8px);
   max-width: calc(35% - 8px);
 }
 
-.reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card:hover {
+.reading-grid-wrapper .book-row:has(.book-card:hover) .book-card:hover {
   flex: 1 1 calc(65% - 8px);
   max-width: calc(65% - 8px);
 
@@ -924,7 +925,11 @@ nav {
 
 // Mobile: stack full-width, tap-to-toggle descriptions
 @media (max-width: 768px) {
-  .reading-grid-wrapper .book-card {
+  .reading-grid-wrapper .book-row {
+    flex-direction: column;
+  }
+
+  .reading-grid-wrapper .book-row .book-card {
     flex: 1 1 100%;
     max-width: 100%;
     transition: none;
@@ -955,7 +960,7 @@ nav {
     }
   }
 
-  .reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card {
+  .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card {
     flex: 1 1 100%;
     max-width: 100%;
   }
