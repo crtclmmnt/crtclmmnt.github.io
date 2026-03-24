@@ -48,42 +48,40 @@ permalink: /offerings/
 <br>
 <hr>
 
-<div style="max-width: 725px; margin: 0.5em auto;">
-  <h1 style="font-size: 3rem; margin-bottom: 0px;">DeepBe</h1>
-  <p>A simple meditation timer, with optional meditation instruction included.</p>
-  <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
-  <br>
-  <details><summary><strong>How to use DeepBe</strong></summary>
-  <div style="max-width: 700px; margin: 0 auto;">
-
-  <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
-    <div style="width: 150px; text-align: left;">
-    <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
-    </div>
-  
-    <div class="services-content" style="max-width: 550px;">
-    <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Disable Silent Mode</h1>
-    <p>Make sure your phone is not in silent mode, otherwise you will not hear the bells.</p>
-    </div>
+<div class="services-layout" style="align-items: flex-start; max-width: 725px; margin: 0.5em auto;">
+  <div style="flex-shrink: 0;">
+    <img src="/images/redmeditat.png" style="width: 120px;">
   </div>
-
+  <div class="services-content">
+    <h1 style="font-size: 3rem; margin-bottom: 0px;">DeepBe</h1>
+    <p>A simple meditation timer, with optional meditation instruction included.</p>
+    <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
+    <br>
+    <details><summary><strong>How to use DeepBe</strong></summary>
+    <div style="max-width: 700px; margin: 0 auto;">
+    <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
+      <div style="width: 150px; text-align: left;">
+      <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">1.</h5>
+      </div>
+      <div class="services-content" style="max-width: 550px;">
+      <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Disable Silent Mode</h1>
+      <p>Make sure your phone is not in silent mode, otherwise you will not hear the bells.</p>
+      </div>
+    </div>
     <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
       <div style="width: 150px; text-align: left;">
       <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">2.</h5>
       </div>
-  
       <div class="services-content" style="max-width: 550px;">
         <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Pick A Time</h1>
         <p>Choose the amount of time you would like to meditate for.</p>
         <p>You can add meditation instructions or a walking meditation (for 40-50 minute sits) by selecting the relevant toggles buttons.</p>
       </div>
     </div>
-
     <div class="services-layout" style="align-items: flex-start; margin-bottom: 40px;">
       <div style="width: 150px; text-align: left;">
       <h5 style="font-size: 4rem; margin-bottom: 0px; margin-top: 0px;">3.</h5>
       </div>
-
       <div class="services-content" style="max-width: 550px;">
       <h1 style="text-align: left; margin-bottom: 5px; margin-top: 0px;">Meditate</h1>
       <p>Sit with your hips elevated above your knees (either on a chair, a kneeling bench, or on a firm cushion on the floor). Back and head posture should be tall and strong (not straining), and you should have a soft gaze 4' - 6' in front of you.</p>
@@ -91,11 +89,11 @@ permalink: /offerings/
       <p>When thoughts arise and you notice them, gently label them "thinking" and come back to focusing on your breath.</p>
       </div>
     </div>
+    </div>
+    </details>
   </div>
-</details>
-
 </div>
-
+<hr>
 <br>
 
 <div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
