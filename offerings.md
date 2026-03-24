@@ -59,6 +59,7 @@ permalink: /offerings/
     <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
 
     <br>
+    <br>
 
     <details><summary><strong>How to use DeepBe</strong></summary>
     <div style="max-width: 700px; margin: 0 auto;">
@@ -96,8 +97,6 @@ permalink: /offerings/
     </details>
   </div>
 </div>
-
-<br>
 <hr>
 <br>
 
