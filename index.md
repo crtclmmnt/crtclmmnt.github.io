@@ -33,7 +33,7 @@ A future where we win starts now, in the critical moment.
 <div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano17.JPG'); background-size: cover; background-position: center;">
   <div class="hero-text" style="width: 600px; max-width: 100%; padding: 80px 20px;">
     <p style="font-family: 'Roboto'; font-size: 30px; font-weight: 300; line-height: 1.1em; color: #fff;"><em><strong>"</strong>If the world is to be healed through human efforts, I am convinced that it will be by ordinary people, people whose love for this life is even greater than their fear.<strong>"</strong></em></p>
-<p style="font-family: 'ZTNature'; font-size: 30px; font-weight: 500; color: #FBB965; text-align: center; margin: 0.5em auto;">— Joanna Macy</p>
+<p style="font-family: 'ZTNature'; font-size: 30px; font-weight: 500; color: #f1e6c9; text-align: center; margin: 0.5em auto;">— Joanna Macy</p>
   </div>
 </div>
 
