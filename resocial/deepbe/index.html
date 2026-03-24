@@ -433,7 +433,7 @@ title: DeepBe
 <body>
 
 <nav class="back-nav">
-  <a href="https://thecriticalmoment.org/resocial">Back to Resocial</a>
+  <a href="/">&larr; Back to The Critical Moment</a>
 </nav>
 
   <!-- Audio placeholders — add src attributes when files are ready -->
@@ -515,6 +515,7 @@ title: DeepBe
     </div>
     <img class="phase-image" id="phase-image" src="" alt="">
     <p class="body-text" id="sitting-note">Sitting quietly&hellip;</p>
+    <button class="btn-primary" id="complete-btn" style="display:none;">Complete</button>
   </div>
 
   <!-- ── Screen 4: Closing ─────────────────────────────────────── -->
@@ -704,6 +705,7 @@ title: DeepBe
 
     // ── State ─────────────────────────────────────────────────────
     let pendingImageHandler = null;
+    let imageCycleTimeout  = null;
     let selectedMinutes    = null;
     let includeInstruction = true;
     let includeWalking     = true;
@@ -855,6 +857,7 @@ title: DeepBe
       fg.style.strokeDashoffset = '0';
 
       setPhaseImage('/images/deepbe/posturewtxt.png');
+      startSittingImageCycle(token);
       updateDisplay();
 
       requestAnimationFrame(function() {
@@ -926,9 +929,46 @@ title: DeepBe
       }
     }
 
+    // ── Sitting image cycle ───────────────────────────────────────
+    // Cycle: posturewtxt.png → breathing.gif → thinking.png
+    // First full cycle: 30s per image. All subsequent: 45s per image.
+    // The first image is already shown by the caller; cycle starts
+    // scheduling from the second image onwards.
+    const CYCLE_IMAGES = [
+      '/images/deepbe/posturewtxt.png',
+      '/images/deepbe/breathing.gif',
+      '/images/deepbe/thinking.png'
+    ];
+
+    function startSittingImageCycle(token) {
+      stopSittingImageCycle();
+      var cycleIndex = 1;         // index 0 already shown by caller
+      var firstCycleDone = false; // true once we've wrapped back to index 0
+
+      function scheduleNext(delayMs) {
+        imageCycleTimeout = setTimeout(function() {
+          if (sessionToken !== token || walkingPhaseActive) return;
+          setPhaseImage(CYCLE_IMAGES[cycleIndex]);
+          cycleIndex = (cycleIndex + 1) % CYCLE_IMAGES.length;
+          if (!firstCycleDone && cycleIndex === 0) firstCycleDone = true;
+          scheduleNext(firstCycleDone ? 45000 : 30000);
+        }, delayMs);
+      }
+
+      scheduleNext(30000); // wait 30s before first transition
+    }
+
+    function stopSittingImageCycle() {
+      if (imageCycleTimeout) {
+        clearTimeout(imageCycleTimeout);
+        imageCycleTimeout = null;
+      }
+    }
+
     // ── Walking phase UI (audio pre-scheduled — UI only here) ─────
     function startWalkingPhaseUI() {
       walkingPhaseActive = true;
+      stopSittingImageCycle();
       document.getElementById('sitting-note').textContent = 'Walking meditation\u2026';
       document.getElementById('ring-fg').style.stroke = '#FBB965';
       setPhaseImage('/images/deepbe/walkmudra.gif');
@@ -943,44 +983,26 @@ title: DeepBe
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
       setPhaseImage('/images/deepbe/posturewtxt.png');
+      startSittingImageCycle(sessionToken);
       const walk = document.getElementById('walking-audio');
       walk.pause(); walk.currentTime = 0;
     }
 
-    // ── Timer end → Closing ───────────────────────────────────────
+    // ── Timer end → Completion screen ────────────────────────────
     // Closing bell was pre-scheduled via Web Audio — no playBell() here.
+    // Stay on screen-sitting; hide the × cancel button and show the
+    // Complete button so the user dismisses manually.
     function onTimerEndUI(token) {
       if (walkingPhaseActive) {
         const walk = document.getElementById('walking-audio');
         walk.pause(); walk.currentTime = 0;
         walkingPhaseActive = false;
       }
+      stopSittingImageCycle();
       document.getElementById('sitting-note').textContent = 'Time complete.';
       setPhaseImage('/images/deepbe/namaste.png');
-      setTimeout(function() {
-        if (sessionToken !== token) return; // session was reset
-        if (includeInstruction) {
-          showScreen('screen-closing');
-          beginClosingPhase();
-        } else {
-          returnToLanding();
-        }
-      }, 2200);
-    }
-
-    function beginClosingPhase() {
-      closingActive = true;
-      const closing = document.getElementById('closing-audio');
-      if (hasSrc(closing)) {
-        closing.play().catch(() => {});
-        closing.addEventListener('ended', function() {
-          if (closingActive) setTimeout(returnToLanding, 1500);
-        }, { once: true });
-        // Safety cap: auto-return after 3 min if audio stalls
-        setTimeout(function() { if (closingActive) returnToLanding(); }, 3 * 60 * 1000);
-      } else {
-        setTimeout(function() { if (closingActive) returnToLanding(); }, 10000);
-      }
+      document.getElementById('cancel-session-btn').style.display = 'none';
+      document.getElementById('complete-btn').style.display = '';
     }
 
     // ── Cancel session button ─────────────────────────────────────
@@ -988,10 +1010,17 @@ title: DeepBe
       returnToLanding();
     });
 
+    // ── Complete button (shown at session end) ────────────────────
+    document.getElementById('complete-btn').addEventListener('click', function() {
+      returnToLanding();
+    });
+
     // ── Return to landing ─────────────────────────────────────────
     function returnToLanding() {
       closingActive = false;
       sessionToken++; // invalidate all pending session callbacks
+
+      stopSittingImageCycle();
 
       // Cancel any pending image fade-in
       if (pendingImageHandler) {
@@ -1031,6 +1060,8 @@ title: DeepBe
       document.getElementById('begin-intro-btn').disabled = true;
       document.getElementById('sitting-note').textContent = 'Sitting quietly\u2026';
       document.getElementById('ring-fg').style.stroke = '#9DF4B0';
+      document.getElementById('cancel-session-btn').style.display = '';
+      document.getElementById('complete-btn').style.display = 'none';
       instructionToggle.classList.remove('visible');
       walkToggle.classList.remove('visible');
       setPhaseImage(null);
