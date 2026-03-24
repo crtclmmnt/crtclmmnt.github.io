@@ -874,6 +874,86 @@ nav {
   }
 }
 
+// Flex-based interactive book grid (reading page)
+.book-toggle-indicator {
+  display: none;
+}
+
+.book-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 2rem;
+
+  .book-card {
+    flex: 1 1 30%;
+    overflow: hidden;
+    transition: flex 0.3s ease;
+    padding-bottom: 1rem;
+
+    .book-description {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      margin: 0;
+    }
+
+    &:hover {
+      flex: 2 1 45%;
+
+      .book-description {
+        max-height: 200px;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+      cursor: pointer;
+
+      .book-toggle-indicator {
+        display: inline-block;
+        margin-left: 6px;
+        font-style: normal;
+        font-size: 1rem;
+        vertical-align: middle;
+        line-height: 1;
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        flex: 1 1 100%;
+
+        .book-description {
+          max-height: 0;
+          opacity: 0;
+        }
+      }
+
+      &.expanded {
+        .book-description {
+          max-height: 300px;
+          opacity: 1;
+        }
+
+        .book-toggle-indicator {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+.reading-cta {
+  text-align: center;
+  margin: 2rem 0;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 .bigblock {
   display: inline-block;
   background-color: $babyYellow;
