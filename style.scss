@@ -907,7 +907,7 @@ nav {
   max-width: calc(35% - 8px);
 }
 
-.reading-grid-wrapper .book-grid .book-card:hover {
+.reading-grid-wrapper .book-grid:has(.book-card:hover) .book-card:hover {
   flex: 1 1 calc(65% - 8px);
   max-width: calc(65% - 8px);
 
@@ -1048,7 +1048,7 @@ nav {
 .footer-squig {
   display: block;
   margin: 0 auto;
-  width: 100px;
+  width: 150px;
 }
 
 footer {
