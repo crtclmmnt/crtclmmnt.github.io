@@ -198,16 +198,5 @@ The world doesn’t need people to worry over her, she needs people who have the
 </div>
 
 <br>
-<h5><a href="https://thecriticalmoment.org/about">Back to the top</a></h5>
-<hr>
-<br>
-<div style="max-width: 725px; margin: 0 auto;">
-  <h1 style="text-align: center;">I Want to Hear From You</h1>
-  <hr class="short">
-  <p style="text-align: center;">No matter your experience level, regardless of your goals, cultivating a meditation practice with the help of a teacher can help you develop a greater sense of equanimity that you can take with you into your life beyond the practice.</p>
-  <p style="text-align: center;">Ready to get started?</p>
-    <div style="display: flex; justify-content: center;">
-      <a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a>
-    </div>
-</div>
+<h5><a style="text-align: center;" href="https://thecriticalmoment.org/about">back to the top</a></h5>
 <br>
