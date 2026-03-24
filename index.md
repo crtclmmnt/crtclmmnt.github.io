@@ -71,8 +71,6 @@ A future where we win starts now, in the critical moment.
 </div>
 <br>
 
-<hr>
-
 <br>
 
 <div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
