@@ -491,15 +491,13 @@ details {
 }
 
 .hero-text {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative; // change from absolute to relative
   width: 850px;
   max-width: 100%;
   padding: 0;
   color: $white;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+  margin: 0 auto; // centers it horizontally
 
   h1 {
     color: $white;
