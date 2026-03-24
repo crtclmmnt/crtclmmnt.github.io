@@ -25,16 +25,13 @@ The goal of this project is to empower people who are rising to the occasion of 
 
 A future where we win starts now, in the critical moment.   
 
-<br>
 <hr>
-<br>
 
 <h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
 <h5><a href="https://thecriticalmoment.org/offerings/">See my Offerings</a></h5>
 <h5><a href="https://thecriticalmoment.org/about/">About me</a></h5>
 <h5><a href="https://thecriticalmoment.org/faq/">Frequently asked questions</a></h5>
 
-<br>
 <br>
 
 <div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/pano17.JPG'); background-size: cover; background-position: center;">
