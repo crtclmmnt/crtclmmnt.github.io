@@ -6,7 +6,7 @@ permalink: /reading/
 <h5  style="text-align: center;"><a href="https://thecriticalmoment.org/about">back</a></h5>
 <br>
 
-<h1 style="margin-bottom: 0px;">Recommended Reading</h1>
+<h1 style="margin-bottom: 0px;">Book Recommendations</h1>
 <hr class="short" style="margin: 0.5em 0;">
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 <h5><span class="text-dark-rose">*</span>start with these</h5>

@@ -35,9 +35,8 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <br>
 <hr>
-<br>
 
-<h1 style="margin-bottom: 0px;">Recommended Reading</h1>
+<h1 style="margin-bottom: 0px;">Book Recommendations</h1>
 <hr class="short" style="margin: 0.5em 0;">
 <p>These are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 <a href="/reading/" class="btn">see the books</a>
