@@ -681,29 +681,37 @@ title: DeepBe
       const dur = 9;
       // Singing-bowl harmonics: fundamental + inharmonic partials.
       // Peak gain is set at t (not ramped up from 0) so iOS hears the attack.
-      [
+      const partials = [
         { f: 220,  peak: 0.32 },
         { f: 440,  peak: 0.14 },
         { f: 590,  peak: 0.06 },
         { f: 880,  peak: 0.04 },
         { f: 1320, peak: 0.02 },
-      ].forEach(function(partial) {
-        const osc  = ctx.createOscillator();
-        const gain = ctx.createGain();
-        // 1. Connect the full chain before any configuration or start()
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        // 2. Configure oscillator
-        osc.type = 'sine';
-        osc.frequency.value = partial.f;
-        // 3. Gain envelope: full peak at t, exponential decay to inaudible.
-        //    No zero-start ramp — that gets silenced within one audio block on iOS.
-        gain.gain.setValueAtTime(partial.peak, t);
-        gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-        // 4. Start oscillator last, after all connections and scheduling
-        osc.start(t);
-        osc.stop(t + dur);
-      });
+      ];
+
+      function strikeAt(strikeTime, gainScale) {
+        partials.forEach(function(partial) {
+          const osc  = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.type = 'sine';
+          osc.frequency.value = partial.f;
+          gain.gain.setValueAtTime(partial.peak * gainScale, strikeTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, strikeTime + dur);
+          osc.start(strikeTime);
+          osc.stop(strikeTime + dur);
+        });
+      }
+
+      // Preparatory strike 1 second before the main bell, at 20% gain
+      const prepT = t - 1;
+      if (prepT > ctx.currentTime) {
+        strikeAt(prepT, 0.2);
+      }
+
+      // Main strike at full gain
+      strikeAt(t, 1.0);
     }
 
     // ── Woodblock playback ────────────────────────────────────────
