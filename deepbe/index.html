@@ -832,7 +832,7 @@ title: DeepBe
 
     testBellBtn.addEventListener('click', function() {
       ensureAudioCtx();
-      scheduleBell();
+      scheduleBell(audioCtx.currentTime + 1.05);
     });
 
     // ── Landing → Intro ───────────────────────────────────────────
