@@ -51,7 +51,7 @@ permalink: /offerings/
 
 <div class="services-layout" style="align-items: flex-start; max-width: 725px; margin: 0.5em auto;">
   <div class="app-icon">
-    <img src="/images/redmeditat.png" style="width: 175px; max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="/images/redmeditat.png" style="width: 225px; max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
   <div class="services-content">
     <h1 class="center-mobile" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
