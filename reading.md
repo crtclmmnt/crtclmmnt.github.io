@@ -9,6 +9,7 @@ permalink: /reading/
 <hr class="short" style="margin: 0.5em 0;">
 <p>The wisdom that comes from a meditation practice is something that can't readily be intellectualized, it has to be experienced by cultivating your own practice. That being said, these are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
 <h5><span class="text-dark-rose">*</span>start with these</h5>
+<button class="btn-expand-all" id="expand-all-btn">Expand all</button>
 
 <div class="reading-grid-wrapper">
 <div style="max-width: 750px; margin: 0 auto;">
@@ -176,6 +177,17 @@ permalink: /reading/
 <h5 style="text-align: center;"><a href="/reading/">back to the top</a></h5>
 
 <script>
+// Expand all / Collapse all toggle
+var expandAllBtn = document.getElementById('expand-all-btn');
+if (expandAllBtn) {
+  expandAllBtn.addEventListener('click', function() {
+    var allDetails = document.querySelectorAll('details');
+    var allOpen = Array.from(allDetails).every(function(d) { return d.open; });
+    allDetails.forEach(function(d) { d.open = !allOpen; });
+    expandAllBtn.textContent = allOpen ? 'Expand all' : 'Collapse all';
+  });
+}
+
 if (window.innerWidth > 768) {
   document.querySelectorAll('.reading-grid-wrapper .book-card').forEach(function(card) {
     var indicator = document.createElement('span');
