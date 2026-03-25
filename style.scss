@@ -937,18 +937,19 @@ nav {
   max-width: calc(50% - 8px);
 }
 
-// Desktop-only: mint text by default, dark on hover/focus
+// Desktop-only: gray text by default, dark on hover or when details is open
 @media (min-width: 641px) {
   .reading-grid-wrapper .book-row .book-card {
-    color: #9DF4B0;
+    color: #666;
     transition: flex-basis 0.3s ease, max-width 0.3s ease, color 0.2s ease;
 
     h5, p, em {
-      color: #9DF4B0;
+      color: #666;
       transition: color 0.2s ease;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:has(details[open]) {
       color: #222;
 
       h5, p, em {
