@@ -177,32 +177,50 @@ permalink: /reading/
 <h5 style="text-align: center;"><a href="/reading/">back to the top</a></h5>
 
 <script>
-// Expand all / Collapse all toggle
-var expandAllBtn = document.getElementById('expand-all-btn');
-if (expandAllBtn) {
-  expandAllBtn.addEventListener('click', function() {
-    var allDetails = document.querySelectorAll('details');
-    var allOpen = Array.from(allDetails).every(function(d) { return d.open; });
-    allDetails.forEach(function(d) { d.open = !allOpen; });
-    expandAllBtn.textContent = allOpen ? 'Expand all' : 'Collapse all';
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+  var expandAllBtn = document.getElementById('expand-all-btn');
 
-if (window.innerWidth > 768) {
-  document.querySelectorAll('.reading-grid-wrapper .book-card').forEach(function(card) {
-    var indicator = document.createElement('span');
-    indicator.className = 'book-toggle-indicator';
-    indicator.textContent = '+';
-    var authorEl = card.querySelector('.book-author');
-    if (authorEl) {
-      authorEl.insertAdjacentElement('afterend', indicator);
-    } else {
-      card.appendChild(indicator);
-    }
-    card.addEventListener('click', function() {
-      card.classList.toggle('locked');
-      indicator.textContent = card.classList.contains('locked') ? '×' : '+';
+  if (window.innerWidth > 768) {
+    document.querySelectorAll('.reading-grid-wrapper .book-card').forEach(function(card) {
+      var indicator = document.createElement('span');
+      indicator.className = 'book-toggle-indicator';
+      indicator.textContent = '+';
+      var authorEl = card.querySelector('.book-author');
+      if (authorEl) {
+        authorEl.insertAdjacentElement('afterend', indicator);
+      } else {
+        card.appendChild(indicator);
+      }
+      card.addEventListener('click', function() {
+        card.classList.toggle('locked');
+        indicator.textContent = card.classList.contains('locked') ? '×' : '+';
+        // Sync the expand-all button label
+        if (expandAllBtn) {
+          var allCards = document.querySelectorAll('.reading-grid-wrapper .book-card');
+          var allLocked = Array.from(allCards).every(function(c) { return c.classList.contains('locked'); });
+          expandAllBtn.textContent = allLocked ? 'Collapse all' : 'Expand all';
+        }
+      });
     });
-  });
-}
+  }
+
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', function() {
+      var allCards = document.querySelectorAll('.reading-grid-wrapper .book-card');
+      var allLocked = Array.from(allCards).every(function(c) { return c.classList.contains('locked'); });
+      allCards.forEach(function(card) {
+        if (allLocked) {
+          card.classList.remove('locked');
+        } else {
+          card.classList.add('locked');
+        }
+        var indicator = card.querySelector('.book-toggle-indicator');
+        if (indicator) {
+          indicator.textContent = allLocked ? '+' : '×';
+        }
+      });
+      expandAllBtn.textContent = allLocked ? 'Expand all' : 'Collapse all';
+    });
+  }
+});
 </script>
