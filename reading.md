@@ -194,11 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
       card.addEventListener('click', function() {
         card.classList.toggle('locked');
         indicator.textContent = card.classList.contains('locked') ? '×' : '+';
-        // Sync the expand-all button label
+        // Sync the expand-all button label and color
         if (expandAllBtn) {
           var allCards = document.querySelectorAll('.reading-grid-wrapper .book-card');
           var allLocked = Array.from(allCards).every(function(c) { return c.classList.contains('locked'); });
           expandAllBtn.textContent = allLocked ? 'Collapse all' : 'Expand all';
+          expandAllBtn.classList.toggle('is-collapsed', allLocked);
         }
       });
     });
@@ -220,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       expandAllBtn.textContent = allLocked ? 'Expand all' : 'Collapse all';
+      expandAllBtn.classList.toggle('is-collapsed', !allLocked);
     });
   }
 });
