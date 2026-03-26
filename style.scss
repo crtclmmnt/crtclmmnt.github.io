@@ -964,7 +964,7 @@ nav {
   }
 }
 
-// Desktop-only: gray text by default, dark on hover or when details is open
+// Desktop-only: gray text by default, dark on hover or when locked/expanded
 @media (min-width: 641px) {
   .reading-grid-wrapper .book-row .book-card {
     color: #666;
@@ -975,8 +975,7 @@ nav {
       transition: color 0.2s ease;
     }
 
-    &:hover,
-    &:has(details[open]) {
+    &:hover {
       color: #222;
 
       h5, p, em, span, a, li, blockquote, strong, b, i, label {
@@ -985,9 +984,17 @@ nav {
     }
   }
 
-  // Ensure details[open] card text always stays dark, even without hover
-  .reading-grid-wrapper .book-row .book-card:has(details[open]),
-  .reading-grid-wrapper .book-row .book-card:has(details[open]) * {
+  // Locked (expanded) card text always stays dark, overrides hover/sibling rules
+  .reading-grid-wrapper .book-row .book-card.locked,
+  .reading-grid-wrapper .book-row .book-card.locked h5,
+  .reading-grid-wrapper .book-row .book-card.locked p,
+  .reading-grid-wrapper .book-row .book-card.locked em,
+  .reading-grid-wrapper .book-row .book-card.locked span,
+  .reading-grid-wrapper .book-row .book-card.locked a,
+  .reading-grid-wrapper .book-row .book-card.locked strong,
+  .reading-grid-wrapper .book-row .book-card.locked b,
+  .reading-grid-wrapper .book-row .book-card.locked i,
+  .reading-grid-wrapper .book-row .book-card.locked label {
     color: #222 !important;
   }
 }
