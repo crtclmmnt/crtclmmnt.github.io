@@ -970,7 +970,7 @@ nav {
     color: #666;
     transition: flex-basis 0.3s ease, max-width 0.3s ease, color 0.2s ease;
 
-    h5, p, em {
+    h5, p, em, span, a, li, blockquote, strong, b, i, label {
       color: #666;
       transition: color 0.2s ease;
     }
@@ -979,10 +979,16 @@ nav {
     &:has(details[open]) {
       color: #222;
 
-      h5, p, em {
+      h5, p, em, span, a, li, blockquote, strong, b, i, label {
         color: #222;
       }
     }
+  }
+
+  // Ensure details[open] card text always stays dark, even without hover
+  .reading-grid-wrapper .book-row .book-card:has(details[open]),
+  .reading-grid-wrapper .book-row .book-card:has(details[open]) * {
+    color: #222 !important;
   }
 }
 
