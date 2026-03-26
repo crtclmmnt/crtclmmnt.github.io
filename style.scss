@@ -887,54 +887,44 @@ nav {
 }
 
 .reading-grid-wrapper .book-row .book-card {
-  flex: 1 1 calc(50% - 8px);
-  max-width: calc(50% - 8px);
   box-sizing: border-box;
   overflow: hidden;
-  transition: flex-basis 0.3s ease, max-width 0.3s ease;
   padding-bottom: 1rem;
-  cursor: pointer;
+}
 
-  .book-description {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    margin: 0;
+@media (min-width: 641px) {
+  // Hover expand (unlocked cards)
+  .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card {
+    flex: 1 1 calc(35% - 8px);
+    max-width: calc(35% - 8px);
   }
-}
 
-// Hover expand (unlocked cards)
-.reading-grid-wrapper .book-row:has(.book-card:hover) .book-card {
-  flex: 1 1 calc(35% - 8px);
-  max-width: calc(35% - 8px);
-}
+  .reading-grid-wrapper .book-row:has(.book-card:hover) .book-card:hover {
+    flex: 1 1 calc(65% - 8px);
+    max-width: calc(65% - 8px);
 
-.reading-grid-wrapper .book-row:has(.book-card:hover) .book-card:hover {
-  flex: 1 1 calc(65% - 8px);
-  max-width: calc(65% - 8px);
-
-  .book-description {
-    max-height: 200px;
-    opacity: 1;
+    .book-description {
+      max-height: 200px;
+      opacity: 1;
+    }
   }
-}
 
-// Locked state: one card locked → 65/35 split
-.reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card.locked {
-  flex: 1 1 calc(65% - 8px);
-  max-width: calc(65% - 8px);
-}
+  // Locked state: one card locked → 65/35 split
+  .reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card.locked {
+    flex: 1 1 calc(65% - 8px);
+    max-width: calc(65% - 8px);
+  }
 
-.reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card:not(.locked) {
-  flex: 1 1 calc(35% - 8px);
-  max-width: calc(35% - 8px);
-}
+  .reading-grid-wrapper .book-row:has(.book-card.locked):not(:has(.book-card.locked + .book-card.locked)) .book-card:not(.locked) {
+    flex: 1 1 calc(35% - 8px);
+    max-width: calc(35% - 8px);
+  }
 
-// Locked state: both cards locked → 50/50 split
-.reading-grid-wrapper .book-row:has(.book-card.locked + .book-card.locked) .book-card {
-  flex: 1 1 calc(50% - 8px);
-  max-width: calc(50% - 8px);
+  // Locked state: both cards locked → 50/50 split
+  .reading-grid-wrapper .book-row:has(.book-card.locked + .book-card.locked) .book-card {
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
 }
 
 // Expand-all toggle button: hidden on mobile, shown on desktop
@@ -964,11 +954,22 @@ nav {
   }
 }
 
-// Desktop-only: gray text by default, dark on hover or when locked/expanded
+// Desktop-only: flex sizing, expand behavior, gray text by default, dark on hover or when locked/expanded
 @media (min-width: 641px) {
   .reading-grid-wrapper .book-row .book-card {
+    flex: 1 1 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+    cursor: pointer;
     color: #666;
     transition: flex-basis 0.3s ease, max-width 0.3s ease, color 0.2s ease;
+
+    .book-description {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      margin: 0;
+    }
 
     h5, p, em, span, a, li, blockquote, strong, b, i, label {
       color: #666;
@@ -984,6 +985,12 @@ nav {
     }
   }
 
+  // Locked card always shows description
+  .reading-grid-wrapper .book-row .book-card.locked .book-description {
+    max-height: 300px;
+    opacity: 1;
+  }
+
   // Locked (expanded) card text always stays dark, overrides hover/sibling rules
   .reading-grid-wrapper .book-row .book-card.locked,
   .reading-grid-wrapper .book-row .book-card.locked h5,
@@ -997,12 +1004,6 @@ nav {
   .reading-grid-wrapper .book-row .book-card.locked label {
     color: #222 !important;
   }
-}
-
-// Locked card always shows description
-.reading-grid-wrapper .book-row .book-card.locked .book-description {
-  max-height: 300px;
-  opacity: 1;
 }
 
 // Toggle indicator: small muted label below author, visible on all viewports
