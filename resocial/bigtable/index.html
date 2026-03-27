@@ -244,6 +244,8 @@ function reshiftSchedule(schedule, agreedDays, agreedWindow, newFirstDinnerDate)
     ...entry,
     date: i < newDates.length ? newDates[i] : entry.date,
     agreedWindow,
+    selectedDate: null,
+    dateChangedAt: null,
   }));
 }
 
@@ -1916,6 +1918,46 @@ function MealPostForm({ entry, pool, myName, onPost, onCancel, initialMeal }) {
   );
 }
 
+function CookDateSelector({ entry, entryIdx, pool, onUpdate }) {
+  const defaultIso = schedDateToISO(entry.date);
+  const options = computeDateOptions(entry.date);
+  const currentIso = entry.selectedDate || defaultIso;
+
+  const handleSelect = (isoDate) => {
+    const newSelectedDate = isoDate === defaultIso ? null : isoDate;
+    const updated = {
+      ...pool,
+      schedule: pool.schedule.map((e, i) => i !== entryIdx ? e : {
+        ...e,
+        selectedDate: newSelectedDate,
+        dateChangedAt: newSelectedDate ? Date.now() : null,
+      })
+    };
+    onUpdate(updated);
+  };
+
+  return (
+    <div style={{ marginTop:'10px', padding:'12px 14px', background:'#f0f9f4',
+      border:`1.5px solid ${C.darkMint}`, borderRadius:'10px' }}>
+      <div style={{ fontSize:'13px', fontWeight:'600', color:C.darkGray, marginBottom:'8px' }}>
+        Select your dinner date:
+      </div>
+      <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
+        {options.map(opt => (
+          <Chip key={opt.iso} label={opt.label}
+            active={currentIso === opt.iso}
+            onClick={() => handleSelect(opt.iso)} />
+        ))}
+      </div>
+      {entry.selectedDate && (
+        <div style={{ fontSize:'12px', color:C.darkMint, marginTop:'6px' }}>
+          Moved from default ({entry.date}) — all members will see your chosen date.
+        </div>
+      )}
+    </div>
+  );
+}
+
 function buildICS(pool, myName) {
   const MO = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
 
@@ -1961,8 +2003,9 @@ function buildICS(pool, myName) {
     .filter(entry => !(entry.optedOut || []).includes(myName))
     .map((entry, i) => {
     const startSlot = entry.meal?.startTime || entry.agreedWindow.earliest;
-    const dtstart = toICSDate(entry.date, startSlot);
-    const dtend   = toICSDateEnd(entry.date, startSlot);
+    const effectiveDateStr = getEffectiveDateDisplay(entry);
+    const dtstart = toICSDate(effectiveDateStr, startSlot);
+    const dtend   = toICSDateEnd(effectiveDateStr, startSlot);
     const uid = `bigtable-${pool.code}-${i}@thecriticalmoment.org`;
     const summary = `Dinner with ${pool.name}`;
     const location = entry.meal?.address ? entry.meal.address.replace(/,/g, '\\,') : '';
@@ -2015,6 +2058,36 @@ function schedDateToISO(dateStr) {
   const d = new Date(year, month - 1, day);
   if (d < new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)) d.setFullYear(year + 1);
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// Convert ISO date string to display format "Tue Mar 11"
+function isoToDisplayDate(isoStr) {
+  const [y, m, d] = isoStr.split('-').map(Number);
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const WDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const dt = new Date(y, m - 1, d);
+  return `${WDAYS[dt.getDay()]} ${MO[m-1]} ${d}`;
+}
+
+// Returns 4 weekly date options (default + 3 weeks out) for a schedule entry
+function computeDateOptions(defaultDateStr) {
+  const isoDefault = schedDateToISO(defaultDateStr);
+  const [y, m, d] = isoDefault.split('-').map(Number);
+  const MO = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const WDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return [0, 7, 14, 21].map(offset => {
+    const dt = new Date(y, m - 1, d + offset);
+    const iso = `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+    const display = `${WDAYS[dt.getDay()]} ${MO[dt.getMonth()]} ${dt.getDate()}`;
+    const label = offset === 0 ? `${display} (default)` : `+${offset/7}w: ${display}`;
+    return { iso, display, label };
+  });
+}
+
+// Returns the display date string for an entry, using cook's selectedDate if set
+function getEffectiveDateDisplay(entry) {
+  if (entry.selectedDate) return isoToDisplayDate(entry.selectedDate);
+  return entry.date;
 }
 
 function ScheduleTab({ pool, myName, onUpdate }) {
@@ -2165,6 +2238,13 @@ function ScheduleTab({ pool, myName, onUpdate }) {
         </div>
       )}
 
+      {(pool.schedule || []).some(e => e.selectedDate) && (
+        <div style={{ padding:'10px 14px', background:'#fff8ee', border:`1.5px solid ${C.peach}`,
+          borderRadius:'10px', fontSize:'13px', color:C.darkPeach, marginBottom:'16px', lineHeight:1.5 }}>
+          A cook has moved their dinner date — re-download the calendar to get the latest dates.
+        </div>
+      )}
+
       {pool.agreedDays && (
         <div style={{ fontSize:'13px', color:C.gray, marginBottom:'16px' }}>
           Active days: {pool.agreedDays.join(', ')} · Window: {pool.agreedWindow?.earliest} – {pool.agreedWindow?.latest}
@@ -2174,7 +2254,8 @@ function ScheduleTab({ pool, myName, onUpdate }) {
         const isCook    = entry.cooks.includes(myName);
         const hasMeal   = !!entry.meal;
         const isOptedOut = (entry.optedOut || []).includes(myName);
-        const monthDate = entry.date.split(' ').slice(1).join(' ');
+        const effectiveDate = getEffectiveDateDisplay(entry);
+        const monthDate = effectiveDate.split(' ').slice(1).join(' ');
         const { hasAlcoholFree } = computeActiveGuests(pool, entry);
 
         return (
@@ -2189,10 +2270,14 @@ function ScheduleTab({ pool, myName, onUpdate }) {
                 {hasMeal ? (
                   <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'19px', color:C.darkerGray, marginBottom:'2px' }}>
                     On the Menu for {monthDate} at {entry.meal.startTime}
+                    {entry.selectedDate && <span style={{ fontSize:'13px', color:C.darkMint, marginLeft:'6px', fontFamily:"'Roboto',sans-serif", fontWeight:'400' }}>(date moved)</span>}
                   </div>
                 ) : (
                   <>
-                    <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'19px', color:C.darkerGray, marginBottom:'2px' }}>{entry.date}</div>
+                    <div style={{ fontFamily:"'ZTNature',Helvetica,sans-serif", fontSize:'19px', color:C.darkerGray, marginBottom:'2px' }}>
+                      {effectiveDate}
+                      {entry.selectedDate && <span style={{ fontSize:'13px', color:C.darkMint, marginLeft:'6px', fontFamily:"'Roboto',sans-serif", fontWeight:'400' }}>(date moved)</span>}
+                    </div>
                     <div style={{ fontSize:'13px', color:C.gray }}>{entry.agreedWindow.earliest} – {entry.agreedWindow.latest}</div>
                   </>
                 )}
@@ -2213,6 +2298,11 @@ function ScheduleTab({ pool, myName, onUpdate }) {
                 marginBottom:'10px', lineHeight:1.5 }}>
                 Assigned outside availability: {entry.forceAssigned.join(', ')} — please confirm with your group.
               </div>
+            )}
+
+            {/* Cook date selector */}
+            {isCook && (
+              <CookDateSelector entry={entry} entryIdx={i} pool={pool} onUpdate={onUpdate} />
             )}
 
             {/* Posted meal details */}
