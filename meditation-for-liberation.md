@@ -27,7 +27,9 @@ permalink: /meditation-for-liberation/
 <h3>What to expect</h3>
 <p>These workshops are 4-8 weeks long, depending on the curriculum. This amount of time gives the group time to warm up to the practice and to see the effects for themselves. This allows for more interesting, revealing, and productive conversations as the workshop progresses.</p>
 <p>Each session will begin with a silent meditation, which starts with meditation instruction. After the meditation has concluded, I will give a short talk to inform a discussion. Discussion topics will range from how to organize effectively, how to see yourself as part of the web of life, and so on. These sessions can range from 45 to 90 minutes, depending on how much time you have, and which parts of the workshop you'd like to emphasize.</p>
-<p>These workshops are available online or in a hybrid format, but I am also open to and interested in hosting them in physical spaces. If your organization has a reservable space at your disposal, then let me know when you fill out the interest form! In-person workshops will only be available to groups in the Bay Area, for now.</p>
+<p>These workshops are available online or in a hybrid format, and I am also open to and interested in hosting them in physical spaces. If your organization has a reservable space at your disposal, then let me know when you fill out the interest form! In-person workshops will only be available to groups in the Bay Area, for now.</p>
+<h3>Alternative Options</h3>
+<p>If you are an individual organizer who is interested in one of these workshops, but you are not part of an organization that wants to host one, please fill out the interest form anyway. I may also host public versions of these workshops for people to attend outside the context of their organization.</p>
 
 <h1 id="curriculum">Curriculum Options</h1>
 <div class="book-grid curriculum-grid">
