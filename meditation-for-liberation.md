@@ -34,7 +34,7 @@ permalink: /meditation-for-liberation/
 <div class="book-grid curriculum-grid">
   <div class="book-card" style="padding: 1rem;">
     <h3 style="margin-top: 0; margin-bottom: 0;">Gentleness, Precision, and Letting Go</h3>
-    <h6 style="margin-top: 5px; font-family: 'Roboto'; font-weight: 400; color: #666;">Exploring the foundations of a sustainable meditation practice.</h6>
+    <h6 style="margin-top: 5px; font-family: 'Roboto'; font-weight: 400; color: #666;">Exploring the foundations of a sustainable relationship to practice and self.</h6>
     <h6>4 weeks / 6 weeks</h6>
     <details><summary><strong>See more</strong></summary>
     <p class="book-description">Based on Pema Chödrön's <em>The Wisdom of No Escape</em>, this curriculum introduces three core qualities of a sustainable meditation practice, which also applies to cultivating a healthy relationship with the self. Participants learn to approach their practice and their daily life with gentleness rather than self-criticism, precision rather than vagueness, and the ability to let go rather than clinging to outcomes.</p>
@@ -71,7 +71,7 @@ permalink: /meditation-for-liberation/
 <div class="hero-wrapper-fullbleed" style="margin-bottom: -10px; background-image: url('/images/block6.JPG'); background-size: cover; background-position: center;">
   <div class="hero-text" style="width: 600px; max-width: 100%; padding: 60px 20px;">
     <h1 style="text-align: center; margin-bottom: 20px;">For any other questions, comments, or concerns...</h1>
-    <div style="text-align: center; margin-bottom: 70px;"><a href="https://tally.so/r/ODAAQp" class="btn" style="color: #fff;">Fill out the intake form</a></div>
+    <div style="text-align: center; margin-bottom: 70px;"><a href="https://tally.so/r/ODAAQp" class="btn" style="color: #fff;">Fill out the interest form</a></div>
     <h5 style="text-align: center; margin: 0 auto;"><a style="color: white;" href="https://thecriticalmoment.org/meditation-for-liberation/">back to the top</a></h5>
   </div>
 </div>
