@@ -16,13 +16,18 @@ permalink: /meditation-for-liberation/
     <br>
   </div>
   <div class="services-content" style="flex: 1;">
-    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from all of which start with teaching basic mindfulness meditation techniques, before moving on to deeper exploration and discussion.</p>
+    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (as shown below) all of which start with teaching basic mindfulness meditation techniques, before moving on to deeper exploration and discussion.</p>
   </div>
 </div>
 
-<p>If you represent an organization, I can bring the workshop of your choosing to your members. If you're an individual organizer, I can help you connect with an organization that is already hosting one, or I can let you know when I host one of these workshops for the public.</p>
-<p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
-<p>Workshops run between <strong>4 and 8 weeks</strong> depending on the curriculum, and the duration of each session is <strong>60 - 90 minutes.</strong> Both <strong>in-person (Bay Area) and online</strong> options are available.</p>
+<h3>Who this is for</h3>
+<p>Meditation for Liberation workshops are intended for organizations that are promoting justice in this world. It's up to you to decide if you fit the description. I'm particularly interested in working with liberatory political organizations, environmental and climate action groups, and labor and tenant unions.</p>
+<p>You do not have to have any experience with meditation to attend one of these workshops, and there is no metaphysical element to the meditation I teach. Mindfulness meditation is a foundational practice in Buddhism, but the practice itself is secular.</p>
+<p>Although these workshops are educational, I'd like to emphasize that I am not a wise old sage. I don't intend to lecture from a pedestal or insist on any specific ideas. My primary intention is to teach the practice and facilitate conversations about our organizing efforts, our political situation, and how we can relate to these aspects of political life in a way that empowers action.</p>
+<h3>What to expect</h3>
+<p>These workshops are 4-8 weeks long, depending on the curriculum. This amount of time gives the group time to warm up to the practice and to see the effects for themselves. This allows for more interesting, revealing, and productive conversations as the workshop progresses.</p>
+<p>Each session will begin with a silent meditation, which starts with meditation instruction. After the meditation has concluded, I will give a short talk to inform a discussion. Discussion topics will range from how to organize effectively, how to see yourself as part of the web of life, and so on. These sessions can range from 45 to 90 minutes, depending on how much time you have, and which parts of the workshop you'd like to emphasize.</p>
+<p>These workshops are available online or in a hybrid format, but I am also open to and interested in hosting them in physical spaces. If your organization has a reservable space at your disposal, then let me know when you fill out the interest form! In-person workshops will only be available to groups in the Bay Area, for now.</p>
 
 <h1 id="curriculum">Curriculum Options</h1>
 <div class="book-grid curriculum-grid">
