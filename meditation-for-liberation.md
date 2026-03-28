@@ -19,7 +19,6 @@ permalink: /meditation-for-liberation/
     <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (as shown below) all of which start with teaching basic mindfulness meditation techniques, before moving on to deeper exploration and discussion.</p>
   </div>
 </div>
-
 <h3>Who this is for</h3>
 <p>Meditation for Liberation workshops are intended for organizations that are promoting justice in this world. It's up to you to decide if you fit the description. I'm particularly interested in working with liberatory political organizations, environmental and climate action groups, and labor and tenant unions.</p>
 <p>You do not have to have any experience with meditation to attend one of these workshops, and there is no metaphysical element to the meditation I teach. Mindfulness meditation is a foundational practice in Buddhism, but the practice itself is secular.</p>
