@@ -2,7 +2,7 @@
 layout: post
 title: The Alt-Left Pipeline
 description: "description here"
-hero_image: /images/blogpics/pano11.JPG
+hero_image: /images/pano11.JPG
 ---
 
 In 2025, I took a break from social media. It was something I had been testing for the last few months of 2024, which was the year I started meditating every day. The more I meditated, the more I noticed how awful it made me feel to doomscroll. I started deleting Instagram (my digital vice of choice) for a couple days, before redownloading it. Then a couple weeks, before redownloading it. Then in January, as the news from Palestine and the Palisades fires and the inauguration of Trump had me feeling particularly black-pilled, I decided enough was enough. 
