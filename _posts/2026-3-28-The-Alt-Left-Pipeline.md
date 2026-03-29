@@ -2,7 +2,7 @@
 layout: post
 title: The Alt-Left Pipeline
 description: "description here"
-hero_image: /images/pano11.JPG
+hero_image: /images/pano12.JPG
 ---
 
 In 2025, I took a break from social media. It was something I had been testing for the last few months of 2024, which was the year I started meditating every day. The more I meditated, the more I noticed how awful it made me feel to doomscroll. I started deleting Instagram (my digital vice of choice) for a couple days, before redownloading it. Then a couple weeks, before redownloading it. Then in January, as the news from Palestine and the Palisades fires and the inauguration of Trump had me feeling particularly black-pilled, I decided enough was enough. 
@@ -22,7 +22,7 @@ I’ve been back online, dipping my toe in, for the last month or so. I’ve bee
 But I very quickly noticed a dynamic in how I was consuming content. I would get a video about something I found interesting, and then scroll down to another video I found interesting, and then another, and so on. It didn’t matter how practical their advice was, or how compelling their theories were. It didn’t matter if there was a specific call-to-action, whether that was learning more about a topic, checking out a website, calling a representative, or whatever. I wouldn’t act on it. I would consume the content, and scroll. But it didn’t <em>feel</em> like scrolling. It <em>felt</em> like activism. It <em>felt</em> like the right thing to be doing, in those moments where I was worried that I wasn’t doing enough.
 
 <br>
-<h3>What is Social Media’s value to a political movement?</h3>
+<h3>What is social media’s value to a political movement?</h3>
 
 This is the question I’ve been wrestling with for the last couple months.
 
