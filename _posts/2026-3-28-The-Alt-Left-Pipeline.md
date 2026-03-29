@@ -21,6 +21,7 @@ I’ve been back online, dipping my toe in, for the last month or so. I’ve bee
 
 But I very quickly noticed a dynamic in how I was consuming content. I would get a video about something I found interesting, and then scroll down to another video I found interesting, and then another, and so on. It didn’t matter how practical their advice was, or how compelling their theories were. It didn’t matter if there was a specific call-to-action, whether that was learning more about a topic, checking out a website, calling a representative, or whatever. I wouldn’t act on it. I would consume the content, and scroll. But it didn’t <em>feel</em> like scrolling. It <em>felt</em> like activism. It <em>felt</em> like the right thing to be doing, in those moments where I was worried that I wasn’t doing enough.
 
+<br>
 <h3>What is Social Media’s value to a political movement?</h3>
 
 This is the question I’ve been wrestling with for the last couple months.
@@ -41,6 +42,8 @@ The intruder is engaging with this new political space the way he’s learned to
 
 That story usually ends with the new person feeling rejected, due to the understandable discomfort of the experienced organizers. So instead of getting a new member, the organization accidentally pushes him back to a life lived on r/Socialism. Instead of joining a cause, Jake decides the people involved are not revolutionary enough. 
 
+>He wants to be in the revolution, but the revolutions he sees online don't look like boring meetings.
+
 But it could end better, if we were preparing people online and in life for the reality of organizing, and if organizers were grounded, present, and intentional when dealing with new people. 
 
 The real issue is that social media does not teach people social skills, and a lot of organizers who make content are not showing the boring parts of their work. Social life online sets odd expectations for the real world, and you can see it in how isolated people have become. Political life online is even stranger, in terms of what it makes you expect from real political work. Someone who has lived their entire political life online will assume that debate is the highest form of praxis. They will assume that they must join the most revolutionary and ideologically rigorous organization in order to get anything done.
@@ -53,6 +56,7 @@ I’m not arguing that we should abandon the digital world. It is certainly a te
 
 So, my question for content creators on the left, and anyone who engages with political content on social media, is <em>how is the content changing you,</em> if at all? What are you doing differently in organizing as a result of your social media use?
 
+<br>
 <h3>Building the alt-left pipeline</h3>
 
 There was a lot of talk about building an alt-left pipeline a couple years ago. I’m sure that talk still exists somewhere. It was a good idea, but it was built on false assumptions about the applicability of the right's goals for the left.
