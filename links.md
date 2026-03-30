@@ -4,7 +4,7 @@ permalink: /links/
 hide_header: true
 ---
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1.5em;">
-  <a href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" style="width: 80px; height: 80px; border-radius: 50%;"></a>
+  <a href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" style="width: 150px; border-radius: 50%;"></a>
   <h1 class="site-name" style="text-shadow: none; border-bottom: none;">
     <a href="{{ site.baseurl }}/"><span class="the">the</span><br>critical<br><span class="bold">moment</span></a>
   </h1>
@@ -18,5 +18,5 @@ hide_header: true
 <a href="/" class="btn-large"><span style="font-size: 20px; line-height: 1;">The Critical Moment - Home Page</span></a>
 <a href="/blog/" class="btn-large"><span style="font-size: 20px; line-height: 1;">Read the blog</span></a>
 <a href="https://buttondown.com/thecriticalmoment" class="btn-large"><span style="font-size: 20px; line-height: 1;">Subscribe to the newsletter</span></a>
-<a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 20px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
+<a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 20px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
 </div>
