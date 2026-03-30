@@ -15,8 +15,8 @@ hide_header: true
 <hr class="short" style="margin: 0.5em auto;">
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
-<a href="/" class="btn-large"><span style="font-size: 20px; line-height: 1;">The Critical Moment - Home Page</span></a>
-<a href="/blog/" class="btn-large"><span style="font-size: 20px; line-height: 1;">Read the blog</span></a>
-<a href="https://buttondown.com/thecriticalmoment" class="btn-large"><span style="font-size: 20px; line-height: 1;">Subscribe to the newsletter</span></a>
-<a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 20px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
+<a href="/" class="btn-large"><span style="font-size: 22px; line-height: 1;">The Critical Moment</span><br><span style="font-size: 24px; line-height: 1;">Home Page</span></a>
+<a href="/blog/" class="btn-large"><span style="font-size: 22px; line-height: 1;">Read the blog</span></a>
+<a href="https://buttondown.com/thecriticalmoment" class="btn-large"><span style="font-size: 22px; line-height: 1;">Subscribe to the newsletter</span></a>
+<a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 22px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
 </div>
