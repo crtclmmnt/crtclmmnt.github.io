@@ -21,3 +21,6 @@ hide_header: true
 <a href="https://buttondown.com/thecriticalmoment" class="btn-large"><span style="font-size: 22px; line-height: 1;">Subscribe to the newsletter</span></a>
 <a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 22px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
 </div>
+<br>
+<br>
+<br>
