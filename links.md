@@ -3,6 +3,7 @@ layout: default
 permalink: /links/
 hide_header: true
 ---
+<br><br>
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1.5em;">
   <a href="{{ site.baseurl }}/"><img src="{{ site.avatar }}" style="width: 150px; border-radius: 50%;"></a>
   <h1 class="site-name" style="text-shadow: none; border-bottom: none;">
