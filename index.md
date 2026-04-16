@@ -17,7 +17,7 @@ It’s hard to face all this without falling apart, or turning a blind eye.
 
 But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. It’s not enough to be on the right side of history. We have a moral duty to win.
 
-The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias; and so that you can notice the ways society has socialized you, and become more in tune with your core values. 
+The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias; and so that you can notice the way systems have socialized you, and become more in tune with your core values. 
 
 A future where we win starts now, in the critical moment.   
 
