@@ -7,10 +7,10 @@ permalink: /friendsandfamily/
 
 <hr class="short" style="margin: 0.5em auto;">
 
-<p>If you're looking for the weekly Wednesday morning sit, please go to <a href="https://thecriticalmoment.org/offerings/leftist/">Leftsit - A Political Sangha</a></p>
+<p>If you're looking for the weekly Wednesday morning sit, please go to <a href="https://thecriticalmoment.org/offerings/leftsit/">Leftsit - A Political Sangha</a></p>
 
 <div style="flex: 1; text-align: center;">
-  <a href="https://thecriticalmoment.org/offerings/leftist/" class="btn">Leftsit - A Political Sangha</a>
+  <a href="https://thecriticalmoment.org/offerings/leftsitt/" class="btn">Leftsit - A Political Sangha</a>
 </div>
 
 <br>
