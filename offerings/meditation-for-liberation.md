@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /meditation-for-liberation/
+permalink: /offerings/meditation-for-liberation/
 ---
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
@@ -12,7 +12,7 @@ permalink: /meditation-for-liberation/
   <div style="flex: 1; text-align: left;">
     <h3 style="margin-top: 0.25rem;">Free workshops for community organizations and community organizers</h3>
     <br>
-    <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <div><a href="https://tally.so/r/obVo85" class="btn">Join the waitlist</a></div>
     <br>
   </div>
   <div class="services-content" style="flex: 1;">
