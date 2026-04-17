@@ -10,17 +10,15 @@ permalink: /offerings/leftsit/
 
 <div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 1; text-align: left;">
-    <h3 style="margin-top: 0.25rem;">Free workshops for community organizations and community organizers</h3>
-    <br>
-    <div><a href="https://tally.so/r/ODAAQp" class="btn">Fill out the interest form</a></div>
+    <h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
     <br>
   </div>
   <div class="services-content" style="flex: 1;">
-    <p>Meditation for Liberation is a series of free workshops I offer to community organizations and organizers. There are different curriculums to choose from (as shown below) all of which start with teaching basic mindfulness meditation techniques, before moving on to deeper exploration and discussion.</p>
+    <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what they are doing as we meditate together, and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
   </div>
 </div>
 <h3>Who this is for</h3>
-<p>Meditation for Liberation workshops are intended for organizations that are promoting justice in this world. It's up to you to decide if you fit the description. I'm particularly interested in working with liberatory political organizations, environmental and climate action groups, and labor and tenant unions.</p>
+<p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
 
 <br>
 
