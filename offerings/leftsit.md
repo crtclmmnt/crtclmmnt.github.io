@@ -5,11 +5,11 @@ permalink: /offerings/leftsit/
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Leftsit</h1>
-<hr class="short" style="margin: 0.5em 0;">
+<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px; text-align: center;">Leftsit</h1>
+<hr class="short" style="margin: 0.5em auto;">
 
-<h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
-<h3 style="margin-top: 0.25rem;">Wednesdays, 7:00 am to 8:00 am</h3>
+<h3 style="margin-top: 0.25rem; text-align: center;">A Political Sangha</h3>
+<h6 style="color: #666; margin-top: 5px; text-align: center">Wednesdays - 7:00 am to 8:00 am</h3>
 <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what they are doing as we meditate together, and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
 
 <h3>Who this is for</h3>
