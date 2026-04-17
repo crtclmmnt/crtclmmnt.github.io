@@ -66,9 +66,9 @@ A future where we win starts now, in the critical moment.
 </div>
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
-  <a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">(free workshops)</span></a>
-  <a href="https://thecriticalmoment.org/private-instruction#individual-instruction" class="btn-large"><span style="font-size: 28px; line-height: 1;">Individual Meditation Instruction</span></a>
-  <a href="https://thecriticalmoment.org/private-instruction#large-groups" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
+  <a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">(free workshops)</span></a>
+  <a href="https://thecriticalmoment.org/offerings/leftsit/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Leftsit</span><br><span style="font-size: 22px; line-height: 1;">A Political Sangha</span></a>
+  <a href="https://thecriticalmoment.org/offerings/private-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Group Meditation Workshops</span></a>
 </div>
 <br>
 <br>

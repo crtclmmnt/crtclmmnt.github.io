@@ -20,7 +20,18 @@ permalink: /offerings/
   <h3 style="margin-top: 0.25rem;">Free Workshops for Community Organizations and Community Organizers</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>These workshops are offered free of charge to organizations and organizers engaging in liberatory work. I don't have a specific definition for what that means, I leave that for you to decide.</p>
-  <div><a href="https://thecriticalmoment.org/meditation-for-liberation/" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn">Learn More</a></div>
+</div>
+<br> 
+
+<hr>
+
+<div style="max-width: 725px; margin: 0.5em auto;">
+  <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Leftsit</h1>
+  <h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
+  <hr class="short" style="margin: 0.5em 0;">
+  <p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
+  <div><a href="https://thecriticalmoment.org/offerings/leftsit/" class="btn">Learn More</a></div>
 </div>
 <br> 
 
@@ -32,7 +43,7 @@ permalink: /offerings/
   <h3 style="margin-top: 0.25rem;">Sliding Scale, up to 4 people</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
-  <div><a href="https://thecriticalmoment.org/private-instruction#individual-instruction/" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/offerings/private-instruction#individual-instruction/" class="btn">Learn More</a></div>
 </div>
 <br>
 <hr>
@@ -43,7 +54,7 @@ permalink: /offerings/
   <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, households, co-ops, and more</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Group Meditation Workshops are for any group of people who want to build a meditation practice in community. Doing so can be incredibly rewarding, regardless of what brings you together.</p>
-  <div><a href="https://thecriticalmoment.org/private-instruction#large-groups" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/offerings/private-instruction#large-groups" class="btn">Learn More</a></div>
 </div>
 <br>
 <hr>
