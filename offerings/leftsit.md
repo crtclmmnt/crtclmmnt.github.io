@@ -9,6 +9,7 @@ permalink: /offerings/leftsit/
 <hr class="short" style="margin: 0.5em 0;">
 
 <h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
+<h3 style="margin-top: 0.25rem;">Wednesdays, 7:00 am to 8:00 am</h3>
 <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what they are doing as we meditate together, and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
 
 <h3>Who this is for</h3>
