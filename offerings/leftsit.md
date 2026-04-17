@@ -8,15 +8,9 @@ permalink: /offerings/leftsit/
 <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Leftsit</h1>
 <hr class="short" style="margin: 0.5em 0;">
 
-<div class="services-layout" style="align-items: flex-start;">
-  <div style="flex: 1; text-align: left;">
-    <h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
-    <br>
-  </div>
-  <div class="services-content" style="flex: 1;">
-    <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what they are doing as we meditate together, and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
-  </div>
-</div>
+<h3 style="margin-top: 0.25rem;">A Political Sangha</h3>
+<p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what they are doing as we meditate together, and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
+
 <h3>Who this is for</h3>
 <p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
 
