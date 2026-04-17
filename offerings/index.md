@@ -67,7 +67,7 @@ permalink: /offerings/
   <div class="services-content">
     <h1 class="center-mobile" style="font-size: 3rem; margin-bottom: 0px; margin-top: 0px;">DeepBe</h1>
     <p>A simple meditation timer. Choose a sit length, and include meditation instruction and/or walking meditation if you choose.</p>
-    <a href="https://thecriticalmoment.org/deepbe/" class="btn">Open</a>
+    <a href="https://thecriticalmoment.org/offerings/deepbe/" class="btn">Open</a>
 
     <br>
     <br>
