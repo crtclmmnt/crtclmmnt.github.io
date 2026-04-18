@@ -14,7 +14,7 @@ permalink: /offerings/leftsit/
 <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what we are doing, as we meditate together and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
 </div>
 
-<div style="text-align: center; max-width: 500; margin: 0 auto;">
+<div style="text-align: center; max-width: 300; margin: 0 auto;">
   <img src="/images/engagedbuddhist.png" alt="Monk kicking a police officer's riot shield.">
 </div>
 
