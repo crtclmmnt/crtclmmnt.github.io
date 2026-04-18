@@ -22,7 +22,8 @@ permalink: /offerings/leftsit/
 <h3>Who this is for</h3>
 <p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
 <br>
-<strong><a href="/leftsit-reminder.ics">Add a sign-up reminder to your calendar</a></strong>
+<a href="https://buttondown.com/thecriticalmoment"><strong>Join the mailing list</strong></a> to get sent a reminder for Leftsit on Tuesdays!
+
 </div>
 
 <br>
