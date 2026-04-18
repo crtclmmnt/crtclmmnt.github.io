@@ -15,7 +15,7 @@ permalink: /offerings/leftsit/
 </div>
 
 <div style="text-align: center; margin: 0 auto;">
-  <img src="/images/engagedbuddhist.png" alt="Monk kicking a police officer's riot shield." width="300px">
+  <img src="/images/engagedbuddhist.png" alt="Monk kicking a police officer's riot shield." width="400px">
 </div>
 
 <h3>Who this is for</h3>
