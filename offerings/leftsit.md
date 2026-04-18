@@ -14,6 +14,10 @@ permalink: /offerings/leftsit/
 <p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what we are doing, as we meditate together and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
 </div>
 
+<div style="text-align: center; max-width: 500; margin: 0 auto;">
+  <img src="/images/engagedbuddhist.png" alt="Monk kicking a police officer's riot shield.">
+</div>
+
 <h3>Who this is for</h3>
 <p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
 
