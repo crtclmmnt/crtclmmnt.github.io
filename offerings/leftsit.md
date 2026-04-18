@@ -18,8 +18,10 @@ permalink: /offerings/leftsit/
   <img src="/images/engagedbuddhist.png" alt="Monk kicking a police officer's riot shield." width="400px">
 </div>
 
+<div style="max-width: 700px; margin: 0 auto;">
 <h3>Who this is for</h3>
 <p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
+</div>
 
 <br>
 
