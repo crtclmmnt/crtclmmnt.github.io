@@ -11,7 +11,7 @@ permalink: /offerings/leftsit/
 <h3 style="margin-top: 0.25rem; text-align: center;">A Political Sangha</h3>
 <h6 style="color: #666; margin-top: 5px; text-align: center">7:00 am to 8:00 am PST<br>Wednesdays</h6>
 <div style="text-align: justify; text-align-last: center; max-width: 670px; margin: 0 auto;">
-<p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what we are doing, as we meditate together and discuss the interesting intersection between Leftist radical politics and Buddhist contemplative wisdom.</p>
+<p>Join a community of Marxists, Anarchists, agitators, looters, and people who in many instances have absolutely no clue what we are doing, as we meditate together and discuss the interesting intersection between Leftist politics and Buddhist philosophy.</p>
 </div>
 
 <div style="text-align: center; margin: 0 auto;">
@@ -20,9 +20,10 @@ permalink: /offerings/leftsit/
 
 <div style="max-width: 720px; margin: 0 auto;">
 <h3>Who this is for</h3>
-<p>This sangha is open to anyone who is working towards the liberation of all living beings. If you're interested in cultivating a meditation practice and exploring how it can enhance your organizing experience, this community is a great place to start.</p>
+<p>This sangha is open to anyone who is working towards the liberation of all living beings. You might be a Leftist interested in Buddhism. You might be a Buddhist interested in politics. Maybe you're an expert on both, or neither.</p>
+<p>If you want to meditate, and participate in mindful conversations about the political and economic state of the world, this sangha is for you.</p>
 <br>
-<a href="https://buttondown.com/thecriticalmoment"><strong>Join the mailing list</strong></a> to get sent a reminder to sign up for Leftsit on Tuesdays!
+<a href="https://buttondown.com/thecriticalmoment"><strong>Join the mailing list</strong></a> to get sent a reminder on Tuesdays to sign up for Leftsit!
 
 </div>
 
