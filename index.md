@@ -28,7 +28,7 @@ A future where we win starts now, in the critical moment.
 <h1>Quick Links</h1>
 <hr class="short" style="margin: 0.5em 0;">
 <h5><a href="https://buttondown.com/thecriticalmoment/">Subscribe to the newsletter</a></h5>
-<h5><a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/">Meditation for Liberation<br><span style="font-size: 18px; line-height: 1;">Free workshops for community organizers</span></a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/">Meditation for Liberation<br><span style="font-size: 18px; line-height: 1;">Free workshops for organizers</span></a></h5>
 <h5><a href="https://thecriticalmoment.org/offerings/leftsit/">Leftsit<br><span style="font-size: 18px; line-height: 1;">A political sangha</span></a></h5>
 <h5><a href="https://thecriticalmoment.org/reading">Book recommendations</a></h5>
 
