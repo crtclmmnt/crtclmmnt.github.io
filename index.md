@@ -22,7 +22,15 @@ The goal of this project is to empower people who are rising to the occasion of 
 A future where we win starts now, in the critical moment.   
 
 <h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
-<h5><a href="https://thecriticalmoment.org/offerings/">See my Offerings</a></h5>
+
+<br>
+
+<h1>Quick Links</h1>
+<hr class="short" style="margin: 0.5em 0;">
+<h5><a href="https://buttondown.com/thecriticalmoment/">Subscribe to the newsletter</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/">Meditation for Liberation - Free workshops for community organizers</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/leftsit/">Leftsit - A political sangha</a></h5>
+<h5><a href="https://thecriticalmoment.org/reading">Book recommendations</a></h5>
 
 <br>
 
