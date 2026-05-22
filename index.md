@@ -22,7 +22,17 @@ The goal of this project is to empower people who are rising to the occasion of 
 A future where we win starts now, in the critical moment.   
 
 <h5><a href="https://thecriticalmoment.org/introducing-the-critical-moment/">Read the Introduction</a></h5>
-<h5><a href="https://thecriticalmoment.org/offerings/">See my Offerings</a></h5>
+
+<br>
+
+<h1>Quick Links</h1>
+<hr class="short" style="margin: 0.5em 0;">
+<h5><a href="https://buttondown.com/thecriticalmoment/">Subscribe to the newsletter</a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/">Meditation for Liberation<br><span style="font-size: 18px; line-height: 1;">Free workshops for organizers</span></a></h5>
+<h5><a href="https://thecriticalmoment.org/offerings/leftsit/">Leftsit<br><span style="font-size: 18px; line-height: 1;">A political sangha</span></a></h5>
+<h5><a href="https://thecriticalmoment.org/reading">Book recommendations</a></h5>
+
+<br>
 
 <br>
 
@@ -67,7 +77,7 @@ A future where we win starts now, in the critical moment.
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
   <a href="https://thecriticalmoment.org/offerings/leftsit/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Leftsit</span><br><span style="font-size: 22px; line-height: 1;">A Political Sangha</span></a>
-  <a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">Free Workshops)</span></a>
+  <a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">Free Workshops</span></a>
   <a href="https://thecriticalmoment.org/offerings/offerings/private-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Private Instruction</span><br><span style="font-size: 22px; line-height: 1;">Sliding-Scale Workshops & Instruction</span></a>
 </div>
 <br>

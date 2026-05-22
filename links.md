@@ -19,7 +19,8 @@ hide_header: true
 <a href="/" class="btn-large"><span style="font-size: 22px; line-height: 1;">The Critical Moment</span><br><span style="font-size: 24px; line-height: 1;">Home Page</span></a>
 <a href="/blog/" class="btn-large"><span style="font-size: 22px; line-height: 1;">Read the blog</span></a>
 <a href="https://buttondown.com/thecriticalmoment" class="btn-large"><span style="font-size: 22px; line-height: 1;">Subscribe to the newsletter</span></a>
-<a href="/meditation-for-liberation/" class="btn-large"><span style="font-size: 22px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
+<a href="/offerings/leftsit/" class="btn-large"><span style="font-size: 22px; line-height: 0.8;">Leftsit</span><br><span style="font-size: 18px; line-height: 1;">A political sangha</span></a>
+<a href="/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 22px; line-height: 0.8;">Meditation for Liberation</span><br><span style="font-size: 18px; line-height: 1;">free meditation workshops for community organizations</span></a>
 </div>
 <br>
 <br>
