@@ -2,7 +2,7 @@
 layout: post
 title: The Next Revolutionary is a Community
 description: "An essay exploring frameworks that can help leftists overcome sectarian tendencies."
-hero_image: /images/pano3.JPG
+hero_image: /images/pano3.jpg
 ---
 
 There are two major problems on the left. The first problem is that most people don't subscribe to my specific ideology, and so they have a tendency to engage in treacherous, liberal, and counter-revolutionary acts that make organizing with them impossible. The second problem on the left is sectarianism.
