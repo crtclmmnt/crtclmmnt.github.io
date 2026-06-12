@@ -12,7 +12,7 @@ permalink: /faq/
 
 <br>
 
-<p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or write me an email with your question.</p>
+<p>If you have a question that isn't answered on this page, please <strong><a href="https://tally.so/r/ODAAQp">fill out the interest form</a></strong> or <strong><a href="mailto:joshua@thecriticalmoment.org">write me an email</a></strong> with your question.</p>
 
 <hr>
 

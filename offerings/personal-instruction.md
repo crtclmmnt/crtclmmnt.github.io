@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /private-instruction/
+permalink: /personal-instruction/
 ---
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>

@@ -2,12 +2,15 @@
 layout: default
 permalink: /about/
 ---
-<img src="/images/pano11.JPG" alt="About header" class="hero-image">
+<div class="hero-wrapper">
+  <img src="/images/pano11.JPG" alt="A breathtaking bay area sunset." class="hero-image">
+  <div class="hero-title">
+    <h1 id="offerings" style="font-size: 4rem; margin-bottom: 0px;">About Me</h1>
+  </div>
+</div>
 
 <div class="about-layout" style="align-items: flex-end;">
   <div>
-    <h1 style="font-size: 4rem; margin-bottom: 0px;">About Me</h1>
-    <hr class="short" style="margin: 0.5em 0;">
     In 2022, I was worrying about climate change on a weekly basis. I was watching an incessant series of natural disasters unfold through short video clips, because Instagram’s algorithm had learned that I couldn’t look away from them. I was in my final year of college, working in research, and I had become disillusioned with the academic establishment’s ability to respond to the unfolding climate crisis. I couldn’t imagine a future where we found a way out, and my certainty of this reality caused me a great deal of despair.  
   </div>
   
@@ -38,7 +41,7 @@ The world doesn’t need people to worry over her, she needs people who have the
 
 <h1 style="margin-bottom: 0px;">Book Recommendations</h1>
 <hr class="short" style="margin: 0.5em 0;">
-<p>These are some books that have shaped my thinking on radical politics, contemplative wisdom, and ecological identity:</p>
+<p>If you're a big fan of books, and want to engage with some of the source material that has shaped my thinking on radical politics, contemplative wisdom, and deep ecology, visit the page below:</p>
 <a href="/reading/" class="btn">see the books</a>
 
 <br>

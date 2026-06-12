@@ -39,22 +39,22 @@ permalink: /offerings/
 
 <div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="individual-instruction" style="font-size: 3rem; margin-bottom: 0px;">Individual Meditation Instruction</h1>
-  <h6 style="color: #666; margin-top: 5px;">Private Instruction</h6>
+  <h6 style="color: #666; margin-top: 5px;">Personal Instruction</h6>
   <h3 style="margin-top: 0.25rem;">Sliding Scale, up to 4 people</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Individual meditation instruction is for people who want to cultivate or deepen a personal practice with the support of a teacher. While it is possible to learn meditation on your own, having a guide who has walked the path before you can make the practice less confusing and more sustainable.</p>
-  <div><a href="https://thecriticalmoment.org/offerings/private-instruction#individual-instruction/" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/offerings/personal-instruction#individual-instruction/" class="btn">Learn More</a></div>
 </div>
 <br>
 <hr>
 
 <div style="max-width: 725px; margin: 0.5em auto;">
   <h1 id="large-groups" style="font-size: 3rem; margin-bottom: 0px;">Group Meditation Workshops</h1>
-  <h6 style="color: #666; margin-top: 5px;">Private Instruction</h6>
+  <h6 style="color: #666; margin-top: 5px;">Personal Instruction</h6>
   <h3 style="margin-top: 0.25rem;">Sliding scale, for workplaces, nonprofits, clubs, households, co-ops, and more</h3>
   <hr class="short" style="margin: 0.5em 0;">
   <p>Group Meditation Workshops are for any group of people who want to build a meditation practice in community. Doing so can be incredibly rewarding, regardless of what brings you together.</p>
-  <div><a href="https://thecriticalmoment.org/offerings/private-instruction#large-groups" class="btn">Learn More</a></div>
+  <div><a href="https://thecriticalmoment.org/offerings/personal-instruction#large-groups" class="btn">Learn More</a></div>
 </div>
 <br>
 <hr>

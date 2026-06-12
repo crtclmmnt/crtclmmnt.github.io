@@ -5,14 +5,13 @@ permalink: /offerings/meditation-for-liberation/
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
-<h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
-<hr class="short" style="margin: 0.5em 0;">
-
 <div class="services-layout" style="align-items: flex-start;">
   <div style="flex: 1; text-align: left;">
+    <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
+    <hr class="short" style="margin: 0.5em 0;">
     <h3 style="margin-top: 0.25rem;">Free workshops for community organizations and community organizers</h3>
     <br>
-    <div><a href="https://tally.so/r/obVo85" class="btn">Join the waitlist</a></div>
+    <div><a href="mailto:joshua@thecriticalmoment.org" class="btn">Get in touch</a></div>
     <br>
   </div>
   <div class="services-content" style="flex: 1;">

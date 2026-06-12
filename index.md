@@ -11,13 +11,13 @@ permalink: /
 
 <br>
 
-**The crises facing us are numerous:** ecological collapse, a new gilded age, an economy that has abandoned the working class, state-sponsored violence against immigrants, the rise of technofeudalism, genocide funded by our taxes, and so many other horrors.
+**The crises facing us are numerous:** ecological collapse, a new gilded age, genocide funded by our tax dollars, state-sponsored violence against immigrants, the rise of technofeudalism, and so many other horrors.
 
 It’s hard to face all this without falling apart, or turning a blind eye. 
 
-But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. It’s not enough to be on the right side of history. We have a moral duty to win.
+But it’s also not enough to simply witness these things, and to have the right opinions about them. We need skills for staying grounded while confronting these issues. We need to resist the solipsism of Capitalism and learn how to be in community with each other. It’s not enough to be on the right side of history. We have a moral duty to win.
 
-The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of meditation and contemplation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias; and so that you can notice the way systems have socialized you, and become more in tune with your core values. 
+The goal of this project is to empower people who are rising to the occasion of this critical moment. I want to teach you the techniques of mindfulness meditation so that you can organize your communities from a place of stability, confidence, and resilience; so that you can see the world and its problems with clarity and without bias; and so that you can notice the ways in which systems have socialized you, and become more in tune with your core values. 
 
 A future where we win starts now, in the critical moment.   
 
@@ -72,13 +72,13 @@ A future where we win starts now, in the critical moment.
 
 <h1 style="text-align: center;">Start a Meditation Practice</h1>
 <div style="max-width: 700px; margin: 0 auto;">
-  <p>I offer free meditation workshops for community organizers, which I call Meditation for Liberation, and sliding scale individual and group instruction for those seeking a more personalized experience.</p>
+  <p>There are many ways to start a meditation practice, but it helps to have guidance from someone who has walked the path before. I offer free meditation workshops for community organizers, which I call Meditation for Liberation. I host a free online weekly meditation, called Leftsit. I also am available for personal instruction, offered at a sliding scale.</p>
 </div>
 
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
   <a href="https://thecriticalmoment.org/offerings/leftsit/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Leftsit</span><br><span style="font-size: 22px; line-height: 1;">A Political Sangha</span></a>
   <a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">Free Workshops</span></a>
-  <a href="https://thecriticalmoment.org/offerings/offerings/private-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Private Instruction</span><br><span style="font-size: 22px; line-height: 1;">Sliding-Scale Workshops & Instruction</span></a>
+  <a href="https://thecriticalmoment.org/offerings/offerings/personal-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Personal Instruction</span><br><span style="font-size: 22px; line-height: 1;">Sliding-Scale Workshops & Instruction</span></a>
 </div>
 <br>
 <br>
