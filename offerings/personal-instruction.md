@@ -5,8 +5,8 @@ permalink: /offerings/personal-instruction/
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
-<h1 id="private-instruction" style="font-size: 3rem; margin-bottom: 0px;">Private Instruction</h1>
-<p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be far more sustainable.</p>
+<h1 style="font-size: 3rem; margin-bottom: 0px;">Personal Instruction</h1>
+<p>I make my services as a meditation instructor available to everyone, because cultivating a meditation practice alongside someone else can be helpful.</p>
 <hr>
 
 <div class="services-layout" style="align-items: flex-end;">
