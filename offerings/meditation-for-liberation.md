@@ -5,7 +5,7 @@ permalink: /offerings/meditation-for-liberation/
 <hr>
 <h5 style="text-align: left; margin: 0 auto;"><a href="https://thecriticalmoment.org/offerings/">back</a></h5>
 
-<div class="services-layout" style="align-items: flex-start;">
+<div class="services-layout" style="align-items: flex-end;">
   <div style="flex: 1; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
