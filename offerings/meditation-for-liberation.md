@@ -9,7 +9,7 @@ permalink: /offerings/meditation-for-liberation/
   <div style="flex: 1; text-align: left;">
     <h1 id="free-workshops" style="font-size: 3rem; margin-bottom: 0px;">Meditation for Liberation</h1>
     <hr class="short" style="margin: 0.5em 0;">
-    <h3 style="margin-top: 0.25rem;">Free workshops for organizers</h3>
+    <h3 style="margin-top: 0.25rem;">Free workshops for community organizers</h3>
     <br>
     <div><a href="mailto:joshua@thecriticalmoment.org" class="btn">Get in touch</a></div>
     <br>
