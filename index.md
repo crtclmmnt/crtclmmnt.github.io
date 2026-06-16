@@ -78,7 +78,7 @@ A future where we win starts now, in the critical moment.
 <div style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 15px; align-items: stretch;">
   <a href="https://thecriticalmoment.org/offerings/leftsit/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Leftsit</span><br><span style="font-size: 22px; line-height: 1;">A Political Sangha</span></a>
   <a href="https://thecriticalmoment.org/offerings/meditation-for-liberation/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Meditation for Liberation</span><br><span style="font-size: 22px; line-height: 1;">Free Workshops</span></a>
-  <a href="https://thecriticalmoment.org/offerings/offerings/personal-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Personal Instruction</span><br><span style="font-size: 22px; line-height: 1;">Sliding-Scale Workshops & Instruction</span></a>
+  <a href="https://thecriticalmoment.org/offerings/personal-instruction/" class="btn-large"><span style="font-size: 28px; line-height: 1;">Personal Instruction</span><br><span style="font-size: 22px; line-height: 1;">Sliding-Scale Workshops & Instruction</span></a>
 </div>
 <br>
 <br>
