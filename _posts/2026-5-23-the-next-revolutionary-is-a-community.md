@@ -4,9 +4,7 @@ title: The Next Revolutionary is a Community
 description: "An essay exploring frameworks that can help leftists overcome sectarian tendencies."
 hero_image: /images/pano3.jpg
 ---
-<em>An edited version of this essay was published in Geese Magazine on July 10th, 2026. <a href="https://www.geesemag.com/articles/the-next-revolutionary-is-a-community">Read it here.</a></em>
-
-<br>
+<em>An edited version of this essay was published in Geese Magazine on July 10th, 2026. <a href="https://www.geesemag.com/articles/the-next-revolutionary-is-a-community">Click here to read it!</a></em>
 
 There are two major problems on the left. The first problem is that most people don't subscribe to my specific ideology, and so they have a tendency to engage in treacherous, liberal, and counter-revolutionary acts that make organizing with them impossible. The second problem on the left is sectarianism.
 
